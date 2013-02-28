@@ -1,0 +1,245 @@
+\mode*
+\mode<all>{\topsection{Pochodne kierunkowe. Izometria.}}
+
+\mode<all>{\midsection{Pochodne kierunkowe}}
+
+\begin{frame}
+
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem na niej. Załóżmy, że mamy daną funkcję gładką $f\colon M\to \R$ oraz wektor $v\in T_pM$ z przestrzeni stycznej. \pause Z definicji przestrzeni stycznej istnieje krzywa $\alpha\colon (-\varepsilon,\varepsilon)\to M$ taka że $\alpha(0)=p$ oraz $\alpha'(0)=v$. \pause Oczywiście złożenie $f\circ \alpha\colon \R\to \R$ jest funkcją gładką, możemy więc rozważać jej pochodną.
+
+\pause \begin{definicja}
+Przy oznaczeniach jak powyżej definiujemy \textbf{pochodną kierunkową} funkcji $f$ \textbf{w kierunku wektora} $v$ jako 
+\[\nabla_vf\define (f\circ \alpha)'(0).\]
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{lemat}
+Definicja pochodnej kierunkowej nie zależy od wyboru krzywej $\alpha$, tj. jeśli $\beta\colon (-\varepsilon,\varepsilon)\to M$ jest drugą krzywą o tej własności, że $\beta(0)=p$ oraz $\beta'(0)=v$ wtedy \[\left(f\circ \alpha\right)'(0)=\left(f\circ \beta\right)'(0).\]
+\end{lemat}
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in M$. Możemy wybrać tak małe $\varepsilon$, że obrazy $\alpha(-\varepsilon,\varepsilon)$ i $\beta(-\varepsilon,\varepsilon)$ będą już zawarte w $x(U)$. \pause Z definicji przestrzeni stycznej, wektory styczne do tych krzywych w $0$ można wyrazić jako kombinacje liniowe wektorów $x_1$ i $x_2$. \pause \mode<presentation>{\\}Co więcej, z równości $\alpha'(0)=v=\beta'(0)$ wynika, że współczynniki tych kombinacji są sobie równe w punkcie $p$. 
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Zatem również 
+\[\left(x^{-1}\circ \alpha\right)'\!\!(0)=\left(x^{-1}\circ \beta\right)'\!\!(0).\] \pause Mamy wtedy
+\begin{align*}
+(f\circ \alpha)'(0)=&\left[(f\circ x)\circ (x^{-1}\circ \alpha)\right]'\!\!(0)=\\\pause
+=& J(f\circ x)\underbrace{(x^{-1}\circ \alpha(0)\!)}_{=p=(x^{-1}\circ \beta)(0)}\underbrace{(x^{-1}\circ \alpha)'(0)}_{=v=(x^{-1}\circ \beta)'(0)}=\\\pause
+=& J(f\circ x)(x^{-1}\circ \beta(0)\!)(x^{-1}\circ \beta)'(0)=(f\circ\beta)'(0),
+\end{align*}
+gdzie $J$ oznacza jakobian odwzorowania (macierz pochodnych cząstkowych).
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}\label{lem:wl-pochodnej-kierunkowej}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $f,g\colon M\to \R$ będą funkcjami gładkimi. Dla wszystkich: punktów $p\in M$, wektorów $v,w\in T_pM$ z przestrzeni stycznej w punkcie $p$, oraz liczb rzeczywistych $a,b\in \R$ zachodzi
+\begin{itemize}
+\item $\nabla_{av+bw}f=a\nabla_v f+b\nabla_w f$
+\item $\nabla_v(af+bg)=a\nabla_v f+b\nabla_v(g)$
+\item $\nabla_v(fg)=g\nabla_vf+f\nabla_vg$
+\end{itemize}
+\end{lemat}
+\begin{uwaga}
+Dwie pierwsze własności mówią, że $\nabla$ jest operatorem liniowym ze względu na argument (funkcję) i kierunek (wektor).
+\mode<article>{Trzecia własność to tzw. reguła Leibnitza, co może być wyrażone inaczej przez powiedzenie, że $\nabla$ jest różniczkowaniem algebry funkcji gładkich na $M$. Nie będzie nas to jednak w dalszej części wykładu zajmowało.}
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+Własność drugą i trzecią pozostawiamy jako (proste) ćwiczenia. Wystarczy w nich skorzystać z podstawowych własności różniczkowania funkcji.
+
+Udowodnimy teraz pierwszą własność. \mode<article>{Idea dowodu jest blisko związana z tą użytą w drugiej części dowodu lematu \ref{lem:prop_tang_spce}.}
+
+\pause Niech $v=(v_1, v_2)$ oraz $w=(w_1,w_2)$. Bez straty ogólności możemy założyć, że $x(0,0)=p$. \pause Zdefiniujmy 
+\begin{align*}
+\alpha_v(t)\define&{x(av_1t,av_2t)}& \alpha_w(t)\define &x(bw_1t,bw_2t),
+\end{align*}
+oraz niech
+\[\beta(t)\define x((av_1+bw_1)t,(av_2+bw_2)t)\] %\underbrace{x(av_1u,av_2u)}_{\define\alpha_v(u)}+\underbrace{x(bw_1u,bw_2u)}_{\define\alpha_w(u)}.
+\pause Wówczas pochodna $\beta$ w $t=0$ jest równa 
+\[\beta'(t)\big|_{t=0}=
+\underbrace{a(v_1x_1+v_2x_2)}_{=\alpha_v'(0)}+\underbrace{b(w_1x_1+w_2x_2)}_{=\alpha_w'(0)}=v+w.\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Wtedy 
+\begin{multline*}
+\nabla_{av+bw}f=\left(f\circ \beta\right)'(0)=\frac{\partial f(\beta(t))}{\partial \beta(t)}\beta'(t)\bigg|_{t=0}=\\\pause
+=a\frac{\partial f(\beta(0))}{\partial \beta(0)}\left(v_1 x_1+v_2 x_2\right)+b\frac{\partial f(\beta(0))}{\partial \beta(0)}\left(w_1 x_1+w_2 x_2\right)=\\\pause
+=a\frac{\partial f(\alpha_v(0))}{\partial \alpha_v(0)}\alpha_v'(0)+b\frac{\partial f(\alpha_w(0))}{\partial \alpha_w(0)}\alpha_w'(0)=\\\pause
+=a\left(f\circ \alpha_v\right)'(t)\big|_{t=0}+b\left(f\circ \alpha_w\right)'(t)\big|_{t=0}=\\a\nabla_vf+b\nabla_wf.
+\end{multline*}
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Izometria}}
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $f\colon M\to \R^3$ będzie odwzorowaniem gładkim (tj. polem wektorowym). \textbf{Pochodną} $f$ w punkcie $p\in M$ definiujemy jako
+\begin{align*}
+Df_p\colon T_pM&\to R^3\\
+v&\mapsto \nabla_v f
+\end{align*}
+\end{definicja}
+
+\mode<article>{Chociaż definicja wygląda na powtórzenie definicji pochodnej kierunkowej, sama różnica w napisach \[\nabla_vf(p)\qquad\text{vs.} \qquad Df_p(v)\]zmienia nasz punkt widzenia. Przy definicji pochodnej kierunkowej, wektor $v$ uważaliśmy za stały, a zmiennnymi były funkcje (lub pola wektorowe). W pochodnej funkcji $f$ na powierzchni mamy na myśli ustaloną funkcję której zmienność badamy we wszystkich (stycznych) kierunkach $v$.}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+Niech $M,N\subset \R^3$ będą powierzchniami gładkimi, $p\in M$ punktem, oraz niech $f\colon M\to N$ będzie gładką funkcją. Wtedy dla każdego $v\in T_pM$ mamy $Df_p(v)\in T_{f(p)}N$ oraz \[Df_p\colon T_pM\to T_{f(p)}N\] jest odwzorowaniem liniowym.
+
+\end{lemat}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\\pause
+Liniowość wynika natychmiast z liniowości pochodnej kierunkowej, (Lemat \ref{lem:wl-pochodnej-kierunkowej}, punkt drugi) więc musimy tylko pokazać, że $Df_p(v)\in T_{f(p)}N$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Niech $v\in T_pM$. Wtedy istnieje taka krzywa $\alpha\colon (-\varepsilon,\varepsilon)\to M$, że $\alpha(0)=p$ oraz $\alpha'(0)=v$. Mamy wtedy \[Df_p(v)=\nabla_v f=(f\circ \alpha)'(0).\]
+\pause Zauważmy, że krzywa \[f\circ\alpha\colon (-\varepsilon,\varepsilon)\to N\] jest krzywą na powierzchni $N$, oraz $(f\circ \alpha)(0)=f(p)$. \pause Zatem z definicji przestrzeni stycznej otrzymujemy $(f\circ \alpha)'(0)\in T_{f(p)}N$, czyli $Df_p(v)\in T_{f(p)}N$.
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}\label{ex:differential}
+Rozważmy odwzorowanie $f\colon \R^2\to S^1\times \R$ zadane wzorem \[f(s,t)=(\cos s,\sin s,t).\]
+(Jest to odwzorowanie które owija arkusz papieru na walec.) \pause Dla $p=(0,0)\in \R^2$ mamy $f(p)=(1,0,0)$. Zauważmy, że $T_p\R^2$ jest płaszczyzną $x-y$, zaś $T_{f(p)}(S^1\times \R)$ jest płaszczyzną $y-z$.
+\pause Wybierzmy $v=(a,b)\in T_p\R^2$ i niech $\alpha\colon (-\varepsilon,\varepsilon)\to\R^2$ będzie zadana przez $\alpha(t)=(at,bt)$. Wtedy oczywiście
+\begin{align*}
+\alpha(0)&=p, &
+\alpha'(0)&=v, \quad\text{oraz}\quad
+f\circ \alpha (t)=(\cos at,\sin at, bt).
+\end{align*}\mode<presentation>{\vspace*{-0.5in}}\pause
+\begin{multline*}
+Df_p(v)=\nabla_v f=(f\circ \alpha)'\big|_{t=0}=\\=(-a\sin at,a\cos at, b)\big|_{t=0}=(0,a,b).
+\end{multline*}
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie funkcją gładką.
+\begin{itemize}
+\item Mówimy, że $f$ jest \textbf{izometrią} jeśli $f$ jest \emph{dyfeomorfizmem}, oraz pierwsza forma podstawowa jest niezmienniczna ze względu na $f$, i.e. \[I_p(v,w)=I_{f(p)}(Df_p(v),Df_p(w)),\] dla wszystkich $p\in M$ i wszystkich $v,w\in T_p(M)$.
+
+\item Funkcję $f$ nazywamy \textbf{lokalną izometrią}, jeśli dla każdego punktu $p\in M$ istnieje jego otoczenie otwarte $U\subset M$ takie, że $f(U)\subset N$ jest zbiorem otwartym (w $N$), oraz $f\,\big|_U\colon U\to f(U)$ jest izometrią.
+\end{itemize}
+
+\end{definicja}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{uwaga}
+
+\mode<article>{Powyższą równość można zapisać\[\langle v,w\rangle=\langle Df_p(v),Df_p(w)\rangle,\]co daje użyteczne kryterium sprawdzania, czy $f$ jest izometrią.}
+Warto zauważyć, że izometria od lokalnej izometrii różni się tylko i wyłącznie tym, że lokalna izometria nie musi być dyfeomorfizmem całych przestrzeni. Jest to niewielka, lecz jak zobaczymy ważna różnica.
+
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}\label{lem:loc-isometry-prop}
+Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie funkcją gładką. Następujące warunki są równoważne.
+
+\begin{enumerate}
+\item $f$ jest lokalną izometrią.
+\item Równość $I_p(v,w)=I_{f(p)}(Df_p(v),Df_p(w))$ zachodzi dla wszystkich $p\in M$ oraz $v,w\in T_pM$.
+%\item Dla każdego $p\in M$ i \emph{dla każdego} lokalnego układu współrzędnych $x\colon U\to M$ wokół $p$ istnieje mniejsze otoczenie otwarte $V\subset U$ punktu $p$ takie, że $f\circ x|_V\colon V\to N$ jest lokalnym układem współrzędnych o takich samych współczynnikach metrycznych $g__{i,j}$ jak $x|_V$.
+
+\item Dla każdego $p\in M$ istnieje lokalny układ współrzędnych $x\colon U\to M$ wokół $p$ taki, że $f\circ x\colon U\to N$ jest lokalnym układem współrzędnych o takich samych współczynnikach metrycznych $g_{ij}$ jak $x$.
+
+\item Dla każdego punktu $p\in M$ istnieje takie jego otoczenie otwarte $A\subset M$, że jeśli $\alpha \colon(a,b)\to A$ jest gładką krzywą, to długość $\alpha\subset M$ jest taka sama jak długość $f\circ \alpha\subset N$.
+\end{enumerate}
+\end{lemat}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+Udowodnimy tylko, że lokalna izometria zachowuje współczynniki metryczne. Resztę implikacji pozostawiamy jako (opcjonalne) zadania.
+
+\pause $(2)\Rightarrow (3)$. Niech $p\in M$ oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p$. Pokażemy, że pochodna złożenia $f\circ x$ ma rangę $2$, więc z twierdzenia o funkcji uwikłanej będzie wynikać, że $f\circ x$ na pewnym otoczeniu $V\subset U$ jest dyfeomorfizmem na swój obraz.
+
+\pause Niech $\{e_1,e_2\}$ będzie standardową bazą w $\R^2$. Niech $q\in x(U)$ oraz niech $\overline{q}=x^{-1}(q)$. Zdefiniujmy krzywe \[\alpha_{q,i}(t)=x(\overline{q}+te_i),\quad i=1,2,\]
+działające z $(-\varepsilon,\varepsilon)\to x(U)$ dla odpowiednio małego $\varepsilon$. 
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Z definicji ${\alpha_{q,i}}$ wiemy, że: 
+\begin{align*}
+\alpha_{q,i}(0)&=q, & \alpha_{q,i}'(0)&=x_i,
+\intertext{natomiast z reguły łańcuchowej wynika, że} 
+f\circ \alpha_{q,i}(0)&=f(q), & (f\circ \alpha_{q,i})'(0)&=(f\circ x)_i,
+\end{align*}
+gdzie wartości pochodnych $x_i$ oraz $(f\circ x)_i$ są wzięte dla $\overline{q}\subset U$. \pause Ponownie z definicji uzyskujemy 
+\[
+(f\circ x)_i=(f\circ \alpha_{q,i})'(0)=\nabla_{x_i}f=Df_q(x_i),
+\]
+\pause więc korzystając z założeninia mamy \[\langle (f\circ x)_i, (f\circ x)_i\rangle=\langle Df_q(x_i),Df_q(xj)\rangle=\langle x_i,x_j\rangle\] dla wszystkich $i,j=1,2$. 
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\mode<presentation>{\[\langle (f\circ x)_i, (f\circ x)_i\rangle=\langle Df_q(x_i),Df_q(xj)\rangle=\langle x_i,x_j\rangle\]}
+Z powyższego równania wynika, że $\|(f\circ x)_i\|=\|x_i\|$, oraz kąt między $(f\circ x)_1$ i $(f\circ x)_2$ jest taki sam jak między $x_1$ i $x_2$. \pause Zatem z liniowej niezależności $x_1$ i $x_2$ wynika liniowa niezależność $(f\circ x)_1$ i $(f\circ x)_2$, czyli $\text{rank }(f\circ x)=2$ na odpowiednio pomniejszonym zbiorze $V\subset U$ (tak by $\alpha_{q,i}$) były dobrze określone). \pause Wreszcie z twierdzenia o funkcji uwikłanej wynika, że $f\circ x\colon V\to N$ jest lokalnym układem współrzędnych. Równość współczynników metrycznych wynika natychmiast z powyższej równości.
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\mode<presentation>{\begin{przyklad}}
+Pokażemy teraz, że funkcja $f\colon \R^2\to S^1\times \R$ określona przez 
+\[f(s,t)=(\cos s,\sin s,t)\]
+jest lokalną izometrią (ale oczywiście nie jest izometrią).
+
+\pause Niech $p=(p_1,p_2)\in \R^2$ oraz niech $U=(p_1-\pi,p_1+\pi)\times \R$. Wtedy inkluzja $x\colon U\to \R^2$ jest lokalnym układem współrzędnych w $\R^2$, oraz $f\circ x\colon U\to S^1\times \R$ jest injekcją. \pause Co więcej mamy
+\[(f\circ x)_1=(-\sin s, \cos s, 0)\quad\text{oraz}\quad(f\circ x)_2=(0,0,1), \]
+więc \[(f\circ x)_1\times (f\circ x)_2=(\cos s, \sin s,0)\neq (0,0,0)\]
+czyli $f\circ x$ jest lokalnym układem współrzędnych. 
+\mode<presentation>{\end{przyklad}}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\mode<presentation>{\begin{przyklad}}
+\pause Obliczenie współczynników metrycznych zarówno dla $x$ jak i $f\circ x$ skutkuje wyznaczeniem macierzy pierwszej formy podstawowej, w każdym z przypadków równej
+\[
+\left[
+\begin{array}{cc}
+1 & 0\\
+0 & 1
+\end{array}\right]
+.\]
+\pause Jednocześnie jest jasnym, że $f$ nie może być izometrią, ponieważ w przeciwnym przypadku $\R^2$ musiałoby być dyfeomorficzne z $S^1\times \R$.
+\mode<presentation>{\end{przyklad}}
+\end{frame}
+
+\mode<all> 

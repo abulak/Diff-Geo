@@ -1,0 +1,213 @@
+ \mode*
+\mode<all>{\topsection{Geometria hiperboliczna}}
+\begin{frame}[<+->]
+W ujęciu tradycyjnym, nazywanym geometrią syntetyczną, geometria euklidesowa przedstawiana jest jako system aksjomatyczny, w którym wszystkie twierdzenia muszą wynikać z aksjomatów, czyli zdań przyjmowanych z góry jako prawdziwe.
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\mode<all>{\midsection{Aksjomaty Euklidesa}}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+W podanym przez siebie systemie Euklides wyróżnił pięć aksjomatów płaszczyzny nazywanej później również euklidesową:
+\begin{enumerate}
+\item Dowolne dwa punkty można połączyć odcinkiem.
+\item Dowolny odcinek można przedłużyć nieograniczenie (uzyskując prostą).
+\item Dla danego odcinka można zaznaczyć okrąg o środku w jednym z jego końcowych punktów i promieniu równym jego długości.
+\item Wszystkie kąty proste są przystające.
+\item Dwie proste, które przecinają trzecią w taki sposób, że suma kątów wewnętrznych po jednej stronie jest mniejsza od dwóch kątów prostych, przetną się z tej właśnie strony.
+\end{enumerate}
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Ponieważ piąty postulat wzbudzał wiele podejrzliwości (już chociażby przez swoją długość) każdy szanujący się matematyk w pomiędzy V-XVIIw. musiał podjąć się próby udowodnienia go jako twierdzenia wynikającego z pozostałych czterech. W XIXw. okazało się jednak, że piąty postulat jest niezależny od pozostałych czterech i na tej podstawie zostały sformułowane różne geometrie: system aksjomatyczny przyjmujący piąty postulat nazywamy \textbf{geometrią euklidesową}, zaś system przyjmujący \textit{zaprzeczenie} piątego postulatu nazywany jest obecnie \textbf{geometrią hiperboliczną}.
+
+
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Przez wieki prób dowodzenia powstało wiele innych twierdzeń \textit{równoważnych} z piątym aksjomatem, np.
+\begin{description}
+\item [Playfair] Przez dany punkt można poprowadzić dokładnie jedną prostą równoległą do danej prostej.
+\item [\textbullet]Dla każdej prostej i każdego punktu poza nią istnieje dokładnie jedna prosta równoległa do niej przechodząca przez ten punkt.
+\item [\textbullet]Jeśli trzy kąty w czworokącie są proste, to i czwarty jest prosty.
+\item [\textbullet]Istnieje prostokąt.
+\item [\textbullet]Twierdzenie Pitagorasa.
+\item [W. Bolyai] Na każdym trójkącie można opisać okrąg.
+\end{description}
+\end{frame}
+\begin{frame}
+\begin{description}
+\item [J. Wallis] Istnieją dwa trójkąty podobne, ale nieprzystające.
+\pause\item [\textbullet]Jeśli dwie proste są równoległe do trzeciej, to są również między sobą równoległe.
+\pause\item [\textbullet]Istnieje trójkąt o sumie kątów wewnętrznych równej $\pi$.
+\pause\item [\textbullet]Suma kątów wewnętrznych w każdym trójkącie jest taka sama.
+\pause\item [Aksjomat trójkąta] Suma kątów wewnętrznych w każdym trójkącie wynosi $\pi$.
+\end{description}
+\mode<presentation>{\pause Jaki wniosek można wyprowadzić z aksjomatu trójkąta i twierdzenia Gaussa-Bonneta?}
+
+\end{frame}
+Zwłaszcza to ostatnie stwierdzenie powinno nas zaciekawić w kontekście niedawno rozważanego lokalnego twierdzenia Gaussa-Bonneta. Wnioskiem z niego będzie zerowa krzywizna całej powierzchni będącej modelem geometrii euklidesowej (tj. na której postulaty Euklidesa są spełnione).
+
+
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Definicja płaszczyzny hiperbolicznej I}}
+W sposób aksjomatyczny płaszczyznę hiperboliczną można zdefiniować analogicznie jak płaszczyznę euklidesową.
+\begin{frame}
+\begin{definicja}
+\textbf{Płaszczyzną hiperboliczną} nazywamy dowolny zbiór $\mathcal{P}$ wraz z rodziną podzbiorów zwanych prostymi i odległością geometryczną spełniający \textit{pierwsze cztery} aksjomaty Euklidesa, oraz następujący \textbf{hiperboliczny aksjomat} o równoległych:
+\begin{itemize}
+\pause \item [5'.] Dla pewnej prostej $\mathcal{D}\subset \mathcal{P}$ i pewnego punktu $M\in \mathcal{P}$ nieleżącego na $\mathcal{D}$ istnieją co najmniej dwie różne proste $\Delta_1$, $\Delta_2$ przechodzące przez $M$ i rozłączne z $\mathcal{D}$.
+\end{itemize}
+\end{definicja}
+\pause 
+\begin{uwaga}
+Wszystkie własności płaszczyzny euklidesowej, które można udowodnić nie posługując się aksjomatem Euklidesa o równoległych (są to tzw. twierdzenia \textbf{geometrii absolutnej}), przysługują również płaszczyźnie hiperbolicznej.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Układ aksjomatyczny ma sens tylko w takiej sytuacji, gdy jest niesprzeczny. 
+W następnym paragrafie zbudujemy model arytmetyczny płaszczyzny hiperbolicznej, analogiczny do modelu
+kartezjańskiego płaszczyzny euklidesowej. 
+
+\mode<all>{\midsection{Model Poincar\'{e}go}}
+\begin{frame}
+Pierwszy model geometrii hiperbolicznej został zaproponowany przez H. Poincar\'{e}go w roku 1882 i nazywany jest 
+\textbf{modelem Poincar\'{e}go} płaszczyzny hiperbolicznej na górnej półpłaszczyźnie.
+
+\pause\begin{definicja} 
+\textbf{Górną półpłaszczyzną} lub \textbf{półpłaszczyzną Poincar\'{e}go}
+nazywamy zbiór \[\mathcal{H}\define\{\,(x,y)\in \R^2\mid y>0\,\}.\]
+\pause \textbf{Prostą hiperboliczną}w $\mathcal{H}$ nazywamy każdy podzbiór $\mathcal{D}\subset \mathcal{H}$ określony równaniem postaci: 
+\begin{align*}
+x=&x_{0}, & \text{albo} & & r^2&=(x-x_{0})^{2}+y^{2},
+\end{align*}gdzie $x_{0}$ i $r>0$ są dowolnymi stałymi.
+\end{definicja}
+
+\end{frame}
+
+\mode<all>{\midsection{Geometria elementarna na półpłaszczyźnie Poincar\'ego}}
+\begin{frame}
+Proste hiperboliczne na półpłaszczyźnie Poincar\'{e}go są to półproste otwarte na górnej płaszczyźnie 
+$\R^2$ mające początki na osi $x$ i prostopadłe do tej osi albo półokręgi otwarte oparte na osi $x$.
+
+\begin{center}
+\input{./pictures/hyperb-halflines.tex}
+Półproste hiperboliczne.
+\end{center}
+
+\end{frame}
+\begin{frame}
+\begin{center}
+\input{./pictures/hyperb-segments.tex}
+Odcinki hiperboliczne.
+\end{center}
+\end{frame}
+
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{definicja}
+Rozważmy funkcję $f_\mathcal{D}:\,\mathcal H\to\R$ która dla prostej hiperbolicznej $\mathcal{D}\subset \mathcal{H}$ zadana jest wzorem\small
+\[
+f_\mathcal{D}(\mathbf{x,y})=
+\begin{cases}
+\mathbf{x}-x_{0}, &\text{jeśli }\mathcal{D}=\{(x,y)\in \mathcal{H}\colon x=x_{0}\},\\
+(\mathbf{x}-x_{0})^{2}+\mathbf{y}^{2}-r^{2}, &\text{jeśli } \mathcal{D}=\le\{
+\begin{aligned}
+&(x,y)\in \mathcal{H}\colon\\
+&(x-x_{0})^{2}+y^{2}=r^{2}
+\end{aligned}\ri\}.
+\end{cases}
+\]
+\end{definicja}\normalsize
+
+\pause Każda prosta hiperboliczna $\mathcal{D}\subset \mathcal{H}$ o równaniu $f_\mathcal{D}(x,y)=0$
+dzieli półpłaszczyznę Poincar\'{e}go na dwa obszary domknięte:
+\begin{align*}
+\{(x,y)\in \mathcal{H}&\colon  f_\mathcal{D}(x,y)\leqslant 0\} \quad \text{oraz}\\
+\{(x,y)\in \mathcal{H}&\colon  f_\mathcal{D}(x,y)\geqslant 0\}, 
+\end{align*}
+\mode<article>{dla których jest ona wspólnym brzegiem. Naturalną rzeczą jest więc nazwanie każdego z tych obszarów \textbf{półpłaszczyznami hiperbolicznymi} ograniczonymi przez $\mathcal{D}$.} \mode<presentation>{\pause dla których jest ona wspólnym brzegiem. Będziemy nazywać każdy z tych obszarów \textbf{półpłaszczyznami hiperbolicznymi}.}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[plain]
+ 
+ \begin{center}
+ \input{./pictures/hyperb-halfplanes.tex}
+ \end{center}
+ 
+ \end{frame}
+
+%%%%%%next-slide%%%%%
+\mode<all>{\lowsection{Aksjomat hiperboliczny}}
+Łatwo podać przykład wskazujący, że na półpłaszczyźnie Poincar\'{e}go obowiązuje hiperboliczny aksjomat o równoległych. Jest pradziwe nawet bardziej ogólne twierdzenie:
+
+\begin{frame}
+ 
+\begin{twierdzenie} %9.2.5
+Niech $\mathcal D$ będzie prostą hiperboliczną na półpłaszczyźnie Poincar\'{e}go niech $p\notin \mathcal{D}$ będzie punktem. Wówczas istnieje nieskończenie wiele prostych w $\mathcal{H}$ przechodzących przez punkt $p$ i rozłącznych z $D$.
+\end{twierdzenie}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Dowód wynika ze sformalizowania poniższych dwóch rysunków.
+\begin{center}
+\input{./pictures/hyperb-parallels.tex}
+\end{center}
+\pause \footnotesize{Proste zaznaczone na niebiesko, które spotykają się z prostą $D$ w nieskończoności nazywamy \textbf{ultra-równoległymi}.}\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\mode<all>{\lowsection{Aksjomat Pascha}}
+\begin{frame}[<+->]
+\begin{lemat}
+\label{9.2.3}
+Jeśli $A=(x_{1},y_{1})$, $B=(x_{2},y_{2})$ są dwoma różnymi punktami półpłaszczyzny Poincar\'{e}go, to dla dowolnej prostej hiperbolicznej $\mathcal{D} \subset \mathcal{H}$ zachodzi równoważność:
+\[(\mathcal{D}\cap [AB]\neq \varnothing)\iff \le(f_\mathcal{D}(x_{1},y_{1})\cdot 
+f_\mathcal{D}(x_{2},y_{2})\leqslant 0\ri).\]
+\end{lemat}
+
+\begin{twierdzenie}[Aksjomat Pascha]
+Jeśli $A=(x_{1},y_{1})$, $B=(x_{2},y_{2})$, $C=(x_{3},y_{3})$ są dowolnymi punktami półpłaszczyzny Poincar\'{e}go nieleżącymi na jednej prostej hiperbolicznej oraz pewna prosta hiperboliczna $\mathcal{D}$ przecina jeden z odcinków hiperbolicznych $[AB]$, $[BC]$ lub $[CA]$, to przecina ona jeszcze co najmniej jeden z nich.
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\textcolor{ared}{\textbf{Dowód:}}\\
+Przypuśćmy, że $\mathcal{D}\cap [AB]\neq \varnothing$ oraz $\mathcal{D}\cap [BC]=
+\varnothing$ i $\mathcal{D}\cap [CA]=\varnothing$. \pause Wówczas na mocy poprzedniego lematu (\ref{9.2.3}) mamy
+\begin{align*}
+f_\mathcal{D}(x_{1},y_{1})\cdot f_\mathcal{D}(x_{2},y_{2})&\leqslant 0,\\
+f_\mathcal{D}(x_{2},y_{2})\cdot f_\mathcal{D}(x_{3},y_{3})&>0,\\
+f_\mathcal{D}(x_{3},y_{3})\cdot f_\mathcal{D}(x_{1},y_{1})&>0.
+\end{align*}
+\pause Mnożąc stronami dwie ostatnie nierówności dostajemy w wyniku nierówność 
+\[f_\mathcal{D}(x_{1},y_{1})\cdot f_\mathcal{D}(x_{2},y_{2})\cdot {(f_\mathcal{D}(x_{3},y_{3}))}^{2}>0.\]
+\pause Dzieląc przez ${(f_\mathcal{D}(x_{3},y_{3}))}^{2}$ otrzymujemy 
+\[f_\mathcal{D}(x_{1},y_{1})\cdot f_\mathcal{D}(x_{2},y_{2})>0,\] co jest sprzeczne z pierwszą z nierówności.
+\hfill $\square$
+\end{frame}
+
+
+\mode<all>{\midsection{Symetrie hiperboliczne}}
+\begin{frame}
+
+
+Z każdą prostą hiperboliczną można stowarzyszyć przekształcenie wzorowane na symetrii osiowej z płaszczyzny euklidesowej. %Będą to przekształcenia wyznaczone przez symetrie osiowe i inwersje względem okręgu.
+
+\pause \begin{definicja} %9.2.10
+\label{9.2.10}
+\textbf{Symetrią hiperboliczną} względem prostej
+hiperbolicznej $\mathcal{D} \subset \mathcal{H}$ nazywamy:
+\begin{itemize}
+ \pause\item jeśli $\mathcal{D}$ dana jest równaniem $x=x_{0}$: obcięcie do $\mathcal{H}$ \textbf{symetrii osiowej} względem prostej w $\R ^{2}$ o równaniu $x=x_{0}$,  lub
+ \pause \item jeśli $\mathcal{D}$ dana jest równaniem $(x-x_{0})^{2}+y^{2}=r^{2}$:
+ obcięcie do $\mathcal{H}$ \textbf{inwersji} względem okręgu w $\R^2$ mającego równanie $(x-x_{0})^{2}+y^{2}=r^{2}$.
+\end{itemize}
+\pause \end{definicja}
+W następnym wykładzie pokażemy, że te symetrie są \textit{izometriami} półpłaszczyzny Poincar\'ego.
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>

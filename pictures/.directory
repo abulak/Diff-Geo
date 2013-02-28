@@ -1,0 +1,8 @@
+[Dolphin]
+GroupedSorting=true
+PreviewsShown=true
+SortOrder=1
+SortRole=date
+Timestamp=2013,2,12,14,10,17
+Version=3
+VisibleRoles=Icons_text,Icons_imageSize

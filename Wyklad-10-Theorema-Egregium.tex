@@ -1,0 +1,379 @@
+\mode*
+\mode<all>{\topsection{Theorema Egregium i Twierdzenie klasyfikacyjne}}
+\mode<all>{\midsection{Symbole Christoffela}}
+
+%%%%%%next-slide%%%%%
+\begin{frame}{Symbole Christoffela}
+\mode<article>{Przypomnijmy, że wzory Fren\'e dla krzywych wyrażały pochodne wektorów $T$, $N$ i $B$ w bazie $\{T,N,B\}$ (a więc pochodne wektorów z bazy wyrażamy w tej samej bazie). Udowodnimy teraz analogiczne twierdzenia dla powierzchni. Szukamy więc formuł, które wyraziłyby pochodne cząstkowe wektorów $x_1$, $x_2$ i $n$ w bazie $\{x_1,x_2,n\}$. Znamy już dwa takie wzory, są nimi równania Weingartena wyrażające $n_i(u_1,u_2)=\frac{\partial n}{\partial u_i}$ jako kombinacje wektorów $x_1$ i $x_2$. Dla przypomnienia:
+\[n_i=-L_{1i}x_1-L_{2i}x_2.\]
+Poniżej używamy naszej konwencji na oznaczanie drugich pochodnych cząstkowych $x$ jako $x_{ij}$, \[x_{ij}(u_1,u_2)\define \frac{\partial x_i(u_1,u_2)}{\partial u_j}=\frac{\partial^2x(u_1,u_2)}{\partial u_j\partial u_i}.\] Oczywiście jak niemal wszystko co do tej pory dowodziliśmy o powierzchniach, ostateczna forma tych formuł będzie zależeć od wyboru lokalnego układu współrzędnych.}
+\mode<presentation>{
+Przypomnijmy najpierw równania Weingartena:
+\[n_i=-L_{1i}x_1-L_{2i}x_2.\]
+Wyrażają one pochodne cząstkowe wektora normalnego w bazie $\{x_1,x_2,n\}$. Udowodnimy teraz podobne wzory dla drugich pochodnych cząstkowych $x_{ij}$.
+}
+\pause
+\begin{twierdzenie}[Formuła Gaussa]
+Niech $M\subset \R^3$ będzie powierzchnią gładką oraz niech $x\colon U\to M$ będzie lokalnych układem współrzędnych. Wtedy
+\begin{equation}
+x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+l_{ij}n.\label{eqn:Gauss-formula}
+\end{equation}
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{uwaga}
+Ponieważ funkcje $\Gamma^k_{ij}$ zwane \textbf{symbolami Christoffela} nie pojawiły się jeszcze na tym wykładzie, możemy to sformułowanie przyjąć jako ich \textbf{definicję} (z resztą tak samo zdefiniowaliśmy torsję krzywej). \pause 
+
+Ponieważ $x_{ij}=x_{ji}$, więc natychmiast otrzymujemy pierwszą własność tych symboli:\[\Gamma^k_{ij}=\Gamma^k_{ji},\quad \text{dla } k=1,2.\]
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\textcolor{ared}{Dowód Formuły Gaussa:}\\\pause
+Ponieważ układ $\{x_1, x_2, n\}$ tworzy bazę przestrzeni $\R^3$, więc muszą istnieć współczynniki $\Gamma^k_{ij}$ oraz $Q_{ij}$ takie, że \[x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+Q_{ij}n.\]\pause
+Zrzutujmy ortogonalnie obie strony tego równania na wektory $x_1$, $x_2$ i $n$:
+\begin{align*}
+\langle x_{ij},x_1 \rangle&=\Gamma^1_{ij}g_{11}+\Gamma^2_{ij}g_{12}\\
+\langle x_{ij}, x_2\rangle&=\Gamma^1_{ij}g_{21}+\Gamma^2_{ij}g_{22}\\
+\langle x_{ij}, n\rangle&=Q_{ij}
+\end{align*}
+\pause Natychmiast z tego wynika, że $Q_{ij}=l_{ij}$. Pozostałe dwa równania potraktujmy jako własności symboli Christoffela.
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{lemat}\label{lem:christoffel-prop}
+Niech $M\to \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Dla wszystkich $i, j=1,2$ zachodzi
+\[
+\left(
+\begin{array}{c}
+\Gamma^1_{ij}\\
+\Gamma^2_{ij}\\
+\end{array}
+\right)
+=\frac{1}{2}\left(
+\begin{array}{cc}
+g_{11} & g_{12}\\
+g_{21} & g_{22}
+\end{array}
+\right)^{-1}
+\left(
+\begin{array}{c}
+\frac{\partial g_{j1}}{\partial u_i}+\frac{\partial g_{i1}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_1}\\
+\frac{\partial g_{j2}}{\partial u_i}+\frac{\partial g_{i2}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_2}
+\end{array}
+\right)
+\]
+\end{lemat}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+Obliczmy pochodną cząstkową z $g_{ij}$:
+\[\frac{\partial{g_{ij}}}{\partial u_k}=\frac{\partial\langle x_i,x_j \rangle}{\partial u_k}=\left\langle \frac{\partial x_i}{\partial u_k},x_j \right\rangle + \left\langle x_i,\frac{\partial x_j}{\partial u_k}\right\rangle=\langle x_{ik},x_j\rangle+\langle x_i,x_{jk}\rangle.\]
+
+
+\pause Podobnie, permutując indeksy $i$, $j$, $k$ (równocześnie pamiętając, że $g_{ij}=g_{ji}$, oraz $x_{ij}=x_{ji}$) otrzymujemy dwa kolejne równania:
+\begin{align*}
+\frac{\partial{g_{ik}}}{\partial u_j}=&\langle x_{ij},x_k\rangle+\langle x_i,x_{jk}\rangle\\
+\frac{\partial{g_{jk}}}{\partial u_i}=&\langle x_{ik},x_j\rangle+\langle x_k,x_{ij}\rangle
+\end{align*}
+
+\pause Dodając drugie i trzecie równanie, a następnie odejmując pierwsze otrzymujemy:
+\[\frac{1}{2}\left(\frac{\partial{g_{ik}}}{\partial u_j}+\frac{\partial{g_{jk}}}{\partial u_i}- \frac{\partial{g_{ij}}}{\partial u_k}\right)=\langle x_{ij},x_{k}\rangle.\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Z drugiej strony na podstawie formuły Gaussa mamy 
+\[\langle x_{ij},x_{k}\rangle=\Gamma^1_{ij}\langle x_1,x_k\rangle+ \Gamma^2_{ij}\langle x_2,x_k\rangle=\sum_{r=1}^2\Gamma^r_{ij}g_{rk},\]
+\pause czyli 
+\[\sum_{r=1}^2\Gamma^r_{ij}g_{rk}=\frac{1}{2}\left(\frac{\partial{g_{ik}}}{\partial u_j}+\frac{\partial{g_{jk}}}{\partial u_i}- \frac{\partial{g_{ij}}}{\partial u_k}\right).\]
+
+
+\pause Wystarczy teraz to równanie zapisać w postaci macierzowej:
+\[
+\left(
+\begin{array}{cc}
+g_{11} & g_{12}\\
+g_{21} & g_{22}
+\end{array}
+\right) 
+\left(
+\begin{array}{c}
+\Gamma^1_{ij}\\
+\Gamma^2_{ij}\\
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c}
+\frac{\partial g_{i1}}{\partial u_j}+\frac{\partial g_{j1}}{\partial u_i}-\frac{\partial g_{ij}}{\partial u_1}\\
+\frac{\partial g_{i2}}{\partial u_j}+\frac{\partial g_{j2}}{\partial u_i}-\frac{\partial g_{ij}}{\partial u_2}
+\end{array}
+\right), 
+\]
+\pause i pomnożyć z lewej strony przez $(g_{ij})^{-1}$ aby otrzymać szukane przedstawienie $\Gamma^k_{ij}$.
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{twierdzenie}\label{thm:Gauss-Codazz-Mainard}
+Niec $M\subset \R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Wtedy zachodzą następujące równości.
+\begin{itemize}
+\item Równanie Gaussa:
+\begin{equation*}
+l_{11}l_{22}-l_{12}^2=
+\sum_{r=1}^{2}g_{1r}
+\left[
+\frac{\partial \Gamma^r_{22}} {\partial u_{1}}- \frac{\partial\Gamma ^r_{21}}{\partial u_{2}}+
+\sum_{m=1}^2 \left(\Gamma^m_{22}\Gamma^r_{m1}-\Gamma^m_{21}\Gamma^r_{m2}\right)\right].
+\end{equation*}
+
+\item Równania Codazziego-Mainardiego:
+\begin{align*}
+\frac{\partial l_{12}}{\partial u_1}-\frac{\partial l_{11}}{\partial u_2} + 
+\sum_{r=1}^2 \left( \Gamma^r_{12}l_{r1}-\Gamma^r_{11}l_{r2}\right)&=0\\
+\frac{\partial l_{22}}{\partial u_1}-\frac{\partial l_{21}}{\partial u_2} + 
+\sum_{r=1}^2 \left( \Gamma^r_{22}l_{r1}-\Gamma^r_{21}l_{r2}\right)&=0
+\end{align*}
+\end{itemize}
+\end{twierdzenie}
+\mode<article>{Chociaż na pierwszy rzut oka te równania są zupełnie nieczytelne, ich pochodzenie sprowadza się do twierdzenia Schwarza: pochodne cząstkowe mieszane muszą być równe niezależnie od kolejności różniczkowania,~tj. \[x_{ijk}=x_{ikj}.\] Ponadto dowód wykorzystywuje jedynie fakt, że równość wektorów w tej samej bazie pociąga równość współczynników, więc nie jest konepcyjnie trudny.}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Udowodnimy tylko Równania Codazziego-Mainardiego, równanie Gaussa pozostawiając jako ćwiczenie.
+
+\pause \mode<presentation>{Chociaż równania te wyglądają groźnie, ich dowód sprowadza się do bardzo prostego faktu: trzecie pochodne cząstkowe są sobie równe bez względu na kolejność różniczkowania: \[x_{ijk}=x_{ikj}.\]}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+
+Przypomnijmy formułę Gaussa:
+\[x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+l_{ij}n,\]\pause
+a następnie zróżniczkujmy ją względem $u_k$:
+\[x_{ijk}=\frac{\partial \Gamma^1_{ij}}{\partial u_k}x_1+ \Gamma^1_{ij}x_{1k}+ \frac{\partial^2_{ij}}{\partial u_k}x_2 +\Gamma^2_{ij}x_{2k} +\frac{\partial l_{ij}}{\partial u_k}n+l_{ij}n_k.\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Korzystając teraz z równania Weingartena i fromuły Gaussa podstawmy za $n_k$ i $x_{ij}$ ich realizacje w bazie $\{x_1, x_2,n\}$, a następnie uporządkujmy wyrażenie:
+\begin{align*}
+x_{ijk}=\pause &\;\frac{\partial \Gamma^1_{ij}}{\partial u_k}x_1+ \Gamma^1_{ij}\underbrace{\left( \Gamma^2_{1k}x_1+\Gamma^2_{1k}x_2+l_{1k}n\right)}_{x_{1k}}+\\\pause
+&\;+\frac{\partial^2_{ij}}{\partial u_k}x_2 +\Gamma^2_{ij}\underbrace{\left( \Gamma^1_{2k}x_1+\Gamma^2_{2k}x_2+l_{2k}n\right)}_{x_{2k}}+\\\pause
+&\;+\frac{\partial l_{ij}}{\partial u_k}n+l_{ij}\underbrace{\left( -L_{1k}x_1-L_{2k}x_2\right)}_{n_k}=\\\pause
+=&\;\left[\frac{\partial \Gamma^1_{ij}}{\partial u_k}+\Gamma^1_{ij}\Gamma^1_{1k}+\Gamma^2_{ij}\Gamma^2_{2k}-l_{ij}L_{1k}\right]x_1+\\
+&\;+\left[ \frac{\partial \Gamma^2_{ij}}{\partial u_k}+\Gamma^1_{ij}\Gamma^2_{1k}+\Gamma^2_{ij}\Gamma^2_{2k}-l_{ij}L_{2k} \right]x_2+\\
+&\;+\left[\Gamma^1_{ij}l_{1k}+\Gamma^2_{ij}l_{2k}+\frac{\partial l_{ij}}{\partial u_k}\right]n\pause
+=\; Ax_1+Bx_2+Cn.
+\end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Zamieniając miejscami $j$ i $k$ otrzymujemy 
+\begin{align*}
+x_{ikj}=&\;\left[\frac{\partial \Gamma^1_{ik}}{\partial u_j}+\Gamma^1_{ik}\Gamma^1_{1j}+\Gamma^2_{ik}\Gamma^2_{2j}-l_{ik}L_{1j}\right]x_1+\\
+&\;+\left[ \frac{\partial \Gamma^2_{ik}}{\partial u_j}+\Gamma^1_{ik}\Gamma^2_{1j}+\Gamma^2_{ik}\Gamma^2_{2j}-l_{ik}L_{2j} \right]x_2+\\
+&\;+\left[\Gamma^1_{ik}l_{1j}+\Gamma^2_{ik}l_{2j}+\frac{\partial l_{ik}}{\partial u_j}\right]n=\\\pause
+=&\; A'x_1+B'x_2+C'n.
+\end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Ponieważ wynik różniczkowania nie zależy od kolejności wyboru zmiennych, więc współczynniki tych przedstawień muszą być sobie równe:
+\[\Gamma^1_{ij}l_{1k}+\Gamma^2_{ij}l_{2k}+\frac{\partial l_{ij}}{\partial u_k}=\Gamma^1_{ik}l_{1j}+\Gamma^2_{ik}l_{2j}+\frac{\partial l_{ik}}{\partial u_j}, \qquad (C=C'). \]
+\pause Odpowiednio grupując otrzymujemy
+\begin{multline*}
+\frac{\partial l_{ij}}{\partial u_k}-\frac{\partial l_{ik}}{\partial u_j}+\left(\Gamma^1_{ij}l_{1k}-\Gamma^1_{ik}l_{1j}\right)+\Gamma^2_{ij}l_{2k} -\Gamma^2_{ik}l_{2j}=\\
+=\frac{\partial l_{12}}{\partial u_1}-\frac{\partial l_{11}}{\partial u_2} + 
+\sum_{r=1}^2 \left( \Gamma^r_{12}l_{r1}-\Gamma^r_{11}l_{r2}\right)=0.
+\end{multline*}
+
+
+\pause Ostatecznie podstawiając $(i=1,j=2,k=1)$ [odpowiednio: $(i=2,j=2,k=1)$] otrzymujemy pierwsze [drugie] równanie Codazziego-Mainardiego. 
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{exercise}
+Udowodnić formułę Gaussa. \\
+\footnotesize{Podpowiedź: należy porównać współczynniki $A$, $A'$, oraz  $B$,  $B'$.  Następnie podstawić $(i=2,j=1,k=2)$.}
+\end{exercise}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Theorema Egregium}}
+
+\begin{frame}
+
+\begin{twierdzenie}[Theorema Egregium Gaussa]
+Niech $M\subset \R^3$ oraz $N\subset \R^3$ będą powierzchniami gładkimi o krzywiznach odpowienio $K_M$ i $K_N$. Niech $f\colon M\to N$ będzie lokalną izometrią. \pause Wtedy \[K_M(p)=K_N(f(p))\] dla wszystkich $p\in M$.
+\end{twierdzenie}
+
+\pause Ponieważ pierwsza forma podstawowa powierzchni jest niezmienicza ze względu na lokalne izometrie (lemat \ref{lem:loc-isometry-prop}, własność 3) wystarczy więc pokazać, że krzywizna Gaussa może być wyrażona w  terminach współczynników metrycznych (funkcji $g_{11}$, $g_{12}$, $g_{22}$), oraz ich pochodnych.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+
+Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in M$. Wiemy, że krzywizna wyraża się wzorem
+\[K(p)=\frac{\det(l_{ij})}{\det (g_{ij})}.\]
+\pause Wystarczy więc przedstawić wyrażenie $\det(l_{ij})=l_{11}l_{22}-l_{12}^{\,2}$ przy pomocy funkcji $g_{11}$, $g_{12}$, $g_{22}$ i ich pochodnych. (\textbf{Uwaga:} jest to możliwe, mimo, że żadnej pojedynczej funkcji $l_{ij}$ w taki sposób przedstawić się nie da!). 
+
+\pause Przypomnijmy równanie Gaussa (z twierdzenia \ref{thm:Gauss-Codazz-Mainard}): 
+\[l_{11}l_{22}-l_{12}^{\,2}=
+\sum_{r=1}^{2}g_{1r}
+\left[
+\frac{\partial \Gamma^r_{22}} {\partial u_{1}}- \frac{\partial\Gamma ^r_{21}}{\partial u_{2}}+
+\sum_{m=1}^2 \left(\Gamma^m_{22}\Gamma^r_{m1}-\Gamma^m_{21}\Gamma^r_{m2}\right)\right].\]
+Wyraża ono $l_{11}l_{22}-l_{12}^{\,2}$ przy pomocy $g_{ij}$ oraz symboli Christoffela (i ich pochodnych). 
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Z drugiej strony dzięki wcześniejszemu lematowi charakteryzującego symbole Christoffela (lemat \ref{lem:christoffel-prop}):
+\[
+\left(
+\begin{array}{c}
+\Gamma^1_{ij}\\
+\Gamma^2_{ij}\\
+\end{array}
+\right)
+=\frac{1}{2}\left(
+\begin{array}{cc}
+g_{11} & g_{12}\\
+g_{21} & g_{22}
+\end{array}
+\right)^{-1}
+\left(
+\begin{array}{c}
+\frac{\partial g_{j1}}{\partial u_i}+\frac{\partial g_{i1}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_1}\\
+\frac{\partial g_{j2}}{\partial u_i}+\frac{\partial g_{i2}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_2}
+\end{array}
+\right)
+\]
+
+wiemy, że i je da się wyrazić przy pomocy współczynników metrycznych (i ich pochodnych). \pause Zatem wstawiając równania z tego lematu do równania Gaussa otrzymujemu szukane wyrażenie $l_{11}l_{22}-l_{12}^{\,2}$ w tylko terminach funkcji $g_{ij}$ (oraz ich pochodnych).
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{exercise}
+Prześledzić dowód Theorema Egregium i wyprowadzić bezpośredni wzór na krzywiznę Gaussa zawierający tylko współczynniki metryczne i ich pochodne.
+\end{exercise}
+
+\begin{uwaga}
+Twierdzenie odwrotne do Theorema Egregium nie zachodzi. Mianowicie istnieją powierzchnie $M$ i $N$ oraz odwzorowania $f\colon M\to N$ dla których $K(f(p))=K(p)$, lecz mimo wszystko $f$ nie jest lokalną izometrią.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}
+Niech 
+\begin{align*}
+M=&\{y(u,v)=(u \sin v, u\cos v,\ln u)\colon u\in \R_+, v\in (-\pi,\pi)\},\\
+N=&\{x(u,v)=(v \sin u, v\cos u, u)\colon u\in \R_+, v\in (-\pi,\pi)\},
+\end{align*}
+oraz zdefiniujmy funkcję $f\colon M\to N$ jako \[f(y(u,v))\define x(v,u).\]
+\pause Wtedy (sprawdzić!)\[K\left( f(y(u,v))\right)=K(x(v,u))=\frac{-1}{(1+u^2)^2}=K(y(u,v)).\]
+
+\pause Gdyby jednak $f$ była lokalną izometrią, wówczas lokalne układy współrzędnych $x$ i $y$ musiałyby mieć te same współczynniki metryczne (z zamienionymi zmiennymi). Jednak $g^M_{11}(u,v)=1+\frac{1}{u^2}$ podczas gdy $g^N_{11}(u,v)=1$.
+\end{przyklad}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Twierdzenie klasyfikujące}}
+
+\begin{frame}
+\mode<presentation>{
+\begin{twierdzenie}[Klasyfikacyjne powierzchni]
+Niech $U\subset \R^2$ będzie spójnym zbiorem otwartym. 
+
+\pause Załóżmy, że mamy dane symetryczne macierze $2\times 2$ funkcji $(g_{ij}\colon U\to \R)$ oraz $(l_{ij}\colon U\to \R)$ spełniających $\det(g_{ij})>0$,\pause  oraz mamy dane osiem funkcji $\Gamma^{k}_{ij}\colon U\to \R$ (dla $i,j,k=1,2$) spełniających z powyższmi $(g_{ij})$ i $(l_{ij})$ dwa równania Codazziego-Mainardiego i równanie Gaussa. \pause Wówczas istnieje powierzchnia $x\colon U\to M$ dla której
+\begin{itemize}
+\item $(g_{ij})$ tworzą pierwszą formę podstawową,
+\item $(l_{ij})$ tworzą drugą formę podstawową,
+\item $\Gamma^{k}_{ij}$ tworzą układ funkcji Christoffela.
+\end{itemize}
+
+\pause Co więcej dowolne dwie takie powierzchnie są ze sobą lokalnie izometryczne.
+\end{twierdzenie}
+\textcolor{ared}{\textbf{Dowód:}} \pause  Pomijamy.
+}
+
+
+
+\mode<article>{\begin{twierdzenie}[Twierdzenie klasyfikacyjne]
+Niech $U\subset \R^2$ będzie spójnym zbiorem otwartym. Załóżmy, że
+\begin{itemize}
+\item istnieją cztery funkcje $g_{ij}\colon U\to \R$ spełniające
+\[g_{ij}=g_{ji}, \quad g_{11}>0,\quad\text{oraz}\quad g_{11}g_{22}-g_{12}^2>0,\]
+dla wszystkich $i,j=1,2$;
+\item istnieją cztery funkcje $l_{ij}\colon U\to \R$ spełniające \[l_{ij}=l_{ji};\]
+\item osiem funkcji $\Gamma^k_{ij}\colon U\to \R$ zdefiniowanych przez 
+\[
+\left(
+\begin{array}{c}
+\Gamma^1_{ij}\\
+\Gamma^2_{ij}\\
+\end{array}
+\right)
+=\frac{1}{2}\left(
+\begin{array}{cc}
+g_{11} & g_{12}\\
+g_{21} & g_{22}
+\end{array}
+\right)^{-1}
+\left(
+\begin{array}{c}
+\frac{\partial g_{j1}}{\partial u_i}+\frac{\partial g_{i1}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_1}\\
+\frac{\partial g_{j2}}{\partial u_i}+\frac{\partial g_{i2}}{\partial u_j}-\frac{\partial g_{ij}}{\partial u_2}
+\end{array}
+\right)
+\]
+dla wszystkich $i,j,k=1,2$, spełnia następujące trzy równania:
+\begin{gather*}
+l_{11}l_{22}-l_{12}^2=
+\sum_{r=1}^{2}g_{1r}
+\left[
+\frac{\partial \Gamma^r_{22}} {\partial u_{1}}- \frac{\partial\Gamma ^r_{21}}{\partial u_{2}}+
+\sum_{m=1}^2 \left(\Gamma^m_{22}\Gamma^r_{m1}-\Gamma^m_{21}\Gamma^r_{m2}\right)\right]\\
+\begin{aligned}
+\frac{\partial l_{12}}{\partial u_1}-\frac{\partial l_{11}}{\partial u_2} + 
+\sum_{r=1}^2 \left( \Gamma^r_{12}l_{r1}-\Gamma^r_{11}l_{r2}\right)&=0\\
+\frac{\partial l_{22}}{\partial u_1}-\frac{\partial l_{21}}{\partial u_2} + 
+\sum_{r=1}^2 \left( \Gamma^r_{22}l_{r1}-\Gamma^r_{21}l_{r2}\right)&=0
+\end{aligned}
+\end{gather*}
+\end{itemize}
+wtedy:
+
+Dla każdego punktu $p\in U$ istnieje jego otwarte otoczenie $V\subset U$ oraz lokalny układ współrzędnych $x\colon V\to \R^3$ dla którego funkcje $g_{ij}$ i $l_{ij}$ tworzą odpowiednio pierwszą i drugą formę podstawową. Każde takie dwa lokalne układy współrzędnych różnią się od siebie o translację i obrót przestrzeni $\R^3$.
+\end{twierdzenie}}
+
+\end{frame} 
+\mode<all>

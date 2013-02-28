@@ -1,0 +1,307 @@
+\mode*
+\mode<all>{\topsection{Wektory styczne i normalne. I forma podstawowa}}
+\mode<all>{\midsection{Przestrzeń styczna}}
+
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Na każdej powierzchni mamy naturalnie dane dwie rodziny krzywych . Dla każdego ustalonego $s_0\in \R$ możemy rozpatrywać krzywą \[x(s_0,\cdot)\colon \R\to \R^3.\] Podobnie dla dowolnego $t_0$ mamy krzywą \[x(\cdot,t_0)\colon \R\to \R^3.\] Krzywe te leżą na naszej powierzchni, a wektory styczne do tych krzywych będą grały bardzo ważną rolę w dalszych rozważaniach.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+Powyższe krzywe nazywamy \textbf{liniami parametru}. Jeśli oznaczymy punkt $p=x(s_0,t_0)$ wtedy wektory do nich styczne w punkcie $p$ oznaczamy przez 
+\begin{align*}
+x_s(p)&\define \frac{\partial{x}}{\partial{s}}(s,t_0)\big|_{s=s_0}, &x_t(p)&\define\frac{\partial{x}}{\partial{t}}(s_0,t)\big|_{t=t_0}.
+\end{align*}
+
+\pause \begin{center}
+\input{./pictures/param-curve.tex}
+\end{center}
+
+\end{definicja}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Niech $p\in M$ będzie punktem na powierzchni $M$. Możemy rozważyć wszystkie krzywe gładkie przechodzące prze ten punkt i leżące (lokalnie) na powierzchni. Intuicja podpowiada nam, że ponieważ wektory styczne dobrze przybliżają (lokalnie) krzywe, więc zbiór wszystkich wektorów tego typu powinien dobrze przybliżać powierzchnię wokół punktu $p$. Te intuicje możemy sformalizować w następującej definicji.
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $\alpha_v\colon (-\varepsilon,\varepsilon)\to M\subset \R^3$ będzie krzywą gładką. Załóżmy, że $\alpha_v(0)=p$, oraz $\alpha_v'(0)=v$. Ustalmy punkt $p\in M$ i rozważmy wszystkie tego typu krzywe $\alpha_v$. Wektory do nich styczne w punkcie $p$ utworzą przestrzeń którą nazywamy \textbf{przestrzenią styczną} i oznaczamy $T_pM$.
+\end{definicja}
+
+\begin{uwaga}
+Przestrzeń styczna jest faktycznie przestrzenią liniową, tj.
+\begin{itemize}
+\item Jeśli $v\in T_pM$, wtedy również $av\in T_pM$ dla dowolnego $a\in \R$. Wynika to z reparametryzacji
+\[\alpha_{av}(t)=\alpha_v(at).\]
+\item Addytywność (jeśli $v,w\in T_pM$, wówczas $av+bw\in T_pM$) wynika z dowodu następnego lematu.
+\end{itemize}
+
+\end{uwaga}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\mode<presentation>{\thispagestyle{empty}}
+
+\input{./pictures/tangent_plane.tex}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}\label{lem:prop_tang_spce}
+Niech $U\subset \R^2$ będzie zbiorem otwartym i niech $x\colon U\to \R^3$ będzie lokalnym układem współrzędnych.
+\begin{enumerate}
+\item Przestrzeń styczna jest rozpięta przez wektory $\{x_s(p),x_t(p)\}$, styczne do linii parametru przecinających się w punkcie $p$.
+\item Niech $p\in x(U)$, $p=x(s_0,t_0)$ będzie punktem na powierzchni. Wymiar przestrzeni stycznej w punkcie $p$ wynosi\[\dim T_pM=2.\]
+\end{enumerate}
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\textcolor{ared}{\textbf{Dowód:}}\\
+\pause Wystarczy udowodnić pierwszą część lematu.
+
+\pause Niech $\langle x_s(p),x_t(p)\rangle_\R$ oznacza podprzestrzeń liniową w $\R^3$ rozpiętą przez wektory $x_s$ i $x_t$. Pokażemy, że każdy wektor z przestrzeni stycznej $T_pM$ można przedstawić jako kombinację liniową wektorów stycznych do linii parametru.
+
+\pause Niech $v\in T_pM$. Z definicji przestrzeni stycznej istnieje krzywa $\alpha_v\colon (-\varepsilon,\varepsilon)\to M\subset \R^3$ taka, że $\alpha_v(0)=p$, $\alpha_v'(0)=v\in T_pM$. \pause Rozważmy złożenie \[\beta\define x^{-1}\circ\alpha_v\colon (-\varepsilon,\varepsilon)\to U\subset \R^2\] i niech $\beta_1,\beta_2\colon (-\varepsilon,\varepsilon)\to \R$ będą funkcjami współrzędnych $\beta$. \pause Wtedy równość funkcji \[\alpha_v(t)=\underbrace{x\circ x^{-1}}_{\operatorname{id}_{x(U)}}\circ \alpha_v(t)=x(\beta_1(t),\beta_2(t)),\]pociąga równość pochodnych:
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{multline*}
+v=\alpha_v'(t)\big|_{t=0}=x\big(\beta_1(t),\beta_2(t)\big)'\big|_{t=0}=\\\pause
+=\frac{\partial x}{\partial \beta_1}(s_0,t_0)\beta_1'(t)\big|_{t=0}+\frac{\partial x}{\partial \beta_2}(s_0,t_0)\beta_2'(t)\big|_{t=0}=\\
+=\beta_1'(0)x_s(s_0)+\beta_2'(0)x_t(t_0),
+\end{multline*}
+\pause co daje szukany rozkład $v$ w bazie $\{x_s, x_t\}$.
+
+\pause Teraz przypuśćmy, że $v=ax_s+bx_t$ dla pewnych $a,b\in \R$. \pause Bez straty ogólności możemy założyć, że lokalny układ współrzędnych został w taki sposób wybrany, że $x(0,0)=p$ (dlaczego?). \pause Zdefiniujmy krzywą $\alpha\colon (-\varepsilon,\varepsilon)\to x(U)$ przez $\alpha(t)=x(at,bt)$. \pause Proste przeliczenie pokazuje, że $\alpha(0)=p$ i $\alpha'(0)=ax_s+bx_t=v$, czyli $v$ należy do $T_pM$.
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Wektor normalny}}
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Zauważmy, że przestrzeń styczna nie ma ustalonej w kanoniczny sposób bazy. Wektory $x_s$ i $x_t$ ją rozpinające zależą od wybranego lokalnego układu współrzędnych. Natomiast niezależna od tego wyboru jest cała przestrzeń styczna, a więc i jej ortogonalne dopełnienie, które nazywać będziemy kierunkiem normalnym.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{definicja}\label{def:normal-vector}
+ Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech 
+\begin{align*}
+x\colon U&\longrightarrow M \\
+(s_0,t_0)&\longmapsto p\in M
+\end{align*}
+będzie lokalnym układem współrzędnych. \textbf{Wektor normalny w $p$} definiujemy jako
+\[N(p)\define\frac{x_s\times x_t}{\|x_s\times x_t\|},\]
+gdzie $x_s$ i $x_t$ wektorami stycznymi do linii parametru przechodzących przez punkt $p$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Ponieważ wektor normalny ma długość $1$, więc koniec każdego wektora normalnego $N(p)$ leży na powierzchni sfery dwuwumiarowej $N(M)\subset S^2$. Zatem $N$ może być traktowany jako \textbf{funkcja między powierzchniami}\[N\colon M\to S^2\subset\R^3\] punktów na powierzchni $M$. Jest to tzw. \textbf{odwzorowanie Gaussa} do którego wrócimy później.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Powtórka z algebry liniowej I}}
+
+\begin{frame}{Powtórka z algebry liniowej I}
+
+\begin{definicja}
+Niech $V$ będzie przestrzenią liniową nad ciałem $\R$. \textbf{Forma dwuliniowa} na $V$ to odwzorowanie 
+\[F\colon V\times V\to \R,\]
+które jest liniowe na każdej ze zmiennych, tj. spełnione są następujące równości
+\pause\begin{itemize}
+\item $F(av+bw,z)=aB(v,z)+bB(w,z)$
+\item $F(v,aw+bz)=aB(v,w)+bB(v,z)$
+\end{itemize}
+dla wszystkich wektorów $v,w,z\in V$ oraz wszystkich liczb rzeczywistych $a,b\in \R$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{definicja}
+Formę dwuliniową $B$ nazywamy \textbf{symetryczną} jeśli \[B(v,w)=B(w,v)\] dla wszystkich $v,w\in V$.
+\end{definicja}
+
+\begin{definicja}
+Niech $\{v_1,\ldots,v_n\}$ będzie bazą przestrzeni $V$, oraz  niech $B$ będzie formą dwuliniową na $V$. \textbf{Macierz fromy $B$} w tej bazie definiujemy jako \[A\define\left[
+\begin{array}{ccc}
+B(v_1,v_1) & \cdots & B(v_1,v_n)\\
+\vdots & \ddots & \vdots\\
+B(v_n,v_1) & \cdots & B(v_n,v_n)
+\end{array}
+\right]\]
+Przy takiej definicji mamy $B(x,y)=xAy^T$ gdzie $y^T$ oznacza transpozycję.
+\end{definicja}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{przyklad}
+Standardowy iloczyn skalarny $\langle x,y\rangle=\sum x_i^2$ jest oczywiście formą dwuliniową. W standardowej bazie przestrzeni $\R^n$ jego macierzą jest $A=\text{Id}$. 
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{I forma podstawowa}}
+
+\begin{frame}[<+->]{I forma podstawowa}
+
+\begin{definicja}
+Niech $M\subset \R^3$ będzie gładką powierchnią i niech $p\in M$ będzie punktem na niej. Dla powierzchni $M$ definiujemy \textbf{pierwszą formę podstawową w punkcie $p$} jako formę dwuliniową
+\begin{align*}
+I_p\colon T_pM\times T_pM &\longrightarrow \R\\
+(v,w)&\longmapsto\langle v,w\rangle,
+\end{align*}
+gdzie $\langle\cdot,\cdot\rangle$ jest standardowym iloczynem skalarnym w $\R^3$. Oznaczamy ją symbolem $I_p.$
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+\textbf{Pierwsza forma podstawowa} powierzchni $M$ to zależna w sposób ciągły od punktu $p$ rodzina wszystkich form dwuliniowych \[\mathcal{I}_M\define\{I_p\}_{p\in M}.\]
+\end{definicja}
+\pause
+\begin{uwaga}
+Postać macierzowa pierwszej formy podstawowa zależy w istotny sposób od zanurzenia powierzchni w $\R^3$ (czyli od wyboru lokalnego układu współrzędnych $x\colon U\to M$). 
+\end{uwaga}
+
+\pause Od teraz wektory styczne do linii parametru będziemy nazywać $x_1$ i $x_2$ zamiast $x_s$ i $x_t$. Niech $x(s_0,t_0)=p$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{uwaga}
+W każdym punkcie powierzchni macierz formy podstawowej to macierz wymiaru $2\times 2$. 
+\pause Przy tak przyjętych oznaczeniach niech
+\[g_{ij}(s_0,t_0)\define\langle x_i(s_0),x_j(t_0)\rangle,\quad i,j = 1,2.\]
+Wtedy macierz formy podstawowej w bazie $\{x_1,x_2\}$, w punkcie $p$ ma postać
+\[I_p=\left[
+\begin{array}{cc}
+g_{11}(s_0,t_0) & g_{12}(s_0,t_0)\\
+g_{21}(s_0,t_0) & g_{22}(s_0,t_0)
+\end{array}
+\right]
+\]
+\end{uwaga}
+
+\pause W przyszłości będziemy utożsamiać formę z jej macierzą w standardowej bazie przestrzeni stycznej.
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{przyklad}
+Niech $x\colon U\to \R^3$ będzie powierzchnią siodłową w parametryzacji Mongea.
+\[x(s,t)=(s,t,st).\]
+\pause Wtedy 
+\begin{align*}
+x_1(s,t)&=(1,0,t) & x_2(s,t)&=(0,1,s).
+\end{align*}
+\pause Biorąc odpowiednie iloczyny skalarne tych wektorów otrzymujemy następującą postać macierzy pierwszej formy podstawowej:
+\pause \[
+I_{p}=I_{x(s,t)}=\le[\begin{array}{cc}
+1+t^2&st\\
+st & 1+s^2
+\end{array}\ri]
+\]
+
+\end{przyklad}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{definicja}
+Elementy macierzy $I_p$ nazywamy \textbf{współczynnikami metrycznymi} lokalnego układu współrzędnych $x\colon U\to M$
+\end{definicja}
+
+\begin{uwaga}
+\begin{itemize}
+\item Ponieważ iloczyn skalarny w $\R^n$ jest formą symetryczną, więc $I_p$ jest również formą symetryczną, zatem każdym punkcie mamy $g_{12}=g_{21}$.
+\item Gauss (a za nim część podręczników) używał oznaczeń $E,F$ i $G$ na (odpowienio) $g_{11},g_{12}$ i $g_{22}$.
+\end{itemize}
+\end{uwaga}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie gładką powierzchnią i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Wtedy
+\[N=\frac{x_1\times x_2}{\sqrt{\det(g_{ij})}}.\]
+\end{lemat}
+\pause \textcolor{ared}{\textbf{Dowód:}}\\\pause
+Niech $\varphi$ będzie kątem między $x_1$ i $x_2$. Wtedy
+\begin{align*}
+\det(g_{ij})
+&= g_{11}g_{22}-g_{12}^2=\langle x_1 ,x_1\rangle\langle x_2 ,x_2\rangle-\langle x_1 ,x_2\rangle^2=\\\pause
+&= \|x_1\|^2\|x_2\|^2-\|x_1\|^2\|x_2\|^2\cos^2 \varphi=\\
+&=\|x_1\|^2\|x_2\|^2(1-\cos^2\varphi)=\\\pause
+&= \|x_1\|^2\|x_2\|^2\sin^2\varphi= \|x_1\times x_2\|^2,
+\end{align*}
+i lemat wynika z definicji $N$.
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+Ostatni lemat w tym wykładzie pokazuje jak zmieniają się współczynniki metryczne podczas przejścia do innego układu współrzędnych. Jak można się domyślać, będzie to związane z Jakobianem funkcji przejścia (podobnie jak na analizie podczas zmiany układu współrzędnych np. z ortogonalnego na sferyczny).
+
+\begin{frame}
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie gładką powierzchnią i niech $x\colon U\to M$, $y\colon V\to M$ będą lokalnymi układami współrzędnych. Załóżmy, że $x(U)\cap y(V)\neq \emptyset$. \pause Niech $(g_{ij})$, [odpowiednio $(\overline{g_{ij}})$] oznacza macierz współczynników metrycznych dla $x$ [odpowiednio $y$]. \pause Jeśli przez $J_\Phi$ oznaczymy Jakobian (macierz pochodnych) funkcji zmiany układu współrzędnych $\Phi_{x,y}$ wtedy $(\overline{g_{ij}})$ wyrażają się następującymi wzorami\pause 
+\[(\overline{g_{ij}}\circ \Phi_{x,y})=(J_\Phi^{-1})^T (g_{ij})J_\Phi^{-1}\]
+\end{lemat}
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Pomijamy.
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Jako przykład zastosowania pierwszej formy podstawowej mamy następujący lemat.
+\pause \begin{lemat}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Rozważmy krzywą gładką $\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U$.
+\pause Wtedy długość krzywej $\overline{\alpha}\define x\circ\alpha\colon \R\to M$ na powierzchni jest równa
+\[L(\overline{\alpha})=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha'(t),\alpha'(t)\ri)}dt,\]
+\pause co można bezpośrednio zapisać:
+\[\int_a^b\sqrt{\le(\alpha_1'\ri)^2 g_{11}(\alpha(t))+ 2 \alpha_1'\alpha_2'g_{12}(\alpha(t))+\le(\alpha_2'\ri)^2 g_{22}(\alpha(t))}.\]
+\end{lemat}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Ćwiczenie.
+\hfill $\square$
+
+
+\end{frame}
+
+\mode<all> 

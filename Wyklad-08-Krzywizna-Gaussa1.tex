@@ -1,0 +1,216 @@
+\mode*
+\mode<all>{\topsection{Krzywizna Gaussa I}}
+\mode<all>{\midsection{Odwzorowanie Gaussa}}
+
+\begin{frame}[<+->]
+Tak jak został zdefiniowany wektor normalny (jako $\frac{x_1\times x_2}{\|x_1\times x_2\|}$, definicja \ref{def:normal-vector}), jest on raczej funkcją z $\R^2\to \R^3 (\text{lub }\R^2\to S^2)$. \pause Jednak dla celów dalszego wykładu chcielibyśmy, aby był funkcją gładką określoną \textit{na powierzchni}. Stąd następująca definicja:
+\pause \begin{definicja}
+Niech $M\subset R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. \textbf{Odwzorowaniem Gaussa} nazywamy funkcję $\widehat{n}\colon x(U)\to S^2$ zadaną wzorem \[\widehat{n}(p)\define n\circ x^{-1}(p),\] gdzie $n=\frac{x_1\times x_2}{\|x_1\times x_2\|}$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{uwaga}
+\begin{itemize}
+\item Zauważmy, że dla różnych lokalnych układów współrzędnych dobrze określony jest tylko \textit{kierunek} normalny, więc (jednostkowy) wektor normalny może się różnić co najwyżej o czynnik $(-1)$ w stosunku do wyjściowego. Nie będzie to jednak zmieniać w istotny sposób dalszych obliczeń. Możemy przyjąć, że jeśli powierzchnia jest zamknięta, to wybieramy kierunek ``zewnętrzny''.
+\item Odwzorowanie Gaussa z całą pewnością zależy od tego w jaki sposób powierzchnia $M$ jest umieszczona w $\R^3$ i może się zmienić, gdy zaczniemy tę powierzchnię deformować. 
+\end{itemize}
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Krzywizna Gaussa -- Idea}}
+\begin{frame}[<+->]
+
+
+Chcemy zdefiniować krzywiznę powierzchni, więc szukamy funkcji $K\colon M\to \R^3$, która będzie spełniać następujące własności:
+\begin{enumerate}
+\item $K\colon M\to \R$ jest funkcją gładką;
+\item krzywizna $K(p)$ jest niezależna od wyboru lokalnych układów współrzędnych, zależy tylko od powierzchni samej w sobie;
+\item jeśli (otwarty, o niepustym wnętrzu) zbiór naszej powierzchni jest zawarty w płaszczyźnie, wtedy krzywizna na nim powinna znikać;
+\item w sytuacji na rysunku krzywizna powierzchni $M$ w punkcie $p$ powinna być \textit{mniejsza} niż krzywizna powierzchni $N$ w tym punkcie, $K_{M}(p)<K_{N}(q)$.
+\end{enumerate}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{center}
+\input{./pictures/gauss-curv.tex}
+\end{center}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Spróbujmy zdefiniować krzywiznę w punkcie $p\in M$ następująco:
+\begin{itemize}
+\item Ustalmy punkt $p\in M$ i lokalny układ współrzędnych $x\colon U\to M$ wokół $p$.
+\item Wybierzmy niewielkie otoczenie otwarte $T\subset x(U)$ zawierające punkt $p$.
+\item Kiedy punkt $p$ należy do zbioru $T$, wtedy $\widehat{n}(p)$ należy do zbioru $\widehat{n}(T)\subset S^2$,
+\item zbadajmy więc stosunek pól \[\frac{A(\widehat{n}(T))\subset S^2}{A(T)\subset M};\]
+\item Gauss definiował krzywiznę jako \[K(p)\define\varinjlim_{T\to p}\frac{A(\widehat{n}(T))}{A(T)}.\]
+\end{itemize}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{enumerate}
+\item [] Problemy:
+\item Czy ta granica jest niezależna od wyboru otoczeń $T$? Jak to formalnie zdefiniować?
+\item Co to jest $A(\widehat{n}(T))$ kiedy $\widehat{n}$ nie jest injekcją?
+\item Co się stanie jeśli odwzorowanie Gaussa ``odwraca'' obszar $T$? Czy wtedy należałoby brać pole $A(\widehat{n}(T))$ ze znakiem ujemnym?
+\end{enumerate}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}
+Niech $S^2\subset \R^3$ oznacza sferę o promieniu $R$ i środku w punkcie $(0,0,0)$ i niech 
+\[x(\phi,\psi)=(R \cos \phi\cos \psi , R \sin \phi \cos \psi , R \sin \psi)\] będzie na niej lokalnym układem współrzędnych. \pause Mamy 
+\begin{align*}
+x_\phi=&R(-\sin \phi \cos \psi,\cos \phi\cos \psi,0), \\
+x_\psi=&R(-\cos\phi\sin\psi,-\sin\phi\sin\psi,\cos\psi),
+\end{align*}
+więc jeśli wybierzemy (zgodnie z konwencją) wektor normalny $n$ wskazujący na zewnątrz, wtedy
+\[\widehat{n}(p)=\frac{x_\phi\times x_\psi}{\|x_\phi\times x_\psi\|}=\frac{p}{R}\]
+dla całej sfery. 
+\end{przyklad}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Widzimy więc, że odwzorowanie Gaussa zmiejsza obszar o czynnik $\frac{1}{R}$ i nie ma żadnych problemów z definicją.
+\begin{center}
+\input{./pictures/gauss-map.tex}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{przyklad}
+Rozważmy powierzchnię siodłową $x(u,v)=(x,y,xy)$. Rozważmy niewielki okrąg $S$ na płaszczyźnie $z=0$ i środku w $(0,0)$, wtedy jego obraz $x(S)$ leży na powierzchni siodłowej. \uncover<2->{Obcięcie odwzorowania Gaussa do $x(S)$ jest również okręgiem (leżącym teraz na sferze), jednak jeśli obiegamy okrąg $S$ w lewo, wówczas kierunek na $\widehat{n}(x(S))$ ulega odwróceniu.} \uncover<3->{Zatem chcielibyśmy nadać znak ujemny$A(\widehat{n}(T))<0$ gdzie $T$ jest obszarem ograniczonym przez $x(S)$. }
+
+\uncover<1->{\begin{center}
+\footnotesize
+\input{./pictures/gauss-map2.tex}
+\normalsize
+\end{center}}
+
+\end{przyklad}
+
+\end{frame}
+
+%\midsection{Długość i pole powierzchni}
+\mode<all>{\midsection{Pole powierzchni}}
+\begin{frame}
+
+%Wyrazimy znane nam wielkości długości krzywej i pola powierzchni przez współczynniki metryczne.
+Podobnie jak wcześniej wyraziliśmy długość, teraz wyrazimy pole powierzchni w języku współczynników metrycznych.
+
+% \begin{lemat}
+% Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych.
+% Rozważmy krzywą gładką $\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U$.
+% Wtedy długość obrazu krzywej $\overline{\alpha}\define x\circ\alpha\colon \R\to M$ jest równa
+% \begin{align*}
+%  L(\overline{\alpha})&=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha'(t),\alpha'(t)\ri)}=\\
+% \int_a^b\sqrt{(x\circ\alpha_1)'(t))^2 g_{11}(\alpha(t))+ 2 (x\circ\alpha_1)'(t))(x\circ\alpha_2)'(t))g_{12}(\alpha(t))+ +(x\circ\alpha_2)'(t))^2 g_{22}(\alpha(t)).
+% \end{align*}
+% \end{lemat}
+\pause
+\begin{definicja}\label{def:area-form}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Pole podzbioru $S\subset x(U)$ wyraża się wzorem
+\[A(S)\define\iint_{x^{-1}(S)}\sqrt{\det{(g_{ij})}}ds\,dt\]
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}
+Załóżmy, że $S\subset x(U)\cap y(V)$ dla dwóch lokalnych układów współrzędnych $x$, $y$ na $M$. Niech $(g_{ij})$, [odpowiednio $(\overline{g_{ij}})$] oznacza macierz współczynników metrycznych dla $x$ [odpowiednio $y$]. Wtedy
+\[\iint_{x^{-1}(S)}\sqrt{\det{(g_{ij})}}ds\,dt=\iint_{y^-1(S)}\sqrt{\det{(\overline{g_{ij}})}}ds\,dt.\]
+\end{lemat}
+
+%Dowody obu lematów pozostawiamy jako ćwiczenia.
+\pause Dowód tego lematu pozostawiamy jako ćwiczenie.
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Zauważmy teraz, że \[\langle x_1\times x_2, n\rangle=\langle \|x_1\times x_2\|n,n \rangle= \|x_1\times x_2\|=\sqrt{\det (g_{ij})},\]\pause zatem mamy
+\[A(T)=\iint_{x^{-1}(T)}\langle x_1\times x_2, n\rangle ds\,dt.\]
+
+\pause Analogicznie możemy zdefiniować pole $\widehat{n}(T)$ jako 
+\[A(\widehat{n}(T))=\iint_{x^{-1}(T)}\langle n_1\times n_2, n\rangle ds\,dt,\]
+gdzie $n_1$, $n_2$ są pochodnymi cząstkowymi $n$ po zmiennych odpowiednio $s$ i $t$.
+
+\pause To rozwiązuje problemy (2) i (3) powyżej, jednak problem (1) (niezależności definicji od wyboru otoczeń $T$) pozostaje. 
+
+\mode<article>{Oczywiście używając odpowiednio zaawansowanego aparatu matematycznego można pokazać, że krzywizna (wg. definicji Gaussa) faktycznie nie zależy od wyboru zstępujących otoczeń $T$, ale my spróbujemy przedstawić bardziej współczesne podejście, które okaże się równoważne definicji Gaussa.}
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Powtórka z algebry liniowej II}}
+\begin{frame}{Powtórka z algebry liniowej II}
+
+Niech $V$ będzie rzeczywistą przestrzenią wektorową i niech $\langle\,,\,\rangle$ będzie iloczynem skalarnym na $V$. 
+\pause \begin{definicja}
+Rozważmy odwzorowanie liniowe $F\colon V\to V$. Odwzorowaniem dwuliniowym \textbf{indukowanym przez $F$} nazywamy odwzorowanie $B_F\colon V\to \R$ zadane przez \[B_F(v,w)=\langle F(v),w\rangle.\]
+\end{definicja}
+
+\mode<article>{Ustalmy bazę przestrzeni $V$. Wtedy odwzorowanie $F$ i odwzorowanie indukowane $B_F$ mogą być reprezentowane przez odpowiednie macierze. Następujący lemat przedstawia związki zachodzące między tymi macierzami.}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+Niech $(V,\langle\,,\,\rangle)$ będzie przestrzenią wektorową z iloczynem skalarnym. Ustalmy bazę tej przestrzeni.
+\begin{itemize}
+\pause \item Oznaczmy przez $G$ macierz iloczynu skalarnego w tej bazie.
+\pause \item Niech $F\colon V\to V$ będzie odwzorowaniem liniowym o macierzy $A$ w powyższej bazie.
+\pause \item Niech $M$ oznacza macierz odwzorowania $B_F$ indukowanego przez $F$ (znów macierz w powyższej bazie).
+\end{itemize}
+\pause Wtedy $M=A^tG$.
+
+\end{lemat}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{lemat}\label{lem:alg-lin-2}
+Niech $V$ będzie przestrzenią wektorową.
+\begin{itemize}
+\item Niech $B$ będzie formą dwuliniową na $V$. Wtedy $B$ jest formą symetryczną wtedy i tylko wtedy, gdy macierz $B$ w \textit{dowolnej bazie $V$} jest macierzą symetryczną.
+\item Niech $F\colon V\to V$ będzie odwzorowaniem liniowym. Wtedy następujące warunki są równoważne:
+\begin{enumerate}
+\item $F$ jest odworowaniem samo-sprzężonym,
+\item macierz $F$ jest symetryczna w każdej bazie ortonormalnej przestrzeni $V$,
+\item indukowana przez $F$ forma dwuliniowa jest symetryczna.
+\end{enumerate}
+
+\end{itemize}
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}\label{lem:alg-lin-2-eigen}
+Niech $F\colon V\to V$ będzie liniowym odwzorowaniem. Załóżmy, że $F$ jest samosprzężone, wtedy
+
+\begin{itemize}
+\item $F$ ma rzeczywiste wartości własne $k_i$.
+\item wektory odpowiadające wartościom własnym $F$ są ortogonalne.
+\item Macierz $A$ odwzorowania $F$ \textit{w dowolnej bazie} spełnia
+\[\det A=\prod_i k_i\qquad \text{oraz}\qquad \operatorname{tr} A=\sum_i k_i.\]
+
+\end{itemize}
+
+\end{lemat}
+
+\begin{exercise}
+Oswoić wszystkie nieznane definicje pojawiające się w powyższej powtórce z algebry liniowej i zrozumieć sformułowania powyższych twierdzeń (niekoniecznie z dowodami!)
+
+\end{exercise}
+\end{frame}
+
+\mode<all> 

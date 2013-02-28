@@ -1,0 +1,342 @@
+\mode*
+\mode<all>{\topsection{Geodezyjne II}}
+\mode<all>{\midsection{Równania geodezyjnych}}
+Dotychczas nie używaliśmy jeszcze lokalnych układów współrzędnych do analizy geodezyjnych. W następującym lemacie pokażemy, że warunek z definicji krzywej geodezyjnej lokalnie wyraża się jako układ równań różniczkowych. Będziemy mogli wtedy użyć ogólnych twierdzeń o rozwiązaniach tych układów, aby dać pewne warunki przy których geodezyjne istnieją i są jednoznaczne.
+
+\begin{frame}
+
+\mode<article>{\begin{twierdzenie}[Równania geodezyjnych]
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M\subset \R^3$ będzie lokalnym układem współrzędnych. Niech $\gamma\colon (a, b)\to x(U)\subset M$ będzie krzywą gładką. Oznaczmy przez
+\begin{align*}
+g\define x^{-1}\circ\gamma\colon (a,b)&\to U\subset \R^2\\
+t&\mapsto (g_1(t),g_2(t))
+\end{align*}
+i niech $g_1$, $g_2$ będą funkcjami współrzędnych $g(t)$. Pochodna kowariantna krzywej $\gamma$ wyraża się jako
+\[\frac{\widehat{D}\gamma'}{dt}=\sum_{k=1}^2\left(g_{k}''(t)+\sum_{i=1}^2\sum_{j=1}^2\Gamma_{ij}^k(g(t))g_i'(t)g_{j}'(t)\right) x_k(g(t).\]
+Stąd wynika, że $\gamma$ jest krzywą geodezyjną wtedy i tylko wtedy, gdy te współczynniki są zerowe, tj. spełnione są następujące równania:
+\[
+\le\{\begin{aligned}
+g''_1+\Gamma^1_{11}(g'_1)^2+2\Gamma^1_{12}g'_1g'_2+\Gamma^1_{22}(g'_2)^2&=0\\
+g''_2+\Gamma^2_{11}(g'_1)^2+2\Gamma^2_{12}g'_1g'_2+\Gamma^2_{22}(g'_2)^2&=0
+\end{aligned}\ri.\]
+\end{twierdzenie}}
+
+
+\mode<presentation>{\begin{twierdzenie}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M\subset \R^3$ będzie lokalnym układem współrzędnych. Niech $\gamma\colon (a, b)\to x(U)\subset M$ będzie krzywą gładką. \pause Oznaczmy przez
+\begin{align*}
+g\define x^{-1}\circ\gamma\colon (a,b)&\to U\subset \R^2\\
+t&\mapsto (g_1(t),g_2(t))
+\end{align*}
+i niech $g_1$, $g_2$ będą funkcjami współrzędnych $g(t)$. \pause Pochodna kowariantna krzywej $\gamma$ wyraża się jako
+\[\frac{\widehat{D}\gamma'}{dt}=\sum_{k=1}^2\left(g_{k}''(t)+\sum_{i=1}^2\sum_{j=1}^2\Gamma_{ij}^k(g(t))g_i'(t)g_{j}'(t)\right) x_k(g(t).\]
+\end{twierdzenie}}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+
+\mode<presentation>{\begin{wniosek}[Równania geodezyjnych]
+Krzywa $\gamma$ jest geodezyjną wtedy i tylko wtedy, gdy te współczynniki są zerowe, tj. spełnione są następujące równania:
+\[
+\le\{\begin{aligned}
+g''_1+\Gamma^1_{11}(g'_1)^2+2\Gamma^1_{12}g'_1g'_2+\Gamma^1_{22}(g'_2)^2&=0\\
+g''_2+\Gamma^2_{11}(g'_1)^2+2\Gamma^2_{12}g'_1g'_2+\Gamma^2_{22}(g'_2)^2&=0
+\end{aligned}\ri.\]
+\end{wniosek}}
+\pause 
+\mode<presentation>{Dowód twierdzenia i wniosku jest długi i dosyć techniczny, więc na wykładzie go pominiemy. Skupimy się natomiast na przykładzie powierzchni obrotowej.}
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Dowód jest dosyć techniczny, jednak polega tylko na bezpośrednim przeliczeniu powyższej pochodnej kowariantnej. Można go potraktować jako ćwiczenie na zrozumienie definicji pochodnej pola wektorowego. Dla ułatwienia orientacji wszystkie krzywe $\R\to U\subset \R^2$ nazywamy literami łacińskimi, zaś krzywe $\R\to M\subset\R^3$ -- greckimi.
+
+
+\textcolor{ared}{\textbf{Dowód:}}\\
+Musimy wyrazić równość $\frac{\widehat{D}\gamma'}{dt}=0$ w terminach lokalnego układu współrzędnych. 
+Zauważmy, że pole wektorów stycznych do $\gamma$ wyraża się w bazie $\{x_1,x_2\}$ następująco:\[\gamma'(t)=(x\circ g)'(t)=x_1(g(t))g_1'(t)+x_2(g(t))g_2'(t).\]
+\begin{itemize}
+\item Spróbujmy policzyć bezpośrednio pochodną stycznego pola wektorowego.
+\begin{multline}\label{eqn:loc-geod}
+\frac{\widehat{D}\gamma'}{dt}=\sum_{i=1}^2 \frac{\widehat{D}}{dt}\left[g_1'(t) x_i(g(t))\right]=\\
+=\sum_{i=1}^2\left(\frac{d g_i'(t)}{dt}x_i(g(t))+g_i'(t)\frac{\widehat{D}(x_{i}\circ g)}{dt}(t)\right)
+\end{multline}
+
+\item Aby kontynuować musimy zbadać krzywą $x_i\circ g=(x_i\circ x^{-1})\circ \gamma$ i policzyć jej pochodną
+kowariantną. W poniższych rachunkach będziemy pomijać argumenty funkcji, należy zatem pamiętać, że wszystko dzieje się w punkcie $g(t)$.}
+
+\item Mamy następującą równość:
+\begin{multline*}
+\frac{\widehat{D}(x_i\circ g)}{dt}(t)=
+\Pi_{T_{\gamma(t)}M}\le(\frac{d\left((x_i\circ x^{-1})\circ \gamma\right)}{dt}(t)\ri)=\\ =\widehat{\nabla}_{\gamma'(t)}\le(x_i\circ x^{-1}\ri)=\widehat{\nabla}_{\left[x_1(g(t))g_1'(t)+x_2(g(t))g_2'(t)\right]}x_i=\\
+=g_1'(t)\widehat{\nabla}_{x_1(g(t))}\le(x_i\circ x^{-1}\ri)+g_2'(t)\widehat{\nabla}_{x_2(g(t))}\le(x_i\circ x^{-1}\ri).
+\end{multline*}
+Skorzystaliśmy tutaj z liniowości pochodnej kowariantnej. 
+
+\item Niech $a^{1}\colon (-\varepsilon,\varepsilon)\to U$ będzie krzywą zadaną wzorem
+\[a^{1}(s)=\define(s+g_1(t),g_2(t)).\] Podobnie można zdefiniować $a^{2}$. Wtedy (sprawdzić!)
+\begin{multline*}
+\widehat{\nabla}_{x_1(g(t))}\le(x_i\circ x^{-1}\ri)=\Pi_{T_{\gamma(t)}M}\le(\frac{d\le( x_i\circ x^{-1}\circ x\circ a^{j}\ri)}{ds}\Bigg|_{s=0}\ri)=\\
+=\Pi_{T_{\gamma(t)}M}\le(\frac{d\le(x_i\circ a^{j}\ri)}{ds}\Bigg|_{s=0}\ri)=\Pi_{T_{\gamma(t)}M}x_{ij}\le(g(t)\ri)
+\end{multline*}
+
+\item Skorzystajmy teraz z formuła Gaussy wyrażającej $x_{ij}$ jako odpowiednią kombinację liniową:
+\begin{multline*}
+g_1'(t)\Pi_{T_{\gamma(t)}M}\left(x_{1i}(g(t))\right)+g_2'(t)\Pi_{T_{\gamma(t)}M}\left(x_{2i}(g(t))\right)=\\
+=c_1'(t)\left(\Gamma_{1i}^1(g(t)) x_1(g(t)) +\Gamma_{1i}^2(g(t)) x_2(g(t)) \right)+\\ +c_2'(t)\left(\Gamma_{2i}^1(g(t)) x_1(g(t)) +\Gamma_{2i}^2(g(t)) x_2(g(t)) \right)
+\end{multline*}
+%gdzie w ostatnim wierszu wszystkie symbole Christoffela i pochodne $x_i$ są wyewaluowane w punkcie $g(t)$.
+
+\item Grupując odpowiednie wyrazy możemy tę równość zapisać
+\[\frac{\widehat{D}(x_i\circ g)}{dt}(t)=\sum_{k=1}^2\sum_{j=1}^2\Gamma^k_{ji}(g(t))g_{j}'(t)x_{k}(g(t)).\]
+
+\item Wstawiając uzyskaną równość do równania \ref{eqn:loc-geod} powyżej otrzymujemy
+
+\[\frac{\widehat{D}\gamma'}{dt}=\sum_{i=1}^2\left(g_i''(t)x_i(g(t))+g_{i}'(t)\sum_{k=1}^2\sum_{j=1}^2\Gamma^k_{ji}(g(t))g_{j}'(t)x_{k}(g(t))\right)\]
+%gdzie w ostatniej równości użyliśmy wyprowadzonej przed chwilą formuły.
+
+\item Ponownie zmieniając kolejność sumowania i grupując otrzymujemy
+\[\frac{\widehat{D}\gamma'}{dt}=\sum_{k=1}^2\left(g_{k}''(t)+\sum_{i=1}^2\sum_{j=1}^2\Gamma_{ij}^k(g(t))g_i'(t)g_{j}'(t)\right) x_k(g(t),\]
+co kończy dowód.
+\end{itemize}
+
+\hfill $\square$
+
+%%%%%%next-slide%%%%%
+\mode<all>{\lowsection{Przykład: powierzchnia obrotowa}}
+
+\begin{frame}[<+->]{Przykład: powierzchnia obrotowa}
+\begin{wniosek}
+Niech $M\subset \R^3$ będzie powierzchnią obrotową z lokalnym układem współrzędnych
+\[x(t,\vartheta)=(\alpha_1(t),\alpha_2(t)\cos(\vartheta),\alpha_2(t)\sin(\vartheta)),\]
+oraz załóżmy, że krzywa profilu $x(t,0)=(\alpha_1(t),\alpha_2(t),0)$ jest unormowana. Wtedy 
+\begin{enumerate}
+\item Każda krzywa profilu (południk) na powierzchni $M$ może być sparametryzowana jako krzywa geodezyjna.
+\item Okrąg na powierzchni $M$ prostopadły do osi obrotu (równoleżnik) może być sparametryzowany jako krzywa geodezyjna wtedy i tylko wtedy, gdy wektor styczny do krzywej profilu w punkcie przecięcia z z tym równoleżnikiem jest równoległy do osi obrotu.
+\end{enumerate}
+\end{wniosek}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{center}
+\input{./pictures/geod-rot.tex}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Przedstawimy jedynie szkic rozumowania, dopracowanie szczegółów pozostawiając jako zadanie domowe.
+
+\begin{frame}[allowdisplaybreaks=4,squeeze]
+\textcolor{ared}{Szkic Dowodu:}\\\pause 
+Dowód pierwszej części:
+\begin{itemize}
+\item Mamy \vspace*{-0.1in}
+\begin{align*}
+x_1(t,\vartheta)=&(\alpha_1'(t),\alpha_2'(t)\cos\vartheta,\alpha_2'(t)\sin\vartheta)\\
+x_2(t,\vartheta)=&(0,-\alpha_2(t)\sin\vartheta,\alpha_2(t)\cos\vartheta)
+\end{align*}\vspace*{-0.2in}
+\pause \item Drugie pochodne cząstkowe:
+\begin{align*}
+x_{11}(t,\vartheta)=&(\alpha_1''(t),\alpha_2''(t)\cos\vartheta,\alpha_2''(t)\sin\vartheta)\\
+x_{12}(t,\vartheta)=x_{21}(t,\vartheta)=&(0,-\alpha_2'(t)\sin\vartheta,\alpha_2'(t)\cos\vartheta)\\
+x_{22}(t,\vartheta)=&(0,-\alpha_2(t)\cos\vartheta,-\alpha_2(t)\sin\vartheta.
+\end{align*}\vspace*{-0.2in}
+\pause \item Z definicji symboli Christoffela mamy np.
+\[x_{12}=\Gamma_{12}^1x_1+\Gamma_{12}^2x_2+l_{12}n.\]
+
+\pause\item Zauważmy, teraz że $x_1$ i $x_2$ są prostopadłe, więc żeby obliczyć np. $\Gamma_{12}^2$ wystarczy pomnożyć powyższą równość (skalarnie) przez $x_2$ a wynik podzielić przez $\|x_2\|^2$.
+\mode<article>{Gdyby wektory standardowej bazy nie były prostopadłe, musielibyśmy rozwiązać odpowiedni układ równań liniowych z dwiema niewiadomymi.}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{itemize}
+\item Sprawdzić, że w tym przypadku $\Gamma_{22}^1=-\alpha_1\alpha_1'$, $\Gamma_{12}^2=\Gamma_{21}^2=\frac{\alpha_1'}{\alpha_1}$ zaś pozostałe symbole Christoffela są równe $0$ (przeliczyć).
+\pause \item Lokalne równania geodezyjnych mają więc postać
+\begin{align*}
+g''_1-\alpha_1\alpha_1'(g'_2)^2&=0\\
+g''_2+2\frac{\alpha_1'}{\alpha_1}g'_1g'_2&=0
+\end{align*}\vspace*{-0.2in}
+\pause \item Południk powierzchni obrotowej może być sparametryzowany jako $\beta(t)=x(t,\vartheta_0)$ dla pewnej stałej $\varphi_0$ (o $s$ myślimy jako o promieniu, $\vartheta$ to kąt obrotu). Zatem $g_1(t)=t$ i $g_2(t)=\vartheta_0$.
+\pause \item Przy takich funkcjach współrzędnych powyższe równania są spełnione (przeliczyć).
+\end{itemize}
+\bigskip
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Dowód drugiej części, implikacja $(\Rightarrow)$.
+\begin{itemize}[<+->]
+\item Równoleżnik na powierzchni obrotowej jest parametryzowany przez $\beta(s)=x(t_0,\vartheta(s))$ ($t_0$ stałe), więc $g_1''(s)=g_1'(s)=0$.
+\item Prędkość krzywej $\beta$ wynosi $\|\beta'(s)\|=|\vartheta'(s)|\|x_2(t_0,\vartheta(s))\|$. Jeśli $\beta$ jest geodezyjną, to ma stałą prędkość, czyli $|\vartheta'(s)|\|x_2(t_0,\vartheta(s))\|=\operatorname{const.}$
+\item Mamy $\|x_2(t_0,\vartheta(s))\|=\alpha_2(t_0)$ (sprawdzić!), więc $|\vartheta'(s)|=c\neq 0$.
+\item Z założenia $\beta$ musi spełniać równania geodezyjnych, więc $\alpha_2\alpha_2'=0$. 
+\item Ponieważ możemy założyć, że $\alpha_1(t_0)\neq 0$, więc $\alpha_1'(t_0)=0$.
+\item Wyprowadzić stąd wniosek, że w $t_0$ wektor styczny do $\alpha$ jest równoległy do osi obrotu.
+\end{itemize}
+\end{frame}
+\bigskip
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Dowód drugiej części, implikacja $(\Leftarrow)$.
+\begin{itemize}
+\item Jeśli dla $t_0$ wektor styczny do krzywej profilu jest równoległy do osi obrotu, wtedy $\alpha_1'(t_0)=0$. 
+\pause\item Mamy również $g_1''=0$ (dlaczego?) i $\beta$ spełnia pierwsze równanie geodezyjnych.
+\pause \item Twierdzimy, że jeśli wybierzemy $\vartheta(s)=s$, wtedy będzie spełnione i drugie równanie (sprawdzić!).
+\end{itemize}
+\hfill $\square$
+
+\pause \begin{uwaga}
+Powyższy wniosek charakteryzuje jedynie \textit{niektóre} geodezyjne na powierzchniach obrotowych.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{wniosek}
+Niech $\alpha\colon \R\to \R^3$ będzie gładką krzywą różnowartościową, która nie przecina pewnej prostej. Wtedy $\alpha$ może byś sparametryzowana jako geodezyjna na pewnej powierzchni.
+\end{wniosek}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Proste ćwiczenie. (Użyć poprzedniego wniosku).
+\hfill $\square$
+
+\bigskip
+\pause Okazuje się, że każda gładka krzywa różnowartościowa może być sparametryzowana jako geodezyjna na pewnej powierzchni (bez założenia o pustym przecięciu z pewną prostą), chociaż dowód jest znacznie trudniejszy.
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Istnienie i jedyność}}
+Czy dwa dowolne punkty na płaszczyźnie mogą zostać połączone geodezyjną? Gdyby tak było wtedy krzywe geodezyjne spełniałyby analogiczny postulat do punktu \textbf{(1)} z wykładu 12 (istnieje prosta łącząca dwa dowolne punkty). Oczywiście przykład sfery pokazuje, że nie możemy liczyć na jedyność takich geodezyjnych, więc może istnieje przynajmniej jedna?
+
+\begin{frame}{Istnienie i jedyność geodezyjnych}
+\begin{przyklad}
+Rozważmy $M=\R\setminus\{(0,0)\}$. Geodezyjne na każdym podzbiorze płaszczyzny są liniami prostymi (dlaczego?), więc nie istnieje nawet jedna krzywa geodezyjna w $M$ łącząca punkty $(1,0)$ i $(-1,0)$.
+\end{przyklad}
+
+\pause Następujące twierdzenie pokazuje, że istnienie takich ``dziur'' w powierzchni jest jednak jedyną przeszkodą do istnienia geodezyjnych.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{twierdzenie}[Rinowa-Hopfa]
+Niech $M\subset \R^3$ będzie powierzchnią gładką. Jeśli $M$ jest zupełną przestrzenią metryczną, wtedy dla dowolnych dwóch punktów $a$,$b\in M$ istnieje krzywa geodezyjna łącząca te dwa punkty. Co więcej ta geodezyjna ma najmniejszą długość spośród wszystkich krzywych łączących $a$ i $b$.
+\end{twierdzenie}
+
+\pause
+Zamiast szukać krzywych geodezyjnych łączących dwa punkty na powierzchni $M$ (co wymagałoby globalnego spojrzenia na nią) spróbujmy ustalić punkt $p\in M$, wybrać wektor $v\in T_pM$, a następnie szukać geodezyjnej w wyznaczonym przez $v$ kierunku. \pause Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną gładką krzywą. Okazuje się jednak, że zawsze wśród krzywych odpowiadających $v$ znajdziemy geodezyjną.
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{twierdzenie}
+Niech $M\subset \R^3$ będzie powierzchnią gładką.
+\begin{itemize}
+\item Dla każdego punktu $p\in M$ i wektora $v\in T_pM$ stycznego w tym punkcie istnieją: $\varepsilon>0$, oraz taka krzywa geodezyjna \[\gamma\colon(-\varepsilon,\varepsilon)\to M,\]że $\gamma(0)=p$ oraz $\gamma'(t)=v$. 
+\pause \item Krzywa $\gamma$ jest jedyną taką krzywą w następującym sensie:
+
+Jeśli dla pewnej $\delta>0$ istnieje krzywa geodezyjna $\widetilde{{\gamma}}\colon (-\delta,\delta)\to M$ o tej własności, że $\delta(0)=p$ i $\delta'(0)=v$, wtedy istnieje mniejsze otoczenie $(-\zeta,\zeta)\subset \R$ na którym $\gamma$ i $\widetilde{\gamma}$ są sobie równe. 
+
+\pause (za $(-\zeta,\zeta)$ można przyjąć$(-\varepsilon,\varepsilon)\cap(-\delta,\delta)$ przecięcie dziedzin tych krzywych)
+\end{itemize}
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+
+\begin{uwaga}
+O klasach równoważności funkcji równych na pewnym otoczeniu punktu $p$ mówi się , że są to \textit{kiełki funkcji} w punkcie $p$. Zatem powyższe twierdzenie mówi, że istnieje bijekcja między zbiorami kiełków geodezyjnych w punkcie $p$ oraz wektorów stycznych $v\in T_pM$.
+\end{uwaga}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in M$.
+Skorzystamy z twierdzeń dotyczących istnienia i jednoznaczności rozwiązań równań różniczkowych zwyczajnych. 
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Równania geodezyjnych są równaniami rzędu drugiego, ale jeśli wprowadzimy dodatkowe zmienne $h_1=g_1'$ i $h_2=g_2'$ możemy je zapisać jako układ równań rzędu pierwszego:
+\pause \begin{equation}\label{eqn:uniq-geodes}
+\left\{
+\begin{aligned}
+g_1'&=h_1\\
+g_2'&=h_2\\
+h'_1&=-\Gamma^1_{11}h_1^2-2\Gamma^1_{12}h_1h_2-\Gamma^1_{22}h_2^2\\
+h'_2&=-\Gamma^2_{11}h_1^2-2\Gamma^2_{12}h_1h_2-\Gamma^2_{22}h_2^2
+\end{aligned}
+\right.
+\end{equation}
+
+%gdzie $\Gamma^k_{ij}$ są funkcjami $g(t)=(g_1(t),g_2(t))$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[plain]
+
+Zamiast myśleć o tych równaniach jako o układzie, rozważmy równanie różniczkowe
+\[
+\left(
+\begin{aligned}
+g_1'(t)\\
+g_2'(t)\\
+h_1'(t)\\
+h_2'(t)
+\end{aligned}
+\right)=
+\left(
+\begin{gathered}
+h_1(t)\\
+h_2(t)\\
+-\Gamma^1_{11}(g(t))h_1^2(t)-2\Gamma^1_{12}(g(t))h_1(t)h_2(t)-\Gamma^1_{22}(g(t))h_2^2(t)\\
+-\Gamma^2_{11}(g(t))h_1^2(t)-2\Gamma^2_{12}(g(t))h_1(t)h_2(t)-\Gamma^2_{22}(g(t))h_2^2(t)
+\end{gathered}
+\right)%\define F(g_1(t),g_2(t),h_1(t),h_2(t))\quad
+\]\pause\[\text{z warunkiem początkowym}\quad\left(
+\begin{aligned}
+g_1(0)\\
+g_2(0)\\
+h_1(0)\\
+h_2(0)
+\end{aligned}
+\right)=
+\left(
+\begin{aligned}
+p_1\\
+p_2\\
+v_1\\
+v_2
+\end{aligned}
+\right),\]
+gdzie $(p_1,p_2)$ to współrzędne punktu $x^{-1}(p)$, zaś $(v_1,v_2)$ to współczynniki wektora $v$ w standardowej bazie $\{x_1,x_2\}$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+Przypomnijmy teraz twierdzenie dotyczące istnienia i jednoznaczności równań. Wyniki zawarte w tym twierdzeniu są przypisywane Picardowi, Lindelöfowi, Lipschitzowi i Cauchyemu.
+
+\begin{frame}
+
+\begin{twierdzenie}[Picard-Lindelöf-Lipschitz-Cauchy-\ldots]
+Niech $U\subset \R^n$ będzie zbiorem otwartym i niech $F\colon U\to \R^n$ będzie funkcją gładką. Ponadto ustalmy punkt $v_0\in U$. Istnieje $\varepsilon>0$, oraz taka gładka funkcja $\alpha\colon (-\varepsilon,\varepsilon)\to U$, że $\alpha(0)=v_0$, oraz \[\alpha'(t)=F(\alpha(t)),\]dla wszystkich $t\in (-\varepsilon,\varepsilon)$.
+
+\pause Co więcej, jeśli $\widetilde{\alpha}\colon (-\delta,\delta)\to U$ jest drugą taką funkcją spełniającą te własności, wtedy $\alpha(t)=\widetilde{\alpha}(t)$ dla wszystkich $t\in (-\varepsilon,\varepsilon)\cap(-\delta,\delta)$.
+
+\end{twierdzenie}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Stosując to twierdzenie do naszej sytuacji widzimy, że istnieje krzywa $G\colon (-\varepsilon,\varepsilon)\to U\times \R^2$ (rozumiane jako $U\times T_pM$), \[G(t)=(k_1(t),k_2(t),l_1(t),l_2(t))\] spełniająca nasz układ równań (\ref{eqn:uniq-geodes}). \pause Z konstrukcji tego układu wynika, że krzywa $\gamma(t)\define x(k_1(t),k_2(t))$ jest szukaną geodezyjną przechodzącą przez punkt $p\in M$, oraz $\gamma'(0)=v$. Jedyność tej krzywej wynika z drugiej części zacytowanego powyżej twierdzenia.
+\hfill $\square$
+
+\end{frame}
+
+\mode<all> 

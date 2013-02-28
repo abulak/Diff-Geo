@@ -1,0 +1,222 @@
+\mode*
+\mode<all>{\topsection{Geodezyjne I}}
+\mode<all>{\midsection{Idea}}
+\begin{frame}[<+->]
+Geodezyjne na powierzchniach to pewne analogi linii prostych na płaszczyźnie. Linie proste mają trzy ważne własności:
+\begin{itemize}
+\item [\textbf{(1)}]każde dwa punkty łączy dokładnie jedna prosta;
+\item [\textbf{(2)}]odcinek tej prostej zawarty między punktami jest najkrótszą drogą między nimi;
+\item [\textbf{(3)}]kiedy podróżujemy wzdłuż prostej ``nie skręcamy w prawo bądź w lewo''.
+\end{itemize}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Chociaż proste na płaszczyśnie spełniają równocześnie te trzy warunki, dla ogólnej powierzchni może nie być to możliwe. Rozważmy przykład $S^2$:
+\begin{itemize}
+\pause\item Najkrótszą drogą łączącą dwa punkty o tej samej ``długości geograficznej'' jest droga wzdłuż tego południka, czyli tzw. okręgu wielkiego. Z symetrii sfery wynika, że każde dwa punkty na sferze leżą na pewnym okręgu wielkim.
+\pause\item Dwa punkty dzielą okrąg wielki na dwie (najczęściej nierówne) części, więc nie każdy fragment okręgu jest najkrótszą drogą.
+\pause\item Między biegunem północnym i południowym istnieje nieskończenie wiele południków równej długości, więc każdy z nich może być uważany za najkrótszą drogę między biegunami.
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+Jak widzimy nawet przy najprostszej powierzchni jaką jest sfera, konfrontacja intuicji ``najkrótszej drogi'' z własnościami okręgów wielkich sprawia, że nie możemy zakładać równoczesnego spełnienia wszystkich trzech własności.  
+
+\begin{frame}[<+->]
+Chociaż najmniej intuicyjną, wybierzemy własność \textbf{(3)} jako definicję. Oto najważniejszy powód naszej decyzji: 
+\begin{quote}
+``Nie krzywienie się'' jest własnością \textit{lokalną}, natomiast własności jedyności \textbf{(1)} i najkrótszej drogi \textbf{(2)} są \textit{globalne}, i odwołują się do kształtu całej powierzchni.
+\end{quote}
+
+
+\end{frame}
+Z naszego punktu widzenia na powierzchnię (poprzez lokalne układy współrzędnych), własności lokalne, które można sprawdzać w otoczeniu każdego punktu z osobna są znaczenie bardziej przystępne (obliczeniowo), niż te, które wymagają brania pod uwagę związków pomiędzy punktami (być może) bardzo dalekimi.
+%%%%%%next-slide%%%%%
+
+\mode<all>{\midsection{Pochodna kowariantna}}
+
+\begin{frame}[<+->]
+Ale jak uogólnić (czy też doprecyzować) własność \textbf{(3)} dla dowolnej powierzchni? Wykorzystamy ideę równoległego transportu wektora wzdłuż krzywej. \pause Postrzeganie równoległości tak na prawdę zależy od położenia obserwatora. 
+\begin{center}
+\input{./pictures/parallel-transport.tex}
+\bigskip Które wektory są wzajemnie równoległe?
+\end{center}
+
+\end{frame}
+
+%%%%%%next-slide%%%%%
+Niech $\alpha(t)\subset M$ będzie krzywą na powierzchni $M\subset \R^3$. Z punktu widzenia obserwatora w $\R^3$ równoległe wektory wzdłuż krzywej będą miały te same współrzędne w $\R^3$ (tj. będą tworzyć \textit{stałe} pole wektorowe wzdłuż $\alpha$). Z punktu widzenia obserwatora na powierzchni, poruszającego się wzdłuż krzywej, równoległe będą te wektory, które będą miały \textit{proporcjonalne współrzędne} w bazie $\{x_1, x_2\}$ w przestrzeniach stycznych $T_{\alpha(t)}M$ dla wszystkich $t$.
+
+\begin{frame}[<+->]
+\begin{uwaga}
+Równoległość wektorów w różnych przestrzeniach stycznych do powierzchni $M$ oznacza \textbf{proporcjonalność współczynników} ich przedstawienia w standardowej bazie obu przestrzeni stycznych.
+\end{uwaga}
+
+
+
+
+\end{frame}
+\mode<all>{\lowsection{Pochodna kierunkowa pola wektorowego}}
+%%%%%%next-slide%%%%%
+
+Przypomnijmy materiał którym zajmowaliśmy się podczas badania własności izometrii.
+\begin{frame}[<+->]{Przypomnienie}
+
+\begin{definicja}
+\textbf{Gładkie pole wektorowe} na $M$ to funkcja gładka \[F\colon M\to \R^3.\]
+Gładkie pole wektorowe nazywamy \textbf{stycznym} jeśli $F(p)\in T_pM\subset \R^3$ dla wszystkich $p\in M$.
+%Będziemy rozważać najczęściej \[F\define \overline{F}\circ x=(F_1,F_2,F_3)\colon U\to \R^3\]
+\end{definicja}
+\begin{definicja}
+\textbf{Pochodna kierunkowa pola wektorowego} $F$ w kierunku wektora $v\in T_p M$ jest zdefiniowana naturalnie jako
+\[\nabla_v F\define(\nabla_v F_1,\nabla_vF_2,\nabla_vF_3)\] gdzie $F_i$ są funkcjami współrządnymi pola $F$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}
+Zauważmy, że wektor normalny jako funkcja
+\[\widehat{n}\colon M\to\R^3,\]
+jest tak naprawdę gładkim polem wektorowym na $M$. Jego pochodną kierunkową jest... odwzorowanie Weingartena.
+\end{przyklad}
+
+
+\pause \begin{lemat}
+Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności jak dla pochodnych kierunkowych funkcji, \mode<presentation>{tj. liniowość ze względu na dodawanie wektorów i pól wektorowych, jednorodność, oraz \textit{reguła Leibniza: \[\nabla_v(FG)=G\nabla_vF+F\nabla_vG\]}}
+\mode<article>{\begin{itemize}
+\pause\item $\nabla_{av+bw}F=a\nabla_v F+b\nabla_w F$
+\pause\item $\nabla_v(aF+bG)=a\nabla_v F+b\nabla_vG$
+\pause\item $\nabla_v(FG)=G\nabla_vF+F\nabla_vG$
+\end{itemize}} \pause Co więcej mamy 
+\[\nabla_v\langle F,G\rangle(p)=\langle\nabla_vF,G(p)\rangle+\langle F(p),\nabla_vG\rangle.\]
+\end{lemat}
+ 
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+ Rozważmy styczne pole wektorowe $Z\colon M\to \R^3$. Niech $p\in M$ i $v\in T_p M$. Oczywiście nie ma powodu, aby wektor $\nabla_v Z$ należał do przestrzeni stycznej (dlaczego nie było tego problemu gdy rozważaliśmy odwzorowanie Weingartena?). \pause Spróbujemy ``naprawić'' tę sytuację w brutalny sposób: rzutując ortogonalnie $\nabla_v Z$ na $T_p M$. %Powody poniższej definicji staną się jasne później.
+
+\pause
+ \begin{definicja}
+ Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $Z\colon M\to \R^3$ będzie stycznym polem wektorowym. Niech $p\in M$ oraz $v\in T_p(M)$. \textbf{Pochodną kowariantną} definiujemy jako
+ \[\widehat\nabla_v(Z)\define\Pi_{T_pM}\left(\nabla_vZ\right),\]gdzie $\Pi_W$ oznacza rzut ortogonalny na podprzestrzeń $W$.
+ \end{definicja}
+ \end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+  Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $Y, Z\colon M\to \R^3$ będą stycznymi polami wektorowymi. Niech $f\colon M\to \R$ będzie ładką funkcją, $p\in M$ punktem na $M$, $v,w\in T_p(M)$ wektorami z przestrzeni stycznej i wreszcie $a,b\in \R$ liczbami rzeczywistymi. Wtedy
+ \begin{itemize}
+  \item Funkcja \[\widehat{\nabla}_{(\cdot)}Z\colon T_pM\to T_pM\] zadana przez $v\mapsto \widehat{\nabla}_vZ$ jest odwzorowaniem liniowym.
+  \item $\widehat{\nabla}_v(Y+Z)=\widehat{\nabla}_vY+\widehat{\nabla}_v Z$.
+  \item $\widehat{\nabla}_vfZ=(\widehat{\nabla}_v f)Z(p)+f(p)(\widehat{\nabla}_vZ)$.
+ \item $\widehat{\nabla}_v\langle Y,Z\rangle=\langle\widehat{\nabla}_v Y, Z(p)\rangle+\langle Y(p),\widehat{\nabla}_v Z\rangle$
+\end{itemize}
+\end{lemat}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+\mode<presentation>{Dowody tych własności są analogiczne jak własności pochodnej kierunkowej\footnotesize (wystarczy skorzystać z liniowości rzutowania na podprzestrzeń)\normalsize.} 
+\mode<article>{Dowody tych własności są analogiczne jak własności pochodnej kierunkowej (lemat \ref{lem:wl-pochodnej-kierunkowej}). Wystarczy skorzystać z liniowości rzutowania ortogonalnego na podprzestrzeń.}
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+Zanim wprowadzimy definicję geodezyjnej potrzebujemy jeszcze jednego oznaczenia. Będą nas interesowały styczne pola wektorowe wzdłuż krzywych, więc mając daną parametryzację krzywej będzie można bardzo prosto policzyć pochodną kowariantną. 
+\begin{frame}
+
+
+Niech $\alpha\colon (a,b)\to M\subset\R^3$ będzie krzywą na powierzchni i niech $Z\colon M\to \R^3$ będzie gładkim polem wektorowym wzdłuż $\alpha$. Oznaczmy 
+\[\frac{\widehat{D}(Z\circ \alpha)}{dt}(t)\define\Pi_{T_{\alpha(t)}M}\left(\frac{d (Z\circ \alpha)}{dt}(t)\right)=\widehat{\nabla}_{\alpha'(t)}Z\]
+
+
+\pause \begin{uwaga}
+
+Zauważmy, że styczne pole wektorowe $\alpha'$ do krzywej $\alpha\subset M$ jest w postaci $Z\circ \alpha$. %ponieważ $\alpha'\colon (a,b)\to \R^3$.
+\end{uwaga}
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Definicja geodezyjnych}}
+Teraz korzystając z języka pochodnych kowariantynych możemy wypowiedzieć co to znaczy, że krzywa ``nie skręca w prawo bądź w lewo''. 
+\begin{frame}
+
+\begin{definicja}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $\gamma\colon (a,b)\to M$ będzie krzywą na tej powierzchni. Krzywą $\gamma$ nazywamy \textbf{krzywą geodezyjną}, lub po prostu \textbf{geodezyjną} na $M$ jeśli wektory $\gamma'(t)\in T_{\gamma(t)}M$ wzdłuż krzywej $\gamma$ pozostają względem siebie równoległe\pause, tj. jeśli istnieje pole wektorowe $Z\colon M\to \R^3$ takie, że $Z\circ \gamma(t)=\gamma'(t)$, oraz \[\frac{\widehat{D}\le(Z\circ\gamma\ri)(t)}{dt}=\Pi_{T_{\alpha(t)}M}\left(\frac{d \gamma'(t)}{dt}\right)= \widehat{\nabla}_{\gamma'(t)}Z=0.\]
+% gdzie $\overline{\gamma'}\colon M\to \R^3$ jest pewnym gładkim \textbf{polem wektorowym na $M$} które jest równe $\gamma'$ na obrazie krzywej $\gamma$.%w punkcie $\gamma(t)$ przyjmuje wartość $\gamma'(t)$. 
+\end{definicja}
+
+\pause\begin{uwaga}
+W powyższej definicji wystarczy, żeby to pole wektorowe istniało w pewnym otoczeniu każdego punktu $\gamma(t)$.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\mode<article>{Zanalizujmy dwa proste przypadki -- płaszczyznę i sferę.}
+\begin{przyklad} 
+Pokażemy, że proste i tylko proste spełniają ten warunek na płaszczyźnie. \pause Załóżmy, że krzywa $\gamma$ jest geodezyjną i leży na płaszczyźnie. Wtedy oczywiście torsja $\tau_\gamma\equiv0$ oraz wektor binormalny jest stały, więc krzywa leży w płaszczyźnie ściśle stycznej (rozpiętej przez $T_\gamma$ i $N_\gamma$). \pause Wobec tego pochodna pola stycznego $\gamma'$ wzdłuż $\gamma$ będzie równa
+\mode<presentation>{\[0=\frac{\widehat{D}\gamma'(t)}{dt}=\Pi_{\langle T_\gamma,N_\gamma\rangle}\left(\frac{d\gamma'(t)}{dt}\right)=\frac{d^{\,2}\gamma(t)}{dt^{\,2}}.\]\pause}
+\mode<article>{\[0=\frac{\widehat{D}\gamma'(t)}{dt}=\Pi_{\langle T_\gamma,N_\gamma\rangle}\left(\frac{d\gamma'(t)}{dt}\right)=\frac{d^2\gamma(t)}{dt^2}.\]\pause}
+Zatem $\gamma(t)=vt+w$ dla pewnych $v,w\in \R^2$.
+
+\pause Z drugiej strony każda prosta na płaszczyźnie ma taką parametryzację, więc spełnione jest powyższe równanie.
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{uwaga}[Bardzo ważna!]
+Sprzecznie z naszą intuicją, bycie krzywą geodezyjną jest własnością \textbf{parametryzacji}, a nie samej krzywej na powierzchni. Powyższy przykład udowadnia jedynie, że prosta \textit{w postaci parametrycznej} jest geodezyjną na płaszczyźnie. \pause 
+
+\bigskip
+Rozważmy teraz krzywą $\beta\colon \R\to \R^2\subset \R^3$ zadaną wzorem
+\mode<article>{\[\beta(t)=(t^3,t^3,0).\]} \mode<presentation>{\[\beta(t)=(t^{\,3},t^{\,3},0).\]}Obraz tej krzywej jest oczywiście prostą, jednak podobne przeliczenia jak powyżej pokazują, że \[\frac{\widehat{D}\beta'(t)}{dt}=\frac{d\beta'(t)}{dt}=(6t,6t,0)\neq 0.\]
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\mode<article>{\begin{przyklad}}
+Pokażemy, że każdy wielki okrąg na jednostkowej sferze $S^2\subset \R^3$ jest obrazem pewnej krzywej geodezyjnej. 
+
+Ze wzgędu na symetrię sfery wystarczy pokazać, że równik $S^2$ sparametryzowany jako $\gamma\colon (-\pi,\pi)\to S^2$ wzorem \[\gamma(t)=(\cos t,\sin t,0)\] jest geodezyjną. \pause Styczne pole wektorowe jest równe \[\gamma'(t)=(-\sin t, \cos t, 0),\] wobec czego
+\mode<presentation>{\begin{multline*}
+\frac{\widehat{D}\gamma'(t)}{dt}=\Pi_{T_{\gamma(t)}S^2}\left(\frac{d\gamma'(t)}{dt}\right)=\\\pause
+=\Pi_{T_{\gamma(t)}S^2}\left((-\cos(t),-\sin(t),0)\right)
+=\Pi_{T_{\gamma(t)}S^2}(-\gamma(t))=0.
+\end{multline*}}
+
+\end{frame}
+\mode<article>{\begin{multline*}
+\frac{\widehat{D}\gamma'(t)}{dt}=
+\Pi_{T_{\gamma(t)}S^2}\left(\frac{d\gamma'(t)}{dt}\right)=
+\Pi_{T_{\gamma(t)}S^2}\left((-\cos(t),-\sin(t),0)\right)=\\\pause
+=\Pi_{T_{\gamma(t)}S^2}(-\gamma(t))=0,
+\end{multline*}}
+ponieważ sfera ma tę własność, że przestrzeń styczna w każdym punkcie jest prostopadła do prostej wyznaczonej przez ten punkt i środek sfery.
+\mode<article>{\end{przyklad}}
+
+Następujący lemat pokazuje związki pomiędzy geodezyjnymi a ich reparametryzacjami.
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{lemat}\label{lem:param-of-geodesics}
+Niech $M\subset \R^3$ będzie powierzchnią i niech $\gamma\colon(a,b)\to M$ będzie nie-stałą geodezyjną. Wtedy następujące twierdzenia są prawdziwe.
+\begin{enumerate}
+\item Krzywa $\gamma$ ma stałą (nie-zerową) prędkość (tj. $||\gamma'(t)||=c\neq 0$ dla wszysktich $t\in(a,b)$.
+\pause\item Reparametryzacja $\widetilde{\gamma}=\gamma\circ h\colon (c,d)\to (a,b)\to M$ jest krzywą geodezyjną wtedy i tylko wtedy gdy $h$ jest funkcją afiniczną.
+\pause\item Jeśli obraz krzywej $\delta\colon (c,d)\to M$ jest zawarty w obrazie krzywej $\gamma$, $\delta(c,d)\subset \gamma(a,b)$, wtedy $\delta$ jest geodezyjną wtedy i tylko wtedy gdy ma stałą prędkość.
+\end{enumerate}
+\end{lemat}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+\mode<article>{Dowody pierwszych dwóch punktów są łatwe (można potraktować je jako ćwiczenia na zrozumienie definicji geodezyjnej). Dowód trzeciego jest bardziej wymagający.}
+Pomijamy.
+\hfill $\square$
+
+\end{frame}
+
+\mode<all> 

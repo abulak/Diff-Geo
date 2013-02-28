@@ -1,0 +1,570 @@
+\mode*
+\mode<all>{\topsection{Powierzchnie o stałej krzywiźnie}}
+
+\begin{frame}
+Istnieje przykład powierzchni pseudosfery (powstającej przez obrót traktrysy -- krzywej pościgu), o stałej krzywiźnie równej $-1$, jednak ta powierzchnia nie jest zamknięta i nie ma sposobu, aby ją zamknąć nie zaburzając krzywizny.
+\pause\begin{center}
+\input{./pictures/pseudosphere.tex}
+\end{center}
+
+\pause W roku 1901 D. Hilbert udowodnił, że zamknięta powierzchnia o ujemnej i stałej krzywiźnie nie może być zanurzona (gładko!) w $\R^3$. \mode<article>{Wspomnieliśmy jednak wcześniej (przy definicji powierzchni $M\subset \R^3$), że powierzchnia może funkcjonować jako abstrakcyjny twór bez konkretnego zanurzenia. Co więcej, aby policzyć symbole Christoffela, krzywiznę, oraz wyznaczyć geodezyjne wystarczy, że będziemy jej znać pierwszą formę podstawową.}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Geometria różniczkowa płaszczyzny Poincar\'ego}}
+
+\begin{frame}
+
+\begin{definicja}
+Płaszczyznę hiperboliczną $\mathcal{H}$ definiujemy jako półpłaszczyznę 
+\[\mathcal{H}=\le\{(u,v)\in \R^2\colon v>0 \ri\},\] wyposażoną w pierwszą formę podstawową
+\[\mathcal{I}_{\mathcal{H}}=\le\{I(u,v)\ri\}_{(u,v)\in \mathcal{H}}=\le\{\le[
+\begin{array}{cc}
+\frac{1}{v^2}&0\\
+0 & \frac{1}{v^2}
+\end{array}
+\ri]\ri\}
+\]
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\begin{frame}[<+->]
+Korzystając teraz z odpowiednich wzorów (lemat \ref{lem:christoffel-prop}) możemy znaleźć symbole Christoffela:
+\begin{align*}
+\Gamma^1_{11}&=\frac{\frac{\partial g_{11}}{\partial u}}{2g_{11}}=0 &
+\Gamma^2_{11}&=\frac{\frac{\partial g_{11}}{\partial v}}{2g_{22}}=\frac{1}{v}\\
+\Gamma^1_{12}&=\frac{\frac{\partial g_{11}}{\partial v}}{2g_{11}}=-\frac{1}{v} &
+\Gamma^2_{12}&=\frac{\frac{\partial g_{22}}{\partial u}}{2g_{22}}=0\\
+\Gamma^1_{22}&=\frac{\frac{\partial g_{22}}{\partial u}}{2g_{11}}=0 &
+\Gamma^2_{22}&=\frac{\frac{\partial g_{22}}{\partial v}}{2g_{22}}=-\frac{1}{v}
+\end{align*}
+\pause Teraz używając jawnej formuły na krzywiznę Gaussa powierzchni (np. z zadania po Theorema Egregium) możemy sprawdzić, że tak zdefiniowana powierzchnia ma stałą krzywiznę równą $-1$.\pause W szczególności z lokalnego twierdzenia Gaussa-Bonneta wiemy, że suma kątów wewnętrznych w każdym trójkącie geodezyjnym jest mniejsza niż $\pi$.
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\mode<all>{\midsection{Geodezyjne na płaszczyźnie Poincar\'ego}}
+
+
+Kiedy zdefiniowaliśmy ``proste hiperboliczne'' naszą motywacją były oczywiście proste na płaszczyźnie wyznaczające najkrótsze drogi pomiędzy punktami. Pokażemy teraz, że te ``proste hiperboliczne'' są właśnie geodezyjnymi na płaszczyźnie hiperbolicznej.
+
+\begin{frame}
+
+Niech $\alpha\colon \R\to U$, $\alpha(t)=(u(t),v(t))$ będzie geodezyjną w $\mathcal{H}$. Wtedy równania geodezyjnych są następujące:
+\begin{align*}
+u''(t)-\frac{2}{v(t)}u'(t)v'(t)&=0\\
+v''(t)+\frac{1}{v(t)}\le((u'(t))^2-(v'(t))^2\ri)&=0.
+\end{align*}
+
+\pause Oczywiście jednym z rozwiązań jest $u(t)=\operatorname{const}$, przez co otrzymujemy półproste prostopadłe do osi $OX$.
+
+\pause\begin{exercise}
+\mode<presentation>{Pokazać, że wtedy te proste mają parametryzację $v(t)=C_1e^{C_2t}$.}
+\mode<article>{Pokazać, że wtedy te proste mają parametryzację \[v(t)=C_1e^{C_2t}.\]}
+\end{exercise}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Przyjmijmy teraz, że $u(t)\neq \operatorname{const}$, zatem $u'(t)\neq 0$ i spróbujmy wyznaczyć $v$ jako funkcję $u(t)$. Mamy \[\frac{d \le[v(u(t))\ri]}{dt}=\frac{d\le[v(u(t))\ri]}{du(t)}\cdot\frac{du(t)}{dt}, \quad\text{więc}\quad\frac{v'(u(t))}{u'(t)}=\frac{dv(u(t))}{du(t)}\] gdzie notację primową rezerwujemy dla pochodnej po $t$. \pause Stosując teraz regułę łańcuchową otrzymujemy (sprawdzić!)
+% \begin{align*}
+% \frac{d^2\le[v(u(t))\ri]}{d u^2(t)}&= \frac{d}{du(t)}\le(\frac{v'(u(t)}{u'(t)}\ri)=\\
+% &=\frac{u'(t)v''(u(t))-v'(u(t))u''(t)}{\le(u'(t)\ri)^2}\cdot\frac{1}{u'(t)}.\end{align*}
+% Podstawmy teraz drugie pochodne wyliczone z równań geodezyjnych
+% \[=\frac{1}{\le(u'(t)\ri)^3}\le[ u'(t)\le(\frac{1}{v(t)}\le((v'(t))^2-(u'(t))^2\ri)\ri) - v'(t)\le( \frac{2}{v(t)}u'(t)v'(t)\ri)\ri],\]
+% i uprośćmy to wyrażenie:
+% \begin{align*}
+% &=\frac{u'(t)}{\le(u'(t)\ri)^3}\cdot\frac{1}{v(t)}\le[\le((v'(t))^2-(u'(t))^2\ri)-2(v'(t))^2\ri]=\\
+% &=-\frac{1}{v(t)}\le[1+\le(\frac{v'(t)}{u'(t)}\ri)^2\ri]=\frac{-1}{v(t)}\le(1+\le(\frac{dv(u(t)}{du(t)}\ri)^2\ri).
+% \end{align*}
+\begin{align*}
+\frac{d^2\le[v(u)\ri]}{d u^2}&= \frac{d}{du}\le(\frac{v'(u)}{u'}\ri)=\\
+&=\frac{u'v''(u)-v'(u)u''}{\le(u'\ri)^2}\cdot\frac{1}{u'}.\end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\begin{frame}
+
+Podstawmy teraz drugie pochodne wyliczone z równań geodezyjnych:
+\begin{multline*}
+\frac{u'v''(u)-v'(u)u''}{\le(u'\ri)^2}\cdot\frac{1}{u'}=\\\pause
+=\frac{1}{\le(u'\ri)^3}\le[ u'\le(\frac{1}{v}\le((v')^2-(u')^2\ri)\ri) - v'\le( \frac{2}{v}u'v'\ri)\ri],\pause
+\end{multline*}
+i uprośćmy to wyrażenie otrzymując
+\begin{align*}
+&=\frac{u'}{\le(u'\ri)^3}\cdot\frac{1}{v}\le[\le((v')^2-(u')^2\ri)-2(v')^2\ri]=\\
+&=-\frac{1}{v}\le[1+\le(\frac{v'}{u'}\ri)^2\ri]=\frac{-1}{v}\le(1+\le(\frac{dv(u)}{du}\ri)^2\ri).
+\end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Zatem \[v\frac{d^2v(u)}{du^2}=-1-\le(\frac{dv(u)}{du}\ri)^2;\]\pause
+\[v\frac{d^2v(u)}{du^2}+\le(\frac{dv(u)}{du}\ri)^2=\frac{d}{du}\le(v\frac{dv(u)}{du}\ri)=-1,\]
+i całkując to równanie dwukrotnie otrzymujemy wreszcie rozwiązanie
+\[v^2(u)=-u^2+C_1u+C_2.\]
+
+\pause Jest to, jak można łatwo zauważyć (pamiętając, że $v>0$) równanie półokręgu przesunięte o pewien wektor $[C,0]$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{uwaga}
+Jeśli pierwsze współrzędne punktów $P$ i $Q$ są równe, to geodezyjną je łączącą jest zwykła prosta. Jeśli pierwsze współrzędne nie są równe, wtedy isnieje dokładnie jeden okrąg o środku na osi $OX$ na którym leżą oba punkty. \pause W każdym przypadku widzimy, że na płaszczyźnie hiperbolicznej każde dwa punkty $P$ i $Q$ łączy \textit{dokładnie jedna} krzywa geodezyjna. 
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Metryka hiperboliczna}}
+\begin{frame}
+
+Obliczymy teraz długość geodezyjnej na powierzchni hiperbolicznej, $d_{\mathcal{H}}(P,Q)$ łączącej punkty $P$ i $Q$. 
+
+\mode<article>{Przypomnijmy wcześniej lemat wiążący długość krzywej na powierzchni z pierwszą formą podstawową:}
+\mode<presentation>{\pause Dla przypomnienia:}
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych.
+Rozważmy krzywą gładką $\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U$.
+Wtedy długość obrazu krzywej $\overline{\alpha}\define x\circ\alpha\colon \R\to M$ jest równa
+\[L(\overline{\alpha})=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha'(t),\alpha'(t)\ri)}dt,\]
+\pause co można bezpośrednio zapisać:
+\[\int_a^b\sqrt{\le(\alpha_1'\ri)^2 g_{11}(\alpha(t))+ 2 \alpha_1'\alpha_2'g_{12}(\alpha(t))+\le(\alpha_2'\ri)^2 g_{22}(\alpha(t))}.\]
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Rozważmy teraz dwa przypadki:
+\begin{itemize}
+\item Geodezyjna łącząca punkty jest odcinkiem pionowej prostej $u=u_0$, tj. $P=(u_0,a)$ i $Q=(u_0,b)$. \pause Wtedy przy parametryzacji $\alpha(t)=(\alpha_1(t),\alpha_2(t))=(u_0,t)$ otrzymujemy:
+\[d_{\mathcal{H}}(P,Q)=\int_a^b\sqrt{\frac{1}{t^{2}}\underbrace{\le(\alpha_1'(t)\ri)^2}_{=0}+\frac{1}{t^2}\underbrace{\le(\alpha_2'(t)\ri)^2}_{=1}}dt=
+\int_a^b\frac{dt}{t}=\ln{\frac{b}{a}}.\]
+\pause Widzimy, że jeśli $P$ zbliża się do osi $OX$ jego odległość od ustalonego $Q$ dąży do $\infty$.
+
+\end{itemize}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{itemize}
+
+\item Niech teraz geodezyjna łącząca punkty $P$ i $Q$ będzie łukiem okręgu $(u_0+r\cos t,r\sin t)$ i niech $\varphi$ i $\psi$ będą kątami wyznaczonymi przez te punkty. \pause Wtedy
+\mode<presentation>{\begin{multline*}
+d_{\mathcal{H}}(P,Q)=\\=\le| \int_{\varphi}^{\psi}\sqrt{\frac{1}{r^2 \sin^2t}r^2\sin^2t+\frac{1}{r^2 \sin^2t}r^2\cos^2t }\,dt\ri|=\\\pause
+=\le|\int_{\varphi}^{\psi}\frac{dt}{\sin t}\ri|=\le|\ln \le.\operatorname{tg} \frac{t}{2}\ri|_{\varphi}^{\psi}\ri|=\le|\ln \frac{\operatorname{tg} \frac{\psi}{2}}{\operatorname{tg} \frac{\varphi}{2}}\ri|
+\end{multline*}}
+\mode<article>{\begin{multline*}
+d_{\mathcal{H}}(P,Q)=\le| \int_{\varphi}^{\psi}\sqrt{\frac{1}{r^2 \sin^2t}r^2\sin^2t+\frac{1}{r^2 \sin^2t}r^2\cos^2t }\,dt\ri|=\\
+=\le|\int_{\varphi}^{\psi}\frac{dt}{\sin t}\ri|=\le|\ln \le.\operatorname{tg} \frac{t}{2}\ri|_{\varphi}^{\psi}\ri|=\le|\ln \frac{\operatorname{tg} \frac{\psi}{2}}{\operatorname{tg} \frac{\varphi}{2}}\ri|
+\end{multline*}
+}
+
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\begin{center}
+\input{./pictures/hyperb-ratio.tex}
+\end{center}
+Analizując powyższy rysunek łatwo dostrzec, że ten iloraz jest równy
+\[d_{\mathcal{H}}(P,Q)=\le|\ln \frac{\operatorname{tg} \frac{\psi}{2}}{\operatorname{tg} \frac{\varphi}{2}}\ri|=\pause\le|\ln \le(\frac{d_{\mathcal{E}}(A,P)}{d_{\mathcal{E}}(B,P)}\le/\frac{d_{\mathcal{E}}(A,Q)}{d_{\mathcal{E}}(B,Q)}\ri.\ri)\ri|\]
+gdzie $d_{\mathcal{E}}$ oznacza zwykłą odległość euklidesową.
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Izometrie płaszczyzny Poincar\'ego}}
+Przypomnijmy, że grupa izometrii danej powierzchni $M$ składała się ze wszystkich dyfeomorfizmów $f\colon M\to M$ które zachowują pierwszą formę podstawową. Podczas dowodu twierdzenia klasyfikacyjnego dla krzywych mieliśmy do czynienia z działaniem grupy $E(3)$. Jak łatwo zauważyć grupa izometrii sfery $S^2$ jest równa dokładnie $SO(3)$. 
+\begin{frame}{Izometrie płaszczyzny Poincar\'ego}
+
+\mode<article>{Teraz zajmiemy się grupą izometrii płaszczyzny hiperbolicznej.} Rozważmy $\mathcal{H}\subset \mathbb{C}$, \[\mathcal{H}=\{z\in \mathbb{C}\colon \Im(z)>0\}\]jako podzbiór płaszczyzny zespolonej utożsamiając punkt $(u,v)$ z liczbą $u+iv$. 
+
+\pause\begin{definicja}
+Niech $a,b,c,d$ będą takimi liczbami rzeczywistymi, że $ad-bc=1$. Zdefiniujmy odpowiadającą im \textbf{specjalną transformację M\"obiusa} jako funkcję 
+$T^{a,b}_{c,d}\colon \mathbb{C}\to\mathbb{C}$ zadaną wzorem
+\[T^{a,b}_{c,d}(z)\define \frac{az+b}{cz+d}.\]
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{twierdzenie}
+\mode<presentation>{Niech \[T^{a,b}_{c,d}(z)\define \frac{az+b}{cz+d}\] będzie specjalną transformacją M\"obiusa. Wtedy}
+\mode<article>{Niech $T^{a,b}_{c,d}(z)$ będzie specjalną transformacją M\"obiusa. Wtedy}
+\begin{itemize}
+\item $T^{a,b}_{c,d}\colon \mathcal{H}\to\mathcal{H}$ jest bijekcją.
+\item składanie specjalnych funkcji M\"oebiusa odpowiada mnożeniu macierzy 
+\[T^{A,B}_{C,D}\circ T^{a,b}_{c,d}=
+\le[\begin{array}{cc}
+     A&B\\
+	C&D
+     \end{array}
+\ri]\cdot
+\le[\begin{array}{cc}
+     a&b\\
+	c&d
+     \end{array}
+\ri],\] więc specjalne transformacje M\"obiusa tworzą grupę.
+\item Każda specjalna transformacja M\"obiusa jest izometrią płaszczyzny Poincar\'ego.
+\end{itemize}
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{uwaga}
+Wszystkie transformacje M\"obiusa tworzą grupę $PGL(2,\R)$. Jest to iloraz grupy liniowej $GL(2,\R)$ przez podgrupę normalną $H=\{I,-I\}$. Specjalne transformacje są jej podgrupą wyznaczoną przez równanie $\det =1$ są oznaczane $PSL(2,\R)$.
+\end{uwaga}
+
+\pause Udowodnimy tylko trzecie stwierdzenie, pierwsze dwa jako proste pozostawiamy jako zadania. 
+
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+
+Niech $z=u+iv$ oraz niech $T(z)=x+iy$. Musimy sprawdzić, że 
+\[\mathcal{I}_z=\mathcal{I}_{T(z)}(DT,DT).\]
+\pause Musimy więc znaleźć $\frac{\partial T}{\partial u}=T_u$ i $\frac{\partial T}{\partial v}=T_v$ w punkcie $T(z)=x+iy$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{multline*}
+T(z)=\frac{az+b}{cz+d}=\frac{(az+b)(c\overline{z}+d)}{|cz+d|^2}=\cdots=\\
+ =\frac{(ac(u^2+v^2)+u+bd)}{|cz+d|^2}+i\frac{v}{|cz+d|^2}=x+iy.
+ \end{multline*}
+ Zatem $y=\frac{v}{|cz+d|^2}$. 
+\pause\medskip 
+ Traktując $T(z)$ jako funkcję jednego argumentu możemy łatwo policzyć jej pochodną:
+ \[\frac{dT(z)}{dz}=\frac{a(cz+d)-c(az+d)}{(cz+d)^2}=\frac{1}{(cz+d)^2}.\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Z drugiej strony jest to funkcja zespolona, więc spełnia równania Cauchyego-Riemanna:
+\begin{align*}
+\frac{d T(z)}{d z}&=\frac{\partial \Re T(z)}{\partial u}+i\frac{\partial \Im T(z)}{\partial u}=\frac{\partial x}{\partial u}+i\frac{\partial y}{\partial u}=T_u\\\pause
+\frac{d T(z)}{d z}&=-i \frac{\partial \Re T(z)}{\partial v}+\frac{\partial \Im T(z)}{\partial v}=-i\frac{\partial x}{\partial v}+\frac{\partial y}{\partial v}=-iT_v\\
+\end{align*}
+\pause Policzmy teraz pierwszą formę podstawową na wektorze $T_u$. Mamy 
+\begin{multline*}
+\mathcal{I}_{T(z)}\le(T_u,T_u\ri)=\frac{1}{y^2}\le[\le(\frac{\partial x}{\partial u}\ri)^2+\le(\frac{\partial y}{\partial u}\ri)^2\ri]=\frac{1}{y^2}|T'(z)|^2=\\\pause
+=\frac{1}{y^2}\frac{1}{(cz+d)^4}=\frac{1}{v^2}=g_{11}
+\end{multline*}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Podobnie można sprawdzić, że 
+\[\mathcal{I}_{T(z)}\le(T_v,T_v\ri)=\frac{1}{v^2}=g_{22}.\]
+\pause Wreszcie z równań Cauchyego-Riemanna wynika, że
+\begin{multline*}
+\mathcal{I}_{T(z)}\le(T_u,T_v\ri)=
+\frac{1}{y^2}\le(\frac{\partial x}{\partial u}\frac{\partial y}{\partial u}+\frac{\partial x}{\partial v}\frac{\partial y}{\partial v}\ri)=\\\pause
+=\frac{1}{y^2}\le(\frac{\partial x}{\partial u}\le(-\frac{\partial x}{\partial v}\ri)+\frac{\partial x}{\partial v}\frac{\partial x}{\partial u}\ri)=0=g_{12}
+\end{multline*}
+
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{exercise}
+Pokazać, że specjalne transformacje M\"obiusa przenoszą geodezyjne na geodezyjne. 
+
+\pause\footnotesize{\textbf{Podpowiedź:} Pokazać, że następujące macierze generują grupę $PSL(2,\R)$: 
+\[\le\{\le(\begin{array}{cc}
+     1 & c\\
+	0 & 1\\
+     \end{array}
+\ri),\quad \le(\begin{array}{cc}
+     \lambda & 0\\
+	0 & \sfrac{1}{\lambda}\\
+     \end{array}
+\ri),\quad\le(\begin{array}{cc}
+     0& -1\\
+	1 & 0\\
+     \end{array}
+\ri)\ri\}.\]
+Następnie zinterpretować geometrycznie działanie poszczególnych macierzy.}
+\end{exercise}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+% \mode<article>{Możliwe są oczywiście różnież inne modele geometrii nie-euklidesowych. Jednym z nich jest model Kleina na (otwartym) dysku. Model Poincar\'ego miał tę zaletę, że był konforemny (równokątny), tzn. kąty mierzone na płaszczyźnie Poincar\'ego miały tę samą miarę co kąty euklidesowe. Model Kleina wiernokątny nie jest, ale ma inne zalety, np. proste w tym modelu są faktycznie odcinkami prostych euklidesowych.
+% 
+% \begin{frame}[<+->]
+% \midsection{Model Kleina na dysku }
+% 
+% Rozważmy sferę jednostkową
+% \[S^{2}=\{(x,y,z)\in \R^{3}\colon x^{2}+y^{2}+z^{2}=1\}.\]
+% \textbf{Rzutem stereograficznym} z punktu $N=(0,0,1)\in S^{2}$ nazywamy przekształcenie płaszczyzny $\R^2=\{\,(x,y,0)\in \R^{3}\,\}$ w sferę $S^{2}$ przyporządkowujące punktowi $A\in \R^2$ pewien punkt $\in S^{2}$, który jest przecięciem sfery $S^{2}$ i prostej łączącej punkty $(u,v)$ oraz $N$.
+% \begin{center}
+% $\input{./Marz/fig/FIG9_13.PIC}$
+% \end{center}
+% \end{frame}
+% %%%%%%next-slide%%%%%
+% \begin{frame}[<+->]
+% Rzut stereograficzny jest bijekcją płaszczyzny $\R^2$ i $S^2\setminus \{N\}$. Na przykład obrazem prostej $l$ prostopadłą do osi $OX$, jest okrąg na sferze przechodzący przez punkt $N$. Okrąg ten jest również przecięciem sfery z płaszczyzną wyznaczoną przez prostą $l$ i punkt $N$. Płaszczyzna tego okręgu jest więc równoległa do osi $OY$. 
+% 
+% \begin{center}
+% $\input{./Marz/fig/FIG9_14.PIC}$
+% \end{center}
+% 
+% \end{frame}
+% %%%%%%next-slide%%%%%
+% \begin{frame}[<+->]
+% 
+% Rozważmy teraz złożenie dwóch przekształceń: obcięcia do półpłaszczyzny Poincar\'{e}go ${\mathcal H}\subset {\mathbb{R}}^{2}=\{\,(x,y,0)\in {\mathbb{R}}^{3}\,\}$ rzutu stereograficznego i rzutowania ortogonalnego na płaszczyznę $X-Z$.
+% \[W\colon \mathcal{H}\to S^2\setminus{N}\to D^2\subset X-Z.\]
+% Funkcja $W$ określa bijekcję półpłaszczyzny Poincar\'{e}go $\mathcal H$ z kołem otwartym \[{\mathcal K}\define\{\,(x,0,z)\in {\mathbb{R}}^{3}\colon x^{2}+z^{2}<1\}.\] Zauważmy, że proste hiperboliczne w $\mathcal H$ przechodzą na cięciwy koła $\mathcal K$.
+% 
+% Będziemy pomijać $0$ w zapisie punktów z $\mathcal K$.
+% 
+% \end{frame}
+% %%%%%%next-slide%%%%%
+% \begin{frame}[<+->]
+% 
+% \begin{definicja}
+% Koło otwarte $\mathcal{K}$ wraz z pierwszą formą podstawową
+% \[\mathcal{I}_{\mathcal{K}}=I_{(x,z)}
+% =\le[
+% \begin{array}{cc}
+% \frac{4}{(1-x^2-z^2)^2} & 0\\
+% 0 & \frac{4}{(1-x^2-z^2)^2}
+% \end{array}
+% \ri]
+% \]
+% nazywamy \textbf{Modelem Kleina} geometrii hiperbolicznej.
+% \end{definicja}
+% 
+% \begin{lemat}
+% Odwzorowanie $W\colon \mathcal{H}\to \mathcal{K}$ określone wzorem
+% \[W(x+iy)=\frac{x+i(y-1)}{x+i(y+1)}\]jest izometrią.
+% Zauważmy, że jest to transformacja M\"obiusa stowarzyszona z macierzą 
+% $\le[
+% \begin{array}{cc}
+% 1 &-1\\
+% 1 & 1
+% \end{array}
+% \ri].$
+% \end{lemat}
+% \end{frame}}
+
+\mode<all>{\midsection{Torusy o stałej krzywiźnie}}
+
+Widzieliśmy wcześniej, że Twierdzenie Gaussa-Bonneta ujawnia głębokie związki między całkowitą krzywizną powierzchni a jej własnościami topologiczno-kombinatorycznymi (charakterystyka Eulera). W szczególności wynika z niego, że gładkie zanurzenie sfery w przestrzeń euklidesową musi mieć całkowitą krzywiznę dokładnie taką samą jak standardowa (okrągła) sfera (czyli $4\pi$).
+
+
+
+\begin{frame}{Torusy o stałej krzywiźnie}
+\begin{exercise}
+Jak wyglądają geodezyjne na torusie? Wskazać przykład triangulacji (najlepiej geodezyjnej) na torusie. Sprawdzić, że charakterystyka Eulera torusa jest równa $0$.
+\end{exercise}
+\mode<presentation>{\pause Z twierdzenia Gaussa-Bonneta wynika, że jeśli $M$ jest homeomorficzna z torusem $T^2$ wtedy jej całkowita krzywizna musi być równa $2\pi \chi(T^2)=0$.}
+
+\end{frame}
+Zatem (ponownie na podstawie twierdzenia Gaussa-Bonneta) jeśli powierzchnia $M$ jest homeomorficzna z torusem $T^2$, wtedy jej całkowita krzywizna musi być równa $2\pi \chi(T^2)=0$.
+
+Oczywiście nie istnieje gładkie zanurzenie \textit{płaskiego} torusa w $\R^3$ (tj. o stałej krzywiźnie równej $0$) (pokażemy to później). Możemy jednak w łatwy sposób wskazać płaskie zanurzenie $T^2$w przestrzeń $\R^4$! Na początek przypomnijmy, że torus może być utożsamiony z $S^1\times S^1$. Wtedy sposób zanurzenia na $4$ współrzędne jest narzucający się.
+
+\begin{frame}
+\mode<presentation>{
+Jak przekonamy się za chwilę nie istnieje gładkie zanurzenie \textit{płaskiego} torusa w $\R^3$ (tj. o stałej krzywiźnie równej $0$). Możemy jednak w łatwy sposób wskazać płaskie zanurzenie $T^2$w przestrzeń $\R^4$. Na początek przypomnijmy, że torus może być utożsamiony z $S^1\times S^1$. } \pause Rozważmy kwadrat $U=[0,2\pi)\times [0,2\pi)\subset \R^2$. Niech $x\colon U\to \R^3$ będzie określone wzorem
+
+\mode<presentation>{\begin{tabular}{m{2.2in} m{2in}}}
+\mode<article>{\begin{tabular}{m{3in} m{2in}}}
+$x(u,v)= (\cos u, \sin u,\cos v,\sin v)$& $ \text{\input{./pictures/flat-torus-square.tex}}$
+\end{tabular}
+
+\pause Zauważmy, że funkcje $\cos$ i $\sin$ we wzorze powyżej wyrażają utożsamienie przeciwległych brzegów kwadratu.
+
+\end{frame}
+
+\begin{frame}
+Niezrażeni faktem, że tym razem $x_1$ i $x_2$ mają po $4$ współrzędne możemy policzyć współczynniki metryczne:
+\begin{align*}
+g_{11}=&\langle x_1,x_1\rangle=\|x_1\|^2=1\\
+g_{12}=&\langle x_1,x_2\rangle=0\\
+g_{22}=&\langle x_2,x_2\rangle=\|x_2\|^2=1,\\
+\end{align*}
+\pause zatem nasz torus zanurzony w $\R^4$ jest faktycznie lokalnie izometryczny z płaszczyzną (więc płaski).
+
+\end{frame}
+\mode<all>{\lowsection{Torus genusu $g$}}
+
+\begin{frame}
+\mode<article>{\begin{center}}
+\input{./pictures/octagon-2-torus.tex}
+\mode<article>{\end{center}}
+Jeśli utożsamimy opisane krawędzie $8$-kąta zgodnie z przypisaną im orientacją, wtedy otrzymamy podwójny torus po prawej stronie. 
+\pause Można pokazać (sprawdzić!), że charakterystyka Eulera podwójnego torusa wynosi $-2$ (ogólniej: dla torusa genusu $g$ to $2-2g$).
+\end{frame}
+
+\begin{frame}
+Na mocy twierdzenia Gaussa-Bonneta taki torus będzie miał krzywiznę całkowitą równą $-4\pi g$ więc możemy zapytać o zanurzenie o \textit{stałej} krzywiźnie ujemnej, równej $-1$. \pause Wystarczy znaleźć \textbf{foremny} $4g$-kąt foremny zanurzony na płaszczyźnie hiperbolicznej o \textbf{sumie kątów wewnętrznych równej $2\pi$}. Wtedy utożsamienie odpowiednich boków da nam $2$-torus o krzywiźnie indukowanej z $\mathcal{H}$ ($=-1$).
+
+\pause \begin{uwaga}
+Nakładamy warunek na sumę kątów wewnętrznych ($=2\pi$) żeby po odpowiednim utożsamieniu brzegów otrzymać \textit{gładką} powierzchnię. Jeśli coś podobnego spóbujemy zrobić na płaszczyźnie Euklidesowej otrzymana powierzchnia nie będzie gładka! (co dzieje się wokół wierzchołka??) 
+\end{uwaga}
+\end{frame}
+\begin{frame}
+
+\begin{center}
+\input{./pictures/hyperb-octagon.tex}
+\end{center}
+
+\end{frame}
+
+\mode<all>{\lowsection{Płaski torus w $\R^3$}}
+
+\begin{frame}
+Standardowe zanurzenie torusa w przestrzeń $\R^3$ (jako powierzchni obrotowej) nie jest izometrią. Aby się o tym przekonać, Wystarczy spojrzeć na linie parametru $u$ i $v$ aby zobaczyć, że ich obrazy (tj. południki i równoleżniki) są różnej długości. 
+
+\begin{center}
+\input{./pictures/torus-rotation-non-equal-paths.tex}
+\end{center}
+
+
+\mode<article>{To oczywiście nie dowodzi, że płaskie zanurzenie torusa w $\R^3$ nie istnieje.}
+\end{frame}
+
+\begin{frame}
+\begin{twierdzenie}
+Nie istnieje gładkie zanurzenie płaskiego torusa w $\R^3$ które zachowuje odległości. W szczególności żadne zanurzenie płaskiego torusa w $\R^3$ nie jest lokalną izometrią.
+\end{twierdzenie}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\newline
+Załóżmy przez moment, że takie zanurzenie istnieje. Ponieważ torus jest zwarty, więc obraz jego zanurzenia będzie również zbiorem zwartym, więc ograniczonym. Niech $K_{R}$ oznacza kulę o promieniu $R$, która zawiera w sobie obraz tego zanurzenia. Możemy tak wybrać środek tej kuli oraz promień $R$, żeby torus i sfera (będąca brzegiem kuli) stały się wewnętrznie styczne.
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\input{./pictures/torus-inside-sphere.tex}
+\end{center}
+
+W punkcie styczności oczywiście współczynniki metryczne są takie same, więc krzywizny tych powierzchni muszą być takie same. Otrzymaliśmy sprzeczność, ponieważ krzywizna torusa miała być $\equiv 0$ zaś krzywizna sfery jest $\equiv \frac{1}{R}>0$.\hfill $\square$
+
+\end{frame}
+
+\begin{frame}
+\begin{uwaga}
+W ostatniej części tego wykładu zawiesimy jak dotąd zawsze obowiązujące założenie o \textit{gładkości} wszystkich odwzorowań.
+\end{uwaga}
+\end{frame}
+
+
+\begin{frame}
+\begin{twierdzenie}[J. Nash (1954), M. Gromov (1986), M. G\"unther(1990)]
+Niech $M$ będzie powierzchnią klasy $C^k$ ($3\leqslant k \leqslant\infty$). Istnieje wówczas $n\geqslant 5$ oraz  zanurzenie klasy $C^k$
+\[f\colon M\to \R^n\] które jest izometrią na swój obraz.
+\end{twierdzenie}
+\end{frame}
+
+\begin{frame}
+\begin{twierdzenie}[J. Nash (1954), N. Kuiper (1955)]
+Niech $M$ będzie powierzchnią i niech $f\colon M\to \R^n$ będzie gładkim zanurzeniem dla pewnego $n\geqslant 3$. Wtedy dla każdego $\varepsilon>0$ istnieje zanurzenie 
+\[f_{\varepsilon}\colon M\to \R^n\]
+takie, że
+\begin{itemize}
+\item $f_\varepsilon$ jest klasy $C^1$,
+\item $f_\varepsilon$ jest izometrią, oraz
+\item $f_\varepsilon$ przybliża zanurzenie $f$ z dowolną dokładnością: dla wszystkich $x\in M$
+\[\le|f(x)-f_{\varepsilon}(x)\ri|< \varepsilon.\]
+\end{itemize}
+\end{twierdzenie}
+\end{frame}
+
+\begin{frame}
+
+\begin{uwaga}
+Powyższe twierdzenie jest prawdziwe, ponieważ krzywizna Gaussa dla powierzchni klasy $C^1$ nie jest zdefiniowana. Wobec tego izometryczność definiujemy następującą własnością:
+\[\mathcal{I}^M(u,v)=\langle Df_\varepsilon(u), Df_\varepsilon(v) \rangle.\]
+\end{uwaga}
+\pause Postaramy się zobrazować teraz to zanurzenie klasy $C^1$ torusa w $\R^3$. %Okręgi na torusie leżące w płaszczyznach prostopadłych do osi obrotu będziemy nazywać południkami.
+
+
+\vfill \footnotesize{Rysunki płaskiego zanurzenia torusa w $\R^3$ pochodzą z pracy:\\
+Borrelli, Vincent and Jabrane, Saïd and Lazarus, Francis and Thibert, Boris,
+\textit{Flat tori in three-dimensional space and convex integration}, Proceedings of the National Academy of Sciences, 2012}
+
+
+
+\end{frame}
+\newpage
+\begin{frame}[plain]
+
+\begin{tabular}{m{2.5in} m{2in}}
+Zaczynamy od standardowego zanurzenia torusa jako powierzchni obrotowej
+&\begin{center}
+\includegraphics[scale=0.5]{./pictures/C1-torus-step1.jpg}
+\end{center}\\
+\end{tabular}
+
+\begin{tabular}{m{2.5in} m{2in}}
+\pause Ponieważ południki są znacznie krótsze niż równoleżniki, wprowadzamy zaburzenia wzdłuż równoleżników (falowanie).
+&\begin{center}
+\includegraphics[scale=0.5]{./pictures/C1-torus-step2.jpg}
+\end{center}\\
+\end{tabular}
+\end{frame}
+
+\begin{frame}[plain]
+
+\begin{tabular}{m{2.5in} m{2in}}
+Teraz południki są faktycznie dłuższe, ale równoleżniki są (były) różnej długości, więc wprowadzamy drugi poziom falowania (mniejsza amplituda, a większa częstotliwość), aby wyrównać te różnice.
+&\pause\begin{center}
+\includegraphics[scale=0.5]{./pictures/C1-torus-step3.jpg}
+\end{center}\\
+itd... 
+\end{tabular}
+\end{frame}
+\newpage
+
+\begin{frame}[plain]
+\mode<presentation>{\hspace*{-0.9in}\includegraphics[scale=2]{./pictures/C1-flat-torus-1.png}}
+\mode<article>{\includegraphics[keepaspectratio=true,width=\textwidth]{./pictures/C1-flat-torus-1.png}}
+% \begin{center}
+%\includegraphics[keepaspectratio=true,width=1\paperwidth]{./pictures/C1-flat-torus-1.png}
+% \end{center}
+\end{frame}
+\smallskip
+%\newpage
+\begin{frame}[plain]
+\mode<presentation>{\hspace*{-0.9in}\includegraphics[scale=2]{./pictures/C1-flat-torus-2.png}}
+\mode<article>{\includegraphics[keepaspectratio=true,width=\textwidth]{./pictures/C1-flat-torus-2.png}}
+\end{frame}
+
+%\newpage
+
+\begin{frame}
+\begin{itemize}
+\item Chociaż wszystkie kroki można wykonać w klasie $C^2$, proces ten kontynuujemy w nieskończoność, więc ostateczne zanurzenie jako granica tych odwzorowań może być tylko klasy $C^1$.
+\pause \item Jednocześnie na rysunku poniżej widzimy, że południki i równoleżniki uzyskały tę samą długość.
+\begin{center}
+\mode<presentation>{\includegraphics[scale=0.41]{./pictures/C1-flat-torus-equal.jpg}}
+\mode<article>{\includegraphics[keepaspectratio=true,width=\textwidth]{./pictures/C1-flat-torus-equal.jpg}}
+
+\end{center}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[plain]
+%\begin{center}
+\mode<presentation>{\hspace*{-0.2in}\includegraphics[scale=1.5]{./pictures/flat-torus-1.pdf}}
+\mode<article>{\hspace*{0.4in}\includegraphics[keepaspectratio=true,width=\textwidth]{./pictures/flat-torus-1.pdf}}
+
+%\end{center}
+\end{frame}
+
+% \footnotesize{Rysunki płaskiego zanurzenia torusa w $\R^3$ pochodzą z pracy:\\
+% Borrelli, Vincent and Jabrane, Saïd and Lazarus, Francis and Thibert, Boris,
+% \textit{Flat tori in three-dimensional space and convex integration}, Proceedings of the National Academy of Sciences, 2012}
+\mode<all> 

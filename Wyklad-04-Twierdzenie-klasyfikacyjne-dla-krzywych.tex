@@ -1,0 +1,231 @@
+\mode*
+\mode<all>{\topsection{Twierdzenie klasyfikacyjne dla krzywych}}
+\mode<all>{\midsection{Translacja i obrót}}
+\begin{frame}[<+->]
+\begin{lemat}
+Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną. 
+\begin{itemize}
+\item Translacja krzywej $\alpha$, tj. krzywa $\beta=\alpha+q$, gdzie $q\in \R^3$ jest wybranym \textit{stałym} wektorem ma taką samą krzywiznę i torsję jak $\alpha$.
+\item Niech $A\in O(3)$ będzie macierzą $3\times 3$ o współczynnikach rzeczywistych, o wyznaczniku $\pm1$ oraz ortogonalnych kolumnach. Krzywa \[\gamma\define A\cdot\alpha\] ma taką samą krzywiznę i torsję jak $\alpha$.
+\end{itemize}
+\end{lemat}
+
+\begin{uwaga}
+Dowód pierwszej części jest bardzo prosty. Dowód drugiej pozostawiamy jako bardziej ambitne zadanie.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Mnożenie przez taką macierz $A$ oznacza obrót wokół środka układu współrzędnych, symetrię względem płaszczyzny, lub kombinację tych dwóch. Grupa $O(3)$ to tzw. grupa symetrii $\R^3$ i jej bazę stanowią macierze obrotów o dowolny kąt wokół każdej z osi, oraz macierz symetrii względem (dowolnie wybranej) płaszczyzny.
+\end{uwaga}
+
+\begin{uwaga}
+Grupa składająca się ze wszystkich obrotów oraz translacji przestrzeni euklidesowej $\R^3$ jest tzw. \textit{grupą Liego} $E(3)$. Jest to grupa izometrii (poznamy to pojęcie w następnej części wykładu) przestrzeni euklidesowej . Intuicyjnie mamy trzy ``stopnie swobody'' pochodzące od obrotu i kolejne trzy od translacji o wektor, więc grupa $E(3)$ powinna być ``$6$-wymiarowa''. 
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Te dwie operacje definiują nam relację równoważności pomiędzy wykresami krzywych w $\R^3$. Krzywą $\alpha$ uznajemy za równoważną krzywej $\beta$, jeśli wykres $\beta$ można otrzymać przez zastosowanie odpowiednich translacji obrotów i symetrii do wykresu $\alpha$.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Twierdzenie klasyfikacyjne}}
+\begin{frame}[<+->]
+\begin{twierdzenie}[Klasyfikacyjne]
+Niech $\kappa, \tau\colon (a,b)\to \R$ będą gładkimi funkcjami, oraz niech $\kappa(t)>0$ dla wszystkich $t\in (a,b)$. Wówczas zachodzą następujące stwierdzenia.
+\begin{itemize}
+\item Istnieje taka krzywa gładka \[\alpha\colon(a,b)\to\R^3,\] że jej krzywizna $\kappa_\alpha$ i torsja $\tau_\alpha$ są tożsamościowo równe funkcjom $\kappa$ oraz $\tau$. 
+\item Jeśli \[\beta\colon (a,b)\to \R^3\] jest drugą taką krzywą, to krzywą $\beta$ można uzyskać z $\alpha$ stosując przesunięcia obroty i symetrie w przestrzeni $\R^3$.
+\end{itemize}
+
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\textcolor{ared}{Szkic dowodu:}\pause\\
+Niech $p\in (a,b)$. Pokażemy, że istnieje dokładnie jedyna krzywa unormowana $\alpha\colon(a,b)\to \R^3$ taka, że 
+\pause\begin{align*}
+&&\alpha(p)&=
+\left(\!\!\begin{array}{c}
+0\\0\\0
+\end{array}\!\!\right)\!,&\text{oraz}\\
+T_\alpha(p)&=\left(\!\!\begin{array}{c}
+1\\0\\0
+\end{array}\!\!\right)\!,& 
+N_\alpha(p)&=\left(\!\!\begin{array}{c}
+0\\1\\0
+\end{array}\!\!\right)\!,& 
+B_\alpha(p)&=\left(\!\!\begin{array}{c}
+0\\0\\1
+\end{array}\!\!\right)
+\label{eqn:warunek_poczatkowy}
+\end{align*}
+o zadanej krzywiźnie i torsji (dlaczego to wystarczy?).
+
+\end{frame}
+%%%%%%next-slide%%%%%
+Szukamy zatem dziewięciu funkcji $u_1(t),\ldots,u_9(t)$ które będą tworzyć wektory $T_\alpha(t)$, $N_\alpha(t)$ i $B_\alpha(t)$ dla domniemanej krzywej $\alpha$. Oczywiście jeśli taka krzywa ma w ogóle istnieć, funkcje te muszą spełniać odpowiednie równania, wynikające ze wzorów Freneta. Poniższy układ jest konsekwencją dokładnie tego faktu.
+
+\begin{frame}[<+->]
+
+\mode<presentation>{Dowód polega na rozwiązaniu następującego układu równań różniczkowych zadanego przez równania Freneta wraz z warunkiem początkowym zadanym powyżej:}
+
+% \begin{align*}
+% \left(\!\!\begin{array}{c}
+% u_1\\u_2\\u_3
+% \end{array}\!\!\right)\!(p)
+% &=
+% \left(\!\!\begin{array}{c}
+% 1\\0\\0
+% \end{array}\!\!\right)\!,
+% &
+% \left(\!\!\begin{array}{c}
+% u_4\\u_5\\u_6
+% \end{array}\!\!\right)\!(p)
+% &=
+% \left(\!\!\begin{array}{c}
+% 0\\1\\0
+% \end{array}\!\!\right)\!,
+% &
+% \left(\!\!\begin{array}{c}
+% u_7\\u_8\\u_9
+% \end{array}\!\!\right)\!(p)
+% &=
+% \left(\!\!\begin{array}{c}
+% 0\\0\\1
+% \end{array}\!\!\right)\!,
+% \end{align*}
+\vspace*{-0.2in}
+\begin{align*}
+\pause\left.\begin{aligned}      
+u_1'(t)&=\kappa(t)u_4(t)\\
+u_2'(t)&=\kappa(t)u_5(t)\\
+u_3'(t)&=\kappa(t)u_6(t)
+\end{aligned}\right\}&\;\text{dla }``T\,'=\kappa N\text{''}\!,\quad\\
+\pause\left.\begin{aligned}      
+u_7'(t)&=\tau(t)u_4(t)\\
+u_8'(t)&=\tau(t)u_5(t)\\
+u_9'(t)&=\tau(t)u_6(t)
+\end{aligned}\right\}&\;\text{dla }``B'=-\tau N\text{''}\!,
+\end{align*}
+\vspace*{-0.1in}
+\pause\begin{equation*}
+\left.\begin{aligned}      
+u_4'(t)&=-\kappa(t)u_1(t)+\tau(t)u_7(t)\\
+u_5'(t)&=-\kappa(t)u_2(t)+\tau(t)u_8(t)\\
+u_6'(t)&=-\kappa(t)u_3(t)+\tau(t)u_9(t)
+\end{aligned}\right\}\;\text{dla }``N\hspace{0.5pt}'=-\kappa T+\tau B\text{''}.
+\end{equation*}
+\vspace*{-0.2in}
+\pause \begin{align*}
+u_1(p)&=1 & u_4(p)&=0 & u_7(p)&=0\\ 
+u_2(p)&=0 & u_5(p)&=1 & u_8(p)&=0\\
+u_3(p)&=0 & u_6(p)&=0 & u_9(p)&=1\\ 
+ \end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{twierdzenie}[Picarda, o istnieniu i jedyności rozwiązania równania różniczkowego]\label{thm:dif-eq-solution}
+Niech $(a,b)\subset \R$, oraz  niech $A\in M_{n,n}(\R)$.  Ustalmy liczbę $t_0\in (a,b)$ i punkt $v_0\in \R^n$. Wtedy istnieje dokładnie jedna funkcja gładka $\alpha\colon (a,b)\to \R^n$ która spełnia 
+\begin{align*}
+\alpha(t_0)&=v_0,\quad\text{oraz}\\
+\alpha'(t)&=A(t)\alpha(t) \quad\text{dla wszystkich }t\in (a,b).
+\end{align*}
+\end{twierdzenie}
+
+\begin{exercise}
+Przepisać sformułowanie naszego problemu tak, aby zastosować do niego powyższe twierdzenie \\(podać $\alpha$, $A$, $t_0$ i $v_0$). 
+\end{exercise}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Na mocy powyższego twierdzenia istnieją więc trzy wektory (albo $9$ funkcji) 
+\begin{align*}
+\pause X_1(t)&=\left(\!\!\begin{array}{c}
+u_1\\u_2\\u_3
+\end{array}\!\!\right)\!(t),&
+\pause X_2(t)&=\left(\!\!\begin{array}{c}
+u_4\\u_5\\u_6
+\end{array}\!\!\right)\!(t),&
+\pause X_3(t)&=\left(\!\!\begin{array}{c}
+u_7\\u_8\\u_9
+\end{array}\!\!\right)\!(t).
+\end{align*}
+spełniające nasz układ wraz z warunkiem początkowym. \pause Możemy myśleć o nich jako o $\{T,N,B\}$ dla krzywej która realizuje $\kappa$ jako krzywiznę i $\tau$ jako torsję.
+
+\pause Aby pokazać, że $\{X_1(t),X_2(t),X_3(t)\}$ tworzą bazę ortogonalną dla wszystkich $t\in (a,b)$ posłużymy się następującą funkcją: \[p_{i,j}(t)=\langle X_i(t),X_j(t)\rangle, \qquad i,j=1,2,3.\]
+
+\pause Oczywiście mamy (warunek początkowy na $X_1$, $X_2$ i $X_3$)
+\begin{equation}\label{eqn:initial-cond}
+p_{i,j}(p)=
+\begin{cases}
+1 & i=j\\
+0 & i\neq j\\
+\end{cases}
+\end{equation}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{exercise}
+Sformułować układ równań wiążących pochodne funkcji $p'_{i,j}(t)$ z funkcjami $\{p_{i,j}(t)\}$ oraz $\kappa(t)$ i $\tau(t)$.
+\end{exercise}
+
+\begin{przyklad}\vspace*{-0.25in}
+\[\begin{split}
+p_{1,1}'(t)=&\left(\langle X_1(t),X_1(t)\rangle\right)'=\\
+=&\underbrace{\langle X_1'(t)}_{=\kappa(t)X_2(t)},X_1(t)\rangle+\langle X_1(t),\underbrace{X_1'(t)\rangle}_{=\kappa(t) X_2(t)}=\\=&\kappa(t) p_{2,1}(t)+\kappa(t)p_{1,2}(t).
+\end{split}
+\]
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Uzyskany układ wraz z warunkami początkowymi (\ref{eqn:initial-cond}) ponownie posiada \textit{jednoznaczne} rozwiązanie na mocy twierdzenia cytowanego powyżej. \pause Można sprawdzić, że delta Kroneckera 
+\[\delta_{ij}(t)=\begin{cases}
+            1,&i=j\\
+	0, & i\neq j
+            \end{cases}\]
+spełnia otrzymany układ, a zatem jest jedynym rozwiązaniem. \pause Z definicji $p_{i,j}(t)$ wynika, że $\{X_1(t),X_2(t),X_3(t)\}$ tworzy bazę ortogonalną dla wszystkich $t$.
+
+\pause Możemy wreszcie zdefiniować 
+\[\alpha(t)\define\int_p^t X_1(s)\;ds.\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+Łatwo można sprawdzić, że dla tak zdefiniowanej krzywej zachodzą równości
+\begin{align*}
+\pause \alpha'(t)=T_\alpha(t)& =X_1(t)\\
+\pause \alpha''(t)=\kappa_\alpha(t)N_\alpha(t)&=\kappa(t) X_2(t)\\
+\pause |\tau_\alpha(t)|B_\alpha(t)&=\tau(t) X_3(t).
+\end{align*}
+
+\pause Pozostaje jedynie pokazać, że zgadzają się zwroty wektorów $X_3(t)$ i $B_\alpha(t)$. 
+
+\footnotesize
+\pause Jest to ładny argument wykorzystujący niezdegenerowanie naszego trójnogu, oraz to, że w jednym punkcie (czyli w $p$) ten zwrot jest taki sam. Zostawiamy to jako zadanie domowe.
+
+\normalsize
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+% \begin{frame}[<+->]
+% 
+% \midsection{Przykład:}
+% 
+% @@@Uzupełnić@@@
+
+\mode<all> 

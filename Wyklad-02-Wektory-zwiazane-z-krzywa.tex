@@ -1,0 +1,141 @@
+\mode*
+\mode<all>{\topsection{Wektory związane z krzywą}}
+
+\mode<all>{\midsection{Wektor styczny i normalny}}
+\begin{frame}[<+->]
+\begin{definicja}
+Niech $\alpha\colon (a,b)\to \R^3$ będzie regularną krzywą gładką. Definiujemy \textbf{jednostkowy wektor styczny} do krzywej $\alpha$ w punkcie $t$ jako \[T_\alpha(t)\define\frac{\alpha'(t)}{\|\alpha'(t)\|}.\]
+\end{definicja}
+
+\begin{center}
+\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.5,yscale=-1, inner sep=0pt, outer sep=0pt]
+\input{./pictures/tangent_vect.tex}
+\end{tikzpicture}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+Niech $\alpha(t)$ będzie unormowaną krzywą regularną. Wówczas dla każdego $t$ zachodzi \[\langle T(t),T\,'(t)\rangle=0.\]
+\end{lemat}
+
+\pause\textcolor{ared}{\textbf{Dowód:}} \\
+Zauważmy, że $T(t)$ jest funkcją gładką. Mamy \[1=\|T(t)\|=\langle T(t),T(t)\rangle,\]\pause a więc korzystając ze standardowego wzoru na różniczkowanie iloczynu skalarnego (sprawdzić ten wzor!) otrzymujemy:\pause\[0=\|T(t)\|'=\langle T\,'(t),T(t)\rangle+\langle T(t),T\,'(t)\rangle=2\langle T(t),T\,'(t)\rangle.\]
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+Załóżmy, że $\alpha\colon (a,b)\to \R^3$ jest krzywą regularną. Dla każdego $t\in (a,b)$ dla którego $\|T\,'(t)\|\neq 0$ definiujemy \textbf{jednostkowy wektor normalny} jako \[N(t)\define \frac{T\,'(t)}{\|T\,'(t)\|}.\]
+
+\pause Jeśli $T(t)$ oraz $N(t)$ są dobrze określone (tj. $T\,'(t)\neq 0$), płaszczyznę rozpiętą przez te dwa wektory nazywamy \textbf{płaszczyzną ściśle styczną}.
+\end{definicja}
+\medskip
+\pause Płaszczyzna ściśle styczna jest w pewnym sensie płaszczyzną najlepiej przybliżającą naszą krzywą, tak jak prosta styczna jest prostą która najlepiej przybliża krzywą $\alpha$.
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}
+Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną. Następujące warunki są równoważne dla każdego $t\in (a,b)$:
+\begin{enumerate}
+\item $\|T\,'(t)\|\neq 0$,
+\item wektory $\alpha'(t)$ oraz $\alpha''(t)$ są liniowo niezależne,
+\item $\alpha'(t)\times \alpha''(t)\neq 0$, gdzie $\times$ oznacza iloczyn wektorowy.
+\end{enumerate}
+\end{lemat}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\textcolor{ared}{Szkic dowodu:}
+
+\begin{itemize}
+\pause\item Implikacje $(2\Leftrightarrow 3)$ wynikają z definicji i własności iloczynu wektorowego.
+\pause \item Implikacja $(1\Rightarrow 2)$.
+Załóżmy, że istnieje $t_0$ dla którego wektory $\alpha'(t_0)$ i $\alpha''(t_0)$ są liniowo zależne, tj. $\alpha''(t_0)=k\alpha'(t_0)$ dla pewnego $k\in \R$. \pause Pokażemy (bezpośrednim rachunkiem), że wówczas $T(t_0)$ jest wektorem zerowym. \pause Oznaczmy $v(t)\define\|\alpha'(t)\|$ i zauważmy, że $v=\sqrt{(\alpha_1')^2+(\alpha_2')^2+(\alpha_3')^2}$, \pause więc \[v\,'=\frac{2(\alpha_1'\alpha_1''+\alpha_2'\alpha_2''+\alpha_3'\alpha_3'')}{2\sqrt{(\alpha_1')^2+(\alpha_2')^2+(\alpha_3')^2}}=\frac{\langle\alpha',\alpha''\rangle}{v}.\]
+\end{itemize}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+Mamy wtedy:
+
+\begin{align*}
+T\,'(t_0)=&\left(\frac{\alpha'(t_0)}{v(t_0)}\right)'=\frac{\alpha''(t_0) v(t_0)-\alpha'(t_0)v\,'(t_0)}{v^2(t_0)}, \\
+\intertext{\pause więc przy podstawieniu $\alpha''(t_0)=k\alpha'(t_0)$ otrzymujemy}
+&\pause \frac{k\alpha'(t_0)v(t_0)-\alpha'(t_0)\frac{\langle \alpha'(t_0),k\alpha'(t_0)\rangle}{v(t_0)}}{v^2(t_0)}=\\
+&\pause \frac{k\alpha'(t_0)v(t_0)-k\alpha'(t_0)\frac{v(t_0)^2}{v(t_0)}}{v^2(t_0)}=\\
+&\pause\frac{k\alpha'(t_0)(v(t_0)-v(t_0))}{v^2(t_0)}=(0,0,0).
+\end{align*}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+
+%Dla uproszczenia zapisu wszystkie funkcje w poniższym rachunku ewaluujemy w punkcie $t_0$.
+%
+%\begin{align*}
+%T\,'=&\left(\frac{\alpha'}{\|\alpha'\|}\right)'=\frac{\alpha'' \|\alpha'\|-\alpha'\|\alpha'\|'}{\|\alpha'\|^2}=\\
+%\intertext{co przy założeniu $\alpha''=k\alpha'$ daje}
+%=&\frac{k\alpha'\|\alpha'\|-\alpha'\frac{\langle \alpha',k\alpha'\rangle}{\|\alpha'\|}}{\|\alpha'^2\|}=\frac{k\alpha'\|\alpha'\|-k\alpha'\frac{\|\alpha'\|^2}{\|\alpha'\|}}{\|\alpha'^2\|}=\frac{k\alpha'(\|\alpha'\|-\|\alpha\|')}{\|\alpha'\|^2}=0.
+%\end{align*}
+\begin{itemize}
+\item Podobnie udowodnimy implikację $(2\Rightarrow 1)$.
+
+\pause Załóżmy, że istnieje $t_0$ dla którego $\|T\,'\!(t_0)\|=0$. Wtedy sam $T\,'\!(t_0)$ jest wektorem zerowym. Oznaczmy $v(t)\define\|\alpha'(t)\|$. \pause Mamy wtedy
+\[0=T\,'(t)\big|_{t=t_0}=\left(\!\frac{\alpha'(t_0)}{v(t_0)}\!\right)'=
+\frac{\alpha''(t_0)v(t_0)-\alpha'(t_0)v\,'(t_0)}{v^2(t_0)}.\]
+\pause Zatem $\alpha''(t_0)v(t_0)-\alpha'(t_0)v\,'(t_0)=0$, więc albo oba współczynniki (tj. $v(t_0)$ i $v\,'(t_0)$) są zerowe, albo wektory $\alpha'(t_0)$ i $\alpha''(t_0)$ są liniowo zależne. \pause Z regularności krzywej wiemy, że może zachodzić tylko druga sytuacja.
+\end{itemize}
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Wektor binormalny}}
+Jeśli dla wszystkich $t\in (a,b)$ z dziedziny krzywa spełnia jeden z powyższych warunków, mamy zdefiniowane w każdym jej punkcie dwa niezależne liniowo (w $\R^3$) wektory. W dodatku są one prostopadłe o długości jednostkowej. Zatem mamy wyznaczony w sposób jednoznaczny kierunek ortogonalny do nich jako prostopadły do płaszczyzny ściśle stycznej (czyli do obu wektorów $T(t)$ i $N(t)$).
+
+\begin{frame}
+
+\begin{definicja}
+Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną. Dla każdego $t\in (a,b)$ takiego, że $\|T\,'(t)\|\neq 0$ definiujemy \textbf{jednostkowy wektor binormalny} jako \[B(t)\define T(t)\times N(t).\]
+
+\pause Płaszczyznę rozpiętą przez wektory $N(t)$ i $B(t)$ nazywamy \textbf{płaszczyzną normalną}, lub \textbf{płaszczyzą prostopadłą} do krzywej.
+\end{definicja}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Trójnóg Freneta}}
+\begin{frame}[<+->]
+
+\begin{definicja}
+Układ ortonormalny $\{T(t),N(t),B(t)\}$ nazywać będziemy \textbf{trójnogiem} (lub \textbf{reperem}) Freneta.
+\end{definicja}
+
+\begin{center}
+\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.5,yscale=-1, inner sep=0pt, outer sep=0pt]
+\input{./pictures/TBN.tex}
+\end{tikzpicture}
+\end{center}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+\begin{enumerate}
+\item Jedyny wybór jaki dokonaliśmy podczas definiowania trójnogu Freneta to kierunek (tj. znak) wektora binormalnego.
+\item Definicja $B(t)$ jest uzależniona od tego, że obraz krzywej umieszczony jest w przestrzeni $\R^3$. W wymiarach wyższych jest wiele możliwych wyborów wektora prostopadłego do dwóch danych (innymi słowy: nie ma iloczynu wektorowego)
+\end{enumerate}
+\end{uwaga}
+
+
+\end{frame}
+\mode<all> 

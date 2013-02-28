@@ -1,0 +1,300 @@
+\mode*
+\mode<all>{\topsection{Twierdzenie Gaussa-Bonneta}}
+\mode<all>{\midsection{Odwzorowanie wykładnicze}}
+
+\begin{frame}
+Większość twierdzeń w tym wykładzie będziemy podawać bez dowodu.
+\mode<article>{Widzieliśmy, że wokół każdego punktu na powierzchni istnieją otoczenia na których geodezyjne są jednoznaczne (tj. istnieją kiełki geodezyjnych). Użyjemy tego faktu w następującej definicji:}
+\begin{definicja}
+Niech $M\subset \R^3$ będzie powierzchnią gładką, $p\in M$ punktem na niej, i niech $v\in T_pM$ będzie wektorem stycznym do $M$ w punkcie $p$. 
+\begin{itemize}
+\pause \item Liczbę $\varrho_v$ definiujemy jako
+\[\varrho_v\define \sup
+\le\{r\in \R\colon \begin{aligned}
+&\text{istnieje geodezyjna } \gamma\colon(-r,r)\to M\\
+&\text{spełniająca:}\;\gamma(0)=p,\text{ oraz }\gamma'(0)=v.
+\end{aligned}\ri\}\]
+\pause \item Zbiór $E_p\subset T_pM$ definiujemy jako
+\[E_{p}\define \le\{v\in T_pM\colon \varrho_v>1\ri\}\]
+\end{itemize}
+\end{definicja}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+\begin{itemize}
+\item W definicji $E_p$ zamiast $1$ mogliśmy wybrać jakąkolwiek dodatnią liczbę rzeczywistą.
+\item W przypadku płaszczyzny czy sfery widzimy, że to supremum (dla każdego $v$ w przestrzeni stycznej) jest równe $\infty$, więc w szczególności dla sfery $E_p=T_pS^2$.
+\item Oczywiście $E_p\neq \varnothing$, ponieważ środek układu współrzędnych zawsze należy do $E_p$ (jako geodezyjna stała).
+\end{itemize}
+
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Wtedy zachodzą następujce twierdzenia.
+\begin{itemize}
+\item Jeśli $v\in E_p$ i $s\in \R$, wtedy $sv$ należy do $E_p$ wtedy i tylko wtedy, gdy
+\[-\varrho_v<s<\varrho_v.\]
+\pause\item Jeśli $u\in T_pM$ jest wektorem jednostkowym, wtedy 
+\[E_p\cap \{su\colon s\in \R\}=\{su\colon -\varrho_v<s<\varrho_v\}.\]
+\end{itemize}
+
+\end{lemat}
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Ćwiczenie na zrozumienie definicji $\varrho_v$ i $E_p$.
+\hfill $\square$
+\end{frame}
+%%%%%%next-slide%%%%%
+
+\begin{frame}
+Na podstawie powyższego lematu nie możemy wnioskować, czy zbiór $E_p$ jest otwarty w $T_pM$, ani czy ma niepuste wnętrze. Chociaż nie jest to oczywiste $E_p$ zawiera kulę otwartą o odpowiednio małym promieniu. \mode<article>{Co więcej, zachodzi następujący lemat.}
+\pause \begin{lemat}
+Niech $D(T_qM,\delta_p)$ oznacza kulę zawartą w przestrzeni $T_qM$ o środku w punkcie $\mathcal{O}=(0,0)$ i promieniu $\delta_p$. 
+
+\pause Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Istnieją otoczenie otwarte $W\subset M$ zawierające $p$, oraz liczba rzeczywista $\delta_p>0$ takie, że dla każdego $q\in W$ zbiór $E_q$ zawiera kulę $D(T_qM,\delta_p)$.
+\end{lemat}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{uwaga}
+Znaczenie tego lematu jest następujące: 
+\begin{quote}
+Nie tylko z każdego punktu możemy prowadzić geodezyjne w dowolnym kierunku, lecz także lokalnie \textit{wokół} 
+każdego punktu możemy je prowadzić w dowolnym kierunku. 
+\end{quote}
+
+\end{uwaga}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Dla każdego $v\in E_p\subset T_pM$ niech $\gamma_v\colon(-\varrho_v,\varrho_v)\to M$ będzie geodezyjną spełniającą $\gamma_v(0)=p$, $\gamma_v'(0)=v$. \pause \textbf{Odwzorowanie wykładnicze} $\exp_p\colon E_p \to M$ jest zdefiniowane jako
+\[\exp_p(v)\define\gamma_v(1).\]
+\end{definicja}
+
+\pause\begin{uwaga}
+Odwzorowanie wykładnicze jest dobrze określone, ponieważ wszystkie geodezyjne które mają dziedzinę większą niż $(-1,1)$ mają tę samą wartość dla $t=1$ (dlaczego?).
+\end{uwaga}
+
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\input{./pictures/exp_pS2.tex}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+Następny lemat powie nam, że geodezyjne na powierzchni $M$ przechodzące przez punkt $p$ są obrazami prostych przechodzących przez środek $T_pM$ przy odwzorowaniu wykładniczym.
+\begin{frame}
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Niech ponadto $v\in E_p$ będzie wektorem stycznym do $M$. Wtedy krzywa $\zeta\colon(-\varrho_v,\varrho_v)\to M$ zdefiniowana przez
+\[\zeta(s)=\exp_p(sv)\] jest geodezyjną spełniającą $\zeta(0)=p$ oraz $\zeta'(0)=v$. Jej długość na odcinku od $p$ do $\exp_p(v)$ jest równa $\|v\|$.
+\end{lemat}
+
+
+\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+Niech $\gamma_v\colon (-\varrho_v,\varrho_v)\to M$ będzie geodezyjną spełniającą: $\gamma_v(0)=p$, oraz $\gamma_v'(0)=v$. Ustalmy $s\in (-\varrho_v,\varrho_v)$ i zdefiniujmy $\widetilde{\gamma}\colon(-\varrho_v/s,\varrho_v/s)\to M$ jako \[\widetilde{\gamma}(t)=\gamma_v(st).\]
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Ponieważ funkcja $t\to st$ jest liniowa, więc z charakteryzacji parametryzacji krzywych geodezyjnych (lemat \ref{lem:param-of-geodesics}) wynika, że $\widetilde{\gamma}$ jest również geodezyjną. Oczywiście $\widetilde{\gamma}(0)=p$ i $\widetilde{\gamma}'(0)=sv$.
+
+\pause Mamy teraz:
+\[\zeta(s)=\exp_p(sv)=\widetilde{\gamma}(1)=\gamma_v(s)\]
+dla wszystkich $s\in (-\varrho_v, \varrho_v)$. Zatem $\zeta\equiv\gamma_v$ jest geodezyjną.
+
+\pause Przypomnijmy, że geodezyjne mają stałą prędkość, więc
+\[\|\zeta'(s)\|=\|\zeta'(0)\|=\|\gamma'(0)\|=\|v\|\]dla wszystkich $s$. Zatem długość geodezyjnej można policzyć jako
+\[\int_0^1\|\zeta'(s)\|ds=\|v\|\int_0^1ds=\|v\|.\]
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+
+Widzieliśmy już na przykładzie sfery, że odwzorowanie wykładnicze nie jest injekcją. W każdym punkcie $p\in S^2$ sfery mamy $E_p=T_pS^2$, jednak proste na płaszczyźnie odwzorowywane na okręgi wielkie na sferze muszą się w pewnym momencie na siebie ``nawinąć''. Powinniśmy jednak zauważyć, że jeśli ograniczymy się do odpowiednio małego dysku w $T_pS^2$, jego obraz przy odwzorowaniu wykładniczym nie powinien wykraczać poza hemisferę zawierającą punkt $p$. Jest to fakt znacznie ogólniejszy.
+
+Przypomnijmy, że przez $D(T_pM,\delta_p)$ oznaczamy dysk o środku w punkcie $\mathcal{O}=(0,0)\in T_pM$ i promieniu $\delta_p$.
+
+\begin{frame}
+
+%Następny lemat pokazuje, że jeśli jednak ograniczymy sie do odpowiednio niewielkiego otoczenia $\mathcal{O}\subset T_pM$dysku $D_{\mathcal{O}}(\delta_p,T_pM)$
+
+\begin{lemat}
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. 
+Istnieje wtedy $\delta_{p}>0$ taka, że 
+\begin{itemize} 
+\item zbiór $\exp_p(D(T_pM,\delta_p))$ jest otwarty w $M$, oraz
+\pause \item odwzorowanie wykładnicze \[\exp_p\big|_{D(T_pM,\delta_p)}\] ograniczone do zbioru $D(T_pM,\delta_p)$ jest dyfeomorfizmem na swój obraz.
+\end{itemize}
+\end{lemat}
+
+\pause
+\begin{lemat}
+Istnieją również: otoczenie otwarte $W\subset M$ zawierające $p$, oraz liczba rzeczywista $\delta_p>0$ takie, że dla każdego $q\in W$ \[W\subset\exp_q(D(T_qM,\delta_p)).\]
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\mode<article>{Jeśli $M$ jest powierzchnią zamkniętą (tj. zwartą i bez brzegu), wtedy korzystając ze zwartości można wykazać, że istnieje jedna uniwersalna stała $\delta_M$ zależna tylko od $M$, którą można podstawić w miejsce $\delta_p$ w powyższych trzech stwierdzeniach.}
+
+\begin{uwaga}
+Widzimy, że $\exp_p\colon D(T_pM,\delta_p)\to M$ jest dyfeomorfizmem na swój obraz. Nietrudno sprawdzić, że jest to przykład lokalnego układu współrzędnych na $M$ ($D(T_pM,\delta_p)\cong D^2\subset \R^2$). 
+\end{uwaga}
+
+\pause\begin{wniosek}
+Niech $M\subset\R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem na niej. Ustalmy $0<\varepsilon<\delta_p$. Wtedy istnieje $V\subset M$ -- otwarte otoczenie punktu $p$, które posiada następujące własności:
+\begin{itemize}
+\item $V\subset \exp_q(D(T_qM,\varepsilon))$ dla wszstkich $q\in V$.
+\pause \item każde dwa punkty w $V$ można połączyć krzywą geodezyjną o długości mniejszej niż $\varepsilon$.
+\end{itemize}
+\end{wniosek}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{uwaga}
+Płaszczyzna ma tę własność, że wokół każdego punktu istnieje wypukłe otoczenie otwarte, tj. otoczenie w którym każde dwa punkty można połączyć odcinkiem geodezyjnej (czyli odcinkiem prostej). Tę własność nazywamy \textbf{wypukłością geodezyjną} i (co nie jest do końca oczywiste) posiada ją każda powierzchnia.
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Triangulacje}}
+
+\begin{frame}{Triangulacja}
+\begin{definicja}
+Niech $M\subset \R^3$ będzie powierzchnią gładką, i niech $x$, $y$, $z\in M$ będą różnymi punktami. Podzbiór $T\subset M$ nazywamy \textbf{trójkątem geodezyjnym} o wierzchołkach $x$, $y$, $z$ i oznaczamy $\vartriangle xyz$ jeśli $T$ jest homeomorficzny z dyskiem jednostkowym $D^2=\{(x,y)\in \R^2\colon x^2+y^2\leqslant1\}$, oraz brzeg $T$ oznaczany jako $\partial T$ składa się z trzech krzywych geodezyjnych $\overline{xy}$, $\overline{yz}$, $\overline{xz}$ (o końcach w $x$, $y$, $z$). \pause Te geodezyjne nazywamy \textbf{krawędziami} trójkąta geodezyjnego $\vartriangle xyz$. 
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+% \begin{frame}
+% @@@@ Rysunek @@@@
+% \end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+Niech $\mathcal{T}$ będzie (skończoną) rodziną trójkątów geodezyjnch na $M$. Załóżmy, że dla wszystkie trójkąty w $\mathcal{T}$ są różne i każdy punkt $x\in M$ należy do pewnego trójkąta z $\mathcal{T}$. Rodzinę $\mathcal{T}$ nazywamy \textbf{triangulacją} powierzchni $M$ jeśli dla dowolnych dwóch trójkątów $T_1$, $T_2\in \mathcal{T}$ mamy 
+\begin{itemize}
+\item $T_1\cap T_2=\{x\}$ i $x$ jest ich wspólnym wierzchołkiem, lub
+\pause\item $T_1\cap T_2=\{\overline{xy}\}$, gdzie $\overline{xy}$ jest ich wspólną krawędzią, lub
+\pause\item $T_1\cap T_2=\varnothing$.
+\end{itemize}
+\end{definicja}
+
+\pause \begin{lemat}
+Dla każdego $\varepsilon>0$ istnieje triangulacja geodezyjna $\mathcal{T}$ zwartej powierzchni $M\subset \R^3$ w której każdy trójkąt geodezyjny ma średnicę mniejszą od $\varepsilon$.
+\end{lemat}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}
+Triangulacja geodezyjna sfery $S^2$.
+\begin{center}
+\input{./pictures/triangulation.tex}
+\end{center}
+\end{przyklad}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+% \begin{frame}
+% 
+% \end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Twierdzenie Gaussa-Bonneta}}
+\begin{frame}[<+->]
+\begin{twierdzenie}[Lokalne twierdzenie Gaussa-Bonneta]
+Niech $M\subset \R^3$ będzie powierzchnią gładką. Jeśli $\vartriangle xyz$ jest trójkątem geodezyjnym na $M$ zawartym w obrazie $\exp_x(D(T_xM,\delta_x))$, wtedy
+\[\int_{\vartriangle xyz} K\,dA=\measuredangle x+\measuredangle y +\measuredangle z - \pi.\]
+\end{twierdzenie}
+\begin{uwaga}
+Zapis $dA$ oznacza całkowanie względem formy powierzchni którą używaliśmy podczas badania intuicyjnej definicji krzywizny Gaussa. Można inaczej zapisać $dA=\det|g_{ij}|\,dsdt$, wtedy należałoby wybrać lokalny układ współrzędnych i całkować po przeciwobrazie $x^{-1}(\vartriangle xyz)$. \mode<article>{patrz definicja pola powierzchni \ref{def:area-form}.}
+
+\end{uwaga}
+
+\end{frame}
+Zauważmy, że chociaż do bezpośredniego policzenia całki z krzywizny będziemy musieli wybrać pewien lokalny układ współrzędnych, wynik nie będzie od tego wyboru zależny. Mówiąc inaczej -- krzywizna całkowita trójkąta geodezyjnego zależy tylko od powierzchni, a nie od sposobu umieszczenia w przestrzeni Euklidesowej.
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja}
+Niech $\mathcal{T}$ będzie triangulacją zwartej powierzchni $M$. Niech $F_\mathcal{T}$ oznacza liczbę trójkątów w $\mathcal{T}$, $E_\mathcal{T}$ -- liczbę ich \textit{różnych} krawędzi, zaś $V_\mathcal{T}$ -- liczbę ich (\textit{różnych}) wierzchołków. \pause Liczbę całkowitą
+\[\chi^\mathcal{T}(M)\define V_\mathcal{T}-E_\mathcal{T}+F_\mathcal{T}\]nazywamy \textbf{charakterystyką Eulera} powierzchni $M$.
+\end{definicja}
+
+\pause \begin{uwaga}
+Charakterystyka Eulera \textbf{nie zależy} od wyboru triangulacji, więc zamiast $\chi^\mathcal{T}M$ będziemy pisać $\chi(M)$. \mode<article>{Co więcej triangulacja nie musi być geodezyjna. Charakterystyka Eulera jest bardzo ważnym niezmiennikiem topologicznym (tj. dwie homeomorficzne powierzchnie muszą mieć tę samą charakterystykę Eulera), a nawet ogólniej \textit{homotopijnym}. W szczególności służy ona do klasyfikacji z dokładnością do homeomorfizmu zwartych powierzchni bez brzegu.}
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{twierdzenie}[Twierdzenie Gaussa-Bonneta]
+Niech $M\subset \R^3$ będzie zwartą powierzchnią. Wtedy 
+\[\int_M K dA=2\pi \chi(M).\]
+\end{twierdzenie}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\textcolor{ared}{Dowód z wykorzystaniem lokalnego twierdzenia G-B:}\\\pause
+
+\mode<presentation>{\begin{itemize}}
+\mode<presentation>{\item }Ponieważ $M$ jest zwarta, więc istnieje taka $\delta_M$, że odwzorowanie wykładnicze $\exp_p\colon D^2_{\delta_M}\to M$ w każdym punkcie $p\in M$ jest dyfeomorfizmem na swój obraz.\pause 
+
+\mode<presentation>{\item }Niech $\mathcal{T}$ będzie triangulacją geodezyjną powierzchni $M$. Możemy założyć, że każdy trójkąt $T\in \mathcal{T}$ jest zawarty w obrazie pewnego odwzorowania wykładniczego $\exp_q$.\pause 
+
+\mode<presentation>{\item }Zatem do każdego trójkąta $T\in \mathcal{T}$ (i każdego jego wierzchołka) możemy zastosować lokalne twierdzenie Gaussa-Bonneta.
+
+\mode<presentation>{\end{itemize}}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+Niech $T\in \mathcal{T}$ będzie trójkątem i niech $v$ będzie wierzchołkiem. Oznaczmy przez $\measuredangle(T,v)$ kąt w $T$ przy wierzchołku $v$. (Przyjmujemy, że jeśli $v\notin T$, wtedy $\measuredangle(T,v)=0$). \pause Wtedy 
+\mode<presentation>{\begin{align*}
+\int_M K dA&=\sum_{T\in \mathcal{T}}\int_{T}KdA=\\\pause
+&=\sum_{T\in \mathcal{T}}\le[ \le(\sum_{v\in T}\measuredangle(T,v)\ri)-\pi\ri]=
+\end{align*}
+na mocy lokalnego twierdzenia Gaussa-Bonneta.\pause
+\begin{align*}
+&=\sum_{T\in \mathcal{T}}\sum_{v\in T}\measuredangle(T,v)-\sum_{T\in \mathcal{T}}\pi=\\
+&=\sum_{v\in T}\sum_{T\in \mathcal{T}}\measuredangle(T,v)-\pi F_{\mathcal{T}}.
+\end{align*}}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+\mode<presentation>{Ponieważ suma kątów wokół każdego wierzchołka jest równa $2\pi$ mamy
+\begin{align*}
+&=\sum_{v\in T}\sum_{T\in \mathcal{T}}\measuredangle(T,v)-\pi F_{\mathcal{T}}=\sum_{v\in T}2\pi -\pi F_\mathcal{T}=\\\pause
+&=2\pi V_\mathcal{T}-\pi F_\mathcal{T}=\pi (2V_\mathcal{T}-F_\mathcal{T}).
+\end{align*}}
+\pause Zauważmy teraz, że każda krawędź należy dokładnie do dwóch trójkątów. Ponieważ każdy trójkąt ma trzy krawędzie mamy następującą równość
+\[3F_\mathcal{T}=2E_\mathcal{T}.\]\pause
+Stosując to do poprzedniego wyniku mamy
+\begin{align*}
+\int_M K dA=&\pi(2V_\mathcal{T}-F_\mathcal{T})=\pi( 2V_\mathcal{T}-3F_\mathcal{T}+2F_\mathcal{T})=\\\pause
+=&2\pi( V_\mathcal{T}-E_\mathcal{T}+F_\mathcal{T})=2\pi \chi(M).
+\end{align*}
+\vspace*{-0.2in}\hfill $\square$
+\end{frame}
+\mode<all> 

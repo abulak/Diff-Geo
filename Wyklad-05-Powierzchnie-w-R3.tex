@@ -1,0 +1,392 @@
+\mode*
+\mode<all>{\topsection{Powierzchnie w $\R^3$}}
+
+\begin{frame}[<+->]
+\begin{definicja}
+Niech $U\subset\R^2$ będzie zbiorem otwartym. Funkcję \[x\colon U\to \R^3\] nazywamy \textbf{gładką}, jeśli wszystkie pochodne cząstkowe (dowolnego rzędu) $x$ istnieją oraz są funkcjami ciągłymi.
+\end{definicja}
+
+\begin{definicja}
+Niech $U\subset \R^2$ będzie zbiorem otwartym. Gładką funkcję
+\[x\colon U\to \R^3\]
+nazywamy \textbf{lokalnym układem współrzędnych} jeśli jest injekcją, oraz \[\frac{\partial x}{\partial s}(s,t)\times \frac{\partial x}{\partial t}(s,t)\neq 0\] dla wszystkich $(s,t)\subset U$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Podstawowe definicje}}
+\begin{frame}[<+->]
+
+\begin{definicja}\label{def:surface}
+\begin{itemize}
+\item 
+Podzbiór $M\subset \R^3$ nazywamy \textbf{powierzchnią gładką}, jeśli dla każdego punktu $p\in M$ istnieje otoczenie otwarte tego punktu $V\subset M$ oraz gładka bijekcja $x\colon U\to V\subset \R^3$. 
+
+Potocznie mówimy, że przestrzeń jest powierzchnią gładką jeśli ,,lokalnie'' (tj. w małym otoczeniu każdego punktu) wygląda jak fragment płaszczyzny (patrz część 1 Lematu \ref{lem:chart_loc_bij}).
+
+\item Powierzchnię gładką $M$ nazywamy \textbf{regularną} jeśli wokół każdego punktu $p$ istnieje lokalny układ współrzędnych $x\colon U\to V\subset \R^3$. 
+
+\item Powierzchnię gładką $M$ nazywamy łukowo spójną, jeśli dla dowolnych dwóch punktów $x,y\in M$ istnieje krzywa $\alpha\colon [0,1]\to M$ taka, że $\alpha(0)=x$ i $\alpha(1)=y$.
+\end{itemize}
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{przyklad}
+Jednostkowa sfera, tj. powierzchnia o równaniu $x^2+y^2+x^2=1$ jest przykładem powierzchni regularnej. Lokalnym układem współrzędnych jest np. $x^\pm(u,v)=(\pm\sqrt{1-u^2-v^2},u,v)$ jak na następującym rysunku
+
+\begin{center}
+%\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.25,yscale=-1, inner sep=0pt, outer sep=0pt]
+\input{./pictures/sphere-atlas.tex}
+%\end{tikzpicture}
+\end{center}
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+\textbf{UWAGA! Zakładamy, że wszystkie powierzchnie które będzie my rozważać dalej są regularne i łukowo spójne.}
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $M\subset\R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ i $y\colon V\to M$ będą lokalnymi układami współrzędnych wokół punktu $p\in M$. Wtedy złożenie \[y^{-1}\circ x\colon x^{-1}(x(U)\cap y(V))\to y^{-1}(x(U)\cap y(V))\]
+nazywamy \textbf{funkcją zmiany układu współrzędnych} i oznaczamy $\Phi_{x,y}$.
+
+\end{definicja}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\mode<presentation>{\thispagestyle{empty}}
+\begin{center}
+%\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.4,yscale=-1, inner sep=0pt, outer sep=0pt]
+\input{./pictures/transition-function.tex}
+%\end{tikzpicture}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+
+\begin{lemat}\label{lem:chart_loc_bij}
+Niech $M\subset \R^3$ będzie gładką powierzchnią. Wówczas:
+\begin{enumerate}[<+->]
+\item Jeśli $x\colon U\to M$ jest lokalnym układem współrzędnych wtedy $x$ jest dyfeomorfizmem $U$ na obraz $x(U)$. %Co więcej $x(U)$ jest zbiorem otwartym w $M$.
+\item Niech $V\subset \R^2$ będzie zbiorem otwartym i niech $f\colon V\to U$ będzie dyfeomorfizmem. Wtedy \[y\define x\circ f\colon V\to M\] jest lokalnym układem współrzędnych i $f$ jest funkcją zmiany układu współrzędnych $\Phi_{y,x}$.
+\end{enumerate}
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\textcolor{ared}{\textbf{Dowód:}}\\\pause
+
+\begin{itemize}
+\item [1)] Ponieważ $x$ jest injekcją, więc jest bijekcją na swój obraz. \pause Ponieważ $x$ jest funkcją gładką, oraz na zbiorze $U$ rząd jej pochodnej jest równy $2$ (z definicji lokalnego układu współrzędnych), \pause więc korzystając z twierdzenia o funkcji uwikłanej na zbiorze $x(U)$ istnieje do $x$ gładka funkcja odwrotna, zatem $x$ jest dyfeomorfizmem.
+\item [2)] Ponieważ złożenie dwóch dyfeomorfizmów jest dyfeomorfizmem, wystarczy sprawdzić, że jest spełniona własność lokalnego układu współrzędnych dla $y=x\circ f$. 
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+Mamy
+\begin{multline*}
+\frac{\partial (x\circ f)}{\partial s}\times \frac{\partial (x\circ f)}{\partial t}=\\\pause
+=\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial s}+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial s}\right)\times
+\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial t}+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial t}\right)=\\ \pause
+=\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}{\partial f_2}\right)+\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\left(\frac{\partial x}{\partial f_2}\times \frac{\partial x}{\partial f_1}\right)=\\\pause
+=\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}{\partial f_2}\right)\left(\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}-\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\right)
+\end{multline*}
+\pause Ponieważ $x$ jest lokalnym układem współrzędnych, więc z definicji pierwszy czynnik jest niezerowy. 
+Ponieważ $f$ jest dyfeomorfizmem, więc drugi czynnik (wyznacznik macierzy Jacobiego dla $f$\,) jest różny od zera.
+
+\pause Ostatnia teza ($\Phi_{x,y}=f$\,) wynika z definicji funkcji przejścia pomiędzy układami współrzędnych.
+
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{definicja} \label{def:smooth_fun}
+Niech $M\subset \R^3$ będzie gładką powierzchnią i niech $f\colon M\to \R$ będzie odwzorowaniem.
+Odwzorowanie $f$ nazywamy gładkim jeśli dla każdego punktu $p\in M$ i dla każdego lokalnego układu współrzędnych $x\colon U\to M$ takiego, że $p\in x(u)$ funkcja \[f\circ x\colon U\top{x}M\top{f}\R\]
+jest gładka jako funkcja z $\R^2$ do $\R$.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+ W praktyce są dwie metody na definiowanie funkcji określonej na powierzchni.
+\pause \begin{itemize}[<+->]
+\item Jeśli $F\colon \R^3\to \R$ jest gładka, wtedy jej obcięcie $F\,|_M\colon M\to \R$ będzie również gładkie.
+\item Załóżmy że  $x\colon U\to M\subset \R^3$ jest lokalnym układem współrzędnych. Jeśli $f\colon U\to \R$ jest funkcją gładką, to funkcję  na powierzchni $M$ możemy określić jako\[F=f\circ x^{-1}\colon x^{-1}(U)\to U\to \R,\] gdzie $x^{-1}(U)\subset M$.
+Jest to funkcja gładka jako złożenie dwóch funkcji gładkich.
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{przyklad}
+\begin{itemize}
+\item Funkcja $f\colon S^2\to \R$ zadana wzorem
+\[f(x,y,z)=\frac{xyz}{x^2+y^2+z^2}\]
+jest funkcją gładką.
+\item Niech $M$ będzie zadana jako powierzchnia paraboloidy, \[x(s,t)=(s,t,s^2+t^2).\]
+\pause Rozważmy funkcję $f\colon \R^2\to \R$ zadaną wzorem \[(s,t)\mapsto \sin{(s+t)}.\]
+\pause Wtedy $f\circ x^{-1}(a,b,c)=\sin{(a+b)}$  i stąd $f\circ x\colon M\to\R$ jest funkcją gładką na powierzchni paraboloidy.
+\end{itemize}
+\end{przyklad}
+
+\end{frame}
+\begin{uwaga}
+Definicja \ref{def:smooth_fun} naturalnie uogólnia się na odwzorowania gładkie $M\to \R^n$.
+\end{uwaga}
+
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie odwzorowaniem. Mówimy, że $f$ jest \textbf{odwzorowaniem gładkim} jeśli jest gładkie jako odwzorowanie $M\to \R^3$. Mówimy, że $f$ jest \textbf{dyfeomorfizmem powierzchni} jeśli $f$ jest gładką bijekcją, której odwzorowanie odwrotne jest również gładkie.
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{lemat}
+Niech $M,N\subset \R^3$ będą powierzchniami gładkimi i niech \[f\colon M\to N\] będzie odwzorowaniem ciągłym. $f$ jest odwzorowaniem gładkim (a więc gładkim jako odwzorowanie $f\colon M\to \R^3$) wtedy i tylko wtedy gdy dla każdego punktu $p\in M$ istnieje wokół niego lokalny układ współrzędnych $x\colon U\to M$ oraz istnieje lokalny układ współrzędnych $y\colon V\to N$ wokół $f(p)\in N$ takie, że złożenie
+\[y^{-1}\circ f\circ x\colon U\to V\]
+jest gładkie jako odwzorowanie $\R^2\to \R^2$ (tam, gdzie to złożenie ma sens).
+\end{lemat}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\mode<presentation>{\thispagestyle{empty}}
+\begin{center}
+%\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.4,yscale=-1, inner sep=0pt, outer sep=0pt]
+\input{./pictures/smth-func-on-mfld.tex}
+%\end{tikzpicture}
+\end{center}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\textcolor{ared}{\textbf{Dowód:}}\\
+
+\pause Aby złożenie $y^{-1}\circ f\circ x$ będzie miało sens musimy założyć, że ograniczymy się do zbioru otwartego $f(x(U))\cap y(v)\neq \emptyset$. Dla wygody oznaczmy $A\define x^{-1}(y^{-1}(y(v)))$.
+
+\pause Załóżmy, że odwzorowanie $f\colon M\to N\subset \R^3$ jest gładkie. Ponieważ $x$ i $y$ są dyfeomorfizmami na swój obraz, więc i ich funkcje odwrotne są gładkie. Zatem złożenie $y^{-1}\circ f\circ x$ jest również gładkie.
+
+\pause Załóżmy, że $y^{-1}\circ f\circ x$ jest odwzorowaniem gładkim z $\R^2\supset U\to V\subset \R^2$. Możemy je złożyć wcześniej z $x^{-1}\colon x(U)\to U$, oraz później z $y\colon V\to y(V)$ otrzymując:\pause
+\[M \supset x(U)\underbrace{\top{x^{-1}}U\top{x}}_{\operatorname{id}_{x(U)}}x(U)\top{f}y(V) \underbrace{\top{y^{-1}}V\top{y}}_{\operatorname{id}_{y(V)}}y(V)\subset N.\]
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+% \begin{frame}[<+->]
+
+\begin{uwaga}
+Przypomnijmy, że powierzchnię zdefiniowaliśmy jako zbiór \textbf{zanurzony} w $\R^3$ który lokalnie przypomina $\R^2$.
+Powyższy lemat pozwala nam definiować powierzchnie (i ogólniej: rozmaitości $n$-wymiarowe), oraz funkcje na nich określone nie uciekając się do zanurzenia w odpowiednio wysoko wymiarowej przestrzeni Euklidesowej. Nie jest wtedy oczywiste, że każdą rozmaitość da się dla pewnego $n$ w przestrzeń $\R^n$ zanurzyć. Udowodnione jest jednak twierdzenie Whitneya o zanurzaniu mówiące, że każdą rozmaitość $n$-wymiarową można zanurzyć w przestrzeń euklidesową odpowiednio dużego wymiaru (wystarczy $\R^{2n+1}$).
+\end{uwaga}
+% 
+% \end{frame}
+
+%%%%%%next-slide%%%%%
+\mode<all>{\midsection{Przykłady powierzchni}}
+\mode<all>{\lowsection{Parametryzacja Monge'a}}
+\begin{frame}[<+->]
+
+
+\begin{definicja}
+Niech $f\colon U\to \R$ będzie funkcją określoną na zbiorze otwartym $U\subset \R^2$. Powierzchnię $M\subset \R^3$ nazywamy \textbf{powierzchnią Monge'a} jeśli jej parametryzacja jest wykresem funkcji $f$:
+\[x(s,t)=(s,t,f(s,t)).\]
+\begin{center}
+\input{./pictures/monge.tex}
+\end{center}
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Parametryzacja Monge'a spełnia naszą definicję powierzchni (Definicja \ref{def:surface} ), ponieważ 
+\begin{multline*}
+\frac{\partial x}{\partial s}(s,t)\times \frac{\partial x}{\partial t}(s,t)=\det 
+\left[
+\begin{array}{ccc}
+i&j&k\\
+1&0&\frac{\partial f}{\partial s}(s,t)\\
+0&1&\frac{\partial f}{\partial t}(s,t)\\
+\end{array}
+\right]
+=\\=\left(-\frac{\partial f}{\partial s}(s,t),-\frac{\partial x}{\partial t}(s,t),1\right)\neq 0.\end{multline*}
+
+\end{uwaga}
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{przyklad}
+\begin{itemize}
+\item Paraboloida
+\item Powierzchnia siodłowa
+\begin{center}
+\input{./pictures/saddle.tex}
+\end{center}
+
+\end{itemize}
+
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\lowsection{Powierzchnie obrotowe}}
+\begin{frame}[<+->]
+
+\begin{definicja}
+\textbf{Powierzchnia obrotowa} powstaje poprzez obrócenie krzywej $\alpha(t)$ wokół pewnej ustalonej prostej. 
+\begin{center}
+\input{./pictures/rotation.tex}
+\end{center}
+\end{definicja}
+
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+
+\begin{uwaga}
+Aby powierzchnia w ten sposób uzyskana była regularna musimy dodatkowo wymagać, aby 
+\begin{itemize}
+\item krzywa była bez samoprzecięć, oraz
+\item oś obrotu nie przecinała naszej krzywej w żadnym punkcie.
+\end{itemize}
+
+\begin{exercise}
+Opisać co się ``psuje" w definicji kiedy zachodzi jedna bądź druga okoliczność.
+\end{exercise}
+\end{uwaga}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{przyklad}
+\begin{itemize}
+\item Sfera
+\item Torus
+\begin{center}
+\input{./pictures/torus.tex}
+\end{center}
+
+\item Hiperboloida jednopowłokowa (katenoida)
+
+\end{itemize}
+\end{przyklad}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\lowsection{Powierzchnie prostokreślne}}
+\begin{frame}[<+->]
+
+\begin{definicja}
+\textbf{Powierzchnią prostokreślną} nazywamy powierzchnię o parametryzacji\[x(s,t)=\alpha(s)+t\beta(s),\] gdzie $\alpha$ i $\beta$ są krzywymi w przestrzeni $\R^3$. $\alpha$ nazywa się potocznie kierownicą, $\beta$ - ruletą.
+
+\begin{center}
+\input{./pictures/ruled.tex}
+\end{center}
+
+\end{definicja}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+
+\begin{uwaga}
+Zauważmy, że dla ustalonego $s_0$ (czyli linia parametru dla zmiennej $t$) parametryzacja powyżej redukuje się do równania parametrycznego prostej. Powierzchnia prostokreślna to więc powierzchnia która ``składa się'' z prostych.
+\end{uwaga}
+\begin{itemize}
+\item Walec, Stożek
+\item Powierzchnia śrubowa
+\item Powierzchnia siodłowa
+\item Katenoida.
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\mode<all>{\lowsection{Poziomice funkcji}}
+\begin{frame}[<+->]
+
+\begin{definicja}
+Niech $V\subset \R^3$ będzie zbiorem otwartym, oraz niech \[F\colon V\to \R\] będzie gładką funkcją. 
+Punkt $p\in V$ nazywamy \textbf{punktem krytycznym} odwzorowania $F$ jeśli \[\text{rank }DF(p)=0.\]
+\end{definicja}
+\begin{itemize}
+\item \mode<article>{[\textbf{Uwaga:} ]}W naszym przypadku oznacza to, że wszystkie pochodne cząstkowe są równe $0$.
+\mode<article>{\item [\textbf{Uwaga 2:} ]W przypadku wyżej-wymiarowym, dla odwzorowania $f\colon \R^m\to \R^n$ warunek $\text{rank }DF(p)=0$   powinien być zastąpiony przez: \[\text{rank }DF(p) \text{ jest mniejszy od maksymalnego, tj. }DF(p)<\max(m,n).\]}
+\item Liczbę $a\in \R$ nazywamy \textbf{wartością krytyczną} odwzorowania $F$ jeśli wewnątrz zbioru $F^{\,-1}(a)$ leży przynajmniej jeden punkt krytyczny.
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}[<+->]
+\begin{definicja}
+Punkt $p\in V$ nazywamy \textbf{punktem regularnym}  odwzorowania $F$ jeśli 
+\[\text{rank }DF(p)=1.\]
+\end{definicja}
+
+
+\begin{itemize}
+
+\item \mode<article>{[\textbf{Uwaga:}]}W naszym przypadku oznacza to, że przynajmniej jedna z pochodnych cząstkowych odwzorowania $F$ jest różna od $0$ w tym punkcie.
+\mode<article>{\item [\textbf{Uwaga 2:}]Warunek $\text{rank }DF(p)=1$ w definicji punktu regularnego tak naprawdę oznacza: rząd tak duży jak tylko jest to możliwe. Jeśli funkcja $F$ będzie miała wartości w $\R^n$ definicję trzeba będzie odpowiednio zmodyfikować. }
+\item Liczbę $a\in \R$ nazywamy \textbf{wartością regularną} odwzorowania $F$ jeśli zbiór $F^{\,-1}(a)$ składa się tylko z punktów regularnych.
+\end{itemize}
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{twierdzenie}Niech $V\subset \R^3$ będzie zbiorem otwartym, zaś $F\colon V\to \R$ funkcją gładką. Jeśli $a\in F(V)\subset \R$ jest wartością regularną, wtedy $F^{-1}(a)$ jest gładką powierzchnią (o ile jest to zbiór niepusty).
+\end{twierdzenie}
+
+\pause \textcolor{ared}{\textbf{Dowód:}}\\
+Dowód jest dosyć techniczny i wynika z twierdzenia o odwzorowaniu uwikłanym. Pomijamy.
+\hfill $\square$
+
+\end{frame}
+%%%%%%next-slide%%%%%
+\begin{frame}
+
+\begin{przyklad}
+\begin{itemize}[<+->]
+\item elipsoida (w szczególności sfera o promieniu $R$ jako przeciwobraz $f^{-1}(R)$, gdzie $f(x,y,z)=x^2+y^2+z^2$). 
+\begin{center}
+\input{./pictures/levels.tex}
+\end{center}
+
+\item paraboloida ($F(x,y,z)=x^2+y^2-z$)
+\item hiperboloida (jedno i dwu-powłokowa: $f(x)=\frac{x^2}{a^2}+\frac{y^2}{b^2}-\frac{z^2}{c^2}.$
+\end{itemize}
+\end{przyklad}
+
+\end{frame}
+
+\mode<all> 
