@@ -14,19 +14,22 @@ proporcjonalna do ich numeru porządkowego. Dlatego zalecane jest przyśpieszani
 (fizycznych) wykładach można właściwie omówić treść z pierwszych 3 rozdziałów tych materiałów.
 
 Wykłady 13 (o Twierdzeniu Gaussa-Bonneta), 14 i 15 (o geometriach nie-euklidesowych i powierzchniach o stałej krzywiźnie) są raczej poglądowe, dowodów 
-tam jest raczej niewiele. Mają one raczej charakter informacyjny i motywujący do dalszej nauki geometrii różniczkowej.
+tam jest niewiele. Mają one raczej charakter informacyjny i motywujący do dalszej nauki geometrii różniczkowej.
 
 Zdaję sobie sprawę, że typografia notatek/skryptu pozostawia wiele do życzenia. Jest to jednak skutek tego, że i skrypt i slajdy powstają z tych samych 
 plików źródłowych. Coś, co wygląda dobrze na slajdzie niekoniecznie musi dobrze wyglądać w tekście i vice-versa. Wraz z kolejnymi uwagami mam jednak 
 nadzieję ten aspekt polepszać. Wszystkie uwagi na ten temat są jak najbardziej mile widziane.
 
 
-2. Kompilacja, Uwagi wstępne:
+2. Kompilacja
+
+2a. Czcionki
 
 Jeśli ktoś nie posiada zainstalowanej czcionki Lucida Bright, musi usunąć/zastąpić linię
 \usepackage{lucidabr} 
 z pliku main.tex;
 
+2b. Struktura
 
 Cała mechanika dokumentu znajduje się w pliku main.tex (wszystkie \usepackage, własne definicje itp.). Jednak main.tex nie jest plikiem kompilowalnym tego 
 dokumentu, tj. nie posiada np. komendy \documentclass{...}. Tę komendę posiadają pliki main.article.tex i main.beamer.tex i to je trzeba kompilować w celu 
