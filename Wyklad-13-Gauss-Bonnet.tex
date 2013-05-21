@@ -6,16 +6,18 @@
 Większość twierdzeń w tym wykładzie będziemy podawać bez dowodu.
 \mode<article>{Widzieliśmy, że wokół każdego punktu na powierzchni istnieją otoczenia na których geodezyjne są jednoznaczne (tj. istnieją kiełki geodezyjnych). Użyjemy tego faktu w następującej definicji:}
 \begin{definicja}
-Niech $M\subset \R^3$ będzie powierzchnią gładką, $p\in M$ punktem na niej, i niech $v\in T_pM$ będzie wektorem stycznym do $M$ w punkcie $p$. 
+Niech $M\subset \R^3$ będzie powierzchnią gładką, $p\in M$ punktem na niej, i niech $v\in T_pM$ będzie wektorem stycznym do $M$ w $p$. 
 \begin{itemize}
 \pause \item Liczbę $\varrho_v$ definiujemy jako
 \[\varrho_v\define \sup
 \le\{r\in \R\colon \begin{aligned}
 &\text{istnieje geodezyjna } \gamma\colon(-r,r)\to M\\
 &\text{spełniająca:}\;\gamma(0)=p,\text{ oraz }\gamma'(0)=v.
-\end{aligned}\ri\}\]
+\end{aligned}\ri\}.\]
+\footnotesize ($\varrho_v$ to maksymalna długość geodezyjnej na $M$ jaką możemy poprowadzić przez $p$ w kierunku $v$)\normalsize
 \pause \item Zbiór $E_p\subset T_pM$ definiujemy jako
 \[E_{p}\define \le\{v\in T_pM\colon \varrho_v>1\ri\}\]
+\footnotesize ($E_p $ to zbi\'or kierunk\'ow w kt\'orych można poprowadzić geodezyjną dłuższą niż $1$)\normalsize
 \end{itemize}
 \end{definicja}
 \end{frame}
@@ -25,7 +27,7 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką, $p\in M$ punktem na niej, 
 \begin{uwaga}
 \begin{itemize}
 \item W definicji $E_p$ zamiast $1$ mogliśmy wybrać jakąkolwiek dodatnią liczbę rzeczywistą.
-\item W przypadku płaszczyzny czy sfery widzimy, że to supremum (dla każdego $v$ w przestrzeni stycznej) jest równe $\infty$, więc w szczególności dla sfery $E_p=T_pS^2$.
+\item W przypadku płaszczyzny czy sfery widzimy, że dla każdego $v$ w przestrzeni stycznej \[\varrho_v=\infty,\] więc w szczególności dla sfery mamy $E_p=T_p S^2$.
 \item Oczywiście $E_p\neq \varnothing$, ponieważ środek układu współrzędnych zawsze należy do $E_p$ (jako geodezyjna stała).
 \end{itemize}
 
@@ -40,8 +42,10 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie pu
 \begin{itemize}
 \item Jeśli $v\in E_p$ i $s\in \R$, wtedy $sv$ należy do $E_p$ wtedy i tylko wtedy, gdy
 \[-\varrho_v<s<\varrho_v.\]
+\footnotesize (jeśli $v$ należy do $E_p$, w\'owczas należy cały odcinek łączący $-\varrho_v v$ z $\varrho_v v$)\normalsize
 \pause\item Jeśli $u\in T_pM$ jest wektorem jednostkowym, wtedy 
 \[E_p\cap \{su\colon s\in \R\}=\{su\colon -\varrho_v<s<\varrho_v\}.\]
+
 \end{itemize}
 
 \end{lemat}
@@ -52,32 +56,38 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie pu
 %%%%%%next-slide%%%%%
 
 \begin{frame}
-Na podstawie powyższego lematu nie możemy wnioskować, czy zbiór $E_p$ jest otwarty w $T_pM$, ani czy ma niepuste wnętrze. Chociaż nie jest to oczywiste $E_p$ zawiera kulę otwartą o odpowiednio małym promieniu. \mode<article>{Co więcej, zachodzi następujący lemat.}
-\pause \begin{lemat}
-Niech $D(T_qM,\delta_p)$ oznacza kulę zawartą w przestrzeni $T_qM$ o środku w punkcie $\mathcal{O}=(0,0)$ i promieniu $\delta_p$. 
+\mode<article>{Na podstawie powyższego lematu nie możemy wnioskować, czy zbiór $E_p$ jest otwarty w $T_pM$, ani czy ma niepuste wnętrze. Wiemy natomiast, że wraz z każdym wektorem $v$ zawiera on cały odcinek od $-v$ do $v$.} Chociaż nie jest to oczywiste $E_p$ zawiera kulę otwartą o odpowiednio małym promieniu. 
 
-\pause Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Istnieją otoczenie otwarte $W\subset M$ zawierające $p$, oraz liczba rzeczywista $\delta_p>0$ takie, że dla każdego $q\in W$ zbiór $E_q$ zawiera kulę $D(T_qM,\delta_p)$.
+\pause Niech $D(T_qM,\delta)$ oznacza kulę zawartą w przestrzeni $T_qM$ o środku w punkcie $\mathcal{O}=(0,0)$ i promieniu $\delta$. 
+\pause \begin{lemat}
+
+\pause Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Istnieją:
+\begin{itemize}
+\pause \item  otoczenie otwarte $W\subset M$ zawierające $p$,
+\pause \item promień $\delta$ (zależny od punktu $p$) takie, że
+\end{itemize}
+dla każdego $q\in W$ zachodzi \[D(T_qM,\delta)\subset E_q.\]
 \end{lemat}
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}
-
-\begin{uwaga}
-Znaczenie tego lematu jest następujące: 
-\begin{quote}
-Nie tylko z każdego punktu możemy prowadzić geodezyjne w dowolnym kierunku, lecz także lokalnie \textit{wokół} 
-każdego punktu możemy je prowadzić w dowolnym kierunku. 
-\end{quote}
-
-\end{uwaga}
-
-
-\end{frame}
+% \begin{frame}
+% 
+% \begin{uwaga}
+% Znaczenie tego lematu jest następujące: 
+% \begin{quote}
+% Nie tylko z każdego punktu możemy prowadzić geodezyjne w dowolnym kierunku, lecz także lokalnie \textit{wokół} 
+% każdego punktu możemy je prowadzić w dowolnym kierunku. 
+% \end{quote}
+% 
+% \end{uwaga}
+% 
+% 
+% \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
 \begin{definicja}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. Dla każdego $v\in E_p\subset T_pM$ niech $\gamma_v\colon(-\varrho_v,\varrho_v)\to M$ będzie geodezyjną spełniającą $\gamma_v(0)=p$, $\gamma_v'(0)=v$. \pause \textbf{Odwzorowanie wykładnicze} $\exp_p\colon E_p \to M$ jest zdefiniowane jako
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$. Dla każdego $v\in E_p\subset T_pM$ niech $\gamma_v\colon(-\varrho_v,\varrho_v)\to M$ będzie geodezyjną spełniającą $\gamma_v(0)=p$, $\gamma_v'(0)=v$. \pause \textbf{Odwzorowanie wykładnicze} $\exp_p\colon E_p \to M$ jest zdefiniowane wzorem
 \[\exp_p(v)\define\gamma_v(1).\]
 \end{definicja}
 
@@ -113,7 +123,7 @@ Ponieważ funkcja $t\to st$ jest liniowa, więc z charakteryzacji parametryzacji
 
 \pause Mamy teraz:
 \[\zeta(s)=\exp_p(sv)=\widetilde{\gamma}(1)=\gamma_v(s)\]
-dla wszystkich $s\in (-\varrho_v, \varrho_v)$. Zatem $\zeta\equiv\gamma_v$ jest geodezyjną.
+dla wszystkich $s\in (-\varrho_v, \varrho_v)$. Zatem $\zeta\equiv\gamma_v$ jest geodezyjną (korzystamy tutaj z jedyności!).
 
 \pause Przypomnijmy, że geodezyjne mają stałą prędkość, więc
 \[\|\zeta'(s)\|=\|\zeta'(0)\|=\|\gamma'(0)\|=\|v\|\]dla wszystkich $s$. Zatem długość geodezyjnej można policzyć jako
@@ -125,38 +135,37 @@ dla wszystkich $s\in (-\varrho_v, \varrho_v)$. Zatem $\zeta\equiv\gamma_v$ jest 
 
 Widzieliśmy już na przykładzie sfery, że odwzorowanie wykładnicze nie jest injekcją. W każdym punkcie $p\in S^2$ sfery mamy $E_p=T_pS^2$, jednak proste na płaszczyźnie odwzorowywane na okręgi wielkie na sferze muszą się w pewnym momencie na siebie ``nawinąć''. Powinniśmy jednak zauważyć, że jeśli ograniczymy się do odpowiednio małego dysku w $T_pS^2$, jego obraz przy odwzorowaniu wykładniczym nie powinien wykraczać poza hemisferę zawierającą punkt $p$. Jest to fakt znacznie ogólniejszy.
 
-Przypomnijmy, że przez $D(T_pM,\delta_p)$ oznaczamy dysk o środku w punkcie $\mathcal{O}=(0,0)\in T_pM$ i promieniu $\delta_p$.
 
 \begin{frame}
+Przypomnijmy, że przez $D(T_pM,\delta)$ oznaczamy dysk o środku w punkcie $\mathcal{O}=(0,0)\in T_pM$ i promieniu $\delta$.
 
 %Następny lemat pokazuje, że jeśli jednak ograniczymy sie do odpowiednio niewielkiego otoczenia $\mathcal{O}\subset T_pM$dysku $D_{\mathcal{O}}(\delta_p,T_pM)$
 
 \begin{lemat}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem. 
-Istnieje wtedy $\delta_{p}>0$ taka, że 
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$. Istnieje wtedy taka $\delta>0$, że 
 \begin{itemize} 
-\item zbiór $\exp_p(D(T_pM,\delta_p))$ jest otwarty w $M$, oraz
+\item zbiór $\exp_p(D(T_pM,\delta)$ jest otwarty w $M$, oraz
 \pause \item odwzorowanie wykładnicze \[\exp_p\big|_{D(T_pM,\delta_p)}\] ograniczone do zbioru $D(T_pM,\delta_p)$ jest dyfeomorfizmem na swój obraz.
 \end{itemize}
 \end{lemat}
 
 \pause
-\begin{lemat}
-Istnieją również: otoczenie otwarte $W\subset M$ zawierające $p$, oraz liczba rzeczywista $\delta_p>0$ takie, że dla każdego $q\in W$ \[W\subset\exp_q(D(T_qM,\delta_p)).\]
-\end{lemat}
+% \begin{lemat}
+% Istnieją również: otoczenie otwarte $W\subset M$ zawierające $p$, oraz liczba rzeczywista $\delta_p>0$ takie, że dla każdego $q\in W$ \[W\subset\exp_q(D(T_qM,\delta_p)).\]
+% \end{lemat}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
-\mode<article>{Jeśli $M$ jest powierzchnią zamkniętą (tj. zwartą i bez brzegu), wtedy korzystając ze zwartości można wykazać, że istnieje jedna uniwersalna stała $\delta_M$ zależna tylko od $M$, którą można podstawić w miejsce $\delta_p$ w powyższych trzech stwierdzeniach.}
+\mode<article>{Jeśli $M$ jest powierzchnią zamkniętą (tj. zwartą i bez brzegu), wtedy korzystając ze zwartości można wykazać, że istnieje jedna uniwersalna stała $\delta_M$ zależna tylko od $M$, którą można podstawić w miejsce $\delta$ (zależną od punktu) w powyższych stwierdzeniach.}
 
 \begin{uwaga}
-Widzimy, że $\exp_p\colon D(T_pM,\delta_p)\to M$ jest dyfeomorfizmem na swój obraz. Nietrudno sprawdzić, że jest to przykład lokalnego układu współrzędnych na $M$ ($D(T_pM,\delta_p)\cong D^2\subset \R^2$). 
+Widzimy, że $\exp_p\colon D(T_pM,\delta_p)\to M$ jest dyfeomorfizmem na swój obraz. Nietrudno sprawdzić, że jest to przykład lokalnego układu współrzędnych na $M$ ($D(T_pM,\delta)\cong D^2\subset \R^2$). 
 \end{uwaga}
 
 \pause\begin{wniosek}
-Niech $M\subset\R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem na niej. Ustalmy $0<\varepsilon<\delta_p$. Wtedy istnieje $V\subset M$ -- otwarte otoczenie punktu $p$, które posiada następujące własności:
+Niech $M\subset\R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie punktem na niej. Ustalmy $0<\varepsilon<\delta$. Wtedy istnieje $V\subset M$ -- otwarte otoczenie punktu $p$, które posiada następujące własności:
 \begin{itemize}
 \item $V\subset \exp_q(D(T_qM,\varepsilon))$ dla wszstkich $q\in V$.
 \pause \item każde dwa punkty w $V$ można połączyć krzywą geodezyjną o długości mniejszej niż $\varepsilon$.

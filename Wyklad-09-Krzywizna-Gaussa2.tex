@@ -4,18 +4,19 @@
 
 \begin{frame}
 \begin{lemat}
-Niech $M\subset \R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in x(U)$. 
+Niech $M\subset \R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in x(U)$. 
 
-\pause Możemy rozważać $\widehat{n}$ jako pole wektorowe na $M$. \pause Wtedy dla każdego wektora $v\in T_p(M)$ pochodna kierunkowa $D\,\widehat{n}(v)$ należy do $T_pM$ (rozważanej abstrakcyjnie jako $2$-wymiarowa podprzestrzeń liniowa w $R^3$).
+%\pause Możemy rozważać $\widehat{n}$ jako pole wektorowe na $M$. 
+\pause Dla każdego wektora $v\in T_p(M)$ pochodna kierunkowa \[D\,\widehat{n}(v)\in T_pM\](rozważanej abstrakcyjnie jako $2$-wymiarowa podprzestrzeń liniowa w $\R^3$).
 \end{lemat}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
-\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+\textcolor{ared}{\textbf{Dowód: }}\\\pause 
 Wektor normalny $\widehat{n}(p)$ ma długość $1$ w każdym punkcie, więc możemy zapisać $\langle\widehat{n},\widehat{n}\rangle=1$ wewnątrz $x(U)$.
-\pause \mode<article>{(uwaga: poza tym obszarem zapis $\langle\, , \, \rangle$ nie ma sensu!)}
+\pause \mode<article>{(Uwaga: poza tym obszarem zapis $\langle\, , \, \rangle$ nie ma sensu!)}
 Wtedy \[0=D\langle\widehat{n},\widehat{n}\rangle(v)=\nabla_v \langle\widehat{n},\widehat{n}\rangle=2\langle\nabla_v \widehat{n},\widehat{n}\rangle=2\langle D\,\widehat{n}(v),\widehat{n}\rangle,\] \pause więc $D\,\widehat{n}(v)$ jest zawsze prostopadły do $\widehat{n}$, zatem musi należeć do $T_pM$.\hfill $\square$
 
 \end{frame}
@@ -29,7 +30,7 @@ Przy powyższych oznaczeniach \textbf{odwzorowaniem Weingartena} w punkcie $p$ n
 Odwozorowanie Weingartena $L\colon T_pM\to T_pM$ jest odwzorowaniem liniowym.
 \end{lemat}
 \pause \textcolor{ared}{\textbf{Dowód:}}\\
-Lemat wynika z własności pochodnej kierunkowej (lemat \ref{lem:wl-pochodnej-kierunkowej}).
+Lemat wynika z liniowości pochodnej kierunkowej (lemat \ref{lem:wl-pochodnej-kierunkowej}).
 \hfill $\square$
 
 \end{frame}
@@ -44,16 +45,14 @@ Chociaż do definicji odwzorowania Weingartena używamy lokalnego układu wspó�
 
 
 \mode<all>{\midsection{Druga forma podstawowa}}
-\begin{frame}[<+->]
-
-
+\begin{frame}
 
 \begin{definicja}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in x(U)$. \textbf{Druga forma podstawowa} w punkcie $p$ to odwzorowanie dwuliniowe $\text{II}_p\colon T_pM\times T_pM\to \R$ indukowane przez odwzorowanie Weingartena $L$, tj. zadane wzorem
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in x(U)$. \pause\textbf{Druga forma podstawowa} w punkcie $p$ to odwzorowanie dwuliniowe $\text{II}_p\colon T_pM\times T_pM\to \R$ indukowane przez odwzorowanie Weingartena $L$\pause, tj. zadane wzorem
 \[\text{II}_p(v,w)=\langle L(v),w\rangle,\]
 dla wszystkich $v,w$ z przestrzeni stycznej $T_pM$.
 \end{definicja}
-\begin{uwaga}
+\pause \begin{uwaga}
 Tak jak odwzorowanie Weingartena, druga forma podstawowa jest zdefiniowana z dokładnością do znaku.
 \end{uwaga}
 
@@ -88,13 +87,13 @@ Na podstawie powtórki z algebry liniowej II, mamy \[(l_{ij})=(L_{ij})^t(g_{ij})
 
 \mode<article>{Następujący lemat pokazuje sposób na łatwe policzenie współczynników drugiej formy podstawowej $l_{ij}$.}
 \begin{lemat}
-Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in x(U)$.
+Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in x(U)$.
 \begin{enumerate}
-\item [\textbf{1.}](Równania Weingartena) Dla wszystkich indeksów $i,j$, zachodzi 
+\item [\textbf{1.}](Równania Weingartena) Dla $i=1,2$ zachodzi 
 \[n_i=-L_{1i}x_1-L_{2i}x_2.\]
-\item [\textbf{2.}]Dla wszystkich indeksów $i,j$, współczynniki macierzy drugiej formy podstawowej są równe
+\item [\textbf{2.}]Dla indeksów $i,j=1,2$, współczynniki macierzy drugiej formy podstawowej są równe
 \[l_{ij}=-\langle n_i,x_j\rangle=\langle n,x_{ij}\rangle,\]
-gdzie $x_{ij}$ jest oznaczeniem drugiej pochodnej cząstkowej względem zmienych $i$-tej i $j$-tej.
+gdzie $x_{ij}$ jest oznaczeniem drugiej pochodnej cząstkowej (względem zmienych $i$-tej i $j$-tej).
 \end{enumerate}
 \end{lemat}
 \end{frame}
@@ -108,7 +107,7 @@ gdzie $x_{ij}$ jest oznaczeniem drugiej pochodnej cząstkowej względem zmienych
 gdzie $x=x(u_1,u_2)$ ($u_i$ są zmiennymi lokalnego układu współrzędnych $x$).
 \pause \item [(\textbf{2.})]
 Mamy \[l_{ij}=\text{II}(x_i,x_j)=\langle L(x_i),x_j\rangle\stackrel{*}{=}-\langle\nabla_{x_i}n,x_j\rangle=-\langle n_i,x_j\rangle,\]
-co dowodzi pierwszej równości w punkcie 2. (równość $*$ wynika z dowodu pierwszej części.) \pause Aby udowodnić drugą równość, skorzystamy z tego, że $\langle n, x_i\rangle=0$. Mamy 
+co dowodzi pierwszej równości w punkcie 2 (równość $*$ wynika z dowodu pierwszej części). \pause Aby udowodnić drugą równość, skorzystamy z tego, że $\langle n, x_i\rangle=0$. Mamy 
 \pause \[0=\frac{\partial \langle n,x_j\rangle}{\partial u_i}=\langle n_i,x_j\rangle+\langle n,x_{ij}\rangle,\]skąd natychmiast wynika druga równość. \hfill $\square$
 \end{enumerate}
 
@@ -119,11 +118,13 @@ co dowodzi pierwszej równości w punkcie 2. (równość $*$ wynika z dowodu pie
 \begin{lemat}
 \begin{itemize}
 \pause \item Druga forma podstawowa $\text{II}$ jest symetryczna.
-\pause \item Odwzorowanie Weingartena $L$ jest samosprzężone.
+\pause \item Macierz $(L_{ij})$ odwzorowania Weingartena $L$ jest symetryczna \textbf{w każdej bazie ortonormalnej}.
 \end{itemize}
 \end{lemat}
 \textcolor{ared}{\textbf{Dowód:}}\\\pause 
-Symetryczność macierzy $(l_{ij})$ wynika z poprzedniego lematu i równości $x_{12}=x_{21}$. \pause Druga teza wynika wtedy z powiązań macierzy symetrycznej z samosprzężeniem odwzorowania przez nią indukowanego (lemat \ref{lem:alg-lin-2} cytowany podczas powtórki z algebry liniowej II).
+Symetryczność macierzy $(l_{ij})$ wynika z równości $l_{ij} =\langle n,x_{ij} \rangle$ oraz $x_{12}=x_{21}$. 
+
+\pause Druga teza wynika wtedy z powiązań macierzy symetrycznej symetrycznością odwzorowania przez nią indukowanego (lemat \ref{lem:alg-lin-2} cytowany podczas powtórki z algebry liniowej II).
 \hfill $\square$
 
 \end{frame}
@@ -131,22 +132,24 @@ Symetryczność macierzy $(l_{ij})$ wynika z poprzedniego lematu i równości $x
 \begin{frame}[<+->]
 
 \begin{uwaga}
-Z powyższych rozważań wcale nie wynika, że macierz odwzorowania Weingartena $(L_{ij})$ jest symetryczna. Jeśli baza przestrzeni stycznej $\{x_1, x_2\}$ nie będzie ortonormalna w punkcie $p$, wtedy najczęściej $L_{ij}(p)$ nie będzie macierzą symetryczną. (ogólniej: nie możemy wtedy zastosować do niej lematu \ref{lem:alg-lin-2}). 
+Z powyższych rozważań wcale nie wynika, że macierz odwzorowania Weingartena $(L_{ij})$ jest symetryczna. Jeśli baza przestrzeni stycznej $\{x_1, x_2\}$ nie będzie ortonormalna w punkcie $p$, wtedy najczęściej $L_{ij}(p)$ nie będzie macierzą symetryczną. (ogólniej: nie możemy wtedy zastosować do niej lematu \ref{lem:alg-lin-2}).
 \end{uwaga}
 
 \begin{uwaga}
-Wiedząc, że $l_{ij}$ jest symetryczna, możemy przepisać uzyskaną wcześniej równość
+Wiedząc, że macierz $(l_{ij})$ jest symetryczna, możemy przepisać uzyskaną wcześniej równość do prostszej 
 \[(L_{ij})=(g_{ij})^{-1}(l_{ij}).\]
 \end{uwaga}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Krzywizna Gaussa oraz krzywizna średnia}}
-\begin{frame}
-\mode<article>{Jak pamiętamy intuicyjna definicja krzywizny wokół punktu $p$ kazała nam porównywać pole na powierzchni z polem zakreślonym przez wektor normalny. Ponieważ odwzorowanie Weingartena charakteryzuje lokalne zmiany wektora normalnego, może się nadawać do definicji krzywizny. }
+Jak pamiętamy intuicyjna definicja krzywizny wokół punktu $p$ kazała nam porównywać pole na powierzchni z polem zakreślonym przez wektor normalny. Ponieważ odwzorowanie Weingartena charakteryzuje lokalne zmiany wektora normalnego, może się nadawać do definicji krzywizny.
 
 Niezmiennikami numerycznymi macierzy $2\times2$ są wyznacznik i ślad. Co więcej, są to niezmienniki odpowiadajacego danej macierzy odwzorowania liniowego (tj. są te same dla macierzy sprzężonych), dlatego właśnie je użyjemy w poniższych definicjach.
 
+
+\begin{frame}{Krzywizna powierzchni}
+\mode<presentation>{Macierz odwzorowania liniowego zależy od wyboru bazy przestrzeni, jednak wyznacznik i ślad tego odwzorowania są od bazy niezależne.}
 \pause \begin{definicja}
 Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $L$ będzie oznaczało odwzorowanie Weingartena. \pause Zdefiniujmy dwie funkcje skalarne $K\colon M\to \R$, $H\colon M\to \R$ nastepująco
 \begin{align*}
@@ -164,26 +167,49 @@ Krzywizna Gaussa i krzywizna średnia nie zależą od wyboru macierzy reprezentu
 \end{lemat}
 
 \pause \textcolor{ared}{\textbf{Dowód:}}\\
-Dowód wynika z odpowiedniego przedstawienia wyznacznika (jako iloczynu wartości własnych) i śladu (jako ich sumy)  cytowanego w powtórce z algebry liniowej II (Lemat \ref{lem:alg-lin-2-eigen}). \hfill $\square$
+Dowód wynika z odpowiedniego przedstawienia wyznacznika i śladu:
+\[\det L(p)=k_1k_2,\operatorname{tr}L(p)=k_1 +k_2 .\]
+cytowanego w powtórce z algebry liniowej II (Lemat \ref{lem:alg-lin-2-eigen}). \hfill $\square$
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
 \begin{lemat}
-Niech $M\subset \R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in x(U)$. \pause Wtedy
+Niech $M\subset \R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in x(U)$. \pause 
 \begin{align*}
 K(p)=&\frac{\det (l_{ij})}{\det (g_{ij})},\quad\text{oraz}\quad& H(p)=&\frac{g_{11}l_{22}-2g_{12}l_{12}+g_{22}l_{11}}{2 \det (g_{ij})}
 \end{align*}
-% \begin{align*}
-% K(p)=&\frac{\det (l_{ij})}{\det (g_{ij})},\\\intertext{oraz}
-% H(p)=&\frac{g_{11}l_{22}-2g_{12}l_{12}+g_{22}l_{11}}{2 \det (g_{ij})}
-% \end{align*}
 \end{lemat}
 
 \pause \textcolor{ared}{\textbf{Dowód:}}\\
-Dowody tych równości wynikają z równości
-$(L_{ij})=(g_{ij})^{-1}(l_{ij})$, oraz z własności multiplikatywnych wyznacznika i śladu macierzy. Pozostawiamy je do sprawdzenia jako zadanie domowe.
+Przypomnijmy, że $(L_{ij})=(g_{ij})^{-1}(l_{ij})$. Mamy zatem
+\[K(p)=\det (L_{ij})=\det((g_{ij})^{-1}(l_{ij}))=\frac{\det (l_{ij})}{\det (g_{ij})}.\]
+
+\pause Podobnie 
+\begin{multline*}
+H(p)=\frac{1}{2}\operatorname{tr}(L_{ij})=
+\frac{1}{2\det(g_{ij})}\operatorname{tr}
+\left(\left[
+ \begin{array}{cc}
+g_{22} & -g_{21} \\
+-g_{12} & g_{11} 
+ \end{array}
+ \right] \left[
+\begin{array}{cc}
+l_{11} & l_{12} \\
+l_{21} & l_{22} 
+\end{array}
+\right]\right)
+=\\\pause 
+=\frac{1}{2\det(g_{ij})}
+\left[
+\begin{array}{cc}
+g_{22} l_{11} - g_{21} l_12 & *\\
+* & - g_{12} l_{21} + g_{11} l_{22} 
+\end{array}
+\right]
+\end{multline*}
 \hfill $\square$
 
 \end{frame}
@@ -210,15 +236,15 @@ l_{11}=&\langle n_1,x_1\rangle, & l_{12}=&\langle n_2,x_1\rangle, & l_{22}=&\lan
 
 \pause Przypomnijmy orginalną definicję Gaussa krzywizny i zastąpmy pola przez odpowiednie całki:
 \begin{multline*}
-K(p)=\lim_{T\to \{p\}}\frac{A(\widehat{n}(T))}{A(T)}\pause =\frac{\iint_{x^{-1}(T)}\langle n_1\times n_2, n\rangle ds\,dt}{\iint_{x^{-1}(T)}\langle x_1\times x_2, n\rangle ds\,dt}=\\=\frac{\iint_{x^{-1}(T)}\langle n_1\times n_2, n\rangle ds\,dt}{\iint_{x^{-1}(T)}\sqrt{\det(g_{ij}) } ds\,dt}. 
+K_{\mathcal{G}}(p)=\lim_{T\to \{p\}}\frac{A(\widehat{n}(V))}{A(V)}\pause =\frac{\iint_{x^{-1}(V)}|\langle n_1\times n_2, n\rangle| ds\,dt}{\iint_{x^{-1}(V)}|\langle x_1\times x_2, n\rangle| ds\,dt}=\\=\frac{\iint_{x^{-1}(V)}|\langle n_1\times n_2, n\rangle|  ds\,dt}{\iint_{x^{-1}(V)}\sqrt{|\det(g_{ij})|} ds\,dt}. 
 \end{multline*}
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
-Teraz użyjemy twierdzenia o wartości średniej które mówi, że dla każdego takiego zbioru $T$ muszą istnieć takie punkty $a_T,b_T\in x^{-1}(T)$, że cała całka wyraża się jako wartość funkcji podcałkowej w tych punktach:
+Teraz użyjemy twierdzenia o wartości średniej które mówi, że dla każdego takiego zbioru $V$ muszą istnieć takie punkty $a_V,b_V\in x^{-1}(V)$, że cała całka wyraża się jako wartość funkcji podcałkowej w tych punktach:
 \pause \begin{align*}
-\iint_{x^{-1}(T)}\langle n_1\times n_2, n\rangle ds\,dt=&\langle n_1(a_T)\times n_2(a_T),n(a_T)\rangle A(x^{-1}(T)),\\
-\iint_{x^{-1}(T)}\sqrt{\det(g_{ij}) } ds\,dt=& \sqrt{\det(g_{ij}(b_T))}A(x^{-1}(T)).
+\iint_{x^{-1}(V)}|\langle n_1\times n_2, n\rangle| ds\,dt=&|\langle n_1(a_V)\times n_2(a_V),n(a_V)\rangle| A(x^{-1}(V)),\\
+\iint_{x^{-1}(V)}\sqrt{|\det(g_{ij})|} ds\,dt=& \sqrt{|\det(g_{ij}(b_V))|}A(x^{-1}(V)).
 \end{align*}
 
 \end{frame}
@@ -226,28 +252,28 @@ Teraz użyjemy twierdzenia o wartości średniej które mówi, że dla każdego 
 \begin{frame}[<+->]
 
 
-Zauważmy, że skoro $T\to \{p\}$, więc $a_T\to \overline{p}$ oraz $b_T\to \overline{p}$. \pause Mamy więc
+Zauważmy, że skoro $V\to \{p\}$, więc $a_V\to \overline{p}$ oraz $b_V\to \overline{p}$. \pause Mamy więc
 \begin{multline*}
-\lim_{T\to \{p\}}\frac{A(\widehat{n}(T))}{A(T)}=\lim_{T\to \{p\}}\frac{\langle n_1(a_T)\times n_2(a_T),n(a_T)\rangle A(x^{-1}(T))}{\sqrt{\det(g_{ij}(b_T))}A(x^{-1}(T))}=\\
-=\frac{\langle n_1(\overline{p})\times n_2(\overline{p}),n(\overline{p})\rangle}{\sqrt{\det(g_{ij}(\overline{p}))}}.
+\lim_{V\to \{p\}}\frac{A(\widehat{n}(V))}{A(V)}=\lim_{V\to \{p\}}\frac{|\langle n_1(a_V)\times n_2(a_V),n(a_V)\rangle| A(x^{-1}(V))}{\sqrt{|\det(g_{ij}(b_V))|}A(x^{-1}(V))}=\\
+=\frac{|\langle n_1(\overline{p})\times n_2(\overline{p}),n(\overline{p})\rangle|}{\sqrt{|\det(g_{ij}(\overline{p}))}|}.
 \end{multline*}
 \pause
 Z równań Weingartena na pochodne wektora normalnego ($n_i=-L_{1i}x_1-L_{2i}x_2$) otrzymujemy
 \begin{multline*}
- n_1\times n_2=\big(-(L_{11}x_1+L_{21}x_2)\big)\times\big(-(L_{21}x_1+L_{22}x_2)\big)=\\=(x_1\times x_2)(L_{11}L_{22}-L_{21}L_{22})=K(p)(x_1\times x_2).
+ n_1\times n_2=\big(-(L_{11}x_1+L_{21}x_2)\big)\times\big(-(L_{21}x_1+L_{22}x_2)\big)=\\=(x_1\times x_2)(L_{11}L_{22}-L_{21}L_{22})=K(p)(x_1\times x_2)
 \end{multline*}
-
+(jest to krzywizna $K(p)$ zdefiniowana jako $\det (L_{ij} )$).
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
 Podstawiając wyliczony iloczyn wektorowy oraz korzystając z definicji wektora normalnego mamy 
 \begin{multline*}
-\langle n_1(\overline{p})\times n_2(\overline{p}) ,n(\overline{p})\rangle=\pause K(p)\left\langle x_1(\overline{p})\times x_2(\overline{p}),\frac{x_1(\overline{p})\times x_2(\overline{p})}{\sqrt{\det (g_{ij}(\overline{p}))}}\right\rangle=\\\pause
-=\frac{K(p)}{\sqrt{\det (g_{ij}(\overline{p})))}}||x_1\times x_2||^2=\pause 4K(p)\sqrt{\det (g_{ij}(\overline{p})))},
+\langle n_1(\overline{p})\times n_2(\overline{p}) ,n(\overline{p})\rangle=\pause\pm K(p)\left\langle x_1(\overline{p})\times x_2(\overline{p}),\frac{x_1(\overline{p})\times x_2(\overline{p})}{\sqrt{\det (g_{ij}(\overline{p}))}}\right\rangle=\\\pause
+=\frac{\pm K(p)}{\sqrt{\det (g_{ij}(\overline{p})))}}||x_1\times x_2||^2=\pause \pm K(p)\sqrt{\det (g_{ij}(\overline{p})))},
 \end{multline*}
 \pause zatem ostatecznie 
-\[\lim_{T\to \{p\}}\frac{A(\widehat{n}(T))}{A(T)}=\frac{K(p)\sqrt{\det (g_{ij}(\overline{p})))}}{\sqrt{\det (g_{ij}(\overline{p})))}}=K(p).\]
+\[K_{\mathcal{G}}(p)=\lim_{V\to \{p\}}\frac{A(\widehat{n}(V))}{A(V)}=\frac{\pm K(p)\sqrt{\det (g_{ij}(\overline{p})))}}{\sqrt{\det (g_{ij}(\overline{p})))}}=\pm K(p).\]
 
 \end{frame}
 \mode<all>

@@ -64,13 +64,13 @@ Przypomnijmy materiał którym zajmowaliśmy się podczas badania własności iz
 \begin{frame}[<+->]{Przypomnienie}
 
 \begin{definicja}
-\textbf{Gładkie pole wektorowe} na $M$ to funkcja gładka \[F\colon M\to \R^3.\]
+\textbf{Gładkie pole wektorowe} na $M$ to odwzorowanie gładkie \[F\colon M\to \R^3.\]
 Gładkie pole wektorowe nazywamy \textbf{stycznym} jeśli $F(p)\in T_pM\subset \R^3$ dla wszystkich $p\in M$.
 %Będziemy rozważać najczęściej \[F\define \overline{F}\circ x=(F_1,F_2,F_3)\colon U\to \R^3\]
 \end{definicja}
 \begin{definicja}
 \textbf{Pochodna kierunkowa pola wektorowego} $F$ w kierunku wektora $v\in T_p M$ jest zdefiniowana naturalnie jako
-\[\nabla_v F\define(\nabla_v F_1,\nabla_vF_2,\nabla_vF_3)\] gdzie $F_i$ są funkcjami współrządnymi pola $F$.
+\[\nabla_v F\define(\nabla_v F_1,\nabla_vF_2,\nabla_vF_3)\] gdzie $F_i$ są funkcjami współrzędnymi pola $F$.
 \end{definicja}
 
 \end{frame}
@@ -78,7 +78,7 @@ Gładkie pole wektorowe nazywamy \textbf{stycznym} jeśli $F(p)\in T_pM\subset \
 \begin{frame}
 
 \begin{przyklad}
-Zauważmy, że wektor normalny jako funkcja
+Zauważmy, że wektor normalny jako odwzorowanie
 \[\widehat{n}\colon M\to\R^3,\]
 jest tak naprawdę gładkim polem wektorowym na $M$. Jego pochodną kierunkową jest... odwzorowanie Weingartena.
 \end{przyklad}
@@ -97,7 +97,9 @@ Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności ja
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
- Rozważmy styczne pole wektorowe $Z\colon M\to \R^3$. Niech $p\in M$ i $v\in T_p M$. Oczywiście nie ma powodu, aby wektor $\nabla_v Z$ należał do przestrzeni stycznej (dlaczego nie było tego problemu gdy rozważaliśmy odwzorowanie Weingartena?). \pause Spróbujemy ``naprawić'' tę sytuację w brutalny sposób: rzutując ortogonalnie $\nabla_v Z$ na $T_p M$. %Powody poniższej definicji staną się jasne później.
+ Rozważmy styczne pole wektorowe $Z\colon M\to \R^3$. Niech $p\in M$ i $v\in T_p M$. 
+
+\pause Oczywiście nie ma powodu, aby wektor $\nabla_v Z$ należał do przestrzeni stycznej (dlaczego nie było tego problemu gdy rozważaliśmy pochodną odwzorowania Weingartena?). \pause Spróbujemy ``naprawić'' tę sytuację w brutalny sposób: rzutując ortogonalnie $\nabla_v Z$ na $T_p M$. %Powody poniższej definicji staną się jasne później.
 
 \pause
  \begin{definicja}
@@ -111,7 +113,7 @@ Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności ja
 \begin{lemat}
   Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $Y, Z\colon M\to \R^3$ będą stycznymi polami wektorowymi. Niech $f\colon M\to \R$ będzie ładką funkcją, $p\in M$ punktem na $M$, $v,w\in T_p(M)$ wektorami z przestrzeni stycznej i wreszcie $a,b\in \R$ liczbami rzeczywistymi. Wtedy
  \begin{itemize}
-  \item Funkcja \[\widehat{\nabla}_{(\cdot)}Z\colon T_pM\to T_pM\] zadana przez $v\mapsto \widehat{\nabla}_vZ$ jest odwzorowaniem liniowym.
+  \item Odwzorowanie \[\widehat{\nabla}_{(\cdot)}Z\colon T_pM\to T_pM\] zadana przez $v\mapsto \widehat{\nabla}_vZ$ jest odwzorowaniem liniowym.
   \item $\widehat{\nabla}_v(Y+Z)=\widehat{\nabla}_vY+\widehat{\nabla}_v Z$.
   \item $\widehat{\nabla}_vfZ=(\widehat{\nabla}_v f)Z(p)+f(p)(\widehat{\nabla}_vZ)$.
  \item $\widehat{\nabla}_v\langle Y,Z\rangle=\langle\widehat{\nabla}_v Y, Z(p)\rangle+\langle Y(p),\widehat{\nabla}_v Z\rangle$

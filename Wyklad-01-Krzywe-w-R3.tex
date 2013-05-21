@@ -14,8 +14,8 @@
 \begin{frame}[<+->]
 \begin{definicja}
 \begin{itemize}
-\item\textbf{Krzywa gładka}, lub po prostu \textbf{krzywa} w $\R^3$ to gładka funkcja z (otwartego) odcinka w trójwymiarową przestrzeń Euklidesową \[\alpha\colon (a,b)\to \R^3;\]
-\item Dla każdego $t\in (a,b)$ \textbf{wektor prędkości} w punkcie $t$ określamy jako \[\alpha'(t)=(\alpha_1'(t),\alpha_2'(t),\alpha_3'(t)),\]gdzie $\alpha_i'(t),$ są poszczególnymi współrzędnymi funkcji $\alpha$;
+\item\textbf{Krzywa gładka}, lub po prostu \textbf{krzywa} w $\R^3$ to odwzorowanie gładkie \[\alpha\colon (a,b)\to \R^3;\]
+\item Dla każdego $t\in (a,b)$ \textbf{wektor styczny} (lub \textbf{wektor prędkości}) w punkcie $t$ określamy jako \[\alpha'(t)=(\alpha_1'(t),\alpha_2'(t),\alpha_3'(t)),\]gdzie $\alpha_i(t)$, są poszczególnymi współrzędnymi funkcji $\alpha$;
 \item \textbf{prędkość}, lub \textbf{prędkość skalarna} w punkcie $t_0\in (a,b)$ to po prostu długość wektora $\alpha'(t_0)$, oznaczana jako $\|\alpha'(t_0)\|$;
 \end{itemize}
 \end{definicja}
@@ -27,11 +27,13 @@
 \begin{itemize}
 \item Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą gładką. \textbf{Długość} $\alpha$ definiujemy jako całkę
 \[L(\alpha)\define\int_a^b\|\alpha'(t)\|dt.\]
-\item Krzywą nazywamy unormowaną gdy dla każdego $t\in (a,b)$ zachodzi $\|\alpha'(t)\|=1$.
+\item Krzywą (lub ściślej: parametryzację krzywej) nazywamy unormowaną gdy dla każdego $t\in (a,b)$ zachodzi \[\|\alpha'(t)\|=1.\]
+\item Zauważmy, że jeśli $|\alpha'(t)|=1$ dla wszystkich $t$, w\'owczas 
+\[L(\alpha)=b-a.\]Z tego powodu taką krzywą (parametryzację krzywej) nazywamy też \textbf{łukową}.
 \end{itemize}
 
 \end{definicja}
-
+@@@ Oprea --> najkr\'otsza droga w $\R^3$ to prosta. @@@
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
@@ -59,15 +61,20 @@ Gładką krzywą $\alpha(t)$ nazywamy \textbf{regularną} (lub \textbf{naturaln�
 \begin{definicja}
 Niech $\alpha\colon (c,d)\to \R^3$ będzie gładką krzywą, oraz niech $h\colon (a,b)\to (c,d)$ będzie pewnym dyfeomorfizmem. Krzywą powstałą przez złożenie $\alpha$ i $h$,\[\overline{\alpha}\define \alpha\circ h\colon (a,b)\top{h}(c,d)\top{\alpha}\R^3\]
 nazywamy \textbf{reparametryzacją} krzywej $\alpha$ przez dyfeomorfizm $h$.
+
+
 \end{definicja}
 \end{frame}
 %%%%%%next-slide%%%%%
+
 \begin{frame}[<+->]
 
 
 \begin{przyklad}
 Niech funkcja $h\colon (0,2)\to (1,5)$ będzie zdefinionana jako \[h(t)=2t+1,\] zaś $\alpha\colon (1,5)\to\R^3$ jako \[\alpha(t)=(t^2+3,t-7,\sin{t}).\] Wówczas reparametryzacja $\alpha$ przez $h$ jest zdana wzorem
 \[\overline{\alpha}(t)=(4t^2+4t+4,2t-6,\sin2t+1).\]
+
+\pause Krzywe te jednak mają dokładnie ten sam kształt (wykres) w przestrzeni $\R^3$.
 \end{przyklad}
 
 \end{frame}
@@ -128,7 +135,7 @@ Rozważmy jej szczególną postać dla $a=b=1$. Wtedy jej prędkość jest równ
 Niech $\alpha\colon (a,b)\to \R^3$ oraz $\overline{\alpha}\colon (c,d)\to \R^3$ będą krzywymi różnowartościowymi o tym samym obrazie. Wówczas istnieje taki dyfeomorfizm \[h\colon (a,b)\to (c,d),\] że $\overline{\alpha}$ jest reparametryzacją krzywej $\alpha$ przez $h$.
 \end{lemat}
 \pause \textcolor{ared}{\textbf{Dowód:}}\\
-Niech $h(t)$ oznacza złożenie \[\alpha^{-1}\circ \overline{\alpha} (t).\] Dokładne sprawdzenie że jest to szukana reparametryzacja jest zadaniem domowym.
+Niech $h(t)$ oznacza złożenie \[\alpha^{-1}\circ \overline{\alpha} (t)\] ($\alpha^{-1}\colon \alpha(a,b)\to \R^3$ istnieje ponieważ $\alpha$ jest r\'ożnowartościowa). Dokładne sprawdzenie że jest to szukana reparametryzacja jest zadaniem domowym.
 \hfill $\square$
 
 \end{frame}

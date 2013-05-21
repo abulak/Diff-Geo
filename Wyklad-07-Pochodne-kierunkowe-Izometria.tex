@@ -19,7 +19,14 @@ Przy oznaczeniach jak powyżej definiujemy \textbf{pochodną kierunkową} funkcj
 Definicja pochodnej kierunkowej nie zależy od wyboru krzywej $\alpha$, tj. jeśli $\beta\colon (-\varepsilon,\varepsilon)\to M$ jest drugą krzywą o tej własności, że $\beta(0)=p$ oraz $\beta'(0)=v$ wtedy \[\left(f\circ \alpha\right)'(0)=\left(f\circ \beta\right)'(0).\]
 \end{lemat}
 \textcolor{ared}{\textbf{Dowód:}}\\\pause
-Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in M$. Możemy wybrać tak małe $\varepsilon$, że obrazy $\alpha(-\varepsilon,\varepsilon)$ i $\beta(-\varepsilon,\varepsilon)$ będą już zawarte w $x(U)$. \pause Z definicji przestrzeni stycznej, wektory styczne do tych krzywych w $0$ można wyrazić jako kombinacje liniowe wektorów $x_1$ i $x_2$. \pause \mode<presentation>{\\}Co więcej, z równości $\alpha'(0)=v=\beta'(0)$ wynika, że współczynniki tych kombinacji są sobie równe w punkcie $p$. 
+\mode<article>{Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in M$. Możemy wybrać tak małe $\varepsilon$, że obrazy $\alpha(-\varepsilon,\varepsilon)$ i $\beta(-\varepsilon,\varepsilon)$ będą już zawarte w $x(U)$. \pause Z definicji przestrzeni stycznej, wektory styczne do tych krzywych w $0$ można wyrazić jako kombinacje liniowe wektorów $x_1$ i $x_2$. \pause \mode<presentation>{\\}Co więcej, z równości $\alpha'(0)=v=\beta'(0)$ wynika, że współczynniki tych kombinacji są sobie równe w punkcie $p$.}
+\mode<presentation>{
+\begin{itemize}
+ \item Niech $x\colon U\to M$ -- lokalny układ wsp\'ołrzędnych wok\'oł $p\in M$.
+ \pause\item Zał\'ożmy, że $\alpha(-\varepsilon,\varepsilon)\subset x(u)$, oraz $\beta(-\varepsilon,\varepsilon)\subset x(U).$
+ \pause \item Z założenia mamy $\alpha'(0)=v=\beta'(0)$.
+\end{itemize}
+}
 
 
 \end{frame}
@@ -94,7 +101,7 @@ Wtedy
 Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $f\colon M\to \R^3$ będzie odwzorowaniem gładkim (tj. polem wektorowym). \textbf{Pochodną} $f$ w punkcie $p\in M$ definiujemy jako
 \begin{align*}
 Df_p\colon T_pM&\to R^3\\
-v&\mapsto \nabla_v f
+v&\mapsto \nabla_v f=\left(\nabla_v f_1,\nabla_v f_2,\nabla_v f_3\right).
 \end{align*}
 \end{definicja}
 
@@ -104,7 +111,7 @@ v&\mapsto \nabla_v f
 \begin{frame}
 
 \begin{lemat}
-Niech $M,N\subset \R^3$ będą powierzchniami gładkimi, $p\in M$ punktem, oraz niech $f\colon M\to N$ będzie gładką funkcją. Wtedy dla każdego $v\in T_pM$ mamy $Df_p(v)\in T_{f(p)}N$ oraz \[Df_p\colon T_pM\to T_{f(p)}N\] jest odwzorowaniem liniowym.
+Niech $M,N\subset \R^3$ będą powierzchniami gładkimi, $p\in M$ punktem, oraz niech $f\colon M\to N$ będzie odwzorowaniem gładkim. Wtedy dla każdego $v\in T_pM$ mamy $Df_p(v)\in T_{f(p)}N$ oraz \[Df_p\colon T_pM\to T_{f(p)}N\] jest odwzorowaniem liniowym.
 
 \end{lemat}
 
@@ -125,7 +132,7 @@ Niech $v\in T_pM$. Wtedy istnieje taka krzywa $\alpha\colon (-\varepsilon,\varep
 
 \begin{przyklad}\label{ex:differential}
 Rozważmy odwzorowanie $f\colon \R^2\to S^1\times \R$ zadane wzorem \[f(s,t)=(\cos s,\sin s,t).\]
-(Jest to odwzorowanie które owija arkusz papieru na walec.) \pause Dla $p=(0,0)\in \R^2$ mamy $f(p)=(1,0,0)$. Zauważmy, że $T_p\R^2$ jest płaszczyzną $x-y$, zaś $T_{f(p)}(S^1\times \R)$ jest płaszczyzną $y-z$.
+(Jest to odwzorowanie które owija walec arkuszem papieru.) \pause Dla $p=(0,0)\in \R^2$ mamy $f(p)=(1,0,0)$. Zauważmy, że \[T_{f(p)}(S^1 \times \R)\{(1,y,z)\in \R^3 \}.\]
 \pause Wybierzmy $v=(a,b)\in T_p\R^2$ i niech $\alpha\colon (-\varepsilon,\varepsilon)\to\R^2$ będzie zadana przez $\alpha(t)=(at,bt)$. Wtedy oczywiście
 \begin{align*}
 \alpha(0)&=p, &
@@ -142,7 +149,7 @@ Df_p(v)=\nabla_v f=(f\circ \alpha)'\big|_{t=0}=\\=(-a\sin at,a\cos at, b)\big|_{
 \begin{frame}[<+->]
 
 \begin{definicja}
-Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie funkcją gładką.
+Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie odwzorowaniem gładkim.
 \begin{itemize}
 \item Mówimy, że $f$ jest \textbf{izometrią} jeśli $f$ jest \emph{dyfeomorfizmem}, oraz pierwsza forma podstawowa jest niezmienniczna ze względu na $f$, i.e. \[I_p(v,w)=I_{f(p)}(Df_p(v),Df_p(w)),\] dla wszystkich $p\in M$ i wszystkich $v,w\in T_p(M)$.
 
@@ -167,7 +174,7 @@ Warto zauważyć, że izometria od lokalnej izometrii różni się tylko i wył�
 \begin{frame}[<+->]
 
 \begin{lemat}\label{lem:loc-isometry-prop}
-Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie funkcją gładką. Następujące warunki są równoważne.
+Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$ będzie odwzorowaniem gładkim. Następujące warunki są równoważne.
 
 \begin{enumerate}
 \item $f$ jest lokalną izometrią.
@@ -185,11 +192,13 @@ Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$
 \textcolor{ared}{\textbf{Dowód:}}\\\pause
 Udowodnimy tylko, że lokalna izometria zachowuje współczynniki metryczne. Resztę implikacji pozostawiamy jako (opcjonalne) zadania.
 
-\pause $(2)\Rightarrow (3)$. Niech $p\in M$ oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p$. Pokażemy, że pochodna złożenia $f\circ x$ ma rangę $2$, więc z twierdzenia o funkcji uwikłanej będzie wynikać, że $f\circ x$ na pewnym otoczeniu $V\subset U$ jest dyfeomorfizmem na swój obraz.
+\pause Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in M$.
+\begin{description}
+\item [$(2)\Rightarrow (3)$: ] Pokażemy, że pochodna złożenia $f\circ x$ ma rangę $2$, więc z twierdzenia o funkcji uwikłanej wynika, że $f\circ x$ na pewnym otoczeniu $V\subset U$ jest dyfeomorfizmem na swój obraz.
 
-\pause Niech $\{e_1,e_2\}$ będzie standardową bazą w $\R^2$. Niech $q\in x(U)$ oraz niech $\overline{q}=x^{-1}(q)$. Zdefiniujmy krzywe \[\alpha_{q,i}(t)=x(\overline{q}+te_i),\quad i=1,2,\]
+\pause Niech $\{e_1,e_2\}$ będzie standardową bazą w $\R^2$. Niech $q\in x(U)$ oraz niech $\overline{q}=x^{-1}(q)$. \pause Zdefiniujmy teraz krzywe \[\alpha_{q,i}(t)=x(\overline{q}+te_i),\quad i=1,2,\]
 działające z $(-\varepsilon,\varepsilon)\to x(U)$ dla odpowiednio małego $\varepsilon$. 
-
+\end{description}
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
@@ -209,11 +218,18 @@ gdzie wartości pochodnych $x_i$ oraz $(f\circ x)_i$ są wzięte dla $\overline{
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
-\mode<presentation>{\[\langle (f\circ x)_i, (f\circ x)_i\rangle=\langle Df_q(x_i),Df_q(xj)\rangle=\langle x_i,x_j\rangle\]}
-Z powyższego równania wynika, że $\|(f\circ x)_i\|=\|x_i\|$, oraz kąt między $(f\circ x)_1$ i $(f\circ x)_2$ jest taki sam jak między $x_1$ i $x_2$. \pause Zatem z liniowej niezależności $x_1$ i $x_2$ wynika liniowa niezależność $(f\circ x)_1$ i $(f\circ x)_2$, czyli $\text{rank }(f\circ x)=2$ na odpowiednio pomniejszonym zbiorze $V\subset U$ (tak by $\alpha_{q,i}$) były dobrze określone). \pause Wreszcie z twierdzenia o funkcji uwikłanej wynika, że $f\circ x\colon V\to N$ jest lokalnym układem współrzędnych. Równość współczynników metrycznych wynika natychmiast z powyższej równości.
-\hfill $\square$
+\mode<presentation>{\[\langle (f\circ x)_i, (f\circ x)_i\rangle=\langle Df_q(x_i),Df_q(xj)\rangle=\langle x_i,x_j\rangle\]
+ \begin{itemize}
+ \item Zatem  $\|(f\circ x)_i\|=\|x_i\|$ i kąt między $(f\circ x)_1$ i $(f\circ x)_2$ jest taki sam jak między $x_1$ i $x_2$.
+ \item Stąd $(f\circ x)_1$ i $(f\circ x)_2$ są liniowo niezależne (na odp. małym $V\subset U$).
+ \item Zatem  $f\circ x\colon V\to N$ jest lokalnym układem wsp\'ołrzędnych (tw. o funkcji uwikłanej), 
+ \item Wsp\'ołczynniki metryczne $f\circ x$ są takie same jak samego $x$ (powyższa r\'owność).
+ \end{itemize}\hfill $\square$
+}
 
 \end{frame}
+Z powyższego równania wynika, że $\|(f\circ x)_i\|=\|x_i\|$, oraz kąt między $(f\circ x)_1$ i $(f\circ x)_2$ jest taki sam jak między $x_1$ i $x_2$. Zatem z liniowej niezależności $x_1$ i $x_2$ wynika liniowa niezależność $(f\circ x)_1$ i $(f\circ x)_2$, czyli $\text{rank }(f\circ x)=2$ na odpowiednio pomniejszonym zbiorze $V\subset U$ (tak by $\alpha_{q,i}$) były dobrze określone). Wreszcie z twierdzenia o funkcji uwikłanej wynika, że $f\circ x\colon V\to N$ jest lokalnym układem współrzędnych. Równość współczynników metrycznych wynika natychmiast z powyższej równości. \hfill $\square$
+
 %%%%%%next-slide%%%%%
 \begin{frame}
 \mode<presentation>{\begin{przyklad}}

@@ -143,7 +143,7 @@ x_2(t,\vartheta)=&(0,-\alpha_2(t)\sin\vartheta,\alpha_2(t)\cos\vartheta)
 \begin{align*}
 x_{11}(t,\vartheta)=&(\alpha_1''(t),\alpha_2''(t)\cos\vartheta,\alpha_2''(t)\sin\vartheta)\\
 x_{12}(t,\vartheta)=x_{21}(t,\vartheta)=&(0,-\alpha_2'(t)\sin\vartheta,\alpha_2'(t)\cos\vartheta)\\
-x_{22}(t,\vartheta)=&(0,-\alpha_2(t)\cos\vartheta,-\alpha_2(t)\sin\vartheta.
+x_{22}(t,\vartheta)=&(0,-\alpha_2(t)\cos\vartheta,-\alpha_2(t)\sin\vartheta).
 \end{align*}\vspace*{-0.2in}
 \pause \item Z definicji symboli Christoffela mamy np.
 \[x_{12}=\Gamma_{12}^1x_1+\Gamma_{12}^2x_2+l_{12}n.\]
@@ -228,8 +228,17 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką. Jeśli $M$ jest zupełną 
 \end{twierdzenie}
 
 \pause
-Zamiast szukać krzywych geodezyjnych łączących dwa punkty na powierzchni $M$ (co wymagałoby globalnego spojrzenia na nią) spróbujmy ustalić punkt $p\in M$, wybrać wektor $v\in T_pM$, a następnie szukać geodezyjnej w wyznaczonym przez $v$ kierunku. \pause Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną gładką krzywą. Okazuje się jednak, że zawsze wśród krzywych odpowiadających $v$ znajdziemy geodezyjną.
+\mode<presentation>{
+\pause\begin{itemize}[<+->]
+ \item Nie będziemy szukać geodezyjnych łączących punkty na powierzchni $M$.
+\item Ustalmy punkt $p\in M$, oraz wektor $v\in T_pM$.
+\item Szukamy krzywej geodezyjnej w wyznaczonym przez $v$ kierunku i przechodzącej przez $p$.
+\item Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną krzywą gładką.
+\end{itemize}}
 \end{frame}
+
+Zamiast szukać krzywych geodezyjnych łączących dwa punkty na powierzchni $M$ (co wymagałoby globalnego spojrzenia na nią) spróbujmy ustalić punkt $p\in M$, wybrać wektor $v\in T_pM$, a następnie szukać geodezyjnej w wyznaczonym przez $v$ kierunku. \pause Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną gładką krzywą. Okazuje się jednak, że zawsze wśród krzywych odpowiadających $v$ znajdziemy geodezyjną.
+
 %%%%%%next-slide%%%%%
 \begin{frame}
 
@@ -240,8 +249,7 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką.
 \pause \item Krzywa $\gamma$ jest jedyną taką krzywą w następującym sensie:
 
 Jeśli dla pewnej $\delta>0$ istnieje krzywa geodezyjna $\widetilde{{\gamma}}\colon (-\delta,\delta)\to M$ o tej własności, że $\delta(0)=p$ i $\delta'(0)=v$, wtedy istnieje mniejsze otoczenie $(-\zeta,\zeta)\subset \R$ na którym $\gamma$ i $\widetilde{\gamma}$ są sobie równe. 
-
-\pause (za $(-\zeta,\zeta)$ można przyjąć$(-\varepsilon,\varepsilon)\cap(-\delta,\delta)$ przecięcie dziedzin tych krzywych)
+\pause (za $(-\zeta,\zeta)$ można przyjąć$(-\varepsilon,\varepsilon)\cap(-\delta,\delta)$)
 \end{itemize}
 \end{twierdzenie}
 

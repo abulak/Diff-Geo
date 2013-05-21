@@ -5,29 +5,33 @@
 \begin{frame}[<+->]
 Tak jak został zdefiniowany wektor normalny (jako $\frac{x_1\times x_2}{\|x_1\times x_2\|}$, definicja \ref{def:normal-vector}), jest on raczej funkcją z $\R^2\to \R^3 (\text{lub }\R^2\to S^2)$. \pause Jednak dla celów dalszego wykładu chcielibyśmy, aby był funkcją gładką określoną \textit{na powierzchni}. Stąd następująca definicja:
 \pause \begin{definicja}
-Niech $M\subset R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. \textbf{Odwzorowaniem Gaussa} nazywamy funkcję $\widehat{n}\colon x(U)\to S^2$ zadaną wzorem \[\widehat{n}(p)\define n\circ x^{-1}(p),\] gdzie $n=\frac{x_1\times x_2}{\|x_1\times x_2\|}$.
+Niech $M\subset R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. \textbf{Odwzorowaniem Gaussa} nazywamy odwzorowanie $\widehat{n}\colon x(U)\to S^2$ zadane wzorem \[\widehat{n}(p)\define n\circ x^{-1}(p),\] gdzie $n=\dfrac{x_1\times x_2}{\|x_1\times x_2\|}$.
 \end{definicja}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 \begin{uwaga}
-\begin{itemize}
+\mode<presentation>{\begin{itemize}
+\item Dla różnych lokalnych układów współrzędnych dobrze określony jest tylko \textit{kierunek} normalny, (a więc $\pm n$, znak zależy od wyboru kolejności zmiennych $u$ i $v$). Przyjmujemy że wybieramy kierunek ``zewnętrzny'' (o ile ma to sens).
+\item Odwzorowanie Gaussa zależy od tego w jaki sposób powierzchnia $M$ jest umieszczona w $\R^3$ (od lokalnego układu wsp\'ołrzędnych).
+\end{itemize}}
+
+\mode<article>{\begin{itemize}
 \item Zauważmy, że dla różnych lokalnych układów współrzędnych dobrze określony jest tylko \textit{kierunek} normalny, więc (jednostkowy) wektor normalny może się różnić co najwyżej o czynnik $(-1)$ w stosunku do wyjściowego. Nie będzie to jednak zmieniać w istotny sposób dalszych obliczeń. Możemy przyjąć, że jeśli powierzchnia jest zamknięta, to wybieramy kierunek ``zewnętrzny''.
 \item Odwzorowanie Gaussa z całą pewnością zależy od tego w jaki sposób powierzchnia $M$ jest umieszczona w $\R^3$ i może się zmienić, gdy zaczniemy tę powierzchnię deformować. 
-\end{itemize}
+\end{itemize}}
 \end{uwaga}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Krzywizna Gaussa -- Idea}}
 \begin{frame}[<+->]
-
-
-Chcemy zdefiniować krzywiznę powierzchni, więc szukamy funkcji $K\colon M\to \R^3$, która będzie spełniać następujące własności:
+\mode<article>{Chcemy zdefiniować krzywiznę powierzchni, więc szukamy funkcji $K\colon M\to \R$, która będzie spełniać następujące własności:}
+\mode<presentation>{Aby zdefiniować krzywiznę potrzebujemy funkcji $K$ o następujących własnościach:}
 \begin{enumerate}
 \item $K\colon M\to \R$ jest funkcją gładką;
-\item krzywizna $K(p)$ jest niezależna od wyboru lokalnych układów współrzędnych, zależy tylko od powierzchni samej w sobie;
+\item krzywizna $K(p)$ jest niezależna od wyboru lokalnego układu współrzędnych, zależy tylko od kształtu powierzchni;
 \item jeśli (otwarty, o niepustym wnętrzu) zbiór naszej powierzchni jest zawarty w płaszczyźnie, wtedy krzywizna na nim powinna znikać;
 \item w sytuacji na rysunku krzywizna powierzchni $M$ w punkcie $p$ powinna być \textit{mniejsza} niż krzywizna powierzchni $N$ w tym punkcie, $K_{M}(p)<K_{N}(q)$.
 \end{enumerate}
@@ -44,10 +48,10 @@ Chcemy zdefiniować krzywiznę powierzchni, więc szukamy funkcji $K\colon M\to 
 Spróbujmy zdefiniować krzywiznę w punkcie $p\in M$ następująco:
 \begin{itemize}
 \item Ustalmy punkt $p\in M$ i lokalny układ współrzędnych $x\colon U\to M$ wokół $p$.
-\item Wybierzmy niewielkie otoczenie otwarte $T\subset x(U)$ zawierające punkt $p$.
-\item Kiedy punkt $p$ należy do zbioru $T$, wtedy $\widehat{n}(p)$ należy do zbioru $\widehat{n}(T)\subset S^2$,
-\item zbadajmy więc stosunek pól \[\frac{A(\widehat{n}(T))\subset S^2}{A(T)\subset M};\]
-\item Gauss definiował krzywiznę jako \[K(p)\define\varinjlim_{T\to p}\frac{A(\widehat{n}(T))}{A(T)}.\]
+\item Wybierzmy niewielkie otoczenie otwarte $V\subset x(U)$ zawierające punkt $p$.
+\item Kiedy punkt $p$ należy do zbioru $V$, wtedy $\widehat{n}(p)$ należy do zbioru $\widehat{n}(V)\subset S^2$,
+\item zbadajmy więc stosunek \textbf{pól powierzchni}\[\frac{A(\widehat{n}(V)),\, \widehat{n}(V)\subset S^2 }{A(V),\, V\subset M};\]
+\item Gauss definiował krzywiznę jako \[K_{\mathcal{G}}(p)\define\varinjlim_{V\to p}\frac{A(\widehat{n}(V))}{A(V)}.\]
 \end{itemize}
 \end{frame}
 %%%%%%next-slide%%%%%
@@ -55,9 +59,9 @@ Spróbujmy zdefiniować krzywiznę w punkcie $p\in M$ następująco:
 
 \begin{enumerate}
 \item [] Problemy:
-\item Czy ta granica jest niezależna od wyboru otoczeń $T$? Jak to formalnie zdefiniować?
-\item Co to jest $A(\widehat{n}(T))$ kiedy $\widehat{n}$ nie jest injekcją?
-\item Co się stanie jeśli odwzorowanie Gaussa ``odwraca'' obszar $T$? Czy wtedy należałoby brać pole $A(\widehat{n}(T))$ ze znakiem ujemnym?
+\item Czy ta granica jest niezależna od wyboru otoczeń $V$? Jak to formalnie zdefiniować?
+\item Jak zdefiniować pole wyznaczone przez $\widehat{n}(V)$ kiedy $\widehat{n}$ nie jest injekcją?
+\item Co się stanie jeśli odwzorowanie Gaussa ``odwraca'' obszar $V$? Czy wtedy należałoby brać pole $A(\widehat{n}(V))$ ze znakiem ujemnym?
 \end{enumerate}
 
 \end{frame}
@@ -78,16 +82,28 @@ dla całej sfery.
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
-Widzimy więc, że odwzorowanie Gaussa zmiejsza obszar o czynnik $\frac{1}{R}$ i nie ma żadnych problemów z definicją.
+Widzimy więc, że odwzorowanie Gaussa zmiejsza obszar o czynnik $\frac{1}{R^2}$ i nie ma żadnych problemów z definicją.
 \begin{center}
 \input{./pictures/gauss-map.tex}
+\[K_{\mathcal{G}}(p)=\frac{A(\widehat{n}(V))}{A(V)}=\frac{2\pi\cos(\alpha)}{2\pi R^2\cos(\alpha)}=\frac{1}{R^2}.\]
 \end{center}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 \begin{przyklad}
-Rozważmy powierzchnię siodłową $x(u,v)=(x,y,xy)$. Rozważmy niewielki okrąg $S$ na płaszczyźnie $z=0$ i środku w $(0,0)$, wtedy jego obraz $x(S)$ leży na powierzchni siodłowej. \uncover<2->{Obcięcie odwzorowania Gaussa do $x(S)$ jest również okręgiem (leżącym teraz na sferze), jednak jeśli obiegamy okrąg $S$ w lewo, wówczas kierunek na $\widehat{n}(x(S))$ ulega odwróceniu.} \uncover<3->{Zatem chcielibyśmy nadać znak ujemny$A(\widehat{n}(T))<0$ gdzie $T$ jest obszarem ograniczonym przez $x(S)$. }
+\mode<presentation>{
+  Niech $x(u,v)=(x,y,xy)$ (powierzchnia siodłowa). 
+\begin{itemize}
+ \item Rozważmy okrąg $S=\{u^2+v^2=\varepsilon\}$, oraz jego obraz $x(S)$ leżący na powierzchni siodłowej. 
+\uncover<2->\item Obcięcie odwzorowania Gaussa do $x(S)$ jest również okręgiem (leżącym teraz na sferze).
+\uncover<3->\item Jeśli obiegamy okrąg $S$ (lub $x(S)$) w lewo, okrąg $\widehat{n}(x(S))$ jest obiegany w prawo.
+\uncover<4->\item Zatem chcemy nadać znak ujemny polu $A(\widehat{n}(V))$ gdzie $V$ jest ograniczony przez $x(S)$.
+\end{itemize}
+}
+
+\mode<article>{Rozważmy powierzchnię siodłową $x(u,v)=(x,y,xy)$. Rozważmy niewielki okrąg $S$ na płaszczyźnie $z=0$ i środku w $(0,0)$, wtedy jego obraz $x(S)$ leży na powierzchni siodłowej. Obcięcie odwzorowania Gaussa do $x(S)$ jest również okręgiem (leżącym teraz na sferze), jednak jeśli obiegamy okrąg $S$ w lewo, wówczas kierunek na $\widehat{n}(x(S))$ ulega odwróceniu.Zatem chcielibyśmy nadać znak ujemny$A(\widehat{n}(V))<0$ gdzie $V$ jest obszarem ograniczonym przez $x(S)$.
+}
 
 \uncover<1->{\begin{center}
 \footnotesize
@@ -98,115 +114,231 @@ Rozważmy powierzchnię siodłową $x(u,v)=(x,y,xy)$. Rozważmy niewielki okrąg
 \end{przyklad}
 
 \end{frame}
-
-%\midsection{Długość i pole powierzchni}
 \mode<all>{\midsection{Pole powierzchni}}
 \begin{frame}
 
-%Wyrazimy znane nam wielkości długości krzywej i pola powierzchni przez współczynniki metryczne.
 Podobnie jak wcześniej wyraziliśmy długość, teraz wyrazimy pole powierzchni w języku współczynników metrycznych.
 
-% \begin{lemat}
-% Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych.
-% Rozważmy krzywą gładką $\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U$.
-% Wtedy długość obrazu krzywej $\overline{\alpha}\define x\circ\alpha\colon \R\to M$ jest równa
-% \begin{align*}
-%  L(\overline{\alpha})&=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha'(t),\alpha'(t)\ri)}=\\
-% \int_a^b\sqrt{(x\circ\alpha_1)'(t))^2 g_{11}(\alpha(t))+ 2 (x\circ\alpha_1)'(t))(x\circ\alpha_2)'(t))g_{12}(\alpha(t))+ +(x\circ\alpha_2)'(t))^2 g_{22}(\alpha(t)).
-% \end{align*}
-% \end{lemat}
 \pause
 \begin{definicja}\label{def:area-form}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Pole podzbioru $S\subset x(U)$ wyraża się wzorem
-\[A(S)\define\iint_{x^{-1}(S)}\sqrt{\det{(g_{ij})}}ds\,dt\]
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. \textbf{Pole podzbioru} $S\subset x(U)$ wyraża się wzorem
+\[A(S)\define\iint_{x^{-1}(S)}\sqrt{|\det{(g_{ij})}|}\,ds\,dt.\]
 \end{definicja}
-
+\pause Motywacją geometryczną jest to, że $\sqrt{|\det{(g_{ij})|}}$ jest r\'owne polu r\'ownoległoboku rozpiętego przez $x_1$ i $x_2$, kt\'ory jest styczny do powierzchni w tym punkcie.
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
 \begin{lemat}
 Załóżmy, że $S\subset x(U)\cap y(V)$ dla dwóch lokalnych układów współrzędnych $x$, $y$ na $M$. Niech $(g_{ij})$, [odpowiednio $(\overline{g_{ij}})$] oznacza macierz współczynników metrycznych dla $x$ [odpowiednio $y$]. Wtedy
-\[\iint_{x^{-1}(S)}\sqrt{\det{(g_{ij})}}ds\,dt=\iint_{y^-1(S)}\sqrt{\det{(\overline{g_{ij}})}}ds\,dt.\]
+\[\iint_{x^{-1}(S)}\sqrt{|\det{(g_{ij})}|}ds\,dt=\iint_{y^-1(S)}\sqrt{|\det{(\overline{g_{ij}})}|}ds\,dt.\]
 \end{lemat}
-
+Dow\'od pomijamy.
 %Dowody obu lematów pozostawiamy jako ćwiczenia.
-\pause Dowód tego lematu pozostawiamy jako ćwiczenie.
+%\pause Dowód tego lematu pozostawiamy jako ćwiczenie.
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
-Zauważmy teraz, że \[\langle x_1\times x_2, n\rangle=\langle \|x_1\times x_2\|n,n \rangle= \|x_1\times x_2\|=\sqrt{\det (g_{ij})},\]\pause zatem mamy
-\[A(T)=\iint_{x^{-1}(T)}\langle x_1\times x_2, n\rangle ds\,dt.\]
+Zauważmy teraz, że \[\langle x_1\times x_2, n\rangle=\langle \|x_1\times x_2\|n,n \rangle= \|x_1\times x_2\|=\sqrt{|\det (g_{ij})|},\]\pause zatem mamy
+\[A(V)=\iint_{x^{-1}(V)}|\langle x_1\times x_2, n\rangle| ds\,dt.\]
 
-\pause Analogicznie możemy zdefiniować pole $\widehat{n}(T)$ jako 
-\[A(\widehat{n}(T))=\iint_{x^{-1}(T)}\langle n_1\times n_2, n\rangle ds\,dt,\]
+\pause Analogicznie możemy zdefiniować pole $\widehat{n}(V)$ jako 
+\[A(\widehat{n}(V))=\iint_{x^{-1}(V)}|\langle n_1\times n_2, n\rangle| ds\,dt,\]
 gdzie $n_1$, $n_2$ są pochodnymi cząstkowymi $n$ po zmiennych odpowiednio $s$ i $t$.
 
-\pause To rozwiązuje problemy (2) i (3) powyżej, jednak problem (1) (niezależności definicji od wyboru otoczeń $T$) pozostaje. 
+\pause To rozwiązuje problemy (2) i (3) powyżej, jednak problem (1) (niezależności definicji od wyboru otoczeń $V$) pozostaje. 
 
-\mode<article>{Oczywiście używając odpowiednio zaawansowanego aparatu matematycznego można pokazać, że krzywizna (wg. definicji Gaussa) faktycznie nie zależy od wyboru zstępujących otoczeń $T$, ale my spróbujemy przedstawić bardziej współczesne podejście, które okaże się równoważne definicji Gaussa.}
+\mode<article>{Oczywiście używając odpowiednio zaawansowanego aparatu matematycznego można pokazać, że krzywizna (wg. definicji Gaussa) faktycznie nie zależy od wyboru zstępujących otoczeń $V$, ale my spróbujemy przedstawić bardziej współczesne podejście, które okaże się równoważne definicji Gaussa.}
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Powtórka z algebry liniowej II}}
 \begin{frame}{Powtórka z algebry liniowej II}
 
-Niech $V$ będzie rzeczywistą przestrzenią wektorową i niech $\langle\,,\,\rangle$ będzie iloczynem skalarnym na $V$. 
+Niech $W$ będzie rzeczywistą przestrzenią wektorową i niech $\langle\,,\,\rangle$ będzie iloczynem skalarnym na $W$. 
 \pause \begin{definicja}
-Rozważmy odwzorowanie liniowe $F\colon V\to V$. Odwzorowaniem dwuliniowym \textbf{indukowanym przez $F$} nazywamy odwzorowanie $B_F\colon V\to \R$ zadane przez \[B_F(v,w)=\langle F(v),w\rangle.\]
+Rozważmy odwzorowanie liniowe $F\colon W\to W$. Odwzorowaniem dwuliniowym \textbf{indukowanym przez $F$} nazywamy odwzorowanie $\mathcal{B}_F \colon W\times W\to \R$ zadane przez \[\mathcal{B}_F (v,w)=\langle F(v),w\rangle.\]
 \end{definicja}
+\pause \begin{przyklad}
+Niech $F\colon \R^2 \to \R^2$ będzie zadane wzorem (w bazie standardowej!)
+\[F( v_1 , v_2 ) = 
+\left[\begin{array}{ c c }
+1 & 2\\
+0 & -1
+\end{array}\right]
+\left[\begin{array}{c}
+v_1 \\
+v_2
+\end{array}
+\right]=(v_1 + 2v_2 , -v_2).\]
+\end{przyklad}
+\end{frame}
 
-\mode<article>{Ustalmy bazę przestrzeni $V$. Wtedy odwzorowanie $F$ i odwzorowanie indukowane $B_F$ mogą być reprezentowane przez odpowiednie macierze. Następujący lemat przedstawia związki zachodzące między tymi macierzami.}
+
+
+
+
+\begin{frame}
+
+\pause \begin{przyklad}
+Odwzorowanie $\mathcal{B}_{F}\colon \R^{2} \to \R$ indukowane przez $F$ jest r\'owne
+\begin{multline*}
+\mathcal{B}_{F}(( v_1 , v_2 ), (w_1 , w_2 ))=\langle F(v_1,v_2),(w_1,w_2)\rangle =\\ 
+=\left\langle\left[\begin{array}{ c c }
+1 & 2\\
+0 & -1
+\end{array}\right]\!
+\left[\begin{array}{c}
+v_1 \\
+v_2
+\end{array}
+\right],(w_1,w_2) \right\rangle =\\= \langle (v_1 + 2v_2 , -v_2 ) , ( w_1 , w_2 )\rangle=(v_1 +2 v_2)w_1 - v_2 w_2.
+\end{multline*}
+
+\end{przyklad}
+
+\mode<article>{Ustalmy bazę przestrzeni $W$. Wtedy odwzorowanie $F$ i odwzorowanie indukowane $B_F$ mogą być reprezentowane przez odpowiednie macierze. Następujący lemat przedstawia związki zachodzące między tymi macierzami.}
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
 \begin{lemat}
-Niech $(V,\langle\,,\,\rangle)$ będzie przestrzenią wektorową z iloczynem skalarnym. Ustalmy bazę tej przestrzeni.
+Niech $(W,\langle\,,\,\rangle)$ będzie przestrzenią wektorową z iloczynem skalarnym. Ustalmy bazę tej przestrzeni.
 \begin{itemize}
-\pause \item Oznaczmy przez $G$ macierz iloczynu skalarnego w tej bazie.
-\pause \item Niech $F\colon V\to V$ będzie odwzorowaniem liniowym o macierzy $A$ w powyższej bazie.
-\pause \item Niech $M$ oznacza macierz odwzorowania $B_F$ indukowanego przez $F$ (znów macierz w powyższej bazie).
+\pause \item Oznaczmy przez $\mathbf{G}$ macierz iloczynu skalarnego w tej bazie.
+\pause \item Niech $F\colon W\to W$ będzie odwzorowaniem liniowym o macierzy $\mathbf{A}$ w powyższej bazie.
+\pause \item Niech $\mathbf{M}$ oznacza macierz odwzorowania $B_F$ indukowanego przez $F$ (znów macierz w powyższej bazie).
 \end{itemize}
-\pause Wtedy $M=A^tG$.
+\pause Wtedy $\mathbf{M}=\mathbf{A}^t \mathbf{G}$.
 
 \end{lemat}
 \end{frame}
+
+\begin{frame}
+ \begin{przyklad}
+  Niech $F$ będzie tak jak z poprzedniego przykładu. Na $W=\R^2$ wybierzmy standardową bazę $\{e_1,e_2\}$. Naturalny iloczyn skalarny na $\R^2$ ma w tej bazie macierz $\mathbf{G}=\text{Id}$. Zatem macierzą odwzorowania $\mathcal{B}_F$ jest macierz
+\[\left[\begin{array}{ c c }
+1 & 2\\
+0 & -1
+\end{array}\right]^t\cdot\text{Id}=\left[\begin{array}{ c c }
+1 & 0\\
+2 & -1
+\end{array}\right]\cdot\text{Id},\]
+zatem
+\[\mathcal{B}_F((v_1, v_2), (w_1,w_2)) =      
+[v_1,v_2]\left[\begin{array}{ c c }
+1 & 0\\
+2 & -1
+\end{array}\right]\cdot\text{Id}
+\left[\begin{array}{c}
+w_1 \\
+w_2
+\end{array}
+\right]
+\]
+ \end{przyklad}
+
+\end{frame}
+
+
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
 
 \begin{lemat}\label{lem:alg-lin-2}
-Niech $V$ będzie przestrzenią wektorową.
+Niech $W$ będzie przestrzenią wektorową i $\mathcal{B}$ formą dwuliniową na $W$.
 \begin{itemize}
-\item Niech $B$ będzie formą dwuliniową na $V$. Wtedy $B$ jest formą symetryczną wtedy i tylko wtedy, gdy macierz $B$ w \textit{dowolnej bazie $V$} jest macierzą symetryczną.
-\item Niech $F\colon V\to V$ będzie odwzorowaniem liniowym. Wtedy następujące warunki są równoważne:
+\item $\mathcal{B}$ jest formą symetryczną wtedy i tylko wtedy, gdy macierz odwzorowania $\mathcal{B}$ w \underline{}{dowolnej bazie $W$} jest macierzą symetryczną.
+\item Niech $F\colon W\to W$ będzie odwzorowaniem liniowym. Następujące warunki są równoważne:
 \begin{enumerate}
-\item $F$ jest odworowaniem samo-sprzężonym,
-\item macierz $F$ jest symetryczna w każdej bazie ortonormalnej przestrzeni $V$,
-\item indukowana przez $F$ forma dwuliniowa jest symetryczna.
+%\item $F$ jest odworowaniem samo-sprzężonym (t.j. ),
+\item macierz $\mathbf{A}$ odwzorowania $F$ jest symetryczna w każdej bazie ortonormalnej przestrzeni $W$,
+\item forma dwuliniowa $\mathcal{B}_F$ indukowana przez $F$ jest symetryczna.
 \end{enumerate}
 
 \end{itemize}
 \end{lemat}
 
 \end{frame}
+
+\begin{uwaga}
+
+Symetryczność formy $\mathcal{B}$ oznacza, że spełniona jest r\'owność
+\[\mathcal{B}(v,w)=\mathcal{B}(w,v).\]
+Jeśli macierz $\mathbf{A}$ odwzorowania $F$ jest symetryczna, wtedy $\mathbf{A}=\mathbf{A}^t$. Ponadto, jeśli jest symetryczna w każdej bazie, możemy wybrać na $W$ taką bazę w kt\'orej macierz $\mathbf{G}$ iloczynu skalarnego na $W$ jest macierzą identycznościową. Zatem
+\[\mathcal B_{F}(v,w)= v \mathbf{A}^t \cdot \mathbf{G} w= w^t \left(\mathbf{A}^t\right)^t v^t=\mathcal{B}_{F}(w,v).\]
+
+\end{uwaga}
+
+
+\begin{frame}[<+->]
+
+\mode<presentation>{
+\begin{itemize}
+\item Symetryczność formy $\mathcal{B}$ oznacza
+\[\mathcal{B}(v,w)=\mathcal{B}(w,v).\]
+\item Jeśli macierz $\mathbf{A}$ odwzorowania $F$ jest symetryczna, wtedy \[\mathbf{A}=\mathbf{A}^t.\]
+\item Jeśli jest symetryczna w każdej bazie, możemy wybrać taką, w kt\'orej macierz $\mathbf{G}=\text{Id}$ (macierz iloczynu skalarnego na $W$).
+\item Zatem
+\[\mathcal B_{F}(v,w)= v \mathbf{A}^t \cdot \mathbf{G} w= w^t \left(\mathbf{A}^t\right)^t v^t=\mathcal{B}_{F}(w,v).\]
+\end{itemize}}
+\end{frame}
+
+
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
 \begin{lemat}\label{lem:alg-lin-2-eigen}
-Niech $F\colon V\to V$ będzie liniowym odwzorowaniem. Załóżmy, że $F$ jest samosprzężone, wtedy
+Niech $F\colon W\to W$ będzie odwzorowaniem liniowym. Załóżmy, że macierz $\mathbf{A}$ formy $F$ jest symetryczna w każdej bazie ortonormalnej $W$.
+Wtedy
 
 \begin{itemize}
 \item $F$ ma rzeczywiste wartości własne $k_i$.
 \item wektory odpowiadające wartościom własnym $F$ są ortogonalne.
-\item Macierz $A$ odwzorowania $F$ \textit{w dowolnej bazie} spełnia
-\[\det A=\prod_i k_i\qquad \text{oraz}\qquad \operatorname{tr} A=\sum_i k_i.\]
+\item Macierz $\mathbf{A}$ odwzorowania $F$ \textit{w dowolnej bazie} spełnia
+\[\det \mathbf{A}=\prod_i k_i\qquad \text{oraz}\qquad \operatorname{tr} \mathbf{A}=\sum_i k_i.\]
 
 \end{itemize}
-
 \end{lemat}
 
+\end{frame}
+
+\begin{frame}
+Niech $W=\R^2$ i niech $F\colon \R^{2} \to \R^2$ będzie zadane przez symetryczną macierz rzeczywistą
+\[\mathbf{A}=\left[\begin{array}{cc}
+   a & b\\
+   b & c
+  \end{array}\right].
+\] 
+
+\pause Wielomian charakterystyczny $\mathbf{A}$:
+\[f_{\mathbf{A}}(t) = \det\left[\begin{array}{cc}
+   a -t & b\\
+   b & c -t
+  \end{array}\right]= t^2 -(a+c) t - (b^2 - ac)\]
+\pause posiada deltę nieujemną $\Delta=(a-c)^2+4b^2$, więc ma dwa pierwiastki rzeczywiste (są to wartości własne $\mathbf{A}$).
+
+\end{frame}
+
+\begin{frame}[<+->]
+\begin{przyklad}
+Niech $W=\R^2$ i niech $F\colon \R^2 \to \R^2$ będzie zadana (w standardowej bazie) przez macierz
+\[\mathbf{A}=\left[\begin{array}{cc}
+   1 & 1\\
+   1 & 0
+  \end{array}\right]\]
+Mamy wtedy 
+\begin{itemize}
+ \item $f_{\mathbf{A}} (t)=(1-t)t-1=t^2-t-1$
+\item $k_1=\frac{1+\sqrt{5}}{2}$, oraz $k_2=\frac{1-\sqrt{5}}{2}$.
+\item $k_1k_2=\frac{1-\sqrt{5}^2}{4}=-1=\det\mathbf{A}$, oraz $k_1+k_2=1=\operatorname{tr}\mathbf{A}$. 
+\end{itemize}
+
+\end{przyklad} 
+
+\end{frame}
+
+\begin{frame}
 \begin{exercise}
 Oswoić wszystkie nieznane definicje pojawiające się w powyższej powtórce z algebry liniowej i zrozumieć sformułowania powyższych twierdzeń (niekoniecznie z dowodami!)
 

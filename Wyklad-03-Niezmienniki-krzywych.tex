@@ -8,7 +8,7 @@ Rozwazmy wektor prędkości dla krzywej $\alpha$. Im szybciej zmienia on kierune
 Aby obejść tę trudność zaczniemy od krzywizny dla krzywych unormowanych.
 
 \mode<all>{\midsection{Krzywizna}}
-\begin{frame}
+\begin{frame}{Krzywizna krzywej unormowanej}
 \begin{definicja}
 Niech $\alpha\colon(a,b)\to \R^3$ będzie (regularną) krzywą unormowaną. Dla każdego $t\in (a,b)$ \textbf{krzywiznę} definiujemy jako funkcję $\kappa\colon (a,b)\to\R$
 \[\kappa(t)\define\|T\,'(t)\|=\|\alpha''(t)\|\]
@@ -18,11 +18,12 @@ Zauważmy, że krzywizna jest zawsze nieujemna, $\kappa(t)\geqslant 0$.
 %%%%%%next-slide%%%%%
 \begin{frame}
 \begin{center}
-\includegraphics[scale=.5]{./pictures/curvature_color.pdf}
+\includegraphics[scale=.5]{./pictures/curvature_color.pdf}\\
+Zmiana koloru w zależności od krzywizny
 \end{center}
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}
+\begin{frame}{Krzywizna dowolnej krzywej}
 
 Dla regularnych krzywych nieunormowanych możemy posłużyć się odpowiednią reparametryzacją:
 \pause \begin{definicja}
@@ -90,16 +91,14 @@ Podstawiając przedostatnią równość do $\alpha$ mamy
 
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}
 
-\begin{uwaga}
+
 Na razie pokazaliśmy, że dla \textit{wybranej} parametryzacji $\alpha$ krzywizna nie zależy od reparametryzacji unormowanej.
 \medskip
-
-\pause Chcemy jednak pokazać coś więcej, mianowicie, że krzywizna jest funkcją zależną tylko od \textit{punktów w obrazie krzywej} i w ogóle nie zależy od wyboru \textit{parametryzacji}. Zostanie to wykazane pod koniec tego wykładu.
+Chcemy jednak pokazać coś więcej, mianowicie, że krzywizna jest funkcją zależną tylko od \textit{punktów w obrazie krzywej} i w ogóle nie zależy od wyboru \textit{parametryzacji}. Zostanie to wykazane pod koniec tego wykładu.
 \end{uwaga}
 
-\end{frame}
+
 %%%%%%next-slide%%%%%
 \begin{frame}
 
@@ -108,12 +107,18 @@ Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną. Wektor normalny d
 \end{lemat}
 \pause\textcolor{ared}{\textbf{Dowód:}}\\
 Bez straty ogólności możemy założyć, że $\alpha$ jest krzywą unormowaną.
-\pause Załóżmy, że wektor normalny do $\alpha$ jest zerowy, \[N(t)=(0,0,0).\] \pause Całkując to równanie otrzymujemy $T(t)=v=\text{\footnotesize{const}}$. \pause Całkując ponownie mamy \[\alpha(t)=vt+w,\] gdzie $v,w\in \R^3$ są ustalonymi wektorami, czyli $\alpha$ jest prostą.
+\pause Załóżmy, że wektor normalny do $\alpha$ jest zerowy, \[\frac{T'(t)}{|T'(t)|}=N(t)=(0,0,0).\] \pause 
+Całkując to równanie otrzymujemy 
+ \begin{multline*}
+T(t)=\int T'(t)\,dt=\left(\int T_1 '(t)\,dt,\int T_2 '(t)\,dt, \int T_3 '(t)\,dt\right)=\pause\\=\left(\int 0\,dt,\int 0\,dt, \int 0\,dt\right)=(c_1,c_2,c_3)=v=\text{\footnotesize{const}}.
+\end{multline*}
+
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
-
+Całkując ponownie mamy \[\alpha(t)=vt+w,\] gdzie $v,w\in \R^3$ są ustalonymi wektorami, czyli $\alpha$ jest prostą.
+\pause 
 Załóżmy teraz, że $\alpha$ jest prostą. \pause Mamy wtedy (postać parametryczna prostej) $\alpha(t)=vt+w$, gdzie $v,w\in \R^3$. \pause Wtedy oczywiście \[T(t)=\frac{\alpha'(t)}{\|\alpha'(t)\|}=\frac{v}{\|v\|},\] zatem $T\,'(t)=0$ więc automatycznie $N(t)=0$.
 \hfill $\square$
 
@@ -143,13 +148,32 @@ Dla wygody od teraz będziemy opuszczać argument $t$ jeśli nie będzie to prow
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Wzory Freneta}}
-\begin{frame}[<+->]
-\begin{twierdzenie}[Wzory Freneta] Niech $\alpha\colon (a,b)\to \R^3$ będzie unormowaną krzywą regularną, oraz załóżmy, że dla wszystkich $t\in (a,b)$ zachodzi $N(t)\neq 0$. Wówczas zachodzą następujące równości.
+\begin{frame}
+\begin{twierdzenie}[Wzory Freneta] Niech $\alpha\colon (a,b)\to \R^3$ będzie unormowaną krzywą regularną, r\'ożną od stałej i prostej (tj. $N(t)\neq 0$ dla wszystkich $t\in (a,b)$). Wówczas zachodzą następujące równości.
 \begin{align}
 T\,'	&= \qquad\kappa N \label{eqn:frenet1} \\
 N\hspace{0.5pt}'	&= -\kappa T + \tau B\label{eqn:frenet2}\\
 B'	&= \quad-\tau N\label{eqn:frenet3}
 \end{align}
+\pause co można zapisać w postaci wektorowej
+\[
+\left(\begin{array}{c}
+ T\\
+ N\\
+ B
+ \end{array}\right)'=
+ \left[\begin{array}{r r r}
+ 0 & \kappa & 0\\
+ -\kappa & 0 & \tau\\
+ 0 & -\tau &0
+ \end{array}\right]
+ \left(\begin{array}{c}
+  T\\
+ N\\
+ B
+ \end{array}\right)
+\]
+
 
 \end{twierdzenie}
 
@@ -183,9 +207,9 @@ Podobnie $B'$ jest prostopadły do $B$, $\langle B,B'\rangle=0$, więc
 \begin{lemat}
 Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą unormowaną oraz niech $N(t)\neq 0$ dla każdego $t\in (a,b)$. Następujące warunki są równoważne.
 \begin{enumerate}
-\item Obraz krzywej $\alpha$ jest zawarty w pewnej płaszczyźnie;
-\item $B$ jest wektorem stałym;
-\item $\tau\equiv 0$
+\item Zbi\'or $\alpha(a,b)$ (tj. wykres $\alpha$) jest zawarty w pewnej płaszczyźnie.
+\item $B$ jest wektorem stałym.
+\item $\tau\equiv 0$.
 \end{enumerate}
 
 \end{lemat}
@@ -199,8 +223,8 @@ Krzywą spełniającą jeden z tych warunków nazywamy \textbf{krzywą płaską}
 \begin{frame}
 
 \textcolor{ared}{\textbf{Dowód:}}\pause \\
-\begin{description}[<+->]
-\item [$1\Rightarrow 2$] Jeśli krzywa leży w jednej płaszczyźnie to leżą w niej wektory styczny i normalny (dlaczego?), więc jest to płaszczyzna ściśle styczna. Wtedy kierunek prostopadły do tej płaszczyzny jest współliniowy z $B$. Zatem $B$ nie zmienia ani zwrotu ani długości.
+\begin{description}
+\item [$1\Rightarrow 2$] Jeśli krzywa leży w jednej płaszczyźnie to leżą w niej wektory styczny i normalny (dlaczego?),\pause więc jest to płaszczyzna ściśle styczna. \pause Wtedy kierunek prostopadły do tej płaszczyzny jest współliniowy z $B$. Zatem $B$ nie zmienia ani zwrotu ani długości.\pause
 \item [$2\Leftrightarrow 3$] wynika ze wzoru Freneta (\ref{eqn:frenet3}):
 \[B'=-\tau N\]
 \end{description}
@@ -215,11 +239,11 @@ Krzywą spełniającą jeden z tych warunków nazywamy \textbf{krzywą płaską}
 Rozważmy funkcję
 \[f(t)=\langle \alpha(t)-\alpha(p),B(t)\rangle.\]
 
-\mode<presentation>{\item}
-Funkcja ta mierzy długość rzutu wektora binormalnego na wektor wyznaczony przez naszą krzywą (bez straty ogólności możemy przecież założyć, że $\alpha(p)=(0,0,0)$.) 
+\mode<article>{
+Funkcja ta mierzy długość rzutu wektora binormalnego na wektor wyznaczony przez naszą krzywą (bez straty ogólności możemy założyć, że $\alpha(p)=(0,0,0)$.)}
 
 \mode<presentation>{\item}
-Przy założeniu, że $B(t)=B$ jest wektorem stałym, pokażemy, że funkcja $f$ jest tożsamościowo równa $0$, a zatem krzywa $\alpha$ w całości leży w płaszczyźnie normalnej do $B$ i zawierającej punkt $\alpha(p)$.
+Przy założeniu, że $B(t)=B$ jest wektorem stałym, pokażemy, że funkcja $f$ jest tożsamościowo równa $0$, \pause z czego wynika, że krzywa $\alpha$ w całości leży w płaszczyźnie normalnej do $B$ i zawierającej punkt $\alpha(p)$.
 \mode<presentation>{\end{itemize}}
 \end{description}
 \end{frame}
@@ -243,7 +267,7 @@ f\,'(t)=&\pause\frac{d}{dt}\left(\langle\alpha(t)-\alpha(p),B(t)\rangle\right)=\
 \mode<all>{\midsection{Wzory ogólne}}
 \begin{frame}
 \begin{lemat}\label{lem_curv:wzory-ogolne}
-Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą unormowaną oraz niech $N(t)\neq 0$ dla każdego $t\in (a,b)$. Wówczas zachodzą następujące wzory:
+Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną r\'ożną od prostej (tj. $N(t)\neq 0$ dla każdego $t\in (a,b)$). Wówczas zachodzą następujące wzory:
 \begin{align}
 \pause T=& \frac{\alpha'}{\|\alpha'\|}\label{eqn:T}\\
 \pause B=& \frac{\alpha'\times \alpha''}{\|\alpha'\times \alpha''\|}\label{eqn:B}\\
@@ -262,7 +286,7 @@ Dowód  polega na przeliczeniu odpowiednich pochodnych bez zakładania, że $\al
 \hfill $\square$
 
 \pause\begin{uwaga}
-Powyższy lemat pozwala liczyć trójnóg Freneta, krzywiznę i torsję nie odwołując się do \textit{żadnej konkretnej parametryzacji} (unormowanej bądź nie). Dowodzi to, że $T,N,B,\kappa$ i $\tau$ są funkcjami tylko i wyłącznie punktów na krzywej (rozumianej jako obraz wykresu w $\R^3$) i nie zależą od parametryzacji.
+Powyższy lemat pozwala liczyć trójnóg Freneta, krzywiznę i torsję nie odwołując się do \textit{żadnej unormowanej parametryzacji}. Dowodzi to, że $T,N,B,\kappa$ i $\tau$ są funkcjami tylko i wyłącznie punktów na krzywej (rozumianej jako obraz wykresu w $\R^3$) i nie zależą od parametryzacji.
 \end{uwaga}
 
 \end{frame}

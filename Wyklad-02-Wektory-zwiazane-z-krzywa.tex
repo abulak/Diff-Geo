@@ -16,13 +16,22 @@ Niech $\alpha\colon (a,b)\to \R^3$ będzie regularną krzywą gładką. Definiuj
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
+ \begin{exercise}
+  Niech $v(t)$ i $w(t)$ będą dowolnymi wektorami w $\R^3$, zależnymi od zmiennej $t$. Sprawdzić, że zachodzi \textbf{wz\'or Leibniza} na r\'ożniczkowanie iloczynu skalarnego:
+\[\langle v(t),w(t) \rangle'=\langle v(t)',w(t) \rangle+\langle v(t),w(t)' \rangle.\]
+ \end{exercise}
+
+\end{frame}
+
+
+\begin{frame}
 
 \begin{lemat}
 Niech $\alpha(t)$ będzie unormowaną krzywą regularną. Wówczas dla każdego $t$ zachodzi \[\langle T(t),T\,'(t)\rangle=0.\]
 \end{lemat}
 
 \pause\textcolor{ared}{\textbf{Dowód:}} \\
-Zauważmy, że $T(t)$ jest funkcją gładką. Mamy \[1=\|T(t)\|=\langle T(t),T(t)\rangle,\]\pause a więc korzystając ze standardowego wzoru na różniczkowanie iloczynu skalarnego (sprawdzić ten wzor!) otrzymujemy:\pause\[0=\|T(t)\|'=\langle T\,'(t),T(t)\rangle+\langle T(t),T\,'(t)\rangle=2\langle T(t),T\,'(t)\rangle.\]
+Zauważmy, że $T(t)$ jest funkcją gładką. Mamy \[1=\|T(t)\|=\langle T(t),T(t)\rangle,\]\pause a więc korzystając powyższego wzoru na różniczkowanie iloczynu skalarnego otrzymujemy:\pause\[0=\|T(t)\|'=\langle T\,'(t),T(t)\rangle+\langle T(t),T\,'(t)\rangle=2\langle T(t),T\,'(t)\rangle.\]
 \hfill $\square$
 
 \end{frame}
@@ -127,8 +136,6 @@ Układ ortonormalny $\{T(t),N(t),B(t)\}$ nazywać będziemy \textbf{trójnogiem}
 
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}[<+->]
-
 \begin{uwaga}
 \begin{enumerate}
 \item Jedyny wybór jaki dokonaliśmy podczas definiowania trójnogu Freneta to kierunek (tj. znak) wektora binormalnego.
@@ -137,5 +144,4 @@ Układ ortonormalny $\{T(t),N(t),B(t)\}$ nazywać będziemy \textbf{trójnogiem}
 \end{uwaga}
 
 
-\end{frame}
 \mode<all> 

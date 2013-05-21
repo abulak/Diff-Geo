@@ -110,7 +110,7 @@ x\colon U&\longrightarrow M \\
 (s_0,t_0)&\longmapsto p\in M
 \end{align*}
 będzie lokalnym układem współrzędnych. \textbf{Wektor normalny w $p$} definiujemy jako
-\[N(p)\define\frac{x_s\times x_t}{\|x_s\times x_t\|},\]
+\[N(p)\define\frac{x_s\times x_t}{\|x_s\times x_t\|}(s_0,t_0),\]
 gdzie $x_s$ i $x_t$ wektorami stycznymi do linii parametru przechodzących przez punkt $p$.
 \end{definicja}
 
@@ -119,7 +119,7 @@ gdzie $x_s$ i $x_t$ wektorami stycznymi do linii parametru przechodzących przez
 \begin{frame}[<+->]
 
 \begin{uwaga}
-Ponieważ wektor normalny ma długość $1$, więc koniec każdego wektora normalnego $N(p)$ leży na powierzchni sfery dwuwumiarowej $N(M)\subset S^2$. Zatem $N$ może być traktowany jako \textbf{funkcja między powierzchniami}\[N\colon M\to S^2\subset\R^3\] punktów na powierzchni $M$. Jest to tzw. \textbf{odwzorowanie Gaussa} do którego wrócimy później.
+Ponieważ wektor normalny ma długość $1$, więc koniec każdego wektora normalnego $N(p)$ leży na powierzchni sfery dwuwumiarowej $N(M)\subset S^2$. Zatem $N$ może być traktowany jako \textbf{odwzorowanie między powierzchniami}\[N\colon M\to S^2\subset\R^3\] punktów na powierzchni $M$. Jest to tzw. \textbf{odwzorowanie Gaussa} do którego wrócimy później.
 \end{uwaga}
 
 \end{frame}
@@ -188,10 +188,10 @@ gdzie $\langle\cdot,\cdot\rangle$ jest standardowym iloczynem skalarnym w $\R^3$
 \begin{definicja}
 \textbf{Pierwsza forma podstawowa} powierzchni $M$ to zależna w sposób ciągły od punktu $p$ rodzina wszystkich form dwuliniowych \[\mathcal{I}_M\define\{I_p\}_{p\in M}.\]
 \end{definicja}
-\pause
+\mode<article>{
 \begin{uwaga}
 Postać macierzowa pierwszej formy podstawowa zależy w istotny sposób od zanurzenia powierzchni w $\R^3$ (czyli od wyboru lokalnego układu współrzędnych $x\colon U\to M$). 
-\end{uwaga}
+\end{uwaga}}
 
 \pause Od teraz wektory styczne do linii parametru będziemy nazywać $x_1$ i $x_2$ zamiast $x_s$ i $x_t$. Niech $x(s_0,t_0)=p$.
 
@@ -247,7 +247,8 @@ Elementy macierzy $I_p$ nazywamy \textbf{współczynnikami metrycznymi} lokalneg
 
 \begin{uwaga}
 \begin{itemize}
-\item Ponieważ iloczyn skalarny w $\R^n$ jest formą symetryczną, więc $I_p$ jest również formą symetryczną, zatem każdym punkcie mamy $g_{12}=g_{21}$.
+\mode<article>{\item Ponieważ iloczyn skalarny w $\R^n$ jest formą symetryczną, więc $I_p$ jest również formą symetryczną, zatem każdym punkcie mamy $g_{12}=g_{21}$.}
+\mode<presentation>{\item Ponieważ $\langle x_i,x_j \rangle=\langle x_j,x_i \rangle$, więc $I_p$ jest formą symetryczną ($g_{12}=g_{21}$).}
 \item Gauss (a za nim część podręczników) używał oznaczeń $E,F$ i $G$ na (odpowienio) $g_{11},g_{12}$ i $g_{22}$.
 \end{itemize}
 \end{uwaga}
@@ -292,13 +293,13 @@ Jako przykład zastosowania pierwszej formy podstawowej mamy następujący lemat
 \pause \begin{lemat}
 Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $x\colon U\to M$ będzie lokalnym układem współrzędnych. Rozważmy krzywą gładką $\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U$.
 \pause Wtedy długość krzywej $\overline{\alpha}\define x\circ\alpha\colon \R\to M$ na powierzchni jest równa
-\[L(\overline{\alpha})=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha'(t),\alpha'(t)\ri)}dt,\]
+\[L(\overline{\alpha})=\int_a^b\sqrt{I_{\alpha(t)}\le(\alpha_1 '(t),\alpha_2 '(t)\ri)}dt,\]
 \pause co można bezpośrednio zapisać:
-\[\int_a^b\sqrt{\le(\alpha_1'\ri)^2 g_{11}(\alpha(t))+ 2 \alpha_1'\alpha_2'g_{12}(\alpha(t))+\le(\alpha_2'\ri)^2 g_{22}(\alpha(t))}.\]
+\[\int_a^b\sqrt{\le(\alpha_1'\ri)^2 g_{11}(\alpha(t))+ 2 \alpha_1'\alpha_2'g_{12}(\alpha(t))+\le(\alpha_2'\ri)^2 g_{22}(\alpha(t))}\,dt.\]
 \end{lemat}
 
 \pause \textcolor{ared}{\textbf{Dowód:}}\\
-Ćwiczenie.
+Ćwiczenie. \footnotesize {Zauważyć, że $(x\circ \alpha )(t)$ jest zwykłą krzywą w $\R^3$. Wektor prędkości jest r\'owny $x_1\alpha_1' +x_2\alpha_2'$. Znaleźć jego długość.}\normalsize
 \hfill $\square$
 
 
