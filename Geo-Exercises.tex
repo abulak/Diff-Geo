@@ -1,0 +1,955 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{polski}
+\usepackage{mathtools}
+% \usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{fourier}
+\usepackage[T1]{fontenc}
+
+
+\setcounter{secnumdepth}{-1 }
+%opening
+\title{Zadania}
+\author{Marek Kaluba\\Elementy Topologii i Geometrii Różniczkowej}
+
+\theoremstyle{definition}\newtheorem{exercise}{Zadanie}
+\theoremstyle{definition}\newtheorem{remark}{Uwaga}
+
+
+\begin{document}
+\section{Krzywe w $\mathbb{R}^3$}
+
+\subsection{Zadania elementarne}
+
+\begin{exercise}
+ Obliczyć długość następujących wektor\'ow w $\mathbb{R}^3$:
+\begin{itemize}
+ \item 
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Znaleźć postać parametryczną prostej  w $\mathbb{R}^3$ przechodzącej
+przez punkty $(3,\pi,2\sqrt{3})$ oraz $(7\frac{1}{2},e,3\sqrt{2})$.
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że $\alpha$ jest prostą wtedy i tylko wtedy gdy $\alpha''\equiv 0$.
+\end{exercise}
+
+\begin{exercise}
+Udowodnić, że żadne 4 różne punkty leżące na krzywej $(t,t^2,t^3)$ nie leżą 
+na jednej płaszczyźnie.
+\end{exercise}
+
+\begin{exercise}
+Udowodnij, że rzut ortogonaly krzywej $\alpha$ na dowolną oś ma długość co 
+najwyżej równą długości wyjściowej krzywej.
+\end{exercise}
+
+\subsection{Znajdowanie parametryzacji}
+
+\begin{exercise}
+Rozważmy okrąg o promieniu $r$ i środku w punkcie $(0,r)$. Niech $P$ będzie 
+punktem na okręgu o wsp\'ołrzędnych w $\mathbb{R}^2$ r\'ownych $(0,0)$. Okrąg 
+ten zaczyna się toczyć po prostej (w prawo bądź w lewo). Wyznaczyć r\'ownanie 
+krzywej po kt\'orej porusza się punkt $P$ (jest to tzw. \textit{cykloida}).
+\end{exercise}
+
+\begin{exercise}
+Okrąg o promieniu $r$ toczy się wewnątrz okręgu o promieniu $nr$. Wyznaczyć 
+r\'ownanie krzywej po kt\'orej porusza się punkt $P$ będący początkowym punktem 
+styczności obu okręg\'ow. (jest to tzw. \textit{asteroida}).
+\end{exercise}
+
+\begin{exercise}
+ Sprawdzić, że asteroida dla $n=4$ może być opisana równaniami:
+\[\alpha(t)=(a \cos^3{t},b\cos^3{t})\text{ (r\'ownanie parametryczne)},\] 
+\[x^{2/3}+y^{2/3}=a^{2/3}\text{ (r\'ownanie analityczne)}.\]
+\end{exercise}
+
+\begin{exercise}
+Niech $l(t)=(t,at+b)$ będzie krzywą na płaszczyźnie przechodzącą przez punkt 
+$(-1,0)$. Sparametryzować jedną z gałęzi hiperboli zadanej wzorem $x^2-y^2=1$ 
+jako parametr wybierając współczynnik $b$.
+\end{exercise}
+
+\begin{exercise}
+Niech $l(t)=(t,at+b)$ będzie krzywą na płaszczyźnie przechodzącą przez punkt 
+$(-1,0)$. Sparametryzować krzywą zadaną równaniem $x^2+y^2=1$ jako parametr 
+wybierając współczynnik $b$ (uwaga: parametryzacja nie obejmuje punktu 
+$(-1,0)$!)
+\end{exercise}
+
+
+
+\begin{exercise}[fizyczne]
+Zbadać kształt krzywej mostu wiszącego, tj. krzywej $\alpha(t)$, kt\'orej 
+``ciężar'' rozłożony jest jednorodnie wzdłuż osi $OX$. 
+
+Korzystając z powyższego rysunku sprowadzić to zadanie do rozwiązania układu 
+równań:
+\begin{align*}
+\alpha'(t)\cos\theta&=T\\
+\alpha'(t)\sin\theta&=Ct
+\end{align*}
+gdzie 
+\begin{itemize}
+ \item $\theta$ to kąt między wektorem $\alpha'(t)$ a osią $OX$, 
+ \item $T$ jest pewną stałą (jaka jest jej interpretacja fizyczna?),
+ \item $C$ jest pewną stałą (jaka jest jej interpretacja fizyczna?).
+\end{itemize}
+Następnie rozwiązać układ pamiętając o tym, że $\alpha'(t)=\tg\theta$.
+\end{exercise}
+
+\begin{exercise}[fizyczne]
+Sprowadzić powyższe zadanie do r\'ownania krzywej opisującego rzut ukośny 
+(pocisk wystrzelony pod kątem $\theta$ w jednorodnym polu grawitacyjnym).
+\end{exercise}
+
+\subsection{Reparametryzacja}
+
+\begin{exercise}
+Pokazać, że jeśli krzywe (regularne) $\alpha$ i $\overline{\alpha}$ mają ten 
+sam kształ (tj. wykres w $R^3$), w\'owczas jedna z nich jest 
+reparametryzacją (gładką) drugiej.
+\end{exercise}
+
+\begin{exercise}
+Omówić dowód istnienia parametryzacji unormowanej.
+\begin{enumerate}
+ \item Niech $s(t)=\int_{a}^t|\alpha'(x)|dx$.
+\item $s(t)$ jest funkcją ściśle rosnącą (bo krzywa jest unormowana), więc 
+posiada funkcję odwrotną:\[t(s)=s^{-1}(t),\] która jest szukaną 
+reparametryzacją krzywej:
+\item $\alpha(t(s))$ jest krzywą unormowaną.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+Wyznaczyć parametryzację unormowaną dla
+\begin{itemize}
+\item okręgu o promieniu $r$,
+\item linia śrubowa (helisy) o promieniu $a$ i współczynniku nachylenia $b$
+\item krzywej zadanej przez \[\alpha(t)=\left(e^t,e^{-t},\sqrt{2}t\right).\]
+\end{itemize}
+\end{exercise}
+
+% \begin{exercise}
+% Grupa wymyśla własne przykłady, pr\'obując znaleźć parametrtzację unormowaną.
+% \end{exercise}
+
+\subsection{Niezmienniki krzywych, Tr\'ojn\'og Freneta}
+
+\begin{exercise}
+Obliczyć wektor styczny i normalny do okręgu o promieniu $r$ i środku w 
+punkcie $(0,0)$.
+\end{exercise}
+
+\begin{exercise}
+Znaleźć wektor styczny i jego długość:
+\[\alpha(t)=\left(\frac{\lambda}{2}\left(\frac{1}{t}+2t+t^3\right),\frac{\lambda
+}{2}\left(\ln 
+{\frac{1}{t}}+t^2+\frac{3}{4}t^4\right)-\frac{7}{8}\lambda\right)\]
+\end{exercise}
+
+\begin{exercise}
+ Niech $\alpha(t)$ będzie krzywą w $\mathbb{R}^2$ zadaną przez wykres funkcji 
+$f\colon 
+\mathbb{R}\to \mathbb{R}$. Znaleźć wektory styczny i normalny do $\alpha$. 
+Pokazać, że krzywizna $\alpha$ jest r\'owna
+\[\kappa=\frac{|f''|}{(1+(f')^2)^{3/2}}.\] 
+\end{exercise}
+
+\begin{exercise}
+Znaleźć krzywą płaską $\alpha$ (o parametryzacji unormowanej), której krzywizna 
+wynosi \[\kappa_\alpha(s)=\frac{1}{s}.\]
+\footnotesize{(Podpowiedź: 
+$\alpha(s)=(\int_0^s\sin(\vartheta(u))\,du,\int_0^s\cos(\vartheta(u))\,du)$.}
+\end{exercise}
+
+\begin{exercise}
+Dla krzywych unormowanych sprawdzić 
+\begin{itemize}
+ \item wz\'or Freneta na $T'$ 
+ \item wz\'or Freneta na $B'$ 
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Wyznaczyć Tr\'ojn\'og Freneta oraz torsję i krzywiznę dla następujących 
+krzywych.
+\begin{itemize}
+ \item linia śrubowa
+\item 
+\[\alpha(t)=(t,t^2,t^3),\]
+\item 
+\[\alpha(t)=\left(\frac{t^2}{2},\sqrt{2}\frac{t^3}{3},\frac{t^4}{4}\right)\]
+\item 
+\[\beta(s)=\left(\frac{(1+s)^{\frac{3}{2}}}{3},\frac{(1-s)^{\frac{3}
+{ 2}}}{3},
+\frac{s}{\sqrt{2}}\right),\]
+\item \[\alpha(t)=\left(2\ln t,2t,\frac{t^2}{2}\right)\]
+
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Dla krzywej regularnej $\alpha$ (niekoniecznie unormowanej) wyprowadzić 
+następujące wzory:
+\begin{align*}
+ T=& \frac{\alpha'}{\|\alpha'\|},& 
+B=& \frac{\alpha'\times \alpha''}{\|\alpha'\times 
+\alpha''\|}, & N=& B\times T,
+\end{align*}
+\begin{align*}
+\kappa=&\frac{\|\alpha'\times \alpha''\|}{\|\alpha'\|^{3}}, & 
+\tau=&\frac{\langle \alpha'\times 
+\alpha'',\alpha'''\rangle}{\|\alpha'\times \alpha''\|}.
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+Niech \[\beta(t)=\int_0^t B_\alpha (s)\,ds\] dla pewnej krzywej unormowanej 
+$\alpha$. Wyrazić trójnóg Freneta dla krzywej $\beta$ 
+($T_\beta$,$B_\beta$,$N_\beta$) oraz krzywiznę $\kappa_\beta$ i torsję 
+$\tau_\beta$ przy pomocy tychże niezmienników krzywej $\alpha$.
+\end{exercise}
+
+
+\begin{exercise}
+Więcej o iloczynie wektorowym: Wektor Darboux.\\
+Niech $\omega$ będzie takim wektorem, że 
+\begin{align*}
+T'&=\omega\times T\\
+N'&=\omega\times N\\
+B'&=\omega\times B
+\end{align*}
+Pokazać, że $\omega=\tau T+\kappa B$
+
+\end{exercise}
+
+
+\subsection{Ewolwenty i ewoluty}
+\begin{exercise}
+Niech $\alpha$ będzie krzywą regularną. \textit{Ewolwenta} (lub 
+\textit{rozwijająca}) krzywej $\alpha$ ma następującą interpretację 
+geometryczną.
+
+\begin{quote}
+Wyobraźmy sobie, że punkt $A$ porusza się po krzywej $\alpha(t)$ ciągnąc za 
+sobą punkt $B$ na linie kt\'orej długość jest r\'owna długości drogi kt\'orą 
+przebiegł punkt $A$. Krzywą po kt\'orej porusza się punkt $B$ nazywamy 
+ewolwentą krzywej $\alpha(t)$ i oznaczamy $\mathcal{E}(\alpha)(t)$.
+\end{quote}
+
+Korzystając z tej interpretacji znajdź wz\'or (zależny od $\alpha$) kt\'orym 
+wyraża się $\mathcal{E}(\alpha)(t)$.
+\end{exercise}
+
+\begin{exercise}
+Niech $\alpha$ będzie krzywą regularną. \textit{Ewoluta} krzywej $\alpha$ ma 
+następującą interpretację geometryczną.
+
+\begin{quote}
+W każdym punkcie krzywej $\alpha$ narysujmy okrąg ściśle styczny do 
+$\alpha(t)$, tj. okrąg styczny do $\alpha$, leżący w płaszczyźnie rozpiętej 
+przez wektory $T_\alpha(t)$ i $N_\alpha(t)$, o krzywiźnie 
+r\'ownej odwrotności krzywizny w danym punkcie ($\frac{1}{\kappa_{\alpha} 
+(t)}$). Środki tych okręg\'ow dla zmieniającego się $t$ utworzą krzywą
+kt\'orą nazywamy ewolutą krzywej $\alpha(t)$ i oznaczamy $E(\alpha)(t)$.
+\end{quote}
+
+Korzystając z tej interpretacji znajdź wz\'or (zależny od $\alpha$) kt\'orym 
+wyraża się $E(\alpha)(t)$.
+\end{exercise}
+
+
+\begin{exercise}
+Pokaż, że ewolwenta ($\mathcal{E}$) ewoluty jest równa wyjściowej krzywej, tj.
+\[\mathcal{E}(E(\alpha))(t)=\alpha(t).\] 
+\end{exercise}
+
+\begin{exercise}
+Pokaż, że ewoluta ewolwenty jest równa wyjściowej krzywej, tj.
+\[E(\mathcal{E}(\alpha))(t)=\alpha(t).\] 
+\end{exercise}
+
+\subsection{Zadania r\'ożne}
+
+\begin{exercise}
+Pokaż, że jeśli wszystkie proste styczne do krzywej $\alpha$ zawierają jeden 
+punkt, to krzywa ta jest prostą (odcinkiem).
+\end{exercise}
+
+\begin{exercise}
+Pokaż, że jeśli wszystkie proste normalne do krzywej $\alpha$ zawierają jeden 
+punkt, to krzywa ta jest okręgiem.
+\end{exercise}
+
+\begin{exercise}
+ Pokaż, że jeśli wszystkie płaszczyzny normalne do krzywej zawierają jeden 
+punkt, to krzywa ta jest krzywą sferyczną (i.e. leży na powierzchni sfery).
+\end{exercise}
+
+\begin{exercise}
+Udowodnij, że jeśli wszystkie wektory binormalne do krzywej $\alpha$ są 
+równoległe, to $\alpha$ jest krzywą płaską.
+\end{exercise}
+
+\begin{exercise} 
+Pokaż że krzywa o stałej torsji $\tau$ i krzywiźnie $\kappa$ jest linią śrubową 
+postaci
+\[(a \sin{x},a\cos{x},b x).\]
+Wyrazić $a$ i $b$ w terminach $\tau$ i $\kappa$.
+\end{exercise}
+
+\begin{exercise}
+Obliczyć paramatryzację unormowaną dla elipsy. Dlaczego są z tym problemy?
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że krzywa zadana wzorem
+\[\alpha(t)=\left\{
+\begin{array}{lc}
+\left(\tg\left(\frac{\pi}{4}t\right),\sin\left(\pi t\right),t 
+\sin\left(\frac{\pi} {t}\right)\right) & t\in (0,1]\\
+(0,0,0) & t=0
+\end{array}\right.\]
+ma nieskończoną długość.
+
+\end{exercise}
+
+\begin{exercise}
+Fred Flinstone ma samochód o kołach będącymi kwadratami o przekątnej równej $2$. W jaki sposób powinien zaprojektować drogę, żeby jechać po niej bez wstrząsów? (tj. podczas toczenia się, środek kwadratu ma mieć współrzędną $y$ równą stale $1$).
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że jeśli $|\alpha(t)|>R$ dla wszystkich $t\in (-\varepsilon, 
+\epsilon)$, $t\neq 0$, oraz $|\alpha(0)|=R$, to 
+\[\kappa(0)\leqslant \frac{1}{R}.\]
+Czy da się udowodnić, że $\kappa(0)<\frac{1}{R}$?
+\end{exercise}
+
+\begin{exercise}
+Zamiast trójnogu Freneta można dla danej krzywej (o prędkości jednostkowej) $\alpha\colon[a,b]\to \mathbb{R}^3$ określić układ ${T, U, V }$, biorąc jako $T$ wektor styczny do $\alpha$, żądając, aby $U$ było dowolnym jednostkowym polem wektorowym wzdłuż $\alpha$ takim, że $T\cdot U= 0$, tzn. odwzorowanie $U\colon[a, b] \to \mathbb{R}^3$ przyporządkowuje każdemu $t \in [a, b]$ wektor jednostkowy $U(t)$ prostopadły do wektora $T(t)$. Niech $V = T \times U$. Pokaż, że naturalne związki (czyli ``wzory Freneta'') dla tego układu mają postać:
+\begin{align*}
+T =& \omega_3 U - \omega_2V \\
+U =& -\omega_3T + \omega_1 V\\
+V =& \omega_2 T - \omega_1U
+\end{align*}
+gdzie współczynniki $\omega_1$, $\omega_2$ i $\omega_3$ są rzeczywiste. Ponadto pokaż, że wektor
+Darboux $\omega$ spełniający zależności $T = \omega\times T$ , $U = \omega\times  U$ oraz $V = \omega\times  V$
+jest postaci \[\omega = \omega_1T + \omega_2U + \omega_3 V \]
+\end{exercise}
+
+\begin{exercise}
+Dwie krzywe $\alpha$ i $\beta$ nazywamy \textit{parą Bertranda} jeśli dla 
+każdego $t$, prosta normalna do $\alpha$ przechodząca przez punkt $\alpha(t)$ 
+jest r\'owna prostej normalnej do $\beta$ przechodzącej przez punkt $\beta(t)$.
+Pokazać, że zachodzą następujące własności.
+
+\begin{itemize}
+ \item Jeśli $\alpha$ ma parametryzację unormowaną, w\'owczas $\beta=\alpha+ 
+cN_\alpha$ dla pewnej stałej $c$. 
+\item Co więcej, kąt między $T_{\alpha}$ i $T_\beta$ jest stały.
+\item Zał\'ożmy, że $\alpha$ jest niepłaską krzywą unormowaną. Pokazać, że 
+$\alpha$ ma parę Bertranda wtedy i tylko wtedy, gdy istnieją stałe $c_1$ i 
+$c_2$ spełniające $c_1 \kappa_{\alpha} (t)+c_2 \tau_\alpha(t)=1$.
+
+\item Zał\'ożmy, że istnieje więcej niż jedna krzywa $\beta$ kt\'ora stanowi 
+parę Bertranda dla $\alpha$. Pokazać, że w\'owczas istnieje ich nieskończenie 
+wiele. Pokazać, że taka sytuacja zachodzi wtedy i tylko wtedy, gdy $\alpha$ 
+jest linią śrubową.
+\end{itemize}
+
+
+
+\end{exercise}
+
+\subsection{Twierdzenie klasyfikacyjne dla krzywych (Wykład 4)}
+
+\begin{exercise}
+ Niech $A\in SO(3)$ będzie macierzą o kolumnach ortonormalnych. Pokazać, że dla 
+dowolnej krzywej $\alpha$, krzywa
+\[\gamma(t) = A\cdot \alpha(t)\]
+ma te same niezmienniki (tj. $(T,N,B,\kappa,\tau)$).
+\end{exercise}
+
+\begin{exercise}
+Znaleźć interpretację umożliwiającą zastosowanie Twierdzenia Picarda
+(Twierdzenie 4.3) do dowodu twierdzenia klasyfikacyjnego. 
+\end{exercise}
+
+\begin{exercise}
+Sformułować układ równań wiążących pochodne funkcji $p'_{i,j}(t)$ z funkcjami 
+$\{p_{i,j}(t)\}$ oraz $\kappa(t)$ i $\tau(t)$.
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że otrzymany w dowodzie wektor $X_3(t)$ ma ten sam zwrot co 
+$B_\alpha(t)$ dla wszystkich $t$.
+\end{exercise}
+
+
+% \begin{exercise}
+% Cytując odpowiednie wyniki z teorii równań różniczkowych zwyczajnych i 
+% korzystając z podręczników, przedstawić pełny dowód twierdzenia 
+% klasyfikacyjnego dla krzywych.
+% \end{exercise}
+
+\section{Powierzchnie}
+
+\begin{exercise}
+Zastanowić się jak pokryć całą powierzchnię sfery jednym płatem 
+powierzchniowym. Gdzie pojawiają się problemy?
+\end{exercise}
+
+\begin{exercise}(Projekcja stereograficzna)
+ Rozważmy sferę $S^2\subset \mathbb{R}^3$ o promieniu $1$ i środku w punkcie 
+$(0,0,0)$. Niech 
+$l_{(x,y)}$ oznacza prostą w $\mathbb{R}^3$ przechodzącą przez punkt $(x,y,0)$ 
+oraz przez punkt $(0,0,1)$. 
+\begin{itemize}
+ \item Pokazać, że każda taka prosta przecina $S^2$ w dokładnie dw\'och 
+punktach: $(0,0,1)$ oraz $(a,b,c)$. Znaleźć wsp\'ołrzędne $a,b,c$ w terminach 
+$x$ i $y$.
+\item Pokazać, że przyporządkowanie
+\[(x,y)\mapsto (a,b,c)\]
+jest parametryzacją powierzchni sfery nie obejmującą punktu $(0,0,1)$. Co się 
+dzieje w tym punkcie?
+\end{itemize}
+%To odwzorowanie nazywane jest \textit{projekcją stereograficzną}.
+\end{exercise}
+
+
+\begin{exercise}
+Sprawdzić, że parametryzacja paraboloidy
+\[x(u,v)=(u,v,u^2+v^2)\] jest regularna.
+\end{exercise}
+
+\begin{exercise}
+Znaleźć parametryzację Monge'a stożka. 
+\end{exercise}
+
+\begin{exercise}
+ Znaleźć parametryzację i wektor normalny do poniższych powierzchni:
+ \begin{itemize}
+  \item powierzchnia siodłowa
+  \item Powierzchnia śrubowa 
+  \item walec
+  \item powierzchnia sfery o promieniu $R$.
+ \end{itemize}
+ Jak wyglądają w każdym przypadku linie parametr\'ow?
+\end{exercise}
+
+
+\begin{exercise}
+Wskazać reprezentację macierzową dla grupy $SO(3)$ (macierze obr\'ow o dowolny 
+kąt wok\'oł każdej z osi).
+\end{exercise}
+
+\begin{exercise}
+Korzystając z poprzedniego ćwiczenia wskazać parametryzację obrotową 
+\begin{itemize}
+ \item sfery o promieniu $R$
+ \item hiperboloidy dwupowłokowej
+ \item katenoidy (hiperboloida jednopowłokowa)
+ \item paraboloidy
+\item torusa
+ \end{itemize}
+Obliczyć wektor normalny i opisać linie parametru na tych powierzchniach.
+\end{exercise}
+
+\begin{exercise}
+Zastanowić się, co się dzieje gdy tworzymy powierzchnię obrotową z 
+krzywej kt\'ora 
+\begin{itemize}
+ \item posiada samoprzecięcia
+ \item przecina oś obrotu.
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+ Znaleźć og\'olny wz\'or na wektor normalny do powierzchni obrotowej.
+\end{exercise}
+
+\begin{exercise}
+Wyznaczyć parametryzację powierzchni powstałej przez obrót krzywej 
+\[\alpha(t)=(x,x+\sin{x},0)\] wokół prostej $l=(t,t,0)$.\\[0.1in]
+\small{Wskazówka: wyobrazić sobie krzywą i powierzchnię w przestrzeni. Jakich 
+obrotów wokół osi bazy standardowej trzeba dokonać, by uzyskać obrót wokół 
+zadanej osi? Złożyć je.}
+\end{exercise}
+
+\begin{exercise}
+ Napisać parametryzację obrotową stożka zawierającego wszystkie trzy osie 
+wsp\'ołrzędnych.
+\end{exercise}
+
+% \begin{exercise}
+% Znaleźć parametryzację powierzchni powstałej przez obrót krzywej 
+% $(t,\sqrt{1+t^{2}},0)$ wokół drugiej osi współrzędnych. Wyznaczyć odwzorowanie 
+% Gaussa dla tej parametryzacji. Wykazać, że jest ono różnowartościowe i 
+% oszacować wielkość obrazu tego odwzorowania.
+% \end{exercise}
+
+\begin{exercise}
+Pokazać, że macierze 
+\begin{align*}
+\mathcal{A}(\phi)&=\!\left[\!\!\!\!
+\begin{array}{c c c}
+\cos(\phi) &	\sin(\phi)&	0\\
+-\sin(\phi) &	\cos(\phi)&	0\\
+0 &			0 &	1
+\end{array}\!\!\!\right], &
+\mathcal{B}(\psi)&=\!\left[\!\!\!\!
+\begin{array}{c c c}
+1 &	0 		&	0\\
+0 &	\cos(\psi) 	&	\sin(\psi)\\
+0 &	-\sin(\psi) 	&	\cos(\psi)
+\end{array}\!\!\!\right],
+\end{align*}
+\begin{align*}
+\text{oraz }\quad\mathcal{C}(\chi)&=\!\left[\!\!\!\!
+\begin{array}{c c c}
+\cos(\chi) &	\sin(\chi)&	0\\
+-\sin(\chi) &	\cos(\chi)&	0\\
+0 &			0 &	1
+\end{array}\!\!\!\right]
+\end{align*}
+(po odpowiedniej interpretacji) tworzą bazę $SO(3)$ (uwaga, tutaj nie ma błędu, 
+to nie są znane nam obroty o zadany kąt wokół \textit{ustalonych} osi $x,y,z$!) 
+tj. pokazać, że odpowiednio dobrany iloczyn $\mathcal{A},\mathcal{B}, 
+\mathcal{C}$ zadaje dowolny obrót w przestrzeni $\mathbb{R}^3$.
+(Obrót definiujemy jako odwzorowanie $\mathbb{R}^3\to \mathbb{R}^3$ zachowujące 
+długość wektorów, kąty między nimi i ich wzajemną \textit{orientację}. Są to 
+tzw. \textbf{Kąty Eulera}).
+\end{exercise}
+
+
+\begin{exercise}
+Wyznaczyć równanie płaszczyzny stycznej w punkcie 
+\[\left(\frac{\sqrt{2}}{4},\frac{\sqrt{2}}{4},\frac{1}{2}\right)\] do sfery o 
+środku $(0,0,0)$.\\[0.1in]
+\small{Wskazówka: Jaki jest wektor normalny w tym punkcie? Następnie skorzystać 
+z iloczynu skalarnego.}
+ \end{exercise}
+
+\begin{exercise}
+ Wyznaczyć r\'ownanie płaszczyzny stycznej w punkcie $(1,1,1)$
+ do powierzchni zadanej przez r\'ownanie $x^2+2y^2+z^2=3$.
+\end{exercise}
+
+\begin{exercise}
+ Wskazać parametryzację prostokreślną
+ \begin{itemize}
+  \item stożka
+  \item walca
+  \item powierzchni siodłowej
+  \item katenoidy
+  \item wstęgi M\"obiusa
+ \end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Przedstaw jako powierzchnię prostokreślną powierzchnię daną równaniem: 
+
+\begin{itemize}
+ \item $z^2=4x^2+y^2$
+ \item $z=4x^2-y^2$
+\end{itemize}
+ \small{Wskazówka: Co to za powierzchnia? Znaleźć 
+odpowiednie podstawienie i wyrazić prostokreślność w nowych zmiennych.}
+\end{exercise}
+
+
+\begin{exercise}
+Korzystając z parametryzacji wstęgi M\"obiusa jako powierzchni prostokreślnej 
+pokazać, że wektor normalny po obiegnięciu pełnego okręgu zmienił sw\'oj znak, a 
+zatem jest to parametryzacja (!) \textit{nieorientowalna}.
+\end{exercise}
+
+\begin{exercise}
+Podać parametryzację walca która nie będzie parametryzacją prostokreślną.
+\end{exercise}
+
+
+\begin{exercise}
+Znaleźć parametryzację powierzchni powstałej przez obrót krzywej 
+$(t,\sqrt{1+t^{2}},0)$ wokół drugiej osi współrzędnych. Wyznaczyć odwzorowanie 
+Gaussa dla tej parametryzacji. Wykazać, że jest ono różnowartościowe i 
+oszacować wielkość obrazu tego odwzorowania.
+\end{exercise}
+
+
+\begin{exercise}
+Wyznaczyć odwzorowanie Gaussa dla katenoidy 
+\[x(u,v)=(u,\cosh{u}\cos{v},\cosh{u}\sin{v}).\]
+Wykazać, że jest różnowartościowe. Oszacować wielkość obrazu tego odwzorowania 
+dla $u>0$.
+\end{exercise}
+
+
+\begin{exercise}
+ Obliczyć pierwszą formę podstawową dla następujących powierzchni
+ \begin{itemize}
+  \item sfera
+ \item torus
+\item powierzchnia śrubowa
+\item katenodida
+ \end{itemize}
+
+ \end{exercise}
+ 
+ \begin{exercise}
+Niech będzie dana funkcja $f\colon \mathbb{R}^2 \to S^1 \times \mathbb{R}$ 
+określona przez \[f(s,t)=(\cos s, \sin s, t).\]
+\begin{itemize}
+ \item Pokazać, że $f$ jest lokalną izometrią.
+ \item Pokazać, że $f$ nie jest dyfeomorfizmem, więc $f$ nie może być izometrią.
+\end{itemize}
+ 
+\end{exercise}
+ 
+\begin{exercise}
+Niech $M\subset \mathbb{R}^3$ będzie powierzchnią gładką i niech $x\colon U\to 
+M$ będzie lokalnym układem współrzędnych. Rozważmy krzywą gładką 
+\[\alpha(t)=(\alpha_1(t),\alpha_2(t))\subset U.\]
+
+Pokazać, że długość krzywej $\overline{\alpha}=x\circ\alpha\colon \mathbb{R}\to 
+M$ na powierzchni jest równa
+\[L(\overline{\alpha})=\int_a^b\sqrt{I_{\alpha(t)}\left(\alpha_1 '(t),\alpha_2 
+'(t)\right)}dt,\]
+co można bezpośrednio zapisać:
+\[\int_a^b\sqrt{\left(\alpha_1'\right)^2 g_{11}(\alpha(t))+ 2 
+\alpha_1'\alpha_2'g_{12}(\alpha(t))+\left(\alpha_2'\right)^2 
+g_{22}(\alpha(t))}\,dt.\]
+
+Jaki jest związek między długościami krzywych na powierzchniach lokalnie 
+izometrycznych?
+\end{exercise} 
+ 
+
+\begin{exercise}
+ M\'owimy, że parametryzacja $x\colon \mathbb{R}^2\to M$ jest 
+\textit{konforemna} jeśli zachowuje kąty.
+
+Zinterpretować tę geometryczną definicję w języku geometrii r\'ożniczkowej.
+\end{exercise}
+ 
+\begin{exercise}
+ Pokazać, że parametryzacja jest konforemna wtedy i tylko wtedy, gdy $g_{11} 
+=g_{22} $ oraz $g_{12} =g_{21} =0$.
+\end{exercise}
+
+\begin{exercise}
+ Pokazać, że projekcja stereograficzna jest parametryzacją konforemną.
+\end{exercise}
+
+\begin{exercise}(geograficzne -- projekcja Lamberta)
+Rozważmy odwzorowanie kt\'ore punktowi na sferze wpisanej w walec 
+przyporządkowuje odpowiadający punkt na tym walcu zachowując wsp\'ołrzędną $z$. 
+Znajdź wz\'or opisujący to odwzorowanie.
+\end{exercise}
+
+
+\begin{exercise}[geograficzne]
+Aby policzyć pole powierzchni na sparametryzowanej powierzchni $x\colon U\to M$ 
+można posłużyć się następującym wzorem:
+\[A\left(x(u,v)\right)=\int_U \|x_u \times x_v \|\, dudv.\]
+
+Pokaż, że projekcja Lamberta ze sfery wpisanej w walec na jego powierzchnię 
+(nie obejmuje biegun\'ow!) zachowuje pole, ale nie jest ani izometrią ani  
+odwzorowaniem konforemnym.
+
+\small{Najlepiej zacząć od wsp\'ołrzędnych sferycznych na sferze i 
+parametryzacji $(\cos v,\sin v, \cos u)$ walca.}
+\end{exercise}
+
+\begin{exercise}[geograficzne -- projekcja Merkatora]
+ Odwzorowanie Merkatora (wynalezione na długo przed początkami geometrii 
+r\'ożniczkowej) było pierwszym odwzorowaniem, w kt\'orym linia prosta na mapie 
+faktycznie była najkr\'otszą drogą na kuli ziemskiej (w języku geometrii 
+r\'ożniczkowej oznacza to konforemność).
+
+Pokazać, że parametryzacja (lub odwzorowanie $R^2 \supset U \to S^2$)
+\[x(u,v)=\left( \frac{\cos v}{\sinh u}, \frac{\sin v}{\sinh u}, 
+\frac{\sinh u}{\cosh u}\right)\]
+jest konforemna.
+
+\small{Trudniejsze zadanie polega na wyprowadzeniu tej formuły. Niech 
+$(\phi,\theta)$ będą wsp\'ołrzędnymi sferycznymi. Wtedy linie parametru $u$ 
+muszą przejść na południki funkcją $f(u)$ -- korzystamy tutaj z symetrii sfery. 
+Pokazać, że $f(u)=2\arctan(e^{-u})$.}
+
+\end{exercise}
+
+
+
+\begin{exercise}
+Pokazać (z definicji), że odwzorowanie Weingartena $S_p$ jest odwzorowaniem 
+liniowym.
+\end{exercise}
+
+\begin{exercise}
+ Sprawdzić, że macierz odwzorowania Weingartena $S_p \colon T_p 
+M \to T_p M$ wyraża się jako
+\[S_p = I_p^{-1} II_p. \]
+ 
+ \small{Wystarczy zapisać $S_p(x_u)=ax_u + bx_v$ i $S_p(x_v)=cx_u + d x_v$ i 
+wyprowadzić układ r\'ownań liniowych na $a,b,c$ i $d$.}
+\end{exercise}
+
+\begin{exercise}
+Korzystając z r\'ownań Weingartena obliczyć macierz odwzorowania Weingartena
+$S_p$ dla następujących powierzchni
+\begin{itemize}
+ \item sfera
+ \item powierzchnia śrubowa
+ \item katenoida
+ \item torus
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Korzystając z r\'ownania $S_p = I_p^{-1} II_p$ obliczyć formę macierzową 
+odwzorowania Weingartena dla następujących powierzchni:
+\begin{itemize}
+ \item walec
+ \item powierzchnia siodłowa
+ \item powierzchnia śrubowa
+%  \item torus
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Oblicz krzywiznę Gaussa i krzywiznę średnią powierzchni danej równaniem 
+parametrycznym:
+\begin{itemize}
+ \item $x(u,v)=(v\cos u,v\sin u,\sin u)$,
+ \item $x(u,v)=(u^2,2uv,2v^2)$
+\end{itemize}
+\end{exercise}
+
+\begin{exercise}
+Oblicz krzywizny główne i ich wektory w punkcie $p=(1,0,2)$ powierzchni danej 
+równaniem
+\begin{itemize}
+ \item $z^2+2x^2+y^2=6,$
+\item $z^2-2x^2-y^2=2$.
+\end{itemize}
+\small{Krzywizny główne to $k_1=k(u_1)=\max_{u}k(u)$, oraz 
+$k_2=k(u_2)=\min_{u}k(u)$.\\$k(u)=S_p(u)\cdot u=\kappa_\alpha(0)\cos{\theta}$ 
+to krzywizna normalna, w punkcie w kierunku wektora \textbf{jednostkowego} 
+$u\in T_p$ z przestrzeni stycznej. $u_1$ i $u_2$ nazywamy wektorami krzywizn 
+głównych. $\alpha$ jest krzywą na powierzchni spełniającą: $\alpha(0)=p$, oraz 
+$\alpha'(0)=u$. $\theta$ jest kątem między $U(p)$, a $N_\alpha(0)$.\\[0.1in] 
+Wskazówka: Powierzchnie te są poziomicami pewnej funkcji. Jaką postać może mieć 
+wektor jednostkowy należący do przestrzeni stycznej w punkcie $p$?} 
+\end{exercise}
+
+\begin{exercise}
+Proszę wybrać punkt na powierzchni danej równaniem\[z^2-5x^2+y^2=5,\]a 
+następnie policzyć w nim krzywizny główne i ich wektory.
+\end{exercise}
+
+
+\begin{exercise}
+Dla powierzchni zadanej równaniem
+\[2 x^2 - y^2 - z^2 = 2\]
+W punkcie $(2,0,2)$ policzyć krzywiznę Gaussa i średnią a także znaleźć 
+krzywizny główne i ich wektory.
+\end{exercise}
+
+
+\begin{exercise}
+ Pokazać że powierzchnia prostokreślna ma krzywiznę Gaussa $\leqslant 0$.
+\end{exercise}
+
+
+\begin{exercise}
+ Sprawdzić, że powierzchnia pseudosfery (tj. powierzchnia otrzymana przez 
+obr\'ot traktrysy -- krzywej pościgu) zadana wzorem
+\[x(u,v)=\left(u-\tanh u, \frac{\cos v}{\cosh u},\frac{\sin v}{\cosh u}\right)\]
+ma stałą krzywiznę Gaussa r\'owną $-1$.
+\end{exercise}
+
+
+
+\begin{exercise}
+ Udowodnić R\'ownanie Gaussa
+ \begin{equation*}
+l_{11}l_{22}-l_{12}^2=
+\sum_{r=1}^{2}g_{1r}
+\left[
+\frac{\partial \Gamma^r_{22}} {\partial u_{1}}- \frac{\partial\Gamma 
+^r_{21}}{\partial u_{2}}+
+\sum_{m=1}^2 
+\left(\Gamma^m_{22}\Gamma^r_{m1}-\Gamma^m_{21}\Gamma^r_{m2}\right)\right].
+\end{equation*}
+\footnotesize{Podpowiedź: należy porównać współczynniki stojące przy $x_1$ i 
+$x_2$ w rozwinięciach $x_ijk$ i $x_ikj$ względem bazy 
+$\{x_1,x_2,n\}$. Następnie podstawić $(i=2,j=1,k=2)$.}
+
+\end{exercise}
+
+\begin{exercise}
+ Prześledzić dow\'od Theorema Egregium Gaussa i wyprowadzić jawny wz\'or na 
+krzywiznę korzystający tylko ze wsp\'ołczynnik\'ow metrycznych.
+\end{exercise}
+
+\begin{exercise}
+Niech 
+\begin{align*}
+M=&\{y(u,v)=(u \sin v, u\cos v,\ln u)\colon u\in \mathbb{R}_+, v\in 
+(-\pi,\pi)\},\\
+N=&\{x(u,v)=(v \sin u, v\cos u, u)\colon u\in \mathbb{R}_+, v\in (-\pi,\pi)\},
+\end{align*}
+oraz zdefiniujmy funkcję $f\colon M\to N$ jako \[f(y(u,v))= x(v,u).\]
+Sprawdzić, że 
+\[K\left( f(y(u,v))\right)=K(x(v,u))=\frac{-1}{(1+u^2)^2}=K(y(u,v)),\]
+a mimo to $f$ nie jest (lokalną) izometrią.
+\end{exercise}
+
+\begin{exercise}
+ Korzystając z r\'ownań geodezyjnych pokazać, że proste i tylko proste są 
+geodezyjnymi na płaszczyźnie.
+\end{exercise}
+
+\begin{exercise}
+ Sprawdzić jak wyglądają r\'ownania geodezyjnych dla sfery o promieniu $1$. 
+Spr\'obować wyprowadzić, że krzywe je spełniające są okręgami wielkimi.
+\end{exercise}
+
+
+
+\begin{exercise}
+Niech $\gamma$ będzie (niestałą) krzywą geodezyjną na powierzchni $M$. 
+\begin{itemize}
+ \item Pokazać, że $\gamma$ ma stałą prędkość.
+ \item Reparametryzacja tej krzywej $\gamma\circ h (t)$ jest geodezyjną wtedy i 
+tylko wtedy, gdy $h$ jest funkcją afiniczną. 
+\end{itemize}
+
+\end{exercise}
+
+\begin{exercise}
+Niech $M\subset \mathbb{R}^3$ będzie powierzchnią obrotową z lokalnym układem 
+współrzędnych 
+\[x(t,\vartheta)=\big(\alpha_1(t),\alpha_2(t)\cos \vartheta ,
+\alpha_2(t)\sin\vartheta \big),\]
+oraz załóżmy, że krzywa profilu $x(t,0)=(\alpha_1(t),\alpha_2(t),0)$ jest 
+unormowana. Pokazać, że r\'ownania geodezyjnych mają dla $M$ postać
+\begin{align*}
+g''_1-\alpha_1\alpha_1'(g'_2)^2&=0\\
+g''_2+2\frac{\alpha_1'}{\alpha_1}g'_1g'_2&=0.
+\end{align*}
+\end{exercise}
+
+\begin{exercise}
+Korzystając z powyższej formy r\'ownań geodezyjnych pokazać, że każda krzywa 
+profilu (południk) na powierzchni $M$ może być sparametryzowana jako krzywa 
+geodezyjna.
+\end{exercise}
+
+\begin{exercise}
+Sprawdzić, że krzywa na powierzchni obrotowej zadana przez r\'ownanie 
+$t=t_0$ (tzn. linia parametru) jest geodezyjną wtedy i tylko wtedy, gdy 
+$\alpha'_1(t_0)=0$. Co ten wynik oznacza geometrycznie?
+
+\end{exercise}
+
+
+
+
+\begin{exercise}[Butelka Kleina]
+Wstęga M\"obiusa powstawała jako powierzchnia prostokreślna przez obiegnięcie 
+okręgu r\'ownocześnie przekręcając proste ,,normalne" o połowę kąta pełnego.
+
+Rozważmy następujuącą powierzchnię ,,okręgo-kreślną``, czyli składającą się z 
+odpowiednio przekręconych okręgów nad (bazowym) okręgiem:\footnote{
+Prawidłowa nazwa brzmi: $S^1$-wiązka nad okręgiem. Nad okręgiem są 
+tylko dwie powierzchnie utworzone w ten spos\'ob: torus (produktowa) i 
+butelka Kleina (nietrywialnie skręcona).}
+
+
+
+
+
+\small {Uwaga: Nie uda się tego zrobić w $\mathbb{R}^3$ bez samoprzecięć. 
+Jedna z wielu dróg do celu wiedzie przez odpowiednie zanurzenie Wstęgi 
+M\"{o}biusa jako, że butelka jest sklejeniem dwóch wstęg wzdłuż brzegów.}
+\end{exercise}
+
+\begin{exercise}
+Udowodnić bądź znaleźć kontrprzykład:
+\begin{quote}
+Jeśli $M$ jest powierzchnią o dodatniej krzywiźnie Gaussa ($K(p)>0$ dla 
+wszystkich $p\in M$), wtedy każda krzywa leżąca na powierzchni ma również 
+krzywiznę dodatnią.
+\end{quote}
+
+\end{exercise}
+
+
+
+\begin{exercise}
+Niech $M$ będzie dowolną powierzchnią prostokreślną. Udowodnić lub wskazać 
+kontrprzykład: 
+\begin{quote}
+Odwzorowanie Weingartena wzdłuż prostych będących liniami parametru jest 
+zerowe. 
+\end{quote}
+
+\end{exercise}
+
+
+
+
+
+
+\begin{exercise}
+Niech będą dane dwa współosiowe, równoległe okręgi w $\mathbb{R}^3$ odległe od siebie o $A$, o promieniach odpowiednio $r$ i $R$. Podać parametryzację katenoidy zawierającej je oba. Czy zawsze da się to zrobić?
+\end{exercise}
+
+% \begin{exercise}
+% Wybierając pewną powierzchnię nieorientowalną, faktycznie udowodnić jej nieorientowalność (To zadanie jest już zdecydowanie obowiązkowe dla osób z projektem \textit{Powierzchnie nieorientowalne}).
+% \end{exercise}
+
+\begin{exercise}
+Zidentyfikować wszystkie powierzchnie, dla których linie normalne (proste 
+wyznaczone przez wektory normalne przesunięte do odpowiedniego punktu na 
+powierzchni) przechodzą przez jeden ustalony punkt $P$.
+\end{exercise}
+
+\begin{exercise}
+Policzyć odwzorowanie Weingartena dla dowolnej powierzchni powstałej przez obrót krzywej \[\alpha(t)=(f(t),g(t),0)\] wokół osi $OX$. Jak wyglądają krzywizny główne i ich wektory? (dla ułatwienia można założyć, że $\alpha$ jest krzywą unormowaną).
+\end{exercise}
+
+\begin{exercise}
+Policzyć odwzorowanie Weingartena dla dowolnej powierzchni prostokreślnej. Jak wyglądają krzywizny główne i ich wektory?
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że jeśli odwzorowanie Weingartena powierzchni $M$ jest postaci $\frac{-1	}{R}[\text{id}]$, gdzie $[\text{id}]$ oznacza macierz identycznościową, to $M$ jest powierzchnią sfery (lub jej fragmentem).
+\end{exercise}
+
+\begin{exercise}
+ Pokazać, że zwarta powierzchnia $M$ bez brzegu zanurzona (gładko!) w 
+$\mathbb{R}^3$ posiada taki punkt $p\in M$, że $K(p)> 0$.
+\end{exercise}
+
+
+\end{document}
