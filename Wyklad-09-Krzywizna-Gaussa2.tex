@@ -121,10 +121,12 @@ co dowodzi pierwszej równości w punkcie 2 (równość $*$ wynika z dowodu pier
 \pause \item Macierz $(L_{ij})$ odwzorowania Weingartena $L$ jest symetryczna \textbf{w każdej bazie ortonormalnej}.
 \end{itemize}
 \end{lemat}
-\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+\textcolor{ared}{\textbf{Dowód :}}\\\pause 
 Symetryczność macierzy $(l_{ij})$ wynika z równości $l_{ij} =\langle n,x_{ij} \rangle$ oraz $x_{12}=x_{21}$. 
 
-\pause Druga teza wynika wtedy z powiązań macierzy symetrycznej symetrycznością odwzorowania przez nią indukowanego (lemat \ref{lem:alg-lin-2} cytowany podczas powtórki z algebry liniowej II).
+\pause Druga teza wynika wtedy z powiązań macierzy symetrycznej z 
+symetrycznością odwzorowania przez nią indukowanego (lemat \ref{lem:alg-lin-2} 
+cytowany podczas powtórki z algebry liniowej II).
 \hfill $\square$
 
 \end{frame}
@@ -151,7 +153,9 @@ Niezmiennikami numerycznymi macierzy $2\times2$ są wyznacznik i ślad. Co więc
 \begin{frame}{Krzywizna powierzchni}
 \mode<presentation>{Macierz odwzorowania liniowego zależy od wyboru bazy przestrzeni, jednak wyznacznik i ślad tego odwzorowania są od bazy niezależne.}
 \pause \begin{definicja}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $L$ będzie oznaczało odwzorowanie Weingartena. \pause Zdefiniujmy dwie funkcje skalarne $K\colon M\to \R$, $H\colon M\to \R$ nastepująco
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $L$ będzie oznaczało 
+odwzorowanie Weingartena. \pause Zdefiniujmy dwie funkcje skalarne  $K\colon 
+M\to \R$, $H\colon M\to \R$ nastepująco
 \begin{align*}
 K(p)&=\det L(p) & H(p)=\frac{1}{2}\text{tr}\, L(p).
 \end{align*}
@@ -166,7 +170,7 @@ Nazywamy je odpowiednio \textbf{krzywizną Gaussa} i \textbf{krzywizną średni�
 Krzywizna Gaussa i krzywizna średnia nie zależą od wyboru macierzy reprezentującej odwzorowanie Weingartena, tj. nie zależą od wyboru bazy przestrzeni stycznej $T_pM$.
 \end{lemat}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\
+\pause \textcolor{ared}{\textbf{Dowód: }}\\
 Dowód wynika z odpowiedniego przedstawienia wyznacznika i śladu:
 \[\det L(p)=k_1k_2,\operatorname{tr}L(p)=k_1 +k_2 .\]
 cytowanego w powtórce z algebry liniowej II (Lemat \ref{lem:alg-lin-2-eigen}). \hfill $\square$
@@ -182,7 +186,7 @@ K(p)=&\frac{\det (l_{ij})}{\det (g_{ij})},\quad\text{oraz}\quad& H(p)=&\frac{g_{
 \end{align*}
 \end{lemat}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\
+\pause \textcolor{ared}{\textbf{Dowód: }}\\
 Przypomnijmy, że $(L_{ij})=(g_{ij})^{-1}(l_{ij})$. Mamy zatem
 \[K(p)=\det (L_{ij})=\det((g_{ij})^{-1}(l_{ij}))=\frac{\det (l_{ij})}{\det (g_{ij})}.\]
 

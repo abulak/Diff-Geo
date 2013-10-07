@@ -104,7 +104,8 @@ Odwzorowanie wykładnicze jest dobrze określone, ponieważ wszystkie geodezyjne
 
 \end{frame}
 %%%%%%next-slide%%%%%
-Następny lemat powie nam, że geodezyjne na powierzchni $M$ przechodzące przez punkt $p$ są obrazami prostych przechodzących przez środek $T_pM$ przy odwzorowaniu wykładniczym.
+Następny lemat powie nam, że geodezyjne na powierzchni $M$ przechodzące 
+przez punkt $p$ są obrazami prostych przechodzących przez środek $T_pM$.
 \begin{frame}
 
 \begin{lemat}
@@ -113,7 +114,7 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $p\in M$ będzie pu
 \end{lemat}
 
 
-\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+\textcolor{ared}{\textbf{Dowód: }}\\\pause 
 Niech $\gamma_v\colon (-\varrho_v,\varrho_v)\to M$ będzie geodezyjną spełniającą: $\gamma_v(0)=p$, oraz $\gamma_v'(0)=v$. Ustalmy $s\in (-\varrho_v,\varrho_v)$ i zdefiniujmy $\widetilde{\gamma}\colon(-\varrho_v/s,\varrho_v/s)\to M$ jako \[\widetilde{\gamma}(t)=\gamma_v(st).\]
 
 \end{frame}
@@ -137,7 +138,8 @@ Widzieliśmy już na przykładzie sfery, że odwzorowanie wykładnicze nie jest 
 
 
 \begin{frame}
-Przypomnijmy, że przez $D(T_pM,\delta)$ oznaczamy dysk o środku w punkcie $\mathcal{O}=(0,0)\in T_pM$ i promieniu $\delta$.
+Przypomnijmy, że przez $D(T_pM,\delta)$ oznaczamy dysk o środku w punkcie 
+$(0,0)\in T_pM$ i promieniu $\delta$.
 
 %Następny lemat pokazuje, że jeśli jednak ograniczymy sie do odpowiednio niewielkiego otoczenia $\mathcal{O}\subset T_pM$dysku $D_{\mathcal{O}}(\delta_p,T_pM)$
 
@@ -234,7 +236,12 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką. Jeśli $\vartriangle xyz$ 
 \[\int_{\vartriangle xyz} K\,dA=\measuredangle x+\measuredangle y +\measuredangle z - \pi.\]
 \end{twierdzenie}
 \begin{uwaga}
-Zapis $dA$ oznacza całkowanie względem formy powierzchni którą używaliśmy podczas badania intuicyjnej definicji krzywizny Gaussa. Można inaczej zapisać $dA=\det|g_{ij}|\,dsdt$, wtedy należałoby wybrać lokalny układ współrzędnych i całkować po przeciwobrazie $x^{-1}(\vartriangle xyz)$. \mode<article>{patrz definicja pola powierzchni \ref{def:area-form}.}
+Zapis $dA$ oznacza całkowanie względem formy powierzchni którą używaliśmy 
+podczas badania intuicyjnej definicji krzywizny Gaussa. Można inaczej zapisać 
+$dA=\det(g_{ij})\,dsdt$, wtedy należałoby wybrać lokalny układ współrzędnych i 
+całkować po przeciwobrazie $x^{-1}(\vartriangle 
+xyz)$.\mode<article>{\footnote{Por\'ownaj z definicją pola powierzchni 
+\ref{def:area-form}.}}
 
 \end{uwaga}
 
@@ -264,8 +271,8 @@ Niech $M\subset \R^3$ będzie zwartą powierzchnią. Wtedy
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
-\textcolor{ared}{Dowód z wykorzystaniem lokalnego twierdzenia G-B:}\\\pause
-
+\textcolor{ared}{\textbf{Dowód z wykorzystaniem lokalnego twierdzenia 
+G-B: }}\\\pause
 \mode<presentation>{\begin{itemize}}
 \mode<presentation>{\item }Ponieważ $M$ jest zwarta, więc istnieje taka $\delta_M$, że odwzorowanie wykładnicze $\exp_p\colon D^2_{\delta_M}\to M$ w każdym punkcie $p\in M$ jest dyfeomorfizmem na swój obraz.\pause 
 
@@ -290,6 +297,26 @@ na mocy lokalnego twierdzenia Gaussa-Bonneta.\pause
 &=\sum_{v\in T}\sum_{T\in \mathcal{T}}\measuredangle(T,v)-\pi F_{\mathcal{T}}.
 \end{align*}}
 \end{frame}
+
+\begin{align*}
+\int_M K dA&=\sum_{T\in \mathcal{T}}\int_{T}KdA=\sum_{T\in \mathcal{T}}\le[ 
+\le(\sum_{v\in T}\measuredangle(T,v)\ri)-\pi\ri]
+\end{align*}
+na mocy lokalnego twierdzenia Gaussa-Bonneta. Możemy teraz zmienić kolejność 
+sumowania:
+\begin{align*}
+\sum_{T\in \mathcal{T}}\le[ \le(\sum_{v\in 
+T}\measuredangle(T,v)\ri)-\pi\ri] = \sum_{T\in \mathcal{T}}\sum_{v\in 
+T}\measuredangle(T,v)-\sum_{T\in \mathcal{T}}\pi=\sum_{v\in T}\sum_{T\in 
+\mathcal{T}}\measuredangle(T,v)-\pi F_{\mathcal{T}}.
+\end{align*}
+
+Ponieważ suma kątów wokół każdego wierzchołka jest równa 
+$2\pi$ mamy
+\[
+\sum_{v\in T}\sum_{T\in \mathcal{T}}\measuredangle(T,v)-\pi 
+F_{\mathcal{T}}=\sum_{v\in T}2\pi -\pi F_\mathcal{T}=2\pi V_\mathcal{T}-\pi 
+F_\mathcal{T}=\pi (2V_\mathcal{T}-F_\mathcal{T}).\]
 %%%%%%next-slide%%%%%
 \begin{frame}
 \mode<presentation>{Ponieważ suma kątów wokół każdego wierzchołka jest równa $2\pi$ mamy

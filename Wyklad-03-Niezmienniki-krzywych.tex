@@ -19,6 +19,7 @@ Zauważmy, że krzywizna jest zawsze nieujemna, $\kappa(t)\geqslant 0$.
 \begin{frame}
 \begin{center}
 \includegraphics[scale=.5]{./pictures/curvature_color.pdf}\\
+
 Zmiana koloru w zależności od krzywizny
 \end{center}
 \end{frame}
@@ -63,8 +64,9 @@ Najpierw pokażemy, że $h_1$ i $h_2$ (funkcje reparametryzujące do krzywych un
 Zatem dla wszystkich $t\in (c_1,d_1)$ zachodzi 
 \begin{multline*}
 h_1'(t)=\frac{\pm1}{\|\alpha'(h_1(t))\|}=
-\frac{\pm1}{\left\|\alpha'\left(h_2\left(h_2^{-1}\left[h_1(t)\right]\right)\right)\right\|}=\\\pause
-=\pm h_2\left[\left(h_2^{-1}\circ h_1\right)\!(t)\right]\!\!.
+\frac{\pm1}{\left\|\alpha'\left(h_2\left(h_2^{-1}\left[h_1(t)\right]
+\right)\right)\right\|}=\pause\pm h_2\left[\left(h_2^{-1}\circ 
+h_1\right)\!(t)\right]\!\!.
 \end{multline*}
 
 \pause Możemy teraz policzyć pochodną funkcji wewnętrznej:
@@ -93,8 +95,9 @@ Podstawiając przedostatnią równość do $\alpha$ mamy
 %%%%%%next-slide%%%%%
 
 \begin{uwaga}
-Na razie pokazaliśmy, że dla \textit{wybranej} parametryzacji $\alpha$ krzywizna nie zależy od reparametryzacji unormowanej.
-\medskip
+Na razie pokazaliśmy, że dla \textit{wybranej} parametryzacji $\alpha$ krzywizna 
+nie zależy od reparametryzacji unormowanej.
+
 Chcemy jednak pokazać coś więcej, mianowicie, że krzywizna jest funkcją zależną tylko od \textit{punktów w obrazie krzywej} i w ogóle nie zależy od wyboru \textit{parametryzacji}. Zostanie to wykazane pod koniec tego wykładu.
 \end{uwaga}
 

@@ -18,7 +18,7 @@ Przy oznaczeniach jak powyżej definiujemy \textbf{pochodną kierunkową} funkcj
 \begin{lemat}
 Definicja pochodnej kierunkowej nie zależy od wyboru krzywej $\alpha$, tj. jeśli $\beta\colon (-\varepsilon,\varepsilon)\to M$ jest drugą krzywą o tej własności, że $\beta(0)=p$ oraz $\beta'(0)=v$ wtedy \[\left(f\circ \alpha\right)'(0)=\left(f\circ \beta\right)'(0).\]
 \end{lemat}
-\textcolor{ared}{\textbf{Dowód:}}\\\pause
+\textcolor{ared}{\textbf{Dowód: }}\\\pause
 \mode<article>{Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół punktu $p\in M$. Możemy wybrać tak małe $\varepsilon$, że obrazy $\alpha(-\varepsilon,\varepsilon)$ i $\beta(-\varepsilon,\varepsilon)$ będą już zawarte w $x(U)$. \pause Z definicji przestrzeni stycznej, wektory styczne do tych krzywych w $0$ można wyrazić jako kombinacje liniowe wektorów $x_1$ i $x_2$. \pause \mode<presentation>{\\}Co więcej, z równości $\alpha'(0)=v=\beta'(0)$ wynika, że współczynniki tych kombinacji są sobie równe w punkcie $p$.}
 \mode<presentation>{
 \begin{itemize}
@@ -64,7 +64,7 @@ Dwie pierwsze własności mówią, że $\nabla$ jest operatorem liniowym ze wzgl
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 
-\textcolor{ared}{\textbf{Dowód:}}\\\pause 
+\textcolor{ared}{\textbf{Dowód: }}\\\pause 
 Własność drugą i trzecią pozostawiamy jako (proste) ćwiczenia. Wystarczy w nich skorzystać z podstawowych własności różniczkowania funkcji.
 
 Udowodnimy teraz pierwszą własność. \mode<article>{Idea dowodu jest blisko związana z tą użytą w drugiej części dowodu lematu \ref{lem:prop_tang_spce}.}
@@ -88,7 +88,8 @@ Wtedy
 \nabla_{av+bw}f=\left(f\circ \beta\right)'(0)=\frac{\partial f(\beta(t))}{\partial \beta(t)}\beta'(t)\bigg|_{t=0}=\\\pause
 =a\frac{\partial f(\beta(0))}{\partial \beta(0)}\left(v_1 x_1+v_2 x_2\right)+b\frac{\partial f(\beta(0))}{\partial \beta(0)}\left(w_1 x_1+w_2 x_2\right)=\\\pause
 =a\frac{\partial f(\alpha_v(0))}{\partial \alpha_v(0)}\alpha_v'(0)+b\frac{\partial f(\alpha_w(0))}{\partial \alpha_w(0)}\alpha_w'(0)=\\\pause
-=a\left(f\circ \alpha_v\right)'(t)\big|_{t=0}+b\left(f\circ \alpha_w\right)'(t)\big|_{t=0}=\\a\nabla_vf+b\nabla_wf.
+=a\left(f\circ \alpha_v\right)'(t)\big|_{t=0}+b\left(f\circ 
+\alpha_w\right)'(t)\big|_{t=0}=a\nabla_vf+b\nabla_wf.
 \end{multline*}
 \hfill $\square$
 
@@ -115,7 +116,7 @@ Niech $M,N\subset \R^3$ będą powierzchniami gładkimi, $p\in M$ punktem, oraz 
 
 \end{lemat}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\\pause
+\pause \textcolor{ared}{\textbf{Dowód: }}\\\pause
 Liniowość wynika natychmiast z liniowości pochodnej kierunkowej, (Lemat \ref{lem:wl-pochodnej-kierunkowej}, punkt drugi) więc musimy tylko pokazać, że $Df_p(v)\in T_{f(p)}N$.
 
 \end{frame}
@@ -132,16 +133,21 @@ Niech $v\in T_pM$. Wtedy istnieje taka krzywa $\alpha\colon (-\varepsilon,\varep
 
 \begin{przyklad}\label{ex:differential}
 Rozważmy odwzorowanie $f\colon \R^2\to S^1\times \R$ zadane wzorem \[f(s,t)=(\cos s,\sin s,t).\]
-(Jest to odwzorowanie które owija walec arkuszem papieru.) \pause Dla $p=(0,0)\in \R^2$ mamy $f(p)=(1,0,0)$. Zauważmy, że \[T_{f(p)}(S^1 \times \R)\{(1,y,z)\in \R^3 \}.\]
+(Jest to odwzorowanie które owija walec arkuszem papieru.) \pause Dla 
+$p=(0,0)\in \R^2$ mamy $f(p)=(1,0,0)$. Zauważmy, że \[T_{f(p)}(S^1 \times 
+\R)=\{(1,y,z)\colon y,z\in \R \}.\]
 \pause Wybierzmy $v=(a,b)\in T_p\R^2$ i niech $\alpha\colon (-\varepsilon,\varepsilon)\to\R^2$ będzie zadana przez $\alpha(t)=(at,bt)$. Wtedy oczywiście
 \begin{align*}
 \alpha(0)&=p, &
 \alpha'(0)&=v, \quad\text{oraz}\quad
 f\circ \alpha (t)=(\cos at,\sin at, bt).
 \end{align*}\mode<presentation>{\vspace*{-0.5in}}\pause
-\begin{multline*}
+\mode<presentation>{\begin{multline*}
 Df_p(v)=\nabla_v f=(f\circ \alpha)'\big|_{t=0}=\\=(-a\sin at,a\cos at, b)\big|_{t=0}=(0,a,b).
-\end{multline*}
+\end{multline*}}
+\mode<article>{
+\[Df_p(v)=\nabla_v f=(f\circ \alpha)'\big|_{t=0}=(-a\sin at,a\cos at, 
+b)\big|_{t=0}=(0,a,b).\]}
 \end{przyklad}
 
 \end{frame}
@@ -189,7 +195,7 @@ Niech $M,N\subset \R^3$ będą gładkimi powierzchniami i niech $f\colon M\to N$
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
-\textcolor{ared}{\textbf{Dowód:}}\\\pause
+\textcolor{ared}{\textbf{Dowód: }}\\\pause
 Udowodnimy tylko, że lokalna izometria zachowuje współczynniki metryczne. Resztę implikacji pozostawiamy jako (opcjonalne) zadania.
 
 \pause Niech $x\colon U\to M$ będzie lokalnym układem współrzędnych wokół $p\in M$.

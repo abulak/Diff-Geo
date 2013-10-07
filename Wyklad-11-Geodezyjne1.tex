@@ -46,7 +46,14 @@ Ale jak uogólnić (czy też doprecyzować) własność \textbf{(3)} dla dowolne
 \end{frame}
 
 %%%%%%next-slide%%%%%
-Niech $\alpha(t)\subset M$ będzie krzywą na powierzchni $M\subset \R^3$. Z punktu widzenia obserwatora w $\R^3$ równoległe wektory wzdłuż krzywej będą miały te same współrzędne w $\R^3$ (tj. będą tworzyć \textit{stałe} pole wektorowe wzdłuż $\alpha$). Z punktu widzenia obserwatora na powierzchni, poruszającego się wzdłuż krzywej, równoległe będą te wektory, które będą miały \textit{proporcjonalne współrzędne} w bazie $\{x_1, x_2\}$ w przestrzeniach stycznych $T_{\alpha(t)}M$ dla wszystkich $t$.
+Niech $\alpha(t)\subset M$ będzie krzywą na powierzchni $M\subset \R^3$. Z 
+punktu widzenia obserwatora w $\R^3$ równoległe wektory wzdłuż krzywej będą 
+miały \textit{proporcjonalne współrzędne w $\R^3$} (tj. będą tworzyć pole 
+wektorowe wzdłuż $\alpha$ skierowane wzdłuż jednej prostej w $\R^3$). Z punktu 
+widzenia obserwatora na powierzchni, poruszającego się wzdłuż krzywej, 
+równoległe będą te wektory, które będą miały \textit{proporcjonalne współrzędne 
+w bazie $\{x_1, x_2\}$ w przestrzeniach stycznych $T_{\alpha(t)}M$} dla 
+wszystkich $t$.
 
 \begin{frame}[<+->]
 \begin{uwaga}
@@ -80,17 +87,18 @@ Gładkie pole wektorowe nazywamy \textbf{stycznym} jeśli $F(p)\in T_pM\subset \
 \begin{przyklad}
 Zauważmy, że wektor normalny jako odwzorowanie
 \[\widehat{n}\colon M\to\R^3,\]
-jest tak naprawdę gładkim polem wektorowym na $M$. Jego pochodną kierunkową jest... odwzorowanie Weingartena.
+jest tak naprawdę gładkim polem wektorowym na $M$. Jego pochodną kierunkową 
+jest...  odwzorowanie Weingartena (z odpowiednim znakiem).
 \end{przyklad}
 
 
 \pause \begin{lemat}
-Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności jak dla pochodnych kierunkowych funkcji, \mode<presentation>{tj. liniowość ze względu na dodawanie wektorów i pól wektorowych, jednorodność, oraz \textit{reguła Leibniza: \[\nabla_v(FG)=G\nabla_vF+F\nabla_vG\]}}
+Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności jak dla pochodnych kierunkowych funkcji, \mode<presentation>{tj. liniowość ze względu na dodawanie wektorów i pól wektorowych, jednorodność, oraz \textit{reguła Leibniza}: \[\nabla_v(FG)=G\nabla_vF+F\nabla_vG\],}
 \mode<article>{\begin{itemize}
 \pause\item $\nabla_{av+bw}F=a\nabla_v F+b\nabla_w F$
 \pause\item $\nabla_v(aF+bG)=a\nabla_v F+b\nabla_vG$
 \pause\item $\nabla_v(FG)=G\nabla_vF+F\nabla_vG$
-\end{itemize}} \pause Co więcej mamy 
+\end{itemize}} \pause czyli w każdym punkcie $p$ mamy 
 \[\nabla_v\langle F,G\rangle(p)=\langle\nabla_vF,G(p)\rangle+\langle F(p),\nabla_vG\rangle.\]
 \end{lemat}
  
@@ -111,7 +119,7 @@ Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności ja
 \begin{frame}
 
 \begin{lemat}
-  Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $Y, Z\colon M\to \R^3$ będą stycznymi polami wektorowymi. Niech $f\colon M\to \R$ będzie ładką funkcją, $p\in M$ punktem na $M$, $v,w\in T_p(M)$ wektorami z przestrzeni stycznej i wreszcie $a,b\in \R$ liczbami rzeczywistymi. Wtedy
+  Niech $M\subset \R^3$ będzie gładką powierzchnią, oraz niech $Y, Z\colon M\to \R^3$ będą stycznymi polami wektorowymi. Niech $f\colon M\to \R$ będzie gładką funkcją, $p\in M$ punktem na $M$, $v,w\in T_p(M)$ wektorami z przestrzeni stycznej i wreszcie $a,b\in \R$ liczbami rzeczywistymi. Wtedy
  \begin{itemize}
   \item Odwzorowanie \[\widehat{\nabla}_{(\cdot)}Z\colon T_pM\to T_pM\] zadana przez $v\mapsto \widehat{\nabla}_vZ$ jest odwzorowaniem liniowym.
   \item $\widehat{\nabla}_v(Y+Z)=\widehat{\nabla}_vY+\widehat{\nabla}_v Z$.
@@ -120,13 +128,17 @@ Dla pochodnych kierunkowych pól wektorowych zachodzą takie same własności ja
 \end{itemize}
 \end{lemat}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\
-\mode<presentation>{Dowody tych własności są analogiczne jak własności pochodnej kierunkowej\footnotesize (wystarczy skorzystać z liniowości rzutowania na podprzestrzeń)\normalsize.} 
+\pause \textcolor{ared}{\textbf{Dowód: }}\\
+\mode<presentation>{Dowody tych własności są analogiczne jak własności pochodnej kierunkowej \footnotesize (wystarczy skorzystać z liniowości rzutowania na podprzestrzeń)\normalsize.} 
 \mode<article>{Dowody tych własności są analogiczne jak własności pochodnej kierunkowej (lemat \ref{lem:wl-pochodnej-kierunkowej}). Wystarczy skorzystać z liniowości rzutowania ortogonalnego na podprzestrzeń.}
 \hfill $\square$
 \end{frame}
 %%%%%%next-slide%%%%%
-Zanim wprowadzimy definicję geodezyjnej potrzebujemy jeszcze jednego oznaczenia. Będą nas interesowały styczne pola wektorowe wzdłuż krzywych, więc mając daną parametryzację krzywej będzie można bardzo prosto policzyć pochodną kowariantną. 
+
+Zanim wprowadzimy definicję geodezyjnej potrzebujemy jeszcze jednego oznaczenia. 
+Będą nas interesowały styczne pola wektorowe wzdłuż krzywych, więc mając daną 
+parametryzację krzywej będzie można bardzo prosto policzyć pochodną 
+kowariantną. 
 \begin{frame}
 
 
@@ -134,11 +146,19 @@ Niech $\alpha\colon (a,b)\to M\subset\R^3$ będzie krzywą na powierzchni i niec
 \[\frac{\widehat{D}(Z\circ \alpha)}{dt}(t)\define\Pi_{T_{\alpha(t)}M}\left(\frac{d (Z\circ \alpha)}{dt}(t)\right)=\widehat{\nabla}_{\alpha'(t)}Z\]
 
 
-\pause \begin{uwaga}
-
-Zauważmy, że styczne pole wektorowe $\alpha'$ do krzywej $\alpha\subset M$ jest w postaci $Z\circ \alpha$. %ponieważ $\alpha'\colon (a,b)\to \R^3$.
-\end{uwaga}
+\mode<presentation>{\pause \begin{uwaga}
+Zauważmy, że styczne pole wektorowe $\alpha'$ do krzywej $\alpha\subset M$ jest 
+w postaci $Z\circ \alpha$. %ponieważ $\alpha'\colon (a,b)\to \R^3$.
+\end{uwaga}}
 \end{frame}
+\begin{uwaga}
+Zauważmy, że styczne pole wektorowe $\alpha'$ do krzywej $\alpha\subset M$ jest 
+w postaci $Z\circ \alpha$. Będzie tak za każdym razem, kiedy pole wektorowe 
+wzdłuż krzywej $\gamma$ (jak np. pole wektor\'ow stycznych $\gamma'$) jest 
+zadane jako wektor zależny od zmiennej $t$ (musimy tylko zadbać, by pole było 
+wystarczająco gładkie).
+\end{uwaga}
+
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Definicja geodezyjnych}}
 Teraz korzystając z języka pochodnych kowariantynych możemy wypowiedzieć co to znaczy, że krzywa ``nie skręca w prawo bądź w lewo''. 
@@ -176,7 +196,10 @@ Sprzecznie z naszą intuicją, bycie krzywą geodezyjną jest własnością \tex
 
 \bigskip
 Rozważmy teraz krzywą $\beta\colon \R\to \R^2\subset \R^3$ zadaną wzorem
-\mode<article>{\[\beta(t)=(t^3,t^3,0).\]} \mode<presentation>{\[\beta(t)=(t^{\,3},t^{\,3},0).\]}Obraz tej krzywej jest oczywiście prostą, jednak podobne przeliczenia jak powyżej pokazują, że \[\frac{\widehat{D}\beta'(t)}{dt}=\frac{d\beta'(t)}{dt}=(6t,6t,0)\neq 0.\]
+\mode<article>{\[\beta(t)=(t^3,t^3,t^3).\]} 
+\mode<presentation>{\[\beta(t)=(t^{\,3},t^{\,3},t^{\,3}).\]}Obraz tej krzywej 
+jest oczywiście prostą, jednak podobne przeliczenia jak powyżej pokazują, że 
+\[\frac{\widehat{D}\beta'(t)}{dt}=\frac{d\beta'(t)}{dt}=(6t,6t,6t)\neq 0.\]
 \end{uwaga}
 
 \end{frame}
@@ -213,7 +236,7 @@ Niech $M\subset \R^3$ będzie powierzchnią i niech $\gamma\colon(a,b)\to M$ bę
 \end{enumerate}
 \end{lemat}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\
+\pause \textcolor{ared}{\textbf{Dowód: }}\\
 \mode<article>{Dowody pierwszych dwóch punktów są łatwe (można potraktować je jako ćwiczenia na zrozumienie definicji geodezyjnej). Dowód trzeciego jest bardziej wymagający.}
 Pomijamy.
 \hfill $\square$

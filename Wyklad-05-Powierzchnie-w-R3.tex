@@ -22,8 +22,8 @@ nazywamy \textbf{lokalnym układem współrzędnych} jeśli jest injekcją, oraz
 \item 
 Podzbiór $M\subset \R^3$ nazywamy \textbf{powierzchnią gładką}, jeśli wokół każdego punktu $p$ istnieje lokalny układ współrzędnych $x\colon U\to V\subset \R^3$. 
 
-%\item Powierzchnię gładką $M$ nazywamy \textbf{regularną}  
-
+% %\item Powierzchnię gładką $M$ nazywamy \textbf{regularną}  
+% 
 \item Powierzchnię gładką $M$ nazywamy łukowo spójną, jeśli dla dowolnych dwóch punktów $x,y\in M$ istnieje krzywa $\alpha\colon [0,1]\to M$ taka, że $\alpha(0)=x$ i $\alpha(1)=y$.
 \end{itemize}
 \end{definicja}
@@ -280,7 +280,11 @@ i&j&k\\
 \begin{frame}[<+->]
 
 \begin{definicja}
-\textbf{Powierzchnia obrotowa} powstaje poprzez obrócenie krzywej $\alpha(t)$ wokół pewnej ustalonej prostej $l$. Postać ogólna to $x(t,\phi)=\alpha\cdot Rot_l(\phi)$, gdzie $Rot_l(\phi)$ to macierz $3\times 3$ obrotu o kąt $\phi$ wokoł prostej $l$.
+\textbf{Powierzchnia obrotowa} powstaje poprzez obrócenie krzywej $\alpha(t)$ 
+wokół pewnej ustalonej prostej $l$. Postać ogólna to 
+\[x(t,\phi)=\alpha(t)\cdot Rot_l(\phi),\] 
+gdzie $Rot_l(\phi)$ to macierz $3\times 3$ obrotu o kąt $\phi$ wokoł prostej 
+$l$.
 \begin{center}
 \input{./pictures/rotation.tex}
 \end{center}

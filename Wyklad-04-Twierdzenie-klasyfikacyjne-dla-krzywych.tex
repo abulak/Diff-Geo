@@ -6,7 +6,9 @@
 Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną. 
 \begin{itemize}
 \item Translacja krzywej $\alpha$, tj. krzywa $\beta=\alpha+q$, gdzie $q\in \R^3$ jest wybranym \textit{stałym} wektorem ma taką samą krzywiznę i torsję jak $\alpha$.
-\item Niech $A\in O(3)$ będzie macierzą $3\times 3$ o współczynnikach rzeczywistych, o wyznaczniku $\pm1$ oraz ortogonalnych kolumnach. Krzywa \[\gamma\define A\cdot\alpha\] ma taką samą krzywiznę i torsję jak $\alpha$.
+\item Niech $A\in O(3)$ będzie macierzą $3\times 3$ o współczynnikach 
+rzeczywistych, o wyznaczniku $\pm1$ oraz ortnormalnych kolumnach. Krzywa 
+\[\gamma\define A\cdot\alpha\] ma taką samą krzywiznę i torsję jak $\alpha$.
 \end{itemize}
 \end{lemat}
 
@@ -23,7 +25,12 @@ Mnożenie przez taką macierz $A$ oznacza obrót wokół środka układu współ
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{uwaga}
-Grupa składająca się ze wszystkich obrotów oraz translacji przestrzeni euklidesowej $\R^3$ jest tzw. \textit{grupą Liego} $E(3)$. Jest to grupa izometrii (poznamy to pojęcie w następnej części wykładu) przestrzeni euklidesowej . Intuicyjnie mamy trzy ``stopnie swobody'' pochodzące od obrotu i kolejne trzy od translacji o wektor, więc grupa $E(3)$ powinna być ``$6$-wymiarowa''. 
+Grupa składająca się ze wszystkich obrotów oraz translacji przestrzeni 
+euklidesowej $\R^3$ jest tzw. \textit{grupą Liego} $E(3)$. Jest to grupa 
+izometrii (poznamy to pojęcie w następnej części wykładu) przestrzeni 
+euklidesowej . Intuicyjnie mamy trzy ``stopnie swobody'' pochodzące od obrotu i 
+kolejne trzy od translacji o wektor, więc grupa $E(3)$ powinna być 
+,,$6$-wymiarowa''. 
 \end{uwaga}
 
 
@@ -135,15 +142,18 @@ u_3(p)&=0 & u_6(p)&=0 & u_9(p)&=1\\
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 \begin{twierdzenie}[Picarda, o istnieniu i jedyności rozwiązania równania różniczkowego]\label{thm:dif-eq-solution}
-Niech $(a,b)\subset \R$, oraz  niech $A\in M_{n,n}(\R)$.  Ustalmy liczbę $t_0\in (a,b)$ i punkt $v_0\in \R^n$. Wtedy istnieje dokładnie jedna funkcja gładka $\alpha\colon (a,b)\to \R^n$ która spełnia 
+Niech $(a,b)\subset \R$, oraz  niech $A\in M_{n,n}(\R)$.  Ustalmy liczbę $t_0\in 
+(a,b)$ i punkt $v_0\in \R^n$. Wtedy istnieje dokładnie jedna funkcja gładka 
+$\omega\colon (a,b)\to \R^n$ która spełnia 
 \begin{align*}
-\alpha(t_0)&=v_0,\quad\text{oraz}\\
-\alpha'(t)&=A(t)\alpha(t) \quad\text{dla wszystkich }t\in (a,b).
+\omega(t_0)&=v_0,\quad\text{oraz}\\
+\omega'(t)&=A(t)\omega(t) \quad\text{dla wszystkich }t\in (a,b).
 \end{align*}
 \end{twierdzenie}
 
 \begin{exercise}
-Przepisać sformułowanie naszego problemu tak, aby zastosować do niego powyższe twierdzenie \\(podać $\alpha$, $A$, $t_0$ i $v_0$). 
+Przepisać sformułowanie naszego problemu tak, aby zastosować do niego powyższe 
+twierdzenie \\(podać $\omega$, $A$, $t_0$ i $v_0$). 
 \end{exercise}
 
 \end{frame}
@@ -180,7 +190,7 @@ p_{i,j}(p)=
 Sformułować układ równań wiążących pochodne funkcji $p'_{i,j}(t)$ z funkcjami $\{p_{i,j}(t)\}$ oraz $\kappa(t)$ i $\tau(t)$.
 \end{exercise}
 
-\begin{przyklad}\vspace*{-0.25in}
+\begin{przyklad}\mode<presentation>{\vspace*{-0.25in}}
 \[\begin{split}
 p_{1,1}'(t)=&\left(\langle X_1(t),X_1(t)\rangle\right)'=\\
 =&\underbrace{\langle X_1'(t)}_{=\kappa(t)X_2(t)},X_1(t)\rangle+\langle X_1(t),\underbrace{X_1'(t)\rangle}_{=\kappa(t) X_2(t)}=\\=&\kappa(t) p_{2,1}(t)+\kappa(t)p_{1,2}(t).

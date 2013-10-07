@@ -59,7 +59,8 @@ Zauważmy, że pole wektorów stycznych do $\gamma$ wyraża się w bazie $\{x_1,
 \begin{itemize}
 \item Spróbujmy policzyć bezpośrednio pochodną stycznego pola wektorowego.
 \begin{multline}\label{eqn:loc-geod}
-\frac{\widehat{D}\gamma'}{dt}=\sum_{i=1}^2 \frac{\widehat{D}}{dt}\left[g_1'(t) x_i(g(t))\right]=\\
+\frac{\widehat{D}\gamma'}{dt}=\sum_{i=1}^2 \frac{\widehat{D}}{dt}\left[g_i'(t) 
+x_i(g(t))\right]=\\
 =\sum_{i=1}^2\left(\frac{d g_i'(t)}{dt}x_i(g(t))+g_i'(t)\frac{\widehat{D}(x_{i}\circ g)}{dt}(t)\right)
 \end{multline}
 
@@ -69,13 +70,17 @@ kowariantną. W poniższych rachunkach będziemy pomijać argumenty funkcji, nal
 \item Mamy następującą równość:
 \begin{multline*}
 \frac{\widehat{D}(x_i\circ g)}{dt}(t)=
-\Pi_{T_{\gamma(t)}M}\le(\frac{d\left((x_i\circ x^{-1})\circ \gamma\right)}{dt}(t)\ri)=\\ =\widehat{\nabla}_{\gamma'(t)}\le(x_i\circ x^{-1}\ri)=\widehat{\nabla}_{\left[x_1(g(t))g_1'(t)+x_2(g(t))g_2'(t)\right]}x_i=\\
+\Pi_{T_{\gamma(t)}M}\le(\frac{d\left((x_i\circ x^{-1})\circ 
+\gamma\right)}{dt}(t)\ri)=\\ =\widehat{\nabla}_{\gamma'(t)}\le(x_i\circ 
+x^{-1}\ri)=\widehat{\nabla}_{\left[x_1(g(t))g_1'(t)+x_2(g(t))g_2'(t)\right]}
+\left(x_i \circ x^{-1} \right)=\\
 =g_1'(t)\widehat{\nabla}_{x_1(g(t))}\le(x_i\circ x^{-1}\ri)+g_2'(t)\widehat{\nabla}_{x_2(g(t))}\le(x_i\circ x^{-1}\ri).
 \end{multline*}
 Skorzystaliśmy tutaj z liniowości pochodnej kowariantnej. 
 
 \item Niech $a^{1}\colon (-\varepsilon,\varepsilon)\to U$ będzie krzywą zadaną wzorem
-\[a^{1}(s)=\define(s+g_1(t),g_2(t)).\] Podobnie można zdefiniować $a^{2}$. Wtedy (sprawdzić!)
+\[a^{1}(s)\define(s+g_1(t),g_2(t)).\] Podobnie można zdefiniować $a^{2}$. Wtedy 
+(sprawdzić!)
 \begin{multline*}
 \widehat{\nabla}_{x_1(g(t))}\le(x_i\circ x^{-1}\ri)=\Pi_{T_{\gamma(t)}M}\le(\frac{d\le( x_i\circ x^{-1}\circ x\circ a^{j}\ri)}{ds}\Bigg|_{s=0}\ri)=\\
 =\Pi_{T_{\gamma(t)}M}\le(\frac{d\le(x_i\circ a^{j}\ri)}{ds}\Bigg|_{s=0}\ri)=\Pi_{T_{\gamma(t)}M}x_{ij}\le(g(t)\ri)
@@ -131,15 +136,15 @@ oraz załóżmy, że krzywa profilu $x(t,0)=(\alpha_1(t),\alpha_2(t),0)$ jest un
 Przedstawimy jedynie szkic rozumowania, dopracowanie szczegółów pozostawiając jako zadanie domowe.
 
 \begin{frame}[allowdisplaybreaks=4,squeeze]
-\textcolor{ared}{Szkic Dowodu:}\\\pause 
+\textcolor{ared}{\textbf{Szkic Dowodu: }}\\\pause 
 Dowód pierwszej części:
 \begin{itemize}
-\item Mamy \vspace*{-0.1in}
+\item Pierwsze pochodne cząstkowe: \vspace*{-0.05in}
 \begin{align*}
 x_1(t,\vartheta)=&(\alpha_1'(t),\alpha_2'(t)\cos\vartheta,\alpha_2'(t)\sin\vartheta)\\
 x_2(t,\vartheta)=&(0,-\alpha_2(t)\sin\vartheta,\alpha_2(t)\cos\vartheta)
 \end{align*}\vspace*{-0.2in}
-\pause \item Drugie pochodne cząstkowe:
+\pause \item Drugie pochodne cząstkowe:\vspace*{-0.05in}
 \begin{align*}
 x_{11}(t,\vartheta)=&(\alpha_1''(t),\alpha_2''(t)\cos\vartheta,\alpha_2''(t)\sin\vartheta)\\
 x_{12}(t,\vartheta)=x_{21}(t,\vartheta)=&(0,-\alpha_2'(t)\sin\vartheta,\alpha_2'(t)\cos\vartheta)\\
@@ -259,7 +264,10 @@ Jeśli dla pewnej $\delta>0$ istnieje krzywa geodezyjna $\widetilde{{\gamma}}\co
 
 
 \begin{uwaga}
-O klasach równoważności funkcji równych na pewnym otoczeniu punktu $p$ mówi się , że są to \textit{kiełki funkcji} w punkcie $p$. Zatem powyższe twierdzenie mówi, że istnieje bijekcja między zbiorami kiełków geodezyjnych w punkcie $p$ oraz wektorów stycznych $v\in T_pM$.
+Klasy równoważności funkcji równych na pewnym otoczeniu punktu $p$ nazywa się 
+czasami \textit{kiełkami funkcji} w punkcie $p$. Zatem powyższe 
+twierdzenie mówi, że istnieje bijekcja między zbiorami: kiełków geodezyjnych w 
+punkcie $p$ oraz wektorów stycznych $v\in T_pM$.
 \end{uwaga}
 
 \pause \textcolor{ared}{\textbf{Dowód:}}\\

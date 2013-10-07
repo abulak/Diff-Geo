@@ -33,7 +33,7 @@ Ponieważ $x_{ij}=x_{ji}$, więc natychmiast otrzymujemy pierwszą własność t
 \end{frame}
 %%%%%%next-slide%%%%%
 \begin{frame}
-\textcolor{ared}{Dowód Formuły Gaussa:}\\\pause
+\textcolor{ared}{\textbf{Dowód Formuły Gaussa: }}\\\pause
 Ponieważ układ $\{x_1, x_2, n\}$ tworzy bazę przestrzeni $\R^3$, więc muszą istnieć współczynniki $\Gamma^k_{ij}$ oraz $Q_{ij}$ takie, że \[x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+Q_{ij}n.\]\pause
 Zrzutujmy ortogonalnie obie strony tego równania na wektory $x_1$, $x_2$ i $n$:
 \begin{align*}
@@ -73,7 +73,7 @@ g_{21} & g_{22}
 %%%%%%next-slide%%%%%
 \begin{frame}
 
-\textcolor{ared}{\textbf{Dowód:}}\\\pause
+\textcolor{ared}{\textbf{Dowód: }}\\\pause
 Obliczmy pochodną cząstkową z $g_{ij}$:
 \[\frac{\partial{g_{ij}}}{\partial u_k}=\frac{\partial\langle x_i,x_j \rangle}{\partial u_k}=\left\langle \frac{\partial x_i}{\partial u_k},x_j \right\rangle + \left\langle x_i,\frac{\partial x_j}{\partial u_k}\right\rangle=\langle x_{ik},x_j\rangle+\langle x_i,x_{jk}\rangle.\]
 
@@ -157,8 +157,7 @@ Udowodnimy tylko Równania Codazziego-Mainardiego, równanie Gaussa pozostawiaj�
 
 \pause \mode<presentation>{Chociaż równania te wyglądają groźnie, ich dowód sprowadza się do bardzo prostego faktu: trzecie pochodne cząstkowe są sobie równe bez względu na kolejność różniczkowania: \[x_{ijk}=x_{ikj}.\]}
 
-\pause \textcolor{ared}{\textbf{Dowód:}}\\
-
+\pause \textcolor{ared}{\textbf{Dowód: }}\\
 Przypomnijmy formułę Gaussa:
 \[x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+l_{ij}n,\]\pause
 a następnie zróżniczkujmy ją względem $u_k$:
@@ -212,7 +211,7 @@ Ponieważ wynik różniczkowania nie zależy od kolejności wyboru zmiennych, wi
 %%%%%%next-slide%%%%%
 \begin{frame}[<+->]
 \begin{exercise}
-Udowodnić formułę Gaussa. \\
+Udowodnić R\'ownanie Gaussa. \\
 \footnotesize{Podpowiedź: należy porównać współczynniki $A$, $A'$, oraz  $B$,  $B'$.  Następnie podstawić $(i=2,j=1,k=2)$.}
 \end{exercise}
 
