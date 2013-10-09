@@ -1,0 +1,9 @@
+*.xoj
+*.aux
+*.backup
+*.log
+*.auxlock
+*.nav
+*.out
+*.synctex.gz
+*.toc
