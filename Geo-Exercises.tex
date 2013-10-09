@@ -29,7 +29,12 @@
 \begin{exercise}
  Obliczyć długość następujących wektor\'ow w $\mathbb{R}^3$:
 \begin{itemize}
- \item 
+ \item $(1,1,1)$
+ \item $(3,\pi,2\sqrt{3})$
+ \item $(7\frac{1}{2},e,3\sqrt{2})$
+ \item $(\cos \phi, \sin \phi \cos \psi, \sin\phi\sin\psi)$ dla ustalonych 
+kąt\'ow $\phi$ i $\psi$.
+ 
 \end{itemize}
 \end{exercise}
 
@@ -48,7 +53,7 @@ na jednej płaszczyźnie.
 \end{exercise}
 
 \begin{exercise}
-Udowodnij, że rzut ortogonaly krzywej $\alpha$ na dowolną oś ma długość co 
+Udowodnić, że rzut ortogonaly krzywej $\alpha$ na dowolną oś ma długość co 
 najwyżej równą długości wyjściowej krzywej.
 \end{exercise}
 
@@ -338,15 +343,16 @@ Pokazać, że jeśli $|\alpha(t)|>R$ dla wszystkich $t\in (-\varepsilon,
 Czy da się udowodnić, że $\kappa(0)<\frac{1}{R}$?
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}[Wektor Darboux]
 Zamiast trójnogu Freneta można dla danej krzywej (o prędkości jednostkowej) $\alpha\colon[a,b]\to \mathbb{R}^3$ określić układ ${T, U, V }$, biorąc jako $T$ wektor styczny do $\alpha$, żądając, aby $U$ było dowolnym jednostkowym polem wektorowym wzdłuż $\alpha$ takim, że $T\cdot U= 0$, tzn. odwzorowanie $U\colon[a, b] \to \mathbb{R}^3$ przyporządkowuje każdemu $t \in [a, b]$ wektor jednostkowy $U(t)$ prostopadły do wektora $T(t)$. Niech $V = T \times U$. Pokaż, że naturalne związki (czyli ``wzory Freneta'') dla tego układu mają postać:
 \begin{align*}
 T =& \omega_3 U - \omega_2V \\
 U =& -\omega_3T + \omega_1 V\\
 V =& \omega_2 T - \omega_1U
 \end{align*}
-gdzie współczynniki $\omega_1$, $\omega_2$ i $\omega_3$ są rzeczywiste. Ponadto pokaż, że wektor
-Darboux $\omega$ spełniający zależności $T = \omega\times T$ , $U = \omega\times  U$ oraz $V = \omega\times  V$
+gdzie współczynniki $\omega_1$, $\omega_2$ i $\omega_3$ są rzeczywiste. Ponadto 
+pokaż, że wektor $\omega$ (zwany wektorem Darboux) spełniający zależności $T = 
+\omega\times T$ , $U = \omega\times  U$ oraz $V = \omega\times  V$
 jest postaci \[\omega = \omega_1T + \omega_2U + \omega_3 V \]
 \end{exercise}
 
@@ -407,6 +413,7 @@ $B_\alpha(t)$ dla wszystkich $t$.
 
 \section{Powierzchnie}
 
+\subsection{Parametryzacje powierzchni}
 \begin{exercise}
 Zastanowić się jak pokryć całą powierzchnię sfery jednym płatem 
 powierzchniowym. Gdzie pojawiają się problemy?
@@ -450,6 +457,7 @@ Znaleźć parametryzację Monge'a stożka.
  Jak wyglądają w każdym przypadku linie parametr\'ow?
 \end{exercise}
 
+\subsection{Parametryzacja obrotowa}
 
 \begin{exercise}
 Wskazać reprezentację macierzową dla grupy $SO(3)$ (macierze obr\'ow o dowolny 
@@ -535,19 +543,7 @@ długość wektorów, kąty między nimi i ich wzajemną \textit{orientację}. S
 tzw. \textbf{Kąty Eulera}).
 \end{exercise}
 
-
-\begin{exercise}
-Wyznaczyć równanie płaszczyzny stycznej w punkcie 
-\[\left(\frac{\sqrt{2}}{4},\frac{\sqrt{2}}{4},\frac{1}{2}\right)\] do sfery o 
-środku $(0,0,0)$.\\[0.1in]
-\small{Wskazówka: Jaki jest wektor normalny w tym punkcie? Następnie skorzystać 
-z iloczynu skalarnego.}
- \end{exercise}
-
-\begin{exercise}
- Wyznaczyć r\'ownanie płaszczyzny stycznej w punkcie $(1,1,1)$
- do powierzchni zadanej przez r\'ownanie $x^2+2y^2+z^2=3$.
-\end{exercise}
+\subsection{Prostokreślność}
 
 \begin{exercise}
  Wskazać parametryzację prostokreślną
@@ -565,7 +561,7 @@ z iloczynu skalarnego.}
 Przedstaw jako powierzchnię prostokreślną powierzchnię daną równaniem: 
 
 \begin{itemize}
- \item $z^2=4x^2+y^2$
+ %\item $z^2=4x^2+y^2$
  \item $z=4x^2-y^2$
 \end{itemize}
  \small{Wskazówka: Co to za powierzchnia? Znaleźć 
@@ -583,6 +579,20 @@ zatem jest to parametryzacja (!) \textit{nieorientowalna}.
 Podać parametryzację walca która nie będzie parametryzacją prostokreślną.
 \end{exercise}
 
+\subsection{Wektor normalny i płaszczyzna styczna}
+
+\begin{exercise}
+Wyznaczyć równanie płaszczyzny stycznej w punkcie 
+\[\left(\frac{\sqrt{2}}{4},\frac{\sqrt{2}}{4},\frac{1}{2}\right)\] do sfery o 
+środku $(0,0,0)$.\\[0.1in]
+\small{Wskazówka: Jaki jest wektor normalny w tym punkcie? Następnie skorzystać 
+z iloczynu skalarnego.}
+ \end{exercise}
+
+\begin{exercise}
+ Wyznaczyć r\'ownanie płaszczyzny stycznej w punkcie $(1,1,1)$
+ do powierzchni zadanej przez r\'ownanie $x^2+2y^2+z^2=3$.
+\end{exercise}
 
 \begin{exercise}
 Znaleźć parametryzację powierzchni powstałej przez obrót krzywej 
@@ -599,6 +609,7 @@ Wykazać, że jest różnowartościowe. Oszacować wielkość obrazu tego odwzor
 dla $u>0$.
 \end{exercise}
 
+\subsection{Izometria i konforemność}
 
 \begin{exercise}
  Obliczyć pierwszą formę podstawową dla następujących powierzchni
@@ -642,7 +653,7 @@ izometrycznych?
 
 \begin{exercise}
  M\'owimy, że parametryzacja $x\colon \mathbb{R}^2\to M$ jest 
-\textit{konforemna} jeśli zachowuje kąty.
+\textit{konforemna} (lub \textit{wiernokątna}) jeśli zachowuje kąty.
 
 Zinterpretować tę geometryczną definicję w języku geometrii r\'ożniczkowej.
 \end{exercise}
@@ -656,10 +667,14 @@ Zinterpretować tę geometryczną definicję w języku geometrii r\'ożniczkowej
  Pokazać, że projekcja stereograficzna jest parametryzacją konforemną.
 \end{exercise}
 
+\subsubsection{Zastosowania kartograficzne}
+
 \begin{exercise}(geograficzne -- projekcja Lamberta)
 Rozważmy odwzorowanie kt\'ore punktowi na sferze wpisanej w walec 
 przyporządkowuje odpowiadający punkt na tym walcu zachowując wsp\'ołrzędną $z$. 
 Znajdź wz\'or opisujący to odwzorowanie.
+
+\small{Uwaga -- odwzorowanie to nie obejmuje biegun\'ow.}
 \end{exercise}
 
 
@@ -668,8 +683,8 @@ Aby policzyć pole powierzchni na sparametryzowanej powierzchni $x\colon U\to M$
 można posłużyć się następującym wzorem:
 \[A\left(x(u,v)\right)=\int_U \|x_u \times x_v \|\, dudv.\]
 
-Pokaż, że projekcja Lamberta ze sfery wpisanej w walec na jego powierzchnię 
-(nie obejmuje biegun\'ow!) zachowuje pole, ale nie jest ani izometrią ani  
+Pokaż, że projekcja Lamberta ze sfery wpisanej w walec na jego 
+powierzchnię zachowuje pole, ale nie jest ani izometrią ani  
 odwzorowaniem konforemnym.
 
 \small{Najlepiej zacząć od wsp\'ołrzędnych sferycznych na sferze i 
@@ -679,8 +694,7 @@ parametryzacji $(\cos v,\sin v, \cos u)$ walca.}
 \begin{exercise}[geograficzne -- projekcja Merkatora]
  Odwzorowanie Merkatora (wynalezione na długo przed początkami geometrii 
 r\'ożniczkowej) było pierwszym odwzorowaniem, w kt\'orym linia prosta na mapie 
-faktycznie była najkr\'otszą drogą na kuli ziemskiej (w języku geometrii 
-r\'ożniczkowej oznacza to konforemność).
+faktycznie była najkr\'otszą drogą na kuli ziemskiej.
 
 Pokazać, że parametryzacja (lub odwzorowanie $R^2 \supset U \to S^2$)
 \[x(u,v)=\left( \frac{\cos v}{\sinh u}, \frac{\sin v}{\sinh u}, 
@@ -695,7 +709,7 @@ Pokazać, że $f(u)=2\arctan(e^{-u})$.}
 \end{exercise}
 
 
-
+\subsection{Odwzorowanie Weingartena i Krzywizna Gaussa}
 \begin{exercise}
 Pokazać (z definicji), że odwzorowanie Weingartena $S_p$ jest odwzorowaniem 
 liniowym.
@@ -787,6 +801,7 @@ ma stałą krzywiznę Gaussa r\'owną $-1$.
 \end{exercise}
 
 
+\subsection{Theorema Egregium Gaussa}
 
 \begin{exercise}
  Udowodnić R\'ownanie Gaussa
@@ -800,7 +815,7 @@ l_{11}l_{22}-l_{12}^2=
 \left(\Gamma^m_{22}\Gamma^r_{m1}-\Gamma^m_{21}\Gamma^r_{m2}\right)\right].
 \end{equation*}
 \footnotesize{Podpowiedź: należy porównać współczynniki stojące przy $x_1$ i 
-$x_2$ w rozwinięciach $x_ijk$ i $x_ikj$ względem bazy 
+$x_2$ w rozwinięciach $x_{ijk} $ i $x_{ikj} $ względem bazy 
 $\{x_1,x_2,n\}$. Następnie podstawić $(i=2,j=1,k=2)$.}
 
 \end{exercise}
@@ -822,6 +837,8 @@ Sprawdzić, że
 \[K\left( f(y(u,v))\right)=K(x(v,u))=\frac{-1}{(1+u^2)^2}=K(y(u,v)),\]
 a mimo to $f$ nie jest (lokalną) izometrią.
 \end{exercise}
+
+\subsection{Geodezyjne}
 
 \begin{exercise}
  Korzystając z r\'ownań geodezyjnych pokazać, że proste i tylko proste są 
@@ -871,28 +888,171 @@ $\alpha'_1(t_0)=0$. Co ten wynik oznacza geometrycznie?
 
 \end{exercise}
 
-
-
-
-\begin{exercise}[Butelka Kleina]
-Wstęga M\"obiusa powstawała jako powierzchnia prostokreślna przez obiegnięcie 
-okręgu r\'ownocześnie przekręcając proste ,,normalne" o połowę kąta pełnego.
-
-Rozważmy następujuącą powierzchnię ,,okręgo-kreślną``, czyli składającą się z 
-odpowiednio przekręconych okręgów nad (bazowym) okręgiem:\footnote{
-Prawidłowa nazwa brzmi: $S^1$-wiązka nad okręgiem. Nad okręgiem są 
-tylko dwie powierzchnie utworzone w ten spos\'ob: torus (produktowa) i 
-butelka Kleina (nietrywialnie skręcona).}
-
-Niech $\alpha\colon [0,2\pi)\to \mathbb{R}^3$ będzie krzywą zamkniętą bez 
-samoprzecięć o zerowej torsji.
-
-
-
-\small {Uwaga: Nie uda się tego zrobić w $\mathbb{R}^3$ bez samoprzecięć. 
-Jedna z wielu dróg do celu wiedzie przez odpowiednie zanurzenie Wstęgi 
-M\"{o}biusa jako, że butelka jest sklejeniem dwóch wstęg wzdłuż brzegów.}
+\begin{exercise}
+ Zastanowić się jak mogą wyglądać geodezyjne na torusie. Spr\'obować 
+wywnioskować pewne własności geodezyjnych na torusie z postaci r\'ownań 
+geodezyjnych.
 \end{exercise}
+
+
+\subsection{Twierdzenie Gaussa-Bonneta}
+
+\begin{exercise}
+Znaleźć triangulację sfery o minimalnej liczbie ścian. Czy można ją zrealizować 
+przez tr\'ojkąty geodezyjne?
+\end{exercise}
+
+\begin{exercise}
+Znaleźć triangulację (dowolną, niekoniecznie geodezyjną) torusa.
+\end{exercise}
+
+\begin{exercise}
+Znaleźć przedstawienie geometryczne torusa jako powierzchni 
+powstałej przez utożsamienie bok\'ow $n$\nobreakdash-kąta foremnego. Dla jakich 
+$n$ to się uda?
+\end{exercise}
+
+\begin{exercise}
+ Policzyć charakterystykę Eulera dla sfery i torusa.
+\end{exercise}
+
+\begin{exercise}
+ Pokazać geometrycznie jak skonstruować $2$\nobreakdash-torus (poprzez sumę 
+sp\'ojną). Zinterpretować to w języku utożsamiania bok\'ow wielokąt\'ow.
+\end{exercise}
+
+\begin{exercise}
+Korzystając z prezentacji $n$\nobreakdash-torusa znaleźć jego triangulację i 
+policzyć charakterystykę Eulera. 
+\end{exercise}
+
+\begin{exercise}
+Jakie wnioski odnośnie krzywizny $n$\nobreakdash-torus\'ow\footnote{W 
+rzeczywistości $n$\nobreakdash-torusy to jedyne zamknięte powierzchnie 
+orientowalne, więc jest to dosyć og\'olny wniosek.} można wyciągnąć na 
+podstawie Twierdzenia Gaussa-Bonneta?
+\end{exercise}
+
+\subsection{Geometria hiperboliczna i płaskie zanurzenia}
+
+\begin{exercise}
+ Policzyć $I\!I$ formę podstawową, symbole Christoffela i krzywiznę Gaussa dla 
+płaszczyzny hiperbolicznej zdefiniowanej jako półpłaszczyznę 
+\[\mathcal{H}=\left\{(u,v)\in \mathbb{R}^2\colon v>0 \right\},\] wyposażoną w 
+pierwszą formę podstawową
+\[I_{\mathcal{H}}=\left\{I(u,v)\right\}_{(u,v)\in 
+\mathcal{H}}=\left\{\left[
+\begin{array}{cc}
+\frac{1}{v^2}&0\\
+0 & \frac{1}{v^2}
+\end{array}
+\right]\right\}
+\]
+
+\end{exercise}
+
+\begin{exercise}
+ Korzystając z poprzedniego zadania wyznaczyć r\'ownania geodezyjnych dla 
+$\mathcal{H}$. Następnie sprawdzić, że prosta w parametryzacji 
+\[v(t)=(C,C_1 e^{C_2 t})\] jest geodezyjną, gdzie $C, C_{1} , C_2$ są stałymi.
+\end{exercise}
+
+
+\begin{exercise}[Transformacje M\"obiusa]
+Pokazać, że specjalna transformacja M\"obiusa zdefiniowana jako funkcja
+$T^{a,b}_{c,d}\colon \mathbb{C}\to\mathbb{C}$ i zadana wzorem
+\[T^{a,b}_{c,d}(z)= \frac{az+b}{cz+d}\]
+zachowuje g\'orną p\'ołpłaszczyznę, tj.
+\[T^{a,b}_{c,d}\Big|_{\mathcal{H}}\colon \mathcal{H}\to \mathcal{H}\]
+jest dobrze zdefiniowanym odwzorowaniem.
+\end{exercise}
+
+\begin{exercise}
+Pokazać, że złożenie transformacji M\"obiusa odpowiada mnożeniu macierzy.
+\end{exercise}
+
+
+\begin{exercise}
+Pokazać, że specjalne transformacje M\"obiusa przenoszą geodezyjne na 
+geodezyjne. 
+
+\small{\textbf{Podpowiedź:} Pokazać, że następujące macierze 
+generują grupę $PSL(2,\mathbb{R})$: 
+\[\left\{\left(\begin{array}{cc}
+     1 & c\\
+	0 & 1\\
+     \end{array}
+\right),\quad \left(\begin{array}{cc}
+     \lambda & 0\\
+	0 & ^1\!\!\big/_{\!\!\lambda}\\
+     \end{array}
+\right),\quad\left(\begin{array}{cc}
+     0& -1\\
+	1 & 0\\
+     \end{array}
+\right)\right\}.\]
+Następnie zinterpretować geometrycznie działanie poszczególnych macierzy.}
+\end{exercise}
+
+\begin{exercise}[Model Kleina]
+Koło otwarte $\mathcal{K}=\{(x,z)\colon x^2 + z ^2 < 1\}$, wraz z pierwszą 
+formą podstawową
+\[I_{\mathcal{K}}=I_{(x,z)}
+=\left[
+\begin{array}{cc}
+\frac{4}{(1-x^2-z^2)^2} & 0\\
+0 & \frac{4}{(1-x^2-z^2)^2}
+\end{array}
+\right]
+\]
+nazywamy \textit{Modelem Kleina} geometrii hiperbolicznej.
+
+Pokazać, że odwzorowanie $W\colon \mathcal{H}\to \mathcal{K}$ określone wzorem
+\[W(x+iy)=\frac{x+i(y-1)}{x+i(y+1)}\]jest izometrią.
+
+\small{Podpowiedź: $W$ jest transformacja M\"obiusa stowarzyszona z 
+macierzą 
+$\left[
+\begin{array}{cc}
+1 &-1\\
+1 & 1
+\end{array}
+\right].$}
+
+\end{exercise}
+
+\begin{exercise}
+Dlaczego przy konstrukcji \textit{gładkiego} $n$\nobreakdash-torusa poprzez 
+identyfikację bok\'ow wielokąta foremnego wymagamy, by suma kąt\'ow 
+wewnętrznych była r\'owna $2\pi$?? Co się dzieje kiedy suma jest mniejsza? Co 
+jeśli większa?
+\end{exercise}
+
+
+
+\subsection{Zadania r\'ożne}
+\begin{exercise}
+Niech będą dane dwa współosiowe, równoległe okręgi w $\mathbb{R}^3$ odległe od siebie o $A$, o promieniach odpowiednio $r$ i $R$. Podać parametryzację katenoidy zawierającej je oba. Czy zawsze da się to zrobić?
+\end{exercise}
+
+% \begin{exercise}
+% Wybierając pewną powierzchnię nieorientowalną, faktycznie udowodnić jej nieorientowalność (To zadanie jest już zdecydowanie obowiązkowe dla osób z projektem \textit{Powierzchnie nieorientowalne}).
+% \end{exercise}
+
+\begin{exercise}
+Zidentyfikować wszystkie powierzchnie, dla których linie normalne (proste 
+wyznaczone przez wektory normalne przesunięte do odpowiedniego punktu na 
+powierzchni) przechodzą przez jeden ustalony punkt $P$.
+\end{exercise}
+
+\begin{exercise}
+Policzyć odwzorowanie Weingartena dla dowolnej powierzchni powstałej przez obrót krzywej \[\alpha(t)=(f(t),g(t),0)\] wokół osi $OX$. Jak wyglądają krzywizny główne i ich wektory? (dla ułatwienia można założyć, że $\alpha$ jest krzywą unormowaną).
+\end{exercise}
+
+\begin{exercise}
+Policzyć odwzorowanie Weingartena dla dowolnej powierzchni prostokreślnej. Jak wyglądają krzywizny główne i ich wektory?
+\end{exercise}
+
 
 \begin{exercise}
 Udowodnić bądź znaleźć kontrprzykład:
@@ -917,39 +1077,51 @@ zerowe.
 \end{exercise}
 
 
-
-
-
-
-\begin{exercise}
-Niech będą dane dwa współosiowe, równoległe okręgi w $\mathbb{R}^3$ odległe od siebie o $A$, o promieniach odpowiednio $r$ i $R$. Podać parametryzację katenoidy zawierającej je oba. Czy zawsze da się to zrobić?
-\end{exercise}
-
-% \begin{exercise}
-% Wybierając pewną powierzchnię nieorientowalną, faktycznie udowodnić jej nieorientowalność (To zadanie jest już zdecydowanie obowiązkowe dla osób z projektem \textit{Powierzchnie nieorientowalne}).
-% \end{exercise}
-
-\begin{exercise}
-Zidentyfikować wszystkie powierzchnie, dla których linie normalne (proste 
-wyznaczone przez wektory normalne przesunięte do odpowiedniego punktu na 
-powierzchni) przechodzą przez jeden ustalony punkt $P$.
-\end{exercise}
-
-\begin{exercise}
-Policzyć odwzorowanie Weingartena dla dowolnej powierzchni powstałej przez obrót krzywej \[\alpha(t)=(f(t),g(t),0)\] wokół osi $OX$. Jak wyglądają krzywizny główne i ich wektory? (dla ułatwienia można założyć, że $\alpha$ jest krzywą unormowaną).
-\end{exercise}
-
-\begin{exercise}
-Policzyć odwzorowanie Weingartena dla dowolnej powierzchni prostokreślnej. Jak wyglądają krzywizny główne i ich wektory?
-\end{exercise}
-
 \begin{exercise}
 Pokazać, że jeśli odwzorowanie Weingartena powierzchni $M$ jest postaci $\frac{-1	}{R}[\text{id}]$, gdzie $[\text{id}]$ oznacza macierz identycznościową, to $M$ jest powierzchnią sfery (lub jej fragmentem).
 \end{exercise}
 
 \begin{exercise}
- Pokazać, że zwarta powierzchnia $M$ bez brzegu zanurzona (gładko!) w 
-$\mathbb{R}^3$ posiada taki punkt $p\in M$, że $K(p)> 0$.
+ Pokazać, że zamknięta powierzchnia $M$ (tzn. zwarta i bez brzegu) zanurzona 
+(gładko!) w $\mathbb{R}^3$ posiada taki punkt $p\in M$, że $K(p)> 0$.
+\end{exercise}
+
+
+\begin{exercise}[Wiązki okręg\'ow nad krzywą zamkniętą]
+Wstęga M\"obiusa powstawała jako powierzchnia prostokreślna przez obiegnięcie 
+okręgu r\'ownocześnie przekręcając proste ,,normalne" o połowę kąta pełnego.
+
+Rozważmy następujuącą powierzchnię ,,okręgo-kreślną``, czyli składającą się z 
+odpowiednio przekręconych okręgów nad (bazowym) okręgiem\footnote{
+Prawidłowa nazwa brzmi: $S^1$-wiązka nad okręgiem.}. Niech \[\alpha\colon 
+[0,2\pi)\to \mathbb{R}^3\] będzie krzywą zamkniętą bez samoprzecięć o zerowej 
+torsji. 
+
+\begin{itemize}
+ \item Dla każdego $t\in [0,2\pi)$ do krzywej $\alpha$ 
+dołączamy okrąg o promieniu $\varepsilon$ (odpowiednio małym) przechodzący 
+przez punkt $\alpha(t)$, leżący w płaszczyźnie $N_{\alpha} (t)\times B_{\alpha} 
+(t)$ (płaszczyzna normalna). Jak wygląda powierzchnia utworzona z tych 
+okręg\'ow? Przyjąć, że $\alpha$ jest okręgiem jednostkowym i znaleźć 
+parametryzację utworzonej powierzchni.
+\item Zał\'ożmy teraz, że zamiast okręgu umieszczamy w każdym punkcie $\alpha$ 
+odpowiednio małą lemniskatę Bernoulliego (kt\'orej środek leży punkcie 
+$\alpha(t)$). Jak wygląda utworzona powierzchnia w zależności od sposobu 
+położenia lemniskaty? jak wyglądają punkty samoprzecięcia?
+
+\item Przyjmijmy, że $\alpha(t)$ jest okręgiem jednostkowym i skorzystajmy z 
+symetrii lemniskaty aby wzdłuż krzywej $\alpha(t)$ obr\'ocić ją o połowę kąta 
+pełnego. Znaleźć parametryzację utworzonej powierzchni. Jest to tzw. Butelka 
+Kleina.
+
+\item Korzystając z powyższej parametryzacji pokazać, że butelka Kleina jest 
+sklejeniem dw\'och wstęg M\"obiusa wzdłuż ich brzegu.
+\end{itemize}
+
+
+
+\small {Uwaga: Butelki Kleina nie uda się zanurzyć w $\mathbb{R}^3$ bez 
+samoprzecięć.}
 \end{exercise}
 
 

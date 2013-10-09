@@ -40,7 +40,11 @@ Korzystając teraz z odpowiednich wzorów (lemat \ref{lem:christoffel-prop}) mo�
 \Gamma^1_{22}&=\frac{\frac{\partial g_{22}}{\partial u}}{2g_{11}}=0 &
 \Gamma^2_{22}&=\frac{\frac{\partial g_{22}}{\partial v}}{2g_{22}}=-\frac{1}{v}
 \end{align*}
-\pause Teraz używając jawnej formuły na krzywiznę Gaussa powierzchni (np. z zadania po Theorema Egregium) możemy sprawdzić, że tak zdefiniowana powierzchnia ma stałą krzywiznę równą $-1$.\pause W szczególności z lokalnego twierdzenia Gaussa-Bonneta wiemy, że suma kątów wewnętrznych w każdym trójkącie geodezyjnym jest mniejsza niż $\pi$.
+\pause Teraz używając jawnej formuły na krzywiznę Gaussa powierzchni (np. z 
+zadania po Theorema Egregium) możemy sprawdzić, że tak zdefiniowana powierzchnia 
+ma stałą krzywiznę równą $-1$. \pause W szczególności z lokalnego twierdzenia 
+Gaussa-Bonneta wiemy, że suma kątów wewnętrznych w każdym trójkącie geodezyjnym 
+jest mniejsza niż $\pi$.
 \end{frame}
 %%%%%%next-slide%%%%%
 
@@ -69,16 +73,6 @@ v''(t)+\frac{1}{v(t)}\le((u'(t))^2-(v'(t))^2\ri)&=0.
 \begin{frame}
 
 Przyjmijmy teraz, że $u(t)\neq \operatorname{const}$, zatem $u'(t)\neq 0$ i spróbujmy wyznaczyć $v$ jako funkcję $u(t)$. Mamy \[\frac{d \le[v(u(t))\ri]}{dt}=\frac{d\le[v(u(t))\ri]}{du(t)}\cdot\frac{du(t)}{dt}, \quad\text{więc}\quad\frac{v'(u(t))}{u'(t)}=\frac{dv(u(t))}{du(t)}\] gdzie notację primową rezerwujemy dla pochodnej po $t$. \pause Stosując teraz regułę łańcuchową otrzymujemy (sprawdzić!)
-% \begin{align*}
-% \frac{d^2\le[v(u(t))\ri]}{d u^2(t)}&= \frac{d}{du(t)}\le(\frac{v'(u(t)}{u'(t)}\ri)=\\
-% &=\frac{u'(t)v''(u(t))-v'(u(t))u''(t)}{\le(u'(t)\ri)^2}\cdot\frac{1}{u'(t)}.\end{align*}
-% Podstawmy teraz drugie pochodne wyliczone z równań geodezyjnych
-% \[=\frac{1}{\le(u'(t)\ri)^3}\le[ u'(t)\le(\frac{1}{v(t)}\le((v'(t))^2-(u'(t))^2\ri)\ri) - v'(t)\le( \frac{2}{v(t)}u'(t)v'(t)\ri)\ri],\]
-% i uprośćmy to wyrażenie:
-% \begin{align*}
-% &=\frac{u'(t)}{\le(u'(t)\ri)^3}\cdot\frac{1}{v(t)}\le[\le((v'(t))^2-(u'(t))^2\ri)-2(v'(t))^2\ri]=\\
-% &=-\frac{1}{v(t)}\le[1+\le(\frac{v'(t)}{u'(t)}\ri)^2\ri]=\frac{-1}{v(t)}\le(1+\le(\frac{dv(u(t)}{du(t)}\ri)^2\ri).
-% \end{align*}
 \begin{align*}
 \frac{d^2\le[v(u)\ri]}{d u^2}&= \frac{d}{du}\le(\frac{v'(u)}{u'}\ri)=\\
 &=\frac{u'v''(u)-v'(u)u''}{\le(u'\ri)^2}\cdot\frac{1}{u'}.\end{align*}
@@ -89,10 +83,15 @@ Przyjmijmy teraz, że $u(t)\neq \operatorname{const}$, zatem $u'(t)\neq 0$ i spr
 \begin{frame}
 
 Podstawmy teraz drugie pochodne wyliczone z równań geodezyjnych:
-\begin{multline*}
+\mode<presentation>{\begin{multline*}
 \frac{u'v''(u)-v'(u)u''}{\le(u'\ri)^2}\cdot\frac{1}{u'}=\\\pause
 =\frac{1}{\le(u'\ri)^3}\le[ u'\le(\frac{1}{v}\le((v')^2-(u')^2\ri)\ri) - v'\le( \frac{2}{v}u'v'\ri)\ri],\pause
-\end{multline*}
+\end{multline*}}
+\mode<article>{
+\[\frac{u'v''(u)-v'(u)u''}{\le(u'\ri)^2}\cdot\frac{1}{u'}
+=\frac{1}{\le(u'\ri)^3}\le[ u'\le(\frac{1}{v}\le((v')^2-(u')^2\ri)\ri) - v'\le( 
+\frac{2}{v}u'v'\ri)\ri],\]
+}
 i uprośćmy to wyrażenie otrzymując
 \begin{align*}
 &=\frac{u'}{\le(u'\ri)^3}\cdot\frac{1}{v}\le[\le((v')^2-(u')^2\ri)-2(v')^2\ri]=\\
@@ -179,7 +178,11 @@ gdzie $d_{\mathcal{E}}$ oznacza zwykłą odległość euklidesową.
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Izometrie płaszczyzny Poincar\'ego}}
-Przypomnijmy, że grupa izometrii danej powierzchni $M$ składała się ze wszystkich dyfeomorfizmów $f\colon M\to M$ które zachowują pierwszą formę podstawową. Podczas dowodu twierdzenia klasyfikacyjnego dla krzywych mieliśmy do czynienia z działaniem grupy $E(3)$. Jak łatwo zauważyć grupa izometrii sfery $S^2$ jest równa dokładnie $SO(3)$. 
+Przypomnijmy, że grupa izometrii danej powierzchni $M$ składała się ze 
+wszystkich dyfeomorfizmów $f\colon M\to M$ które zachowują pierwszą formę 
+podstawową. Podczas dowodu twierdzenia klasyfikacyjnego dla krzywych mieliśmy do 
+czynienia z działaniem grupy $E(3)$. Grupa izometrii sfery $S^2$ jest równa 
+dokładnie $SO(3)$. 
 \begin{frame}{Izometrie płaszczyzny Poincar\'ego}
 
 \mode<article>{Teraz zajmiemy się grupą izometrii płaszczyzny hiperbolicznej.} Rozważmy $\mathcal{H}\subset \mathbb{C}$, \[\mathcal{H}=\{z\in \mathbb{C}\colon \Im(z)>0\}\]jako podzbiór płaszczyzny zespolonej utożsamiając punkt $(u,v)$ z liczbą $u+iv$. 
@@ -362,14 +365,11 @@ Następnie zinterpretować geometrycznie działanie poszczególnych macierzy.}
 
 Widzieliśmy wcześniej, że Twierdzenie Gaussa-Bonneta ujawnia głębokie związki między całkowitą krzywizną powierzchni a jej własnościami topologiczno-kombinatorycznymi (charakterystyka Eulera). W szczególności wynika z niego, że gładkie zanurzenie sfery w przestrzeń euklidesową musi mieć całkowitą krzywiznę dokładnie taką samą jak standardowa (okrągła) sfera (czyli $4\pi$).
 
-
-
 \begin{frame}{Torusy o stałej krzywiźnie}
 \begin{exercise}
 Jak wyglądają geodezyjne na torusie? Wskazać przykład triangulacji (najlepiej geodezyjnej) na torusie. Sprawdzić, że charakterystyka Eulera torusa jest równa $0$.
 \end{exercise}
 \mode<presentation>{\pause Z twierdzenia Gaussa-Bonneta wynika, że jeśli $M$ jest homeomorficzna z torusem $T^2$ wtedy jej całkowita krzywizna musi być równa $2\pi \chi(T^2)=0$.}
-
 \end{frame}
 Zatem (ponownie na podstawie twierdzenia Gaussa-Bonneta) jeśli powierzchnia $M$ jest homeomorficzna z torusem $T^2$, wtedy jej całkowita krzywizna musi być równa $2\pi \chi(T^2)=0$.
 
@@ -377,7 +377,12 @@ Oczywiście nie istnieje gładkie zanurzenie \textit{płaskiego} torusa w $\R^3$
 
 \begin{frame}
 \mode<presentation>{
-Jak przekonamy się za chwilę nie istnieje gładkie zanurzenie \textit{płaskiego} torusa w $\R^3$ (tj. o stałej krzywiźnie równej $0$). Możemy jednak w łatwy sposób wskazać płaskie zanurzenie $T^2$w przestrzeń $\R^4$. Na początek przypomnijmy, że torus może być utożsamiony z $S^1\times S^1$. } \pause Rozważmy kwadrat $U=[0,2\pi)\times [0,2\pi)\subset \R^2$. Niech $x\colon U\to \R^3$ będzie określone wzorem
+Jak przekonamy się za chwilę nie istnieje gładkie zanurzenie \textit{płaskiego} 
+torusa w $\R^3$ (tj. o stałej krzywiźnie równej $0$). Możemy jednak w łatwy 
+sposób wskazać płaskie zanurzenie $T^2$w przestrzeń $\R^4$. Na początek 
+przypomnijmy, że torus może być utożsamiony z $S^1\times S^1$. } \pause Rozważmy 
+kwadrat $U=[0,2\pi)\times [0,2\pi)\subset \R^2$. Niech $x\colon U\to \R^4$ 
+będzie określone wzorem
 
 \mode<presentation>{\begin{tabular}{m{2.2in} m{2in}}}
 \mode<article>{\begin{tabular}{m{3in} m{2in}}}
@@ -456,7 +461,8 @@ W punkcie styczności oczywiście współczynniki metryczne są takie same, wię
 
 \begin{frame}
 \begin{uwaga}
-W ostatniej części tego wykładu zawiesimy jak dotąd zawsze obowiązujące założenie o \textit{gładkości} wszystkich odwzorowań.
+W ostatniej części tego wykładu zawiesimy jak dotąd zawsze obowiązujące
+założenie o \textit{gładkości} ($C^\infty$) wszystkich odwzorowań.
 \end{uwaga}
 \end{frame}
 
@@ -492,7 +498,7 @@ Powyższe twierdzenie jest prawdziwe, ponieważ krzywizna Gaussa dla powierzchni
 
 
 \vfill \footnotesize{Rysunki płaskiego zanurzenia torusa w $\R^3$ pochodzą z pracy:\\
-Borrelli, Vincent and Jabrane, Saïd and Lazarus, Francis and Thibert, Boris,
+Borrelli V., Jabrane S., Lazarus F., and Thibert B.,
 \textit{Flat tori in three-dimensional space and convex integration}, Proceedings of the National Academy of Sciences, 2012}
 
 
@@ -546,7 +552,14 @@ itd...
 
 \begin{frame}
 \begin{itemize}
-\item Chociaż wszystkie kroki można wykonać w klasie $C^2$, proces ten kontynuujemy w nieskończoność, więc ostateczne zanurzenie jako granica tych odwzorowań może być tylko klasy $C^1$.
+\item Chociaż wszystkie kroki można wykonać w klasie $C^2$, proces ten 
+kontynuujemy w nieskończoność, więc ostateczne zanurzenie jako granica tych 
+odwzorowań może być tylko klasy $C^1$.
+\mode<article>{
+\item Odwzorowanie klasy $C^1$ oznacza, że przestrzeń styczna jest w każdym 
+punkcie zdefiniowana, lecz wektor normalny może zdradzać ,,dziwaczne" 
+zachowanie (w przypadku tego zanurzenia -- fraktalne).
+}
 \pause \item Jednocześnie na rysunku poniżej widzimy, że południki i równoleżniki uzyskały tę samą długość.
 \begin{center}
 \mode<presentation>{\includegraphics[scale=0.41]{./pictures/C1-flat-torus-equal.jpg}}
