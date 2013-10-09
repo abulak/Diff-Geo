@@ -29,7 +29,8 @@ g\define x^{-1}\circ\gamma\colon (a,b)&\to U\subset \R^2\\
 t&\mapsto (g_1(t),g_2(t))
 \end{align*}
 i niech $g_1$, $g_2$ będą funkcjami współrzędnych $g(t)$. \pause Pochodna kowariantna krzywej $\gamma$ wyraża się jako
-\[\frac{\widehat{D}\gamma'}{dt}=\sum_{k=1}^2\left(g_{k}''(t)+\sum_{i=1}^2\sum_{j=1}^2\Gamma_{ij}^k(g(t))g_i'(t)g_{j}'(t)\right) x_k(g(t).\]
+\[\frac{\widehat{D}\gamma'}{dt}=\sum_{k=1}^2\left(g_{k}''(t)+\sum_{i=1}^2\sum_{
+j=1}^2\Gamma_{ij}^k(g(t))g_i'(t)g_{j}'(t)\right) x_k(g(t)).\]
 \end{twierdzenie}}
 
 \end{frame}
@@ -166,7 +167,9 @@ x_{22}(t,\vartheta)=&(0,-\alpha_2(t)\cos\vartheta,-\alpha_2(t)\sin\vartheta).
 g''_1-\alpha_1\alpha_1'(g'_2)^2&=0\\
 g''_2+2\frac{\alpha_1'}{\alpha_1}g'_1g'_2&=0
 \end{align*}\vspace*{-0.2in}
-\pause \item Południk powierzchni obrotowej może być sparametryzowany jako $\beta(t)=x(t,\vartheta_0)$ dla pewnej stałej $\varphi_0$ (o $s$ myślimy jako o promieniu, $\vartheta$ to kąt obrotu). Zatem $g_1(t)=t$ i $g_2(t)=\vartheta_0$.
+\pause \item Południk powierzchni obrotowej może być sparametryzowany jako 
+$\beta(t)=x(t,\vartheta_0)$ dla pewnej stałej $\vartheta_0$ ($\vartheta$ to kąt 
+obrotu). Zatem $g_1(t)=t$ i $g_2(t)=\vartheta_0$.
 \pause \item Przy takich funkcjach współrzędnych powyższe równania są spełnione (przeliczyć).
 \end{itemize}
 \bigskip
@@ -232,13 +235,14 @@ Rozważmy $M=\R\setminus\{(0,0)\}$. Geodezyjne na każdym podzbiorze płaszczyzn
 Niech $M\subset \R^3$ będzie powierzchnią gładką. Jeśli $M$ jest zupełną przestrzenią metryczną, wtedy dla dowolnych dwóch punktów $a$,$b\in M$ istnieje krzywa geodezyjna łącząca te dwa punkty. Co więcej ta geodezyjna ma najmniejszą długość spośród wszystkich krzywych łączących $a$ i $b$.
 \end{twierdzenie}
 
-\pause
 \mode<presentation>{
-\pause\begin{itemize}[<+->]
+\pause\begin{itemize}
  \item Nie będziemy szukać geodezyjnych łączących punkty na powierzchni $M$.
-\item Ustalmy punkt $p\in M$, oraz wektor $v\in T_pM$.
-\item Szukamy krzywej geodezyjnej w wyznaczonym przez $v$ kierunku i przechodzącej przez $p$.
-\item Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną krzywą gładką.
+\pause\item Ustalmy punkt $p\in M$, oraz wektor $v\in T_pM$.
+\pause\item Szukamy krzywej geodezyjnej w wyznaczonym przez $v$ kierunku i 
+przechodzącej przez $p$.
+\pause\item Z definicji wiemy, że taki wektor wyznacza (lokalnie) tylko pewną 
+krzywą gładką.
 \end{itemize}}
 \end{frame}
 

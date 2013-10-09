@@ -111,7 +111,7 @@ g_{21} & g_{22}
 \Gamma^2_{ij}\\
 \end{array}
 \right)
-=
+=\frac{1}{2}\!
 \left(
 \begin{array}{c}
 \frac{\partial g_{i1}}{\partial u_j}+\frac{\partial g_{j1}}{\partial u_i}-\frac{\partial g_{ij}}{\partial u_1}\\
@@ -161,7 +161,9 @@ Udowodnimy tylko Równania Codazziego-Mainardiego, równanie Gaussa pozostawiaj�
 Przypomnijmy formułę Gaussa:
 \[x_{ij}=\Gamma^1_{ij}x_1+\Gamma^2_{ij}x_2+l_{ij}n,\]\pause
 a następnie zróżniczkujmy ją względem $u_k$:
-\[x_{ijk}=\frac{\partial \Gamma^1_{ij}}{\partial u_k}x_1+ \Gamma^1_{ij}x_{1k}+ \frac{\partial^2_{ij}}{\partial u_k}x_2 +\Gamma^2_{ij}x_{2k} +\frac{\partial l_{ij}}{\partial u_k}n+l_{ij}n_k.\]
+\[x_{ijk}=\frac{\partial \Gamma^1_{ij}}{\partial u_k}x_1+ \Gamma^1_{ij}x_{1k}+ 
+\frac{\partial \Gamma^2_{ij}}{\partial u_k}x_2 +\Gamma^2_{ij}x_{2k} 
++\frac{\partial l_{ij}}{\partial u_k}n+l_{ij}n_k.\]
 
 \end{frame}
 %%%%%%next-slide%%%%%

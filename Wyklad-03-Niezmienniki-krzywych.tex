@@ -62,12 +62,22 @@ Najpierw pokażemy, że $h_1$ i $h_2$ (funkcje reparametryzujące do krzywych un
 \begin{frame}[<+->]
 
 Zatem dla wszystkich $t\in (c_1,d_1)$ zachodzi 
+\mode<article>{
 \begin{multline*}
 h_1'(t)=\frac{\pm1}{\|\alpha'(h_1(t))\|}=
 \frac{\pm1}{\left\|\alpha'\left(h_2\left(h_2^{-1}\left[h_1(t)\right]
-\right)\right)\right\|}=\pause\pm h_2\left[\left(h_2^{-1}\circ 
+\right)\right)\right\|}=\pause\pm 
+h_2\left[\left(h_2^{-1}\circ 
 h_1\right)\!(t)\right]\!\!.
-\end{multline*}
+\end{multline*}}
+\mode<presentation>{
+\begin{multline*}
+h_1'(t)=\frac{\pm1}{\|\alpha'(h_1(t))\|}=
+\frac{\pm1}{\left\|\alpha'\left(h_2\left(h_2^{-1}\left[h_1(t)\right]
+\right)\right)\right\|}=\\\pause=\pm 
+h_2\left[\left(h_2^{-1}\circ 
+h_1\right)\!(t)\right]\!\!.
+\end{multline*}}
 
 \pause Możemy teraz policzyć pochodną funkcji wewnętrznej:
 \[
@@ -128,15 +138,16 @@ Załóżmy teraz, że $\alpha$ jest prostą. \pause Mamy wtedy (postać parametr
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Torsja}}
-\begin{frame}[<+->]
+\begin{frame}
 \begin{definicja}
 Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną, oraz załóżmy, że dla wszystkich $t\in (a,b)$ zachodzi $N(t)\neq 0$. \textbf{Torsję} krzywej $\alpha$ w punkcie $t$ definiujemy jako funkcję \[\tau(t)\define \langle B'(t),N(t)\rangle.\]
 \end{definicja}
-
+\pause
 \begin{uwaga}
 \begin{itemize}
 \item Torsja jest funkcją gładką (wynika to z gładkości iloczynu skalarnego).
-\item Podobnie jak w przypadku krzywizny mamy $|\tau(t)|=\|B'(t)\|$, jednak torsja może mieć wartości \textit{ujemne}.
+\pause\item Podobnie jak w przypadku krzywizny mamy $|\tau(t)|=\|B'(t)\|$, 
+jednak torsja może mieć wartości \textit{ujemne}.
 \end{itemize}
 \end{uwaga}
 
@@ -227,25 +238,28 @@ Krzywą spełniającą jeden z tych warunków nazywamy \textbf{krzywą płaską}
 
 \textcolor{ared}{\textbf{Dowód:}}\pause \\
 \begin{description}
-\item [$1\Rightarrow 2$] Jeśli krzywa leży w jednej płaszczyźnie to leżą w niej wektory styczny i normalny (dlaczego?),\pause więc jest to płaszczyzna ściśle styczna. \pause Wtedy kierunek prostopadły do tej płaszczyzny jest współliniowy z $B$. Zatem $B$ nie zmienia ani zwrotu ani długości.\pause
+\item [$1\Rightarrow 2$] Jeśli krzywa leży w jednej płaszczyźnie to leżą w niej 
+wektory styczny i normalny (dlaczego?), \pause więc jest to płaszczyzna ściśle 
+styczna. \pause Wtedy kierunek prostopadły do tej płaszczyzny jest współliniowy 
+z $B$. Zatem $B$ nie zmienia ani zwrotu ani długości.\pause
 \item [$2\Leftrightarrow 3$] wynika ze wzoru Freneta (\ref{eqn:frenet3}):
 \[B'=-\tau N\]
 \end{description}
 
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}[<+->]
+\begin{frame}
 \begin{description}
 \item [$2\Rightarrow 1$] Niech $p\in (a,b)$ będzie punktem z dziedziny $\alpha$. 
 \mode<presentation>{\begin{itemize}}
-\mode<presentation>{\item}
+\mode<presentation>{\pause\item}
 Rozważmy funkcję
 \[f(t)=\langle \alpha(t)-\alpha(p),B(t)\rangle.\]
 
 \mode<article>{
 Funkcja ta mierzy długość rzutu wektora binormalnego na wektor wyznaczony przez naszą krzywą (bez straty ogólności możemy założyć, że $\alpha(p)=(0,0,0)$.)}
 
-\mode<presentation>{\item}
+\mode<presentation>{\pause\item}
 Przy założeniu, że $B(t)=B$ jest wektorem stałym, pokażemy, że funkcja $f$ jest tożsamościowo równa $0$, \pause z czego wynika, że krzywa $\alpha$ w całości leży w płaszczyźnie normalnej do $B$ i zawierającej punkt $\alpha(p)$.
 \mode<presentation>{\end{itemize}}
 \end{description}
@@ -269,7 +283,7 @@ f\,'(t)=&\pause\frac{d}{dt}\left(\langle\alpha(t)-\alpha(p),B(t)\rangle\right)=\
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Wzory ogólne}}
 \begin{frame}
-\begin{lemat}\label{lem_curv:wzory-ogolne}
+\begin{lemat}[Wzory og\'olne]\label{lem_curv:wzory-ogolne}
 Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną r\'ożną od prostej (tj. $N(t)\neq 0$ dla każdego $t\in (a,b)$). Wówczas zachodzą następujące wzory:
 \begin{align}
 \pause T=& \frac{\alpha'}{\|\alpha'\|}\label{eqn:T}\\
@@ -282,7 +296,7 @@ Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą regularną r\'ożną od prost
 \end{lemat}
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}[<+->]
+\begin{frame}
 
 \textcolor{ared}{\textbf{Dowód:}}\pause \\
 Dowód  polega na przeliczeniu odpowiednich pochodnych bez zakładania, że $\alpha$ jest krzywą unormowaną. Pozostawiamy go jako ćwiczenie.

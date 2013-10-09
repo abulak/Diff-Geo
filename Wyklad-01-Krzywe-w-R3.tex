@@ -4,7 +4,8 @@
 \begin{frame}[<+->]
 \begin{center}
 %\Large Krzywe w $\R^3$.\\[0.2in]
-\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.7,yscale=-1, inner sep=0pt, outer sep=0pt]
+\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.7,yscale=-1, inner sep=0pt, 
+outer sep=0pt]
 \input{./pictures/curve1.tex}
 \end{tikzpicture}
 \end{center}
@@ -14,9 +15,14 @@
 \begin{frame}[<+->]
 \begin{definicja}
 \begin{itemize}
-\item\textbf{Krzywa gładka}, lub po prostu \textbf{krzywa} w $\R^3$ to odwzorowanie gładkie \[\alpha\colon (a,b)\to \R^3;\]
-\item Dla każdego $t\in (a,b)$ \textbf{wektor styczny} (lub \textbf{wektor prędkości}) w punkcie $t$ określamy jako \[\alpha'(t)=(\alpha_1'(t),\alpha_2'(t),\alpha_3'(t)),\]gdzie $\alpha_i(t)$, są poszczególnymi współrzędnymi funkcji $\alpha$;
-\item \textbf{prędkość}, lub \textbf{prędkość skalarna} w punkcie $t_0\in (a,b)$ to po prostu długość wektora $\alpha'(t_0)$, oznaczana jako $\|\alpha'(t_0)\|$;
+\item\textbf{Krzywa gładka}, lub po prostu \textbf{krzywa} w $\R^3$ to 
+odwzorowanie gładkie \[\alpha\colon (a,b)\to \R^3;\]
+\item Dla każdego $t\in (a,b)$ \textbf{wektor styczny} (lub \textbf{wektor 
+prędkości}) w punkcie $t$ określamy jako 
+\[\alpha'(t)=(\alpha_1'(t),\alpha_2'(t),\alpha_3'(t)),\]
+gdzie $\alpha_i(t)$, są poszczególnymi współrzędnymi funkcji $\alpha$;
+\item \textbf{prędkość}, lub \textbf{prędkość skalarna} w punkcie $t_0\in (a,b)$
+to po prostu długość wektora $\alpha'(t_0)$, oznaczana jako $\|\alpha'(t_0)\|$;
 \end{itemize}
 \end{definicja}
 \end{frame}
@@ -25,11 +31,14 @@
 
 \begin{definicja}
 \begin{itemize}
-\item Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą gładką. \textbf{Długość} $\alpha$ definiujemy jako całkę
+\item Niech $\alpha\colon (a,b)\to \R^3$ będzie krzywą gładką. \textbf{Długość} 
+$\alpha$ definiujemy jako całkę
 \[L(\alpha)\define\int_a^b\|\alpha'(t)\|dt.\]
-\item Krzywą (lub ściślej: parametryzację krzywej) nazywamy unormowaną gdy dla każdego $t\in (a,b)$ zachodzi \[\|\alpha'(t)\|=1.\]
+\item Krzywą (lub ściślej: parametryzację krzywej) nazywamy unormowaną gdy dla 
+każdego $t\in (a,b)$ zachodzi \[\|\alpha'(t)\|=1.\]
 \item Zauważmy, że jeśli $|\alpha'(t)|=1$ dla wszystkich $t$, w\'owczas 
-\[L(\alpha)=b-a.\]Z tego powodu taką krzywą (parametryzację krzywej) nazywamy też \textbf{łukową}.
+\[L(\alpha)=b-a.\]Z tego powodu taką krzywą (parametryzację krzywej) nazywamy 
+też \textbf{łukową}.
 \end{itemize}
 
 \end{definicja}
@@ -42,9 +51,11 @@
 Rozważmy krzywą $\alpha(t)=(\cos{t},\sin{t},t^2)$. Wtedy wektor prędkości wynosi 
 \[\alpha'(t)=(-\sin{t},\cos{t},2t),\]
 zatem prędkość to 
-$\|\alpha'(t)\|=\sqrt{1+4t^2}$, tak więc krzywa nie jest unormowana. Długość tej krzywej na odcinku od $0$ do $2\pi$ wynosi
+$\|\alpha'(t)\|=\sqrt{1+4t^2}$, tak więc krzywa nie jest unormowana. 
+Długość tej krzywej na odcinku od $0$ do $2\pi$ wynosi
 \begin{multline*}
-\int_{0}^{2\pi}\sqrt{1+4t^2} dt=\le.\frac{1}{4}\le( 2 t \sqrt{1+4 t^2}+\sinh^{-1}(2t)\ri)\ri|_{0}^{2\pi}=\\
+\int_{0}^{2\pi}\sqrt{1+4t^2} dt=\le.\frac{1}{4}\le( 2 t \sqrt{1+4 t^{2}} 
++\sinh^{-1}(2t)\ri)\ri|_{0}^{2\pi}=\\
 =\pi \sqrt{1+16 \pi^2}+\frac{\sinh^{-1}(4 \pi)}{4}\simeq 40.4097.
 \end{multline*}
 \end{przyklad}
@@ -55,11 +66,16 @@ $\|\alpha'(t)\|=\sqrt{1+4t^2}$, tak więc krzywa nie jest unormowana. Długość
 \mode<all>{\midsection{Krzywe regularne}}
 \begin{frame}[<+->]
 \begin{definicja}
-Gładką krzywą $\alpha(t)$ nazywamy \textbf{regularną} (lub \textbf{naturalną}) jeśli $\alpha'(t)\neq (0,0,0)$ dla wszystkich $t\in (a,b)$. Jest to równoważne ze stwierdzeniem $\|\alpha'(t)\|\neq 0$ dla wszystkich $t\in (a,b)$.
+Gładką krzywą $\alpha(t)$ nazywamy \textbf{regularną} (lub \textbf{naturalną}) 
+jeśli $\alpha'(t)\neq (0,0,0)$ dla wszystkich $t\in (a,b)$. Jest to równoważne 
+ze stwierdzeniem $\|\alpha'(t)\|\neq 0$ dla wszystkich $t\in (a,b)$.
 \end{definicja}
 
 \begin{definicja}
-Niech $\alpha\colon (c,d)\to \R^3$ będzie gładką krzywą, oraz niech $h\colon (a,b)\to (c,d)$ będzie pewnym dyfeomorfizmem. Krzywą powstałą przez złożenie $\alpha$ i $h$,\[\overline{\alpha}\define \alpha\circ h\colon (a,b)\top{h}(c,d)\top{\alpha}\R^3\]
+Niech $\alpha\colon (c,d)\to \R^3$ będzie gładką krzywą, oraz niech 
+$h\colon (a,b)\to (c,d)$ będzie pewnym dyfeomorfizmem. Krzywą powstałą przez 
+złożenie $\alpha$ i $h$,\[\overline{\alpha}\define \alpha\circ h\colon 
+(a,b)\top{h}(c,d)\top{\alpha}\R^3\]
 nazywamy \textbf{reparametryzacją} krzywej $\alpha$ przez dyfeomorfizm $h$.
 
 
@@ -67,14 +83,17 @@ nazywamy \textbf{reparametryzacją} krzywej $\alpha$ przez dyfeomorfizm $h$.
 \end{frame}
 %%%%%%next-slide%%%%%
 
-\begin{frame}[<+->]
+\begin{frame}
 
 
 \begin{przyklad}
-Niech funkcja $h\colon (0,2)\to (1,5)$ będzie zdefinionana jako \[h(t)=2t+1,\] zaś $\alpha\colon (1,5)\to\R^3$ jako \[\alpha(t)=(t^2+3,t-7,\sin{t}).\] Wówczas reparametryzacja $\alpha$ przez $h$ jest zdana wzorem
+Niech funkcja $h\colon (0,2)\to (1,5)$ będzie zdefinionana jako \[h(t)=2t+1,\] 
+zaś $\alpha\colon (1,5)\to\R^3$ jako \[\alpha(t)=(t^2+3,t-7,\sin{t}).\] 
+\pause Wówczas reparametryzacja $\alpha$ przez $h$ jest zdana wzorem
 \[\overline{\alpha}(t)=(4t^2+4t+4,2t-6,\sin2t+1).\]
 
-\pause Krzywe te jednak mają dokładnie ten sam kształt (wykres) w przestrzeni $\R^3$.
+\pause Krzywe te jednak mają dokładnie ten sam kształt (wykres) w przestrzeni 
+$\R^3$.
 \end{przyklad}
 
 \end{frame}
@@ -110,12 +129,19 @@ Pozostaje więc jedynie sprawdzić, że $\overline{\alpha}\define\alpha\circ h$ 
 \end{multline*}
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}[<+->]
+\begin{frame}
 %\begin{przykladblock}
 \begin{przyklad}
-(Lewa) Linia śrubowa lub helisa lewoskrętna to krzywa $\alpha\colon \R\to \R^3$ zadana wzorem
-\[\alpha(t)=(a\cos{t},a\sin{t},bt).\]
-Rozważmy jej szczególną postać dla $a=b=1$. Wtedy jej prędkość jest równa $\|\alpha'(t)\|=\sqrt{2}$. Wybierzmy $t_0=0$. Wówczas \[q(t)=\int_0^t\sqrt{2} du=\sqrt{2}t,\] a więc \[h(t)=\frac{t}{\sqrt{2}}.\] Zatem parametryzacja unormowana tej krzywej jest równa \[\overline{\alpha}(t)=(\alpha\circ h)(t)=\left(\cos{\frac{t}{\sqrt{2}}},\sin{\frac{t}{\sqrt{2}}},\frac{t}{\sqrt{2}}\right)\!.\]
+(Lewa) Linia śrubowa lub helisa (lewoskrętna) to krzywa $\alpha\colon \R\to 
+\R^3$ zadana wzorem
+\[\alpha(t)=(a\cos{t},a\sin{t},bt).\] \pause
+Rozważmy jej szczególną postać dla $a=b=1$. Wtedy jej prędkość jest równa 
+$\|\alpha'(t)\|=\sqrt{2}$. Wybierzmy $t_0=0$. Wówczas \[q(t)=\int_0^t\sqrt{2} 
+du=\sqrt{2}t,\] a więc \[h(t)=\frac{t}{\sqrt{2}}.\] \pause Zatem parametryzacja 
+unormowana tej krzywej jest równa 
+\[\overline{\alpha}(t)=(\alpha\circ h)(t)= 
+\left(\cos{\frac{t}{\sqrt{2}}},\sin{\frac{t}{\sqrt{2}}},\frac{t}{\sqrt{2}} 
+\right)\!.\]
 \end{przyklad}
 
 \end{frame}

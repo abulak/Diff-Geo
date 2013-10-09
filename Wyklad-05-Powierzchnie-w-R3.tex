@@ -3,32 +3,44 @@
 
 \begin{frame}[<+->]
 \begin{definicja}
-Niech $U\subset\R^2$ będzie zbiorem otwartym. Odwzorowanie (funkcję wektorową) \[x\colon U\to \R^3\] nazywamy \textbf{gładkim}, jeśli wszystkie pochodne cząstkowe (dowolnego rzędu) $x$ istnieją oraz są odwzorowaniami ciągłymi.
+Niech $U\subset\R^2$ będzie zbiorem otwartym. Odwzorowanie (funkcję wektorową) 
+\[x\colon U\to \R^3\] nazywamy \textbf{gładkim}, jeśli wszystkie pochodne 
+cząstkowe (dowolnego rzędu) $x$ istnieją oraz są odwzorowaniami ciągłymi.
 \end{definicja}
 
 \begin{definicja}
 Niech $U\subset \R^2$ będzie zbiorem otwartym. Odwzorowanie gładkie
 \[x\colon U\to \R^3\]
-nazywamy \textbf{lokalnym układem współrzędnych} jeśli jest injekcją, oraz \[\frac{\partial x}{\partial s}(s,t)\times \frac{\partial x}{\partial t}(s,t)\neq 0\] dla wszystkich $(s,t)\in U$.
+nazywamy \textbf{lokalnym układem współrzędnych} jeśli jest injekcją, oraz 
+\[\frac{\partial x}{\partial s}(s,t)\times \frac{\partial x}{\partial 
+t}(s,t)\neq 0\] dla wszystkich $(s,t)\in U$.
 \end{definicja}
 
 \end{frame}
 %%%%%%next-slide%%%%%
 \mode<all>{\midsection{Podstawowe definicje}}
-\begin{frame}[<+->]
+\begin{frame}
 
 \begin{definicja}\label{def:surface}
 \begin{itemize}
 \item 
-Podzbiór $M\subset \R^3$ nazywamy \textbf{powierzchnią gładką}, jeśli wokół każdego punktu $p$ istnieje lokalny układ współrzędnych $x\colon U\to V\subset \R^3$. 
+Podzbiór $M\subset \R^3$ nazywamy \textbf{powierzchnią gładką}, jeśli wokół 
+każdego punktu $p$ istnieje lokalny układ współrzędnych $x\colon U\to V\subset 
+\R^3$. 
 
 % %\item Powierzchnię gładką $M$ nazywamy \textbf{regularną}  
 % 
-\item Powierzchnię gładką $M$ nazywamy łukowo spójną, jeśli dla dowolnych dwóch punktów $x,y\in M$ istnieje krzywa $\alpha\colon [0,1]\to M$ taka, że $\alpha(0)=x$ i $\alpha(1)=y$.
+\pause \item Powierzchnię gładką $M$ nazywamy łukowo spójną, jeśli dla dowolnych 
+dwóch 
+punktów $x,y\in M$ istnieje krzywa $\alpha\colon [0,1]\to M$ taka, że 
+$\alpha(0)=x$ i $\alpha(1)=y$.
 \end{itemize}
 \end{definicja}
 
-\pause Potocznie mówimy, że przestrzeń jest powierzchnią gładką jeśli ,,lokalnie'' (tj. w małym otoczeniu każdego punktu) wygląda jak fragment płaszczyzny (patrz część 1 Lematu \ref{lem:chart_loc_bij}).
+\pause Potocznie mówimy, że przestrzeń jest powierzchnią gładką jeśli 
+,,lokalnie'' (tj. w małym otoczeniu każdego punktu) wygląda jak fragment 
+płaszczyzny.
+\mode<article>{(patrz część 1 Lematu \ref{lem:chart_loc_bij})}
 
 
 \end{frame}
@@ -36,7 +48,9 @@ Podzbiór $M\subset \R^3$ nazywamy \textbf{powierzchnią gładką}, jeśli wokó
 \begin{frame}[<+->]
 
 \begin{przyklad}
-Jednostkowa sfera, tj. powierzchnia o równaniu $x^2+y^2+x^2=1$ jest przykładem powierzchni regularnej. Lokalnym układem współrzędnych jest np. $x^\pm(u,v)=(\pm\sqrt{1-u^2-v^2},u,v)$ jak na następującym rysunku
+Jednostkowa sfera, tj. powierzchnia o równaniu $x^2+y^2+x^2=1$ jest przykładem 
+powierzchni regularnej. Lokalnym układem współrzędnych jest np. 
+$x^\pm(u,v)=(\pm\sqrt{1-u^2-v^2},u,v)$ jak na następującym rysunku
 
 \begin{center}
 %\begin{tikzpicture}[y=0.80pt, x=0.8pt,scale=0.25,yscale=-1, inner sep=0pt, outer sep=0pt]
@@ -50,7 +64,8 @@ Jednostkowa sfera, tj. powierzchnia o równaniu $x^2+y^2+x^2=1$ jest przykładem
 \begin{frame}[<+->]
 
 \begin{uwaga}
-\textbf{UWAGA! Zakładamy, że wszystkie powierzchnie które będzie my rozważać dalej są gładkie i łukowo spójne.}
+\textbf{UWAGA! Zakładamy, że wszystkie powierzchnie które będzie my rozważać 
+dalej są gładkie i łukowo spójne.}
 \end{uwaga}
 
 \end{frame}
@@ -58,7 +73,11 @@ Jednostkowa sfera, tj. powierzchnia o równaniu $x^2+y^2+x^2=1$ jest przykładem
 \begin{frame}[<+->]
 
 \begin{definicja}
-Niech $M\subset\R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ i $y\colon V\to M$ będą lokalnymi układami współrzędnych wokół punktu $p\in M$. Wtedy złożenie \[\Phi_{x,y}\define y^{-1}\circ x\colon x^{-1}(x(U)\cap y(V))\to y^{-1}(x(U)\cap y(V))\]
+Niech $M\subset\R^3$ będzie powierzchnią gładką, oraz niech $x\colon U\to M$ i 
+$y\colon V\to M$ będą lokalnymi układami współrzędnych wokół punktu $p\in M$. 
+Wtedy złożenie 
+\[\Phi_{x,y}\define y^{-1}\circ x\colon x^{-1}(x(U)\cap y(V))\to y^{-1}(x(U)\cap 
+y(V))\]
 nazywamy \textbf{funkcją zmiany układu współrzędnych}.
 
 \end{definicja}
@@ -80,8 +99,13 @@ nazywamy \textbf{funkcją zmiany układu współrzędnych}.
 \begin{lemat}\label{lem:chart_loc_bij}
 Niech $M\subset \R^3$ będzie powierzchnią gładką. Wówczas:
 \begin{enumerate}[<+->]
-\item Jeśli $x\colon U\to M$ jest lokalnym układem współrzędnych wtedy $x$ jest dyfeomorfizmem $U$ na obraz $x(U)$. %Co więcej $x(U)$ jest zbiorem otwartym w $M$.
-\item Niech $V\subset \R^2$ będzie zbiorem otwartym i niech $f\colon V\to U$ będzie dyfeomorfizmem. Wtedy \[y\define x\circ f\colon V\to M\] jest lokalnym układem współrzędnych i $f$ jest funkcją zmiany układu współrzędnych $\Phi_{y,x}$.
+\item Jeśli $x\colon U\to M$ jest lokalnym układem współrzędnych wtedy $x$ jest 
+dyfeomorfizmem $U$ na obraz $x(U)$. 
+%Co więcej $x(U)$ jest zbiorem otwartym w $M$.
+\item Niech $V\subset \R^2$ będzie zbiorem otwartym i niech $f\colon V\to U$ 
+będzie dyfeomorfizmem. Wtedy \[y\define x\circ f\colon V\to M\] jest lokalnym 
+układem współrzędnych i $f$ jest funkcją zmiany układu współrzędnych 
+$\Phi_{y,x}$.
 \end{enumerate}
 \end{lemat}
 
@@ -92,8 +116,14 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką. Wówczas:
 \textcolor{ared}{\textbf{Dowód:}}\\\pause
 
 \mode<article>{\begin{itemize}
-\item [1)] Ponieważ $x$ jest injekcją, więc jest bijekcją na swój obraz. \pause Ponieważ $x$ jest odwzorowaniem gładkim, oraz na zbiorze $U$ rząd jego pochodnej jest równy $2$ (z definicji lokalnego układu współrzędnych), więc korzystając z twierdzenia o odwzorowaniu uwikłanym na zbiorze $x(U)$ istnieje do $x$ gładkie odwzorowanie odwrotne, zatem $x$ jest dyfeomorfizmem.
-\item [2)] Ponieważ złożenie dwóch dyfeomorfizmów jest dyfeomorfizmem, wystarczy sprawdzić, że jest spełniona własność lokalnego układu współrzędnych dla $y=x\circ f$.
+\item [1)] Ponieważ $x$ jest injekcją, więc jest bijekcją na swój obraz. 
+\pause Ponieważ $x$ jest odwzorowaniem gładkim, oraz na zbiorze $U$ rząd jego 
+pochodnej jest równy $2$ (z definicji lokalnego układu współrzędnych), więc 
+korzystając z twierdzenia o odwzorowaniu uwikłanym na zbiorze $x(U)$ istnieje do 
+$x$ gładkie odwzorowanie odwrotne, zatem $x$ jest dyfeomorfizmem.
+\item [2)] Ponieważ złożenie dwóch dyfeomorfizmów jest dyfeomorfizmem, 
+wystarczy sprawdzić, że jest spełniona własność lokalnego układu współrzędnych 
+dla $y=x\circ f$.
 \end{itemize}
 }
 
@@ -103,10 +133,13 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką. Wówczas:
  \item [1)]
 \begin{itemize}
  \item $x$ -- injekcja, więc jest bijekcją na obraz.
-\pause\item rząd pochodnej $x$ na $U$ jest równy $2$ (z def. lokalnego układu współrzędnych)
-\pause\item z twierdzenia o funkcji uwikłanej -- na $x(U)$ istnieje $x^{-1}$ -- gładkie odwzorowanie odwrotne
+\pause\item rząd pochodnej $x$ na $U$ jest równy $2$ (z def. lokalnego układu 
+współrzędnych)
+\pause\item z twierdzenia o funkcji uwikłanej -- na $x(U)$ istnieje $x^{-1}$ -- 
+gładkie odwzorowanie odwrotne,
 \end{itemize}
- \pause \item [2)] wystarczy sprawdzić dla lokalnego układu współrzędnych dla $y=x\circ f$
+ \pause \item [2)] wystarczy sprawdzić dla lokalnego układu współrzędnych 
+dla $y=x\circ f$
 \end{itemize}
 
 }
@@ -115,20 +148,36 @@ Niech $M\subset \R^3$ będzie powierzchnią gładką. Wówczas:
 \begin{frame}
 Mamy
 \begin{multline*}
-\frac{\partial (x\circ f)}{\partial s}\times \frac{\partial (x\circ f)}{\partial t}=\\\pause
-=\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial s}+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial s}\right)\times
-\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial t}+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial t}\right)=\\ \pause
-=\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}{\partial f_2}\right)+\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\left(\frac{\partial x}{\partial f_2}\times \frac{\partial x}{\partial f_1}\right)=\\\pause
-=\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}{\partial f_2}\right)\left(\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}-\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\right)
+\frac{\partial (x\circ f)}{\partial s}\times 
+\frac{\partial (x\circ f)}{\partial t}=\\\pause
+=\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial s}+
+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial s}\right) \times
+\left(\frac{\partial x}{\partial f_1}\frac{\partial f_1}{\partial t}+
+\frac{\partial x}{\partial f_2}\frac{\partial f_2}{\partial t}\right)=\\ \pause
+=\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}
+\left(\frac{\partial x}{\partial f_1}\times 
+\frac{\partial x}{\partial f_2}\right)+\frac{\partial f_1}{\partial t} 
+\frac{\partial f_2}{\partial s}\left(\frac{\partial x}{\partial f_2}\times 
+\frac{\partial x}{\partial f_1}\right)=\\\pause
+=\left(\frac{\partial x}{\partial f_1}\times 
+\frac{\partial x}{\partial f_2}\right) 
+\left(\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t} - 
+\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\right)
 \end{multline*}
-\mode<article>{Ponieważ $x$ jest lokalnym układem współrzędnych, więc z definicji pierwszy czynnik jest niezerowy. 
-Ponieważ $f$ jest dyfeomorfizmem, więc drugi czynnik (wyznacznik macierzy Jacobiego dla $f$\,) jest różny od zera.
+\mode<article>{Ponieważ $x$ jest lokalnym układem współrzędnych, więc z 
+definicji pierwszy czynnik jest niezerowy. Ponieważ $f$ jest dyfeomorfizmem, 
+więc drugi czynnik (wyznacznik macierzy Jacobiego dla $f$\,) jest różny od zera.
 
-Ostatnia teza ($\Phi_{x,y}=f$\,) wynika z definicji funkcji przejścia pomiędzy układami współrzędnych.}
+Ostatnia teza ($\Phi_{x,y}=f$\,) wynika z definicji funkcji przejścia pomiędzy 
+układami współrzędnych.}
 \mode<presentation>{
 \begin{itemize}
- \pause \item $\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}{\partial f_2}\right)\neq 0$ (lokalny układ współrzędnych)
-\pause\item $\left(\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t}-\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\right)\neq 0$ (Jakobian funkcji $f$\,).\\
+ \pause \item $\left(\frac{\partial x}{\partial f_1}\times \frac{\partial x}
+{\partial f_2}\right)\neq 0$ (lokalny układ współrzędnych)
+\pause\item 
+$\left(\frac{\partial f_1}{\partial s}\frac{\partial f_2}{\partial t} 
+-\frac{\partial f_1}{\partial t}\frac{\partial f_2}{\partial s}\right)\neq 0$ 
+(Jakobian funkcji $f$\,).\\
 \pause Wreszcie teza ($\Phi_{x,y}=f$\,) wynika z definicji funkcji przejścia.
 \end{itemize}
 }\hfill $\square$
@@ -138,8 +187,10 @@ Ostatnia teza ($\Phi_{x,y}=f$\,) wynika z definicji funkcji przejścia pomiędzy
 \begin{frame}{Gładkość funkcji na powierzchni}
 
 \begin{definicja} \label{def:smooth_fun}
-Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $f\colon M\to \R$ będzie funkcją.
-Funkcję $f$ nazywamy gładką jeśli dla każdego punktu $p\in M$ i dla każdego lokalnego układu współrzędnych $x\colon U\to M$ takiego, że $p\in x(u)$ funkcja \[f\circ x\colon U\top{x}M\top{f}\R\]
+Niech $M\subset \R^3$ będzie powierzchnią gładką i niech $f\colon M\to \R$ 
+będzie funkcją. Funkcję $f$ nazywamy gładką jeśli dla każdego punktu $p\in M$ i 
+dla każdego lokalnego układu współrzędnych $x\colon U\to M$ takiego, że $p\in 
+x(u)$ funkcja \[f\circ x\colon U\top{x}M\top{f}\R\]
 jest gładka jako funkcja z $\R^2$ do $\R$.
 \end{definicja}
 
@@ -149,23 +200,30 @@ jest gładka jako funkcja z $\R^2$ do $\R$.
 
  W praktyce są dwie metody na definiowanie funkcji określonej na powierzchni.
 \pause \begin{itemize}[<+->]
-\item Jeśli $F\colon \R^3\to \R$ jest gładka, wtedy jej obcięcie $F\,|_M\colon M\to \R$ będzie również gładkie.
-\item Załóżmy że  $x\colon U\to M\subset \R^3$ jest lokalnym układem współrzędnych. Jeśli $f\colon U\to \R$ jest funkcją gładką, to funkcję  na powierzchni $M$ możemy określić jako\[F=f\circ x^{-1}\colon x^{-1}(U)\to U\to \R,\] gdzie $x^{-1}(U)\subset M$.
+\item Jeśli $F\colon \R^3\to \R$ jest gładka, wtedy jej obcięcie 
+$F\,|_M\colon M\to \R$ będzie również gładkie.
+\item Załóżmy że  $x\colon U\to M\subset \R^3$ jest lokalnym układem 
+współrzędnych. Jeśli $f\colon U\to \R$ jest funkcją gładką, to funkcję  na 
+powierzchni $M$ możemy określić jako\[F=f\circ x^{-1}\colon x^{-1}(U)\to U\to 
+\R,\] gdzie $x^{-1}(U)\subset M$.
 Jest to funkcja gładka jako złożenie dwóch funkcji gładkich.
 \end{itemize}
 
 \end{frame}
 %%%%%%next-slide%%%%%
-\begin{frame}[<+->]
+\begin{frame}
 
 \begin{przyklad}
 \begin{itemize}
 \item Funkcja $f\colon S^2\to \R$ zadana wzorem
 \[f(x,y,z)=\frac{xyz}{x^2+y^2+z^2}\]
 jest funkcją gładką.
-\item Niech $M$ będzie zadana jako powierzchnia paraboloidy, \[x(s,t)=(s,t,s^2+t^2).\]
-\pause Rozważmy funkcję $f\colon \R^2\to \R$ zadaną wzorem \[(s,t)\mapsto \sin{(s+t)}.\]
-\pause Wtedy $f\circ x^{-1}(a,b,c)=\sin{(a+b)}$  i stąd $f\circ x^{-1}\colon M\to\R$ jest funkcją gładką na powierzchni paraboloidy.
+\pause\item Niech $M$ będzie zadana jako powierzchnia paraboloidy, 
+\[x(s,t)=(s,t,s^2+t^2).\]
+\pause Rozważmy funkcję $f\colon \R^2\to \R$ zadaną wzorem 
+\[(s,t)\mapsto \sin{(s+t)}.\]
+\pause Wtedy $f\circ x^{-1}(a,b,c)=\sin{(a+b)}$  i stąd 
+$f\circ x^{-1}\colon M\to\R$ jest funkcją gładką na powierzchni paraboloidy.
 \end{itemize}
 \end{przyklad}
 
@@ -308,8 +366,10 @@ Rot_{y}(\phi)=\left[\begin{array}{ccc}
 -\sin\phi & \cos\phi & 0\\
 0 & 0 & 1\\
 \end{array}\right]\]
-\pause W przypadku obrotu $\alpha (t)=(\alpha_1(t),\alpha_2(t),\alpha_3(t))$ wok\'oł osi $Ox$ otrzymamy
-\[x(t,\phi)=\left(\alpha_1(t),\alpha_2(t)\cos\phi-\alpha_3(t)\sin\phi,\alpha_2 (t)\sin\phi+\alpha_3 (t)\cos\phi\right)\]
+\pause W przypadku obrotu $\alpha (t)=(\alpha_1(t),\alpha_2(t),\alpha_3(t))$ 
+wok\'oł osi $OX$ otrzymamy
+\[x(t,\phi)=\left(\alpha_1(t),\alpha_2(t)\cos\phi-\alpha_3(t)\sin\phi,
+\alpha_2 (t)\sin\phi+\alpha_3 (t)\cos\phi\right)\]
 
 \end{frame}
 
@@ -392,7 +452,7 @@ Zauważmy, że dla ustalonego $s_0$ (czyli linia parametru dla zmiennej $t$) par
 \item Walec, Stożek
 \item Powierzchnia śrubowa
 \item Powierzchnia siodłowa
-\item Katenoida.
+\item Katenoida(!).
 \end{itemize}
 
 \end{frame}
